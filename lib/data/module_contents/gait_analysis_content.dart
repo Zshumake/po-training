@@ -1,0 +1,371 @@
+import 'package:flutter/material.dart';
+import '../models/topic_content_model.dart';
+
+final gaitAnalysisContent = TopicData(
+  id: 'gait_analysis',
+  title: 'Gait Analysis',
+  tabs: [
+    // ─────────────────────────────────────────────
+    // TAB 1: Normal Gait Review
+    // ─────────────────────────────────────────────
+    TopicTab(
+      title: 'Normal Gait Review',
+      blocks: [
+        HeaderBlock('Pathologic Gait Patterns'),
+        TextBlock(
+          'Gait deviations result from weakness, spasticity, contracture, pain, '
+          'or skeletal deformity. Identifying the deviation and its root cause '
+          'is essential for prescribing appropriate treatment and is a high-yield '
+          'board topic.',
+          isIntro: true,
+        ),
+        TableBlock(
+          title: 'Common Gait Pathologies (Table 6-4)',
+          columns: ['Deviation', 'Cause', 'Phase Affected'],
+          rows: [
+            ['Foot slap', 'Weak dorsiflexors (tibialis anterior); L4-L5 radiculopathy; peroneal nerve palsy', 'Initial contact / Loading response'],
+            ['Foot drop (steppage gait)', 'Weak/absent dorsiflexors; peroneal nerve palsy; L5 radiculopathy', 'Swing phase'],
+            ['Genu recurvatum', 'Weak quadriceps; plantarflexion contracture; quadriceps spasticity', 'Midstance / Terminal stance'],
+            ['Excessive knee flexion', 'Knee flexion contracture; weak quadriceps; hamstring spasticity', 'Stance phase'],
+            ['Trendelenburg gait', 'Weak hip abductors (gluteus medius); L5 radiculopathy; superior gluteal nerve palsy', 'Midstance'],
+            ['Circumduction', 'Weak dorsiflexors or hip flexors; stiff knee; leg length discrepancy', 'Swing phase'],
+            ['Hip hiking', 'Weak dorsiflexors; weak hip flexors; leg length discrepancy', 'Swing phase'],
+            ['Vaulting', 'Leg length discrepancy; inadequate knee flexion in swing', 'Swing phase (contralateral stance)'],
+            ['Antalgic gait', 'Pain in any lower extremity joint', 'Stance phase (shortened)'],
+          ],
+          headerColor: Colors.red,
+        ),
+        HeaderBlock('Trendelenburg Gait: Compensated vs Uncompensated'),
+        ComparisonCardBlock(
+          title: 'Uncompensated Trendelenburg',
+          themeColor: Colors.red,
+          backgroundColor: const Color(0xFFFFEBEE),
+          icon: Icons.trending_down,
+          description: 'The pelvis drops on the swing side due to weak hip abductors '
+              'on the stance side. The trunk remains midline or shifts slightly '
+              'to the contralateral side.',
+          keyPoints: [
+            'Contralateral pelvic drop during single-limb stance',
+            'Caused by weak gluteus medius on the STANCE side',
+            'Trunk does NOT lean over the affected side',
+            'Superior gluteal nerve injury (L4-S1)',
+            'Seen in: polio, muscular dystrophy, hip OA, L5 radiculopathy',
+          ],
+        ),
+        ComparisonCardBlock(
+          title: 'Compensated Trendelenburg (Gluteus Medius Lurch)',
+          themeColor: Colors.orange,
+          backgroundColor: const Color(0xFFFFF3E0),
+          icon: Icons.swap_horiz,
+          description: 'The patient compensates for hip abductor weakness by leaning '
+              'the trunk OVER the affected (stance) side to shift the COG, '
+              'thereby reducing the demand on the gluteus medius.',
+          keyPoints: [
+            'Lateral trunk lean TOWARD the stance (weak) side',
+            'Shifts COG over the stance limb to reduce abductor moment demand',
+            'Also called gluteus medius lurch or abductor lurch',
+            'Reduces the moment arm of body weight about the hip',
+            'Can also be caused by hip pain (antalgic adaptation)',
+            'A cane in the OPPOSITE hand reduces the compensatory trunk lean',
+          ],
+        ),
+        PearlBlock(
+          'Board Pearl',
+          'A cane should be used in the hand OPPOSITE the weak hip. '
+          'The cane reduces the demand on the hip abductors by ~50%. '
+          'Trendelenburg sign tests the stance-side abductors, not the swing side.',
+        ),
+        BulletCardBlock(
+          title: 'Additional Pathologic Gait Patterns',
+          themeColor: Colors.deepPurple,
+          backgroundColor: const Color(0xFFEDE7F6),
+          points: [
+            'Crouch gait: excessive knee and hip flexion throughout stance (cerebral palsy, hamstring spasticity)',
+            'Scissor gait: excessive hip adduction and internal rotation (spastic diplegia, UMN lesion)',
+            'Ataxic gait: wide-based, unsteady, irregular step length (cerebellar dysfunction)',
+            'Parkinsonian gait: shuffling, short steps, reduced arm swing, festination',
+            'Waddling gait: bilateral Trendelenburg (bilateral hip abductor weakness, muscular dystrophy)',
+            'Quadriceps avoidance: patient leans trunk forward or locks knee in extension to avoid knee buckling',
+          ],
+        ),
+      ],
+    ),
+
+    // ─────────────────────────────────────────────
+    // TAB 2: Prosthetic Gait Deviations
+    // ─────────────────────────────────────────────
+    TopicTab(
+      title: 'Prosthetic Gait Deviations',
+      blocks: [
+        HeaderBlock('Transtibial Prosthetic Gait Deviations'),
+        TextBlock(
+          'Gait deviations in transtibial amputees can result from prosthetic '
+          'causes (socket fit, alignment, components) or patient causes (weakness, '
+          'contracture, habits). Distinguishing between the two is critical for '
+          'appropriate intervention.',
+          isIntro: true,
+        ),
+        TableBlock(
+          title: 'Transtibial Gait Deviations',
+          columns: ['Deviation', 'Prosthetic Cause', 'Patient Cause'],
+          rows: [
+            ['Abrupt heel contact (hard heel strike)', 'Heel too stiff; socket set too far anterior', 'Habitual; knee extension contracture'],
+            ['Prolonged heel contact (delayed foot flat)', 'Heel cushion too soft; socket too far posterior', 'Weak quadriceps; fear of knee buckling'],
+            ['Jerky/unstable knee motion', 'Socket too far anterior; excessive dorsiflexion', 'Weak quadriceps; short residual limb'],
+            ['Early knee flexion (drop-off)', 'Socket flexed too much; foot too dorsiflexed', 'Hip flexion contracture; weak quads'],
+            ['Medial socket thrust', 'Foot outset too far; excessive valgus', 'Genu varum of residual limb'],
+            ['Lateral socket thrust', 'Foot inset too far; excessive varus', 'Genu valgum of residual limb'],
+            ['Pelvis drops (contralateral)', 'Prosthesis too short', 'Weak hip abductors; short residual limb'],
+            ['Heel off too early', 'Keel too stiff; socket too far posterior', 'Habitual; too rapid gait'],
+            ['Delayed heel off', 'Keel too flexible; socket too far anterior', 'Weak plantar flexors; slow gait'],
+            ['Foot drag in swing', 'Prosthesis too long', 'Inadequate hip/knee flexion'],
+            ['Uneven step length', 'Socket uncomfortable; poor suspension', 'Fear; hip flexion contracture; pain'],
+          ],
+          headerColor: Colors.blue,
+        ),
+        HeaderBlock('Transfemoral Prosthetic Gait Deviations'),
+        TableBlock(
+          title: 'Transfemoral Gait Deviations',
+          columns: ['Deviation', 'Prosthetic Cause', 'Patient Cause'],
+          rows: [
+            ['Foot rotation at heel strike', 'Heel too stiff; poor rotational control', 'Habitual'],
+            ['Knee buckling (excessive knee flexion)', 'Socket too far anterior; insufficient friction; insufficient alignment stability', 'Hip extensor weakness; hip flexion contracture'],
+            ['Lateral trunk bend (abductor lurch)', 'Prosthesis too short; medial wall too high; foot inset', 'Weak hip abductors; hip pain; short residual limb; habit'],
+            ['Circumduction', 'Prosthesis too long; too much friction; inadequate suspension', 'Weak hip flexors; abduction contracture; habit'],
+            ['Medial whip (heel moves medially)', 'Excessive internal rotation of knee; tight socket', 'Internal rotation of residual limb'],
+            ['Lateral whip (heel moves laterally)', 'Excessive external rotation of knee', 'External rotation of residual limb'],
+            ['Uneven step length', 'Inadequate socket flexion; insufficient friction', 'Hip flexion contracture; fear of falling; distrust of knee'],
+            ['Uneven heel rise', 'Insufficient friction/resistance', 'Forceful hip flexion (habit); fear'],
+            ['Terminal impact (snap at end of swing)', 'Insufficient extension resistance', 'Forceful hip flexion to ensure full knee extension'],
+            ['Foot slap', 'Insufficient plantar flexion resistance', 'N/A (prosthetic cause only)'],
+            ['Vaulting', 'Prosthesis too long; inadequate suspension; insufficient knee flexion', 'Habit; fear of stubbing toe'],
+            ['Hip hiking', 'Prosthesis too long; inadequate suspension; insufficient knee friction', 'Habit; weak hip flexors'],
+          ],
+          headerColor: Colors.deepOrange,
+        ),
+        PearlBlock(
+          'Board Pearl',
+          'Whips are best observed from behind the patient. MEDIAL whip = heel '
+          'kicks medially at initial swing (internal rotation issue). LATERAL whip = '
+          'heel kicks laterally (external rotation issue). Whips occur at the '
+          'initiation of knee flexion in preswing/initial swing.',
+        ),
+        BulletCardBlock(
+          title: 'Key Transfemoral Alignment Concepts',
+          themeColor: Colors.amber,
+          backgroundColor: const Color(0xFFFFF8E1),
+          points: [
+            'TKA line: trochanter-knee-ankle line; GRF should pass through this',
+            'Stability in stance: GRF must pass ANTERIOR to knee axis',
+            'Too much stability: difficulty initiating swing phase',
+            'Too little stability: knee buckling in stance',
+            'Socket flexion (5-7 degrees) compensates for hip flexion contracture',
+            'Lateral trunk bend can be prosthetic (short, inset) or patient (weak abductors) cause',
+          ],
+        ),
+      ],
+    ),
+
+    // ─────────────────────────────────────────────
+    // TAB 3: Orthotic Gait Deviations
+    // ─────────────────────────────────────────────
+    TopicTab(
+      title: 'Orthotic Gait Deviations',
+      blocks: [
+        HeaderBlock('Orthotic Gait Analysis'),
+        TextBlock(
+          'Orthotic gait deviations arise when the orthosis does not properly '
+          'compensate for the underlying neuromuscular or skeletal deficit, or '
+          'when the orthosis itself introduces biomechanical problems.',
+          isIntro: true,
+        ),
+        TableBlock(
+          title: 'AFO-Related Gait Deviations',
+          columns: ['Deviation', 'Possible Cause', 'Solution'],
+          rows: [
+            ['Foot slap at initial contact', 'AFO allows too much plantarflexion; dorsiflexor weakness not adequately supported', 'Increase dorsiflexion assist; stiffer anterior trim line'],
+            ['Genu recurvatum in stance', 'AFO set in too much plantarflexion; too flexible posterior leaf', 'Set AFO in slight dorsiflexion (5 degrees); use solid ankle or floor reaction AFO'],
+            ['Excessive knee flexion in stance', 'AFO set in too much dorsiflexion', 'Reduce dorsiflexion angle; consider floor reaction AFO (FRAFO)'],
+            ['Inadequate push-off', 'Solid ankle AFO blocks plantarflexion; too rigid', 'Use posterior leaf spring or carbon fiber AFO'],
+            ['Lateral instability', 'Medial-lateral control insufficient', 'Use solid ankle AFO; add medial/lateral flanges'],
+            ['Toe drag in swing', 'Insufficient dorsiflexion assist', 'Increase dorsiflexion stop or assist; check trim lines'],
+          ],
+          headerColor: Colors.green,
+        ),
+        ComparisonCardBlock(
+          title: 'Floor Reaction AFO (FRAFO)',
+          themeColor: Colors.teal,
+          backgroundColor: const Color(0xFFE0F2F1),
+          icon: Icons.architecture,
+          description: 'A solid ankle AFO with an anterior proximal shell/tibial cuff that '
+              'creates a knee extension moment by blocking tibial advancement. '
+              'Used for excessive knee flexion in stance (crouch gait).',
+          keyPoints: [
+            'Creates a knee EXTENSION moment during stance',
+            'Set in slight plantarflexion to enhance extension effect',
+            'Indication: quadriceps weakness, crouch gait (cerebral palsy)',
+            'Contraindication: knee recurvatum (would worsen hyperextension)',
+            'Also called ground reaction AFO or anti-crouch AFO',
+            'Requires intact plantarflexion strength or rigid ankle',
+          ],
+        ),
+        BulletCardBlock(
+          title: 'KAFO-Related Gait Deviations',
+          themeColor: Colors.indigo,
+          backgroundColor: const Color(0xFFE8EAF6),
+          points: [
+            'Circumduction: KAFO too long or knee lock prevents knee flexion in swing',
+            'Vaulting: KAFO too long; compensating by rising on contralateral toes',
+            'Wide-based gait: medial upright too prominent; uncomfortable medial knee area',
+            'Genu recurvatum: KAFO knee joint axis too anterior to anatomic axis',
+            'Knee instability: KAFO knee joint axis too posterior; worn or loose locks',
+            'Medial or lateral knee thrust: misaligned knee joint axis',
+          ],
+        ),
+        PearlBlock(
+          'Board Pearl',
+          'AFO set in dorsiflexion creates a knee FLEXION moment (useful for '
+          'recurvatum). AFO set in plantarflexion creates a knee EXTENSION '
+          'moment (useful for crouch/quad weakness). This ankle-knee coupling '
+          'is a fundamental orthotic biomechanics principle.',
+        ),
+        TableBlock(
+          title: 'Orthotic Ankle Position and Knee Effect',
+          columns: ['AFO Ankle Position', 'Effect on Knee', 'Indication'],
+          rows: [
+            ['Dorsiflexion (>0 degrees)', 'Knee flexion moment', 'Genu recurvatum; quadriceps spasticity'],
+            ['Neutral (0 degrees)', 'Neutral', 'General foot drop; mild instability'],
+            ['Plantarflexion (<0 degrees)', 'Knee extension moment', 'Quadriceps weakness; crouch gait'],
+          ],
+          headerColor: Colors.teal,
+        ),
+        BulletCardBlock(
+          title: 'Shoe Modifications and Gait Effects',
+          themeColor: Colors.brown,
+          backgroundColor: const Color(0xFFEFEBE9),
+          points: [
+            'Heel lift: compensates for limb length discrepancy or fixed equinus; reduces recurvatum',
+            'Rocker bottom sole: substitutes for lost ankle/forefoot motion (fused ankle or MTP joints)',
+            'Lateral heel wedge: shifts weight-bearing medially; used for lateral ankle instability or valgus correction',
+            'Medial heel wedge: shifts weight-bearing laterally; used for varus correction',
+            'Thomas heel: extends medially for medial longitudinal arch support',
+            'SACH heel: solid ankle cushion heel; simulates controlled plantarflexion',
+            'Metatarsal bar/pad: relieves pressure on metatarsal heads',
+          ],
+        ),
+      ],
+    ),
+
+    // ─────────────────────────────────────────────
+    // TAB 4: Energy Expenditure
+    // ─────────────────────────────────────────────
+    TopicTab(
+      title: 'Energy Expenditure',
+      blocks: [
+        HeaderBlock('Energy Expenditure in Amputee Gait'),
+        TextBlock(
+          'Energy expenditure increases with higher amputation levels and with '
+          'vascular (vs traumatic) etiology. Understanding these values is a '
+          'commonly tested board topic and is critical for functional outcome '
+          'prediction and rehabilitation planning.',
+          isIntro: true,
+        ),
+        TableBlock(
+          title: 'Energy Expenditure by Amputation Level (Table 6-5)',
+          columns: ['Amputation Level', 'Increase Over Normal (%)', 'Speed Change'],
+          rows: [
+            ["Syme's amputation", '15%', 'Slightly decreased'],
+            ['Traumatic unilateral TT (BKA) - average', '25%', 'Slightly decreased'],
+            ['Traumatic unilateral TT - long residual limb', '10%', 'Near normal'],
+            ['Traumatic unilateral TT - short residual limb', '40%', 'Moderately decreased'],
+            ['Traumatic bilateral TT (BKA)', '41%', 'Moderately decreased'],
+            ['Traumatic unilateral TF (AKA)', '60-70%', 'Significantly decreased'],
+            ['Traumatic bilateral TF (AKA)', '>200%', 'Most use wheelchair'],
+            ['Vascular unilateral TT (BKA)', '40%', 'Decreased'],
+            ['Vascular unilateral TF (AKA)', '100%', 'Markedly decreased'],
+            ['Hip disarticulation', '100-200%', 'Markedly decreased'],
+          ],
+          headerColor: Colors.red,
+        ),
+        PearlBlock(
+          'Board Pearl - Two Key Rules',
+          '1) Higher level = higher energy cost (TF > TT > Syme\'s). '
+          '2) Vascular etiology costs MORE than traumatic at the same level '
+          '(vascular TT 40% vs traumatic TT 25%). These are heavily tested.',
+        ),
+        BulletCardBlock(
+          title: 'Energy Expenditure Principles',
+          themeColor: Colors.red,
+          backgroundColor: const Color(0xFFFFEBEE),
+          points: [
+            'Energy cost measured as O2 consumption per meter walked (mL O2/kg/m)',
+            'Amputees self-select a slower walking speed to maintain a comfortable O2 rate',
+            'O2 rate (mL O2/kg/min) may remain near normal at self-selected speed',
+            'O2 cost (mL O2/kg/m) is always increased regardless of speed',
+            'Longer residual limbs are more energy efficient (better lever arm)',
+            'Bilateral amputees have significantly higher energy cost than unilateral',
+            'Bilateral TF amputees often choose wheelchair over prosthetic ambulation',
+          ],
+        ),
+        ComparisonCardBlock(
+          title: 'Wheelchair vs Prosthetic Ambulation',
+          themeColor: Colors.blue,
+          backgroundColor: const Color(0xFFE3F2FD),
+          icon: Icons.accessible,
+          description: 'For higher-level amputees, wheelchair propulsion may be '
+              'more energy-efficient than prosthetic ambulation, which is an '
+              'important factor in rehabilitation planning.',
+          keyPoints: [
+            'Wheelchair propulsion in paraplegia: only ~9% increase over normal walking',
+            'Crutch walking without prosthesis requires MORE energy than prosthetic walking',
+            'Bilateral TF amputees: >200% increase with prostheses vs ~9% with wheelchair',
+            'Many bilateral TF amputees use prostheses for transfers and standing only',
+            'Rehabilitation goal should be functional independence, not always ambulation',
+          ],
+        ),
+        PearlBlock(
+          'Board Pearl',
+          'Wheelchair propulsion in paraplegia increases energy expenditure by '
+          'only ~9% above normal walking. This is far less than prosthetic '
+          'walking for bilateral TF amputees (>200%). Crutch walking is MORE '
+          'energy-expensive than walking with a prosthesis.',
+        ),
+        BulletCardBlock(
+          title: 'Factors Affecting Energy Expenditure',
+          themeColor: Colors.orange,
+          backgroundColor: const Color(0xFFFFF3E0),
+          points: [
+            'Amputation level: most important factor (higher = more energy)',
+            'Etiology: vascular > traumatic at same level',
+            'Residual limb length: longer is more efficient',
+            'Age: older patients have higher relative energy cost',
+            'Comorbidities: cardiac, pulmonary disease limit exercise capacity',
+            'Prosthetic components: energy-storing feet reduce O2 cost by 5-20%',
+            'Socket fit: poor fit increases compensatory movements and energy cost',
+            'Gait deviations: each deviation adds to total energy expenditure',
+            'Conditioning: aerobic training can improve efficiency',
+          ],
+        ),
+        TableBlock(
+          title: 'K-Levels and Functional Classification',
+          columns: ['K-Level', 'Description', 'Expected Prosthetic Components'],
+          rows: [
+            ['K0', 'Does not have ability or potential to ambulate or transfer', 'No prosthesis or cosmetic only'],
+            ['K1', 'Has ability to use prosthesis for transfers or household ambulation on level surfaces at fixed cadence (limited/unlimited household ambulator)', 'SACH foot; single-axis knee; basic components'],
+            ['K2', 'Has ability to traverse low-level environmental barriers (limited community ambulator)', 'Multiaxis foot; stance-control knee'],
+            ['K3', 'Has ability to traverse most environmental barriers; variable cadence (unlimited community ambulator)', 'Energy-storing foot; fluid-controlled knee'],
+            ['K4', 'Exceeds basic ambulation; high-impact activities, sports, child prosthetic needs', 'High-activity feet; specialized sport components'],
+          ],
+          headerColor: Colors.indigo,
+        ),
+        PearlBlock(
+          'Board Pearl',
+          'K-levels determine Medicare coverage for prosthetic components. '
+          'K0 patients do not receive functional prostheses. K3/K4 patients '
+          'qualify for energy-storing feet and microprocessor knees. The '
+          'prescribing physician must document the K-level.',
+        ),
+      ],
+    ),
+  ],
+);

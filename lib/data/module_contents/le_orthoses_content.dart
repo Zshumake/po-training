@@ -1,0 +1,629 @@
+import 'package:flutter/material.dart';
+import '../models/topic_content_model.dart';
+
+final leOrthosesContent = TopicData(
+  id: 'le_orthoses',
+  title: 'Lower Extremity Orthoses',
+  tabs: [
+    // ─────────────────────────────────────────────
+    // TAB 1: AFO Types
+    // ─────────────────────────────────────────────
+    TopicTab(
+      title: 'AFO Types',
+      blocks: [
+        HeaderBlock('Ankle-Foot Orthoses (AFOs)'),
+        TextBlock(
+          'AFOs are the most commonly prescribed lower extremity orthoses. They span '
+          'the ankle joint and extend from below the knee to the foot. AFO selection '
+          'depends on the specific motion to be controlled, the presence of '
+          'mediolateral instability, muscle tone, and the patient\'s functional goals. '
+          'Understanding the biomechanical differences between AFO types is '
+          'EXTREMELY HIGH-YIELD for board examinations.',
+          isIntro: true,
+        ),
+
+        // --- Solid AFO ---
+        ComparisonCardBlock(
+          title: 'Solid AFO (Rigid AFO)',
+          themeColor: Colors.blue,
+          backgroundColor: const Color(0xFFE3F2FD),
+          icon: Icons.shield,
+          description:
+              'A rigid plastic AFO that completely blocks all ankle motion in all planes. '
+              'Provides maximum control of plantarflexion, dorsiflexion, and '
+              'mediolateral instability. The posterior trim line is wide and extends '
+              'anterior to the malleoli.',
+          keyPoints: [
+            'Controls ALL ankle motion: PF, DF, inversion, eversion',
+            'Indicated for severe spasticity (tone overwhelming flexible orthoses)',
+            'Indicated for flaccid foot drop WITH mediolateral instability',
+            'Indicated for significant ankle/subtalar instability',
+            'LIMITS push-off power at terminal stance (restricts PF at toe-off)',
+            'Wider posterior trim lines = more rigidity and control',
+            'May increase energy expenditure due to loss of ankle motion',
+            'Can be trimmed or modified but NOT as adjustable as metal uprights',
+          ],
+        ),
+
+        // --- PLS ---
+        ComparisonCardBlock(
+          title: 'Posterior Leaf Spring (PLS)',
+          themeColor: Colors.green,
+          backgroundColor: const Color(0xFFE8F5E9),
+          icon: Icons.eco,
+          description:
+              'A thin, narrow posterior strut AFO that flexes to allow plantarflexion '
+              'and provides passive dorsiflexion assist in swing phase via elastic '
+              'recoil. The narrow trim line behind the ankle is the key design feature.',
+          keyPoints: [
+            'Thin narrow posterior strut provides flexibility',
+            'Allows plantarflexion at heel strike (controlled descent)',
+            'Assists dorsiflexion during swing phase via elastic recoil',
+            'Indicated for MILD foot drop WITHOUT mediolateral instability',
+            'Does NOT control varus or valgus (no ML control)',
+            'Does NOT control moderate-to-severe spasticity',
+            'Narrower trim lines = more flexibility, less control',
+            'Lighter and more cosmetic than solid AFO',
+          ],
+        ),
+        PearlBlock(
+          'Board Pearl: PLS vs Solid AFO',
+          'PLS for foot drop WITHOUT ML instability; Solid AFO for foot drop WITH '
+          'ML instability. This distinction is one of the most tested concepts in '
+          'orthotic board questions. If the question mentions varus/valgus or ML '
+          'instability, the answer is NOT a PLS.',
+        ),
+
+        // --- Articulated AFO ---
+        ComparisonCardBlock(
+          title: 'Articulated AFO (Hinged AFO)',
+          themeColor: Colors.orange,
+          backgroundColor: const Color(0xFFFFF3E0),
+          icon: Icons.compare_arrows,
+          description:
+              'An AFO with a mechanical ankle joint that allows dorsiflexion while '
+              'controlling plantarflexion. Adjustable stops can be added to limit '
+              'motion in either direction. Provides a more physiologic gait pattern '
+              'than a solid AFO.',
+          keyPoints: [
+            'Mechanical ankle joint allows adjustable range of motion',
+            'PF STOP (anterior stop): prevents foot drop in swing phase',
+            'DF STOP (posterior stop): prevents excessive tibial advancement',
+            'Allows free dorsiflexion for more normal gait pattern',
+            'Better push-off than solid AFO (allows some PF at toe-off)',
+            'Can add dorsiflexion assist (spring) for foot drop',
+            'PF stop prevents foot slap at initial contact',
+            'Indicated for foot drop when DF is desired but PF needs control',
+            'More complex and heavier than non-articulated designs',
+          ],
+        ),
+
+        // --- Floor Reaction Orthosis ---
+        ComparisonCardBlock(
+          title: 'Floor Reaction Orthosis (FRO / Ground Reaction AFO)',
+          themeColor: Colors.red,
+          backgroundColor: const Color(0xFFFFEBEE),
+          icon: Icons.arrow_upward,
+          description:
+              'A solid AFO with an ANTERIOR SHELL (anterior tibial section) that '
+              'creates a knee EXTENSION moment by keeping the ground reaction force '
+              'vector anterior to the knee joint axis. Blocks ankle dorsiflexion '
+              'so that when the tibia tries to advance, the GRF is redirected '
+              'to extend the knee.',
+          keyPoints: [
+            'Solid anterior shell is the defining feature',
+            'Creates knee EXTENSION moment via GRF anterior to knee axis',
+            'Blocks ankle dorsiflexion to prevent tibial advancement',
+            'REQUIRES INTACT QUADRICEPS for effective knee extension',
+            'Indicated for crouch gait (excessive knee flexion in stance)',
+            'Common diagnoses: cerebral palsy (CP), myelomeningocele',
+            'CONTRAINDICATED in knee recurvatum (would worsen hyperextension)',
+            'Patient must have adequate hip extension to be effective',
+            'Also called Ground Reaction AFO (GRAFO)',
+          ],
+        ),
+        PearlBlock(
+          'Board Pearl: FRO Key Points',
+          'FRO REQUIRES intact quads and creates a knee EXTENSION moment. '
+          'It is CONTRAINDICATED in knee recurvatum (genu recurvatum). '
+          'If a question describes crouch gait with intact quads, the answer '
+          'is FRO. If the question describes knee hyperextension, FRO is WRONG.',
+        ),
+
+        // --- Metal Double Upright AFO ---
+        ComparisonCardBlock(
+          title: 'Metal Double Upright AFO',
+          themeColor: Colors.blueGrey,
+          backgroundColor: const Color(0xFFECEFF1),
+          icon: Icons.construction,
+          description:
+              'A traditional metal AFO with medial and lateral metal uprights '
+              'attached to a shoe (stirrup). Ankle joints can be adjusted with '
+              'stops, springs, or assists. More adjustable than plastic AFOs.',
+          keyPoints: [
+            'Medial and lateral metal uprights attached to the shoe via stirrup',
+            'Adjustable ankle joints: can add PF stop, DF stop, or assists',
+            'Heavier than plastic AFOs but more durable',
+            'Can accommodate fluctuating edema (not total contact)',
+            'Better for patients with insensate skin (not in full contact)',
+            'Klenzak ankle joint: spring-loaded dorsiflexion assist with PF stop',
+            'Indicated when adjustability is paramount or skin cannot tolerate plastic',
+          ],
+        ),
+
+        // --- AFO Comparison Table ---
+        TableBlock(
+          title: 'AFO Types Comparison',
+          columns: ['AFO Type', 'Motion Controlled', 'Indication', 'Contraindication', 'Key Effect'],
+          rows: [
+            ['Solid AFO', 'All ankle motion (PF, DF, ML)', 'Severe spasticity, foot drop WITH ML instability', 'When ankle motion is needed', 'Maximum ankle control'],
+            ['PLS', 'Assists DF, allows PF', 'Mild foot drop WITHOUT ML instability', 'Varus/valgus instability, spasticity', 'Swing phase DF assist'],
+            ['Articulated AFO', 'PF (adjustable), allows DF', 'Foot drop needing adjustable control', 'Severe ML instability without stabilization', 'Allows DF, blocks PF'],
+            ['FRO (GRAFO)', 'DF blocked, creates knee extension', 'Crouch gait (CP, MMC)', 'Knee recurvatum', 'Knee extension via GRF'],
+            ['Metal Double Upright', 'Adjustable (PF/DF stops, assists)', 'Fluctuating edema, insensate skin', 'When lightweight design needed', 'Maximum adjustability'],
+          ],
+          headerColor: const Color(0xFF1565C0),
+        ),
+
+        MnemonicBlock(
+          'AFO Selection Checklist',
+          'Ask: (1) Is there foot drop? (2) Is there ML instability? (3) Is there '
+          'spasticity? (4) Is there crouch gait or recurvatum? '
+          'Foot drop + no ML instability = PLS. '
+          'Foot drop + ML instability = Solid AFO. '
+          'Crouch gait + intact quads = FRO. '
+          'Recurvatum = avoid FRO.',
+        ),
+      ],
+    ),
+
+    // ─────────────────────────────────────────────
+    // TAB 2: KAFO & HKAFO
+    // ─────────────────────────────────────────────
+    TopicTab(
+      title: 'KAFO & HKAFO',
+      blocks: [
+        HeaderBlock('Knee-Ankle-Foot Orthoses'),
+        TextBlock(
+          'KAFOs extend from below the hip to the foot, spanning the knee and ankle. '
+          'They are indicated when knee control is needed in addition to ankle/foot '
+          'control. The knee joint mechanism determines the level of control, energy '
+          'expenditure, and functional capabilities.',
+          isIntro: true,
+        ),
+
+        // --- Drop-Lock KAFO ---
+        ComparisonCardBlock(
+          title: 'Drop-Lock KAFO (Ring Lock)',
+          themeColor: Colors.indigo,
+          backgroundColor: const Color(0xFFE8EAF6),
+          icon: Icons.lock,
+          description:
+              'The most common KAFO knee joint. A metal ring drops over the knee '
+              'joint axis to lock the knee in full extension during stance and gait. '
+              'Must be manually unlocked by pulling the ring upward to sit.',
+          keyPoints: [
+            'Locks knee in FULL EXTENSION for stance stability',
+            'Manual unlock required to sit (pull ring up)',
+            'Simple, reliable, low maintenance',
+            'Gait pattern: circumducting or hip-hiking to clear the locked limb',
+            'Increased energy expenditure due to stiff-knee gait',
+            'Most commonly prescribed KAFO knee joint',
+            'Can be bilateral but very energy-demanding',
+          ],
+        ),
+
+        // --- Offset Knee Joint ---
+        ComparisonCardBlock(
+          title: 'Offset Knee Joint',
+          themeColor: Colors.teal,
+          backgroundColor: const Color(0xFFE0F2F1),
+          icon: Icons.adjust,
+          description:
+              'The knee joint axis is positioned POSTERIOR to the weight-bearing '
+              'line. This creates an automatic extension moment during stance, '
+              'making the knee self-stabilizing without a manual lock.',
+          keyPoints: [
+            'Knee axis positioned POSTERIOR to the weight-bearing line',
+            'Auto-locks in extension during stance via gravitational moment',
+            'No manual lock needed for stance stability',
+            'Patient must fully extend knee to engage stability',
+            'More cosmetic and natural gait than ring-lock',
+            'Indicated for patients with quadriceps weakness (grade 3/5)',
+            'Less stable than ring-lock in patients with severe weakness',
+          ],
+        ),
+
+        // --- Stance Control KAFO ---
+        ComparisonCardBlock(
+          title: 'Stance Control KAFO (SCO)',
+          themeColor: Colors.purple,
+          backgroundColor: const Color(0xFFF3E5F5),
+          icon: Icons.sync_alt,
+          description:
+              'An advanced KAFO that allows FREE knee motion in swing phase '
+              'but LOCKS the knee in stance phase. Uses a sensor or mechanical '
+              'mechanism to detect stance vs swing transitions.',
+          keyPoints: [
+            'Allows free knee flexion/extension during SWING phase',
+            'Locks knee during STANCE phase to prevent buckling',
+            'More physiologic gait pattern than locked-knee designs',
+            'Lower energy expenditure than ring-lock KAFO',
+            'Electronic (sensor-based) or mechanical trigger mechanisms',
+            'More expensive and complex than traditional KAFOs',
+            'Better cosmesis and function than standard locked KAFO',
+            'Examples: Horton Stance Control, Otto Bock E-MAG Active',
+          ],
+        ),
+
+        // --- HKAFO ---
+        HeaderBlock('Hip-Knee-Ankle-Foot Orthosis (HKAFO)'),
+        TextBlock(
+          'HKAFOs add a hip joint and pelvic band to a KAFO, providing control '
+          'across the hip, knee, and ankle. They are indicated for patients with '
+          'paraplegia who lack hip musculature in addition to knee and ankle control.',
+        ),
+        BulletCardBlock(
+          title: 'HKAFO Indications and Features',
+          themeColor: Colors.deepOrange,
+          backgroundColor: const Color(0xFFFBE9E7),
+          points: [
+            'Adds hip joint and pelvic band to KAFO',
+            'Indicated for paraplegia (thoracic or high lumbar spinal cord injury)',
+            'Hip joint can be free, locked, or have motion stops',
+            'High energy cost limits functional ambulation',
+            'Many patients use HKAFO for therapeutic standing only',
+            'Bilateral HKAFOs require upper extremity strength for ambulation',
+          ],
+        ),
+
+        // --- RGO ---
+        ComparisonCardBlock(
+          title: 'Reciprocating Gait Orthosis (RGO)',
+          themeColor: Colors.deepPurple,
+          backgroundColor: const Color(0xFFEDE7F6),
+          icon: Icons.swap_horiz,
+          description:
+              'A bilateral HKAFO with cable-linked hip joints. When one hip extends, '
+              'the cable drives the contralateral hip into flexion, creating a '
+              'reciprocal gait pattern. Designed for thoracic-level paraplegia.',
+          keyPoints: [
+            'Cable-linked bilateral hip joints provide reciprocal gait',
+            'Hip EXTENSION on one side drives hip FLEXION on the other',
+            'Creates a more physiologic reciprocal walking pattern',
+            'Designed for thoracic-level paraplegia (T6-T12)',
+            'Requires strong upper extremities and trunk control',
+            'Still very high energy expenditure (200-500% above normal)',
+            'Better gait pattern than standard HKAFO swing-to/swing-through',
+            'Isocentric RGO: uses a central pivot instead of cables',
+          ],
+        ),
+
+        // --- Standing Frames ---
+        HeaderBlock('Standing Devices'),
+        BulletCardBlock(
+          title: 'Standing Frames and Walkers',
+          themeColor: Colors.brown,
+          backgroundColor: const Color(0xFFEFEBE9),
+          points: [
+            'Parapodium: static standing frame, allows hands-free standing',
+            'Swivel walker: standing frame with swivel base plates for ambulation',
+            'Standing frames provide bone loading, pressure relief, bowel/bladder benefits',
+            'Typically used for pediatric patients with myelomeningocele or SCI',
+            'Do not provide independent functional ambulation',
+            'Psychological and physiologic benefits of upright posture',
+          ],
+        ),
+
+        PearlBlock(
+          'Board Pearl: Energy Expenditure',
+          'Energy expenditure increases dramatically with higher orthotic levels: '
+          'AFO < KAFO < HKAFO/RGO. Many patients with thoracic SCI abandon HKAFOs '
+          'for wheelchair mobility due to excessive energy cost. Functional community '
+          'ambulation with bilateral KAFOs is rare above L3 level.',
+        ),
+      ],
+    ),
+
+    // ─────────────────────────────────────────────
+    // TAB 3: Shoe Modifications
+    // ─────────────────────────────────────────────
+    TopicTab(
+      title: 'Shoe Modifications',
+      blocks: [
+        HeaderBlock('Shoe Modifications'),
+        TextBlock(
+          'Shoe modifications are external or internal alterations to footwear '
+          'that address biomechanical abnormalities of the foot and ankle. They '
+          'are among the simplest and most cost-effective orthotic interventions. '
+          'Understanding the specific indication for each modification is high-yield.',
+          isIntro: true,
+        ),
+
+        // --- Rocker Bottom ---
+        ComparisonCardBlock(
+          title: 'Rocker Bottom Sole',
+          themeColor: Colors.brown,
+          backgroundColor: const Color(0xFFEFEBE9),
+          icon: Icons.skateboarding,
+          description:
+              'A rigid convex sole that allows the foot to roll over the apex '
+              'during stance phase, reducing the need for ankle dorsiflexion and '
+              'MTP extension during terminal stance and pre-swing.',
+          keyPoints: [
+            'Rigid convex sole facilitates rollover without ankle/MTP motion',
+            'Reduces stress at the ankle and metatarsophalangeal joints',
+            'Indicated for hallux rigidus (limited MTP extension)',
+            'Indicated for metatarsalgia (reduces pressure under met heads)',
+            'Indicated for diabetic neuropathy (reduces shear forces)',
+            'Indicated for arthrodesis or limited ankle ROM',
+            'Apex placement determines where rollover occurs',
+          ],
+        ),
+
+        // --- Metatarsal Bar and Pad ---
+        HeaderBlock('Metatarsal Pressure Redistribution'),
+        BulletCardBlock(
+          title: 'Metatarsal Bar (External)',
+          themeColor: Colors.teal,
+          backgroundColor: const Color(0xFFE0F2F1),
+          points: [
+            'External bar applied to the sole PROXIMAL to metatarsal heads',
+            'Transfers weight-bearing proximal to met heads',
+            'Reduces pressure directly under metatarsal heads',
+            'Indicated for metatarsalgia and met head pain',
+            'Placed just proximal to met heads (NOT on them)',
+          ],
+        ),
+        BulletCardBlock(
+          title: 'Metatarsal Pad (Internal)',
+          themeColor: Colors.green,
+          backgroundColor: const Color(0xFFE8F5E9),
+          points: [
+            'Internal pad placed INSIDE the shoe proximal to met heads',
+            'Supports the transverse metatarsal arch',
+            'Redistributes pressure away from met heads',
+            'More cosmetic than external metatarsal bar',
+            'Must be placed PROXIMAL to met heads to be effective',
+            'Placement error (directly under met heads) INCREASES pain',
+          ],
+        ),
+
+        // --- Heel Modifications ---
+        HeaderBlock('Heel Modifications'),
+        ComparisonCardBlock(
+          title: 'Thomas Heel',
+          themeColor: Colors.indigo,
+          backgroundColor: const Color(0xFFE8EAF6),
+          icon: Icons.expand,
+          description:
+              'A heel with a MEDIAL extension (the heel extends anteriorly on the '
+              'medial side). Supports the medial longitudinal arch and prevents '
+              'excessive pronation.',
+          keyPoints: [
+            'Medial heel extension (anteromedial flare)',
+            'Supports the medial longitudinal arch',
+            'Indicated for pes planus (flat foot) and excessive pronation',
+            'Prevents calcaneal eversion and midfoot collapse',
+          ],
+        ),
+        ComparisonCardBlock(
+          title: 'Reverse Thomas Heel',
+          themeColor: Colors.amber,
+          backgroundColor: const Color(0xFFFFF8E1),
+          icon: Icons.compare,
+          description:
+              'A heel with a LATERAL extension (the heel extends anteriorly on the '
+              'lateral side). Supports the lateral border and counters excessive '
+              'supination.',
+          keyPoints: [
+            'Lateral heel extension (anterolateral flare)',
+            'Supports the lateral longitudinal arch',
+            'Indicated for pes cavus (high arch) and excessive supination',
+            'Prevents calcaneal inversion',
+          ],
+        ),
+
+        // --- Other Shoe Mods ---
+        HeaderBlock('Additional Shoe Modifications'),
+        BulletCardBlock(
+          title: 'SACH Heel (Solid Ankle Cushion Heel)',
+          themeColor: Colors.blue,
+          backgroundColor: const Color(0xFFE3F2FD),
+          points: [
+            'Compressible wedge heel cushion',
+            'Simulates plantarflexion at initial contact (heel strike)',
+            'Absorbs shock and provides smooth heel-to-forefoot transition',
+            'Used in both shoes and prosthetic feet',
+          ],
+        ),
+        BulletCardBlock(
+          title: 'Heel Lift / Sole Lift',
+          themeColor: Colors.orange,
+          backgroundColor: const Color(0xFFFFF3E0),
+          points: [
+            'Used for limb length discrepancy (LLD) compensation',
+            'Internal heel lift: up to 1/4 inch (6 mm) inside shoe',
+            'External sole lift: for larger LLD corrections (> 1/4 inch)',
+            'Full sole lift preferred over heel lift alone for larger corrections',
+            'Typically correct ~50-75% of measured LLD',
+          ],
+        ),
+        BulletCardBlock(
+          title: 'Heel Wedges',
+          themeColor: Colors.deepOrange,
+          backgroundColor: const Color(0xFFFBE9E7),
+          points: [
+            'MEDIAL heel wedge: tilts heel into eversion, corrects pronation',
+            'LATERAL heel wedge: tilts heel into inversion, corrects supination',
+            'Can be placed internally or externally',
+            'Used for calcaneal alignment correction',
+          ],
+        ),
+        BulletCardBlock(
+          title: 'Steel Shank',
+          themeColor: Colors.blueGrey,
+          backgroundColor: const Color(0xFFECEFF1),
+          points: [
+            'Metal reinforcement placed within the sole of the shoe',
+            'Stiffens the sole and limits MTP joint motion',
+            'Indicated for hallux rigidus (limits painful MTP extension)',
+            'Also used for midfoot arthritis or Charcot foot',
+            'Often combined with rocker bottom for best effect',
+          ],
+        ),
+
+        TableBlock(
+          title: 'Shoe Modifications Summary',
+          columns: ['Modification', 'Location', 'Indication'],
+          rows: [
+            ['Rocker bottom', 'External sole', 'Hallux rigidus, metatarsalgia, DM neuropathy'],
+            ['Metatarsal bar', 'External sole (proximal to met heads)', 'Metatarsalgia'],
+            ['Metatarsal pad', 'Internal (proximal to met heads)', 'Metatarsalgia, transverse arch support'],
+            ['Thomas heel', 'Medial heel extension', 'Pes planus, pronation'],
+            ['Reverse Thomas', 'Lateral heel extension', 'Pes cavus, supination'],
+            ['SACH heel', 'Compressible heel cushion', 'Shock absorption, simulates PF'],
+            ['Heel/sole lift', 'Internal or external', 'Limb length discrepancy'],
+            ['Medial wedge', 'Medial heel', 'Pronation correction'],
+            ['Lateral wedge', 'Lateral heel', 'Supination correction'],
+            ['Steel shank', 'Within sole', 'Hallux rigidus, limits MTP motion'],
+          ],
+          headerColor: const Color(0xFF4E342E),
+        ),
+      ],
+    ),
+
+    // ─────────────────────────────────────────────
+    // TAB 4: Foot Orthoses
+    // ─────────────────────────────────────────────
+    TopicTab(
+      title: 'Foot Orthoses',
+      blocks: [
+        HeaderBlock('Foot Orthoses (FOs)'),
+        TextBlock(
+          'Foot orthoses are in-shoe devices that control foot alignment, '
+          'redistribute plantar pressures, and accommodate foot deformities. '
+          'They range from simple prefabricated arch supports to custom-molded '
+          'total contact insoles.',
+          isIntro: true,
+        ),
+
+        // --- UCBL ---
+        ComparisonCardBlock(
+          title: 'UCBL (University of California Biomechanics Laboratory)',
+          themeColor: Colors.blue,
+          backgroundColor: const Color(0xFFE3F2FD),
+          icon: Icons.back_hand,
+          description:
+              'A rigid custom-molded foot orthosis with a deep heel cup and high '
+              'medial and lateral flanges that grip the calcaneus. Controls '
+              'hindfoot valgus and varus by stabilizing the subtalar joint.',
+          keyPoints: [
+            'Rigid plastic construction (thermoformed)',
+            'Deep heel cup is the defining feature',
+            'High medial and lateral flanges grip the calcaneus',
+            'Controls hindfoot valgus (calcaneal eversion)',
+            'Controls hindfoot varus (calcaneal inversion)',
+            'Indicated for FLEXIBLE flatfoot (pes planovalgus)',
+            'Does NOT control forefoot deformities',
+            'Must be flexible/correctable deformity (rigid flatfoot will not respond)',
+            'Custom-molded from a non-weight-bearing cast',
+          ],
+        ),
+        PearlBlock(
+          'Board Pearl: UCBL',
+          'The UCBL controls HINDFOOT alignment but does NOT control the FOREFOOT. '
+          'It is indicated for FLEXIBLE flatfoot only. If the deformity is rigid '
+          '(fixed), the UCBL will not correct it and an accommodative orthosis '
+          'is needed instead.',
+        ),
+
+        // --- Custom Molded Insoles ---
+        ComparisonCardBlock(
+          title: 'Custom Molded Total Contact Insoles',
+          themeColor: Colors.teal,
+          backgroundColor: const Color(0xFFE0F2F1),
+          icon: Icons.layers,
+          description:
+              'Custom-fabricated insoles that conform to the exact contours of the '
+              'plantar surface, maximizing the weight-bearing area to minimize '
+              'focal pressure points. The gold standard for diabetic foot care.',
+          keyPoints: [
+            'Total contact design maximizes weight-bearing surface area',
+            'Reduces peak plantar pressures at high-risk areas',
+            'Indicated for diabetic neuropathy and insensate feet',
+            'Prevents diabetic foot ulceration by pressure redistribution',
+            'Multi-layered construction: firm base with soft top layer',
+            'Must be used with extra-depth shoes to accommodate thickness',
+            'Accommodative (does not correct deformity, only accommodates)',
+            'Requires regular replacement as materials compress over time',
+          ],
+        ),
+
+        // --- Other FOs ---
+        HeaderBlock('Other Foot Orthotic Components'),
+        BulletCardBlock(
+          title: 'Arch Supports',
+          themeColor: Colors.green,
+          backgroundColor: const Color(0xFFE8F5E9),
+          points: [
+            'Medial longitudinal arch support: most common, for pes planus',
+            'Prefabricated (OTC) vs custom-molded',
+            'Provides support but less control than UCBL',
+            'Often combined with posting (medial or lateral wedging)',
+            'Scaphoid pad: placed under the navicular to support the medial arch',
+          ],
+        ),
+        BulletCardBlock(
+          title: 'Metatarsal Pads and Bars (In-Shoe)',
+          themeColor: Colors.orange,
+          backgroundColor: const Color(0xFFFFF3E0),
+          points: [
+            'Metatarsal pad: dome-shaped pad proximal to met heads',
+            'Supports transverse metatarsal arch',
+            'Redistributes pressure from met heads to met shafts',
+            'Must be placed PROXIMAL to (behind) met heads',
+            'Indicated for metatarsalgia, Morton neuroma, claw toes',
+          ],
+        ),
+
+        // --- FO Classification ---
+        HeaderBlock('Foot Orthosis Classification'),
+        BulletCardBlock(
+          title: 'Accommodative vs Corrective Orthoses',
+          themeColor: Colors.purple,
+          backgroundColor: const Color(0xFFF3E5F5),
+          points: [
+            'ACCOMMODATIVE: soft, conforms to foot, redistributes pressure',
+            'Accommodative: for fixed (rigid) deformities, insensate feet, DM',
+            'CORRECTIVE (Functional): rigid, realigns foot/ankle biomechanics',
+            'Corrective: for flexible (reducible) deformities',
+            'UCBL = corrective orthosis for flexible flatfoot',
+            'Total contact insole = accommodative orthosis for DM neuropathy',
+          ],
+        ),
+
+        TableBlock(
+          title: 'Foot Orthoses Summary',
+          columns: ['Orthosis', 'Type', 'Indication', 'Key Feature'],
+          rows: [
+            ['UCBL', 'Corrective (rigid)', 'Flexible flatfoot', 'Deep heel cup, controls hindfoot'],
+            ['Total contact insole', 'Accommodative (soft)', 'DM neuropathy', 'Pressure redistribution'],
+            ['Arch support', 'Corrective or supportive', 'Pes planus, arch pain', 'Medial longitudinal support'],
+            ['Metatarsal pad', 'Accommodative', 'Metatarsalgia, Morton neuroma', 'Proximal to met heads'],
+            ['Scaphoid pad', 'Supportive', 'Pes planus', 'Under navicular bone'],
+          ],
+          headerColor: const Color(0xFF1565C0),
+        ),
+
+        PearlBlock(
+          'Board Pearl: Accommodative vs Corrective',
+          'Accommodative orthoses are for RIGID/FIXED deformities and insensate '
+          'feet (cannot correct, only accommodate). Corrective orthoses are for '
+          'FLEXIBLE deformities that can be realigned. If a question describes '
+          'diabetic neuropathy, the answer is accommodative total contact insole.',
+        ),
+      ],
+    ),
+  ],
+);
