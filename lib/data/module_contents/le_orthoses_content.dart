@@ -174,6 +174,41 @@ final leOrthosesContent = TopicData(
           'Crouch gait + intact quads = FRO. '
           'Recurvatum = avoid FRO.',
         ),
+
+        // --- AFO Selection by Diagnosis ---
+        HeaderBlock('AFO Selection by Diagnosis'),
+        BulletCardBlock(
+          title: 'Stroke AFO Selection',
+          themeColor: Colors.indigo,
+          backgroundColor: const Color(0xFFE8EAF6),
+          points: [
+            'AFOs improve walking speed, cadence, step length, stride length, TUG, and FAC in stroke',
+            'Also improve Berg Balance Scale, 6MWT, and Timed Up-Stairs',
+            'AFOs reduce energy cost of walking in stroke patients',
+            'Flaccid foot drop without ML instability: PLS or articulated AFO with PF stop',
+            'Spastic foot drop with varus: solid AFO or articulated with ML control',
+            'Severe spasticity overwhelming flexible designs: solid AFO',
+            'Knee recurvatum: avoid FRO; consider solid AFO set in 5 deg PF to create knee flexion moment',
+          ],
+        ),
+        BulletCardBlock(
+          title: 'Foot Drop (Peroneal Nerve Palsy)',
+          themeColor: Colors.green,
+          backgroundColor: const Color(0xFFE8F5E9),
+          points: [
+            'Isolated peroneal nerve palsy = most common indication for PLS AFO',
+            'PLS provides swing-phase DF assist via elastic recoil',
+            'Foot drop WITH significant subtalar instability: hinged AFO with double-action ankle joints',
+            'PLS is WRONG if ML instability is present',
+          ],
+        ),
+        PearlBlock(
+          'Board Pearl: AFO by Diagnosis',
+          'For stroke with knee recurvatum, set solid AFO in slight (5 deg) plantarflexion '
+          'to create a knee FLEXION moment at loading response. This is the OPPOSITE of '
+          'FRO strategy. FRO creates extension moment (for crouch); slight PF creates '
+          'flexion moment (for recurvatum).',
+        ),
       ],
     ),
 
@@ -254,6 +289,35 @@ final leOrthosesContent = TopicData(
             'Better cosmesis and function than standard locked KAFO',
             'Examples: Horton Stance Control, Otto Bock E-MAG Active',
           ],
+        ),
+
+        // --- C-Brace ---
+        ComparisonCardBlock(
+          title: 'C-Brace (Microprocessor-Controlled KAFO)',
+          themeColor: Colors.red,
+          backgroundColor: const Color(0xFFFFEBEE),
+          icon: Icons.memory,
+          description:
+              'The C-Brace (Ottobock) is a microprocessor-controlled stance-control KAFO '
+              'that provides real-time knee resistance adjustment throughout the gait cycle. '
+              'It represents the most advanced KAFO technology currently available.',
+          keyPoints: [
+            'Microprocessor sensors monitor knee angle, velocity, and loading continuously',
+            'Controlled knee flexion during weight bearing (ramp and stair descent)',
+            'Dynamic swing-phase control adjusts to walking speed',
+            'Stumble recovery technology detects fall-like movements',
+            'RCT (n=102): BBS improved 3.3 points vs conventional KAFO',
+            'Mean falls reduced from 4.0 to 1.1 per assessment period',
+            'Falls comparison: MPO=5 vs stance-control=38 vs locked KAFO=15',
+            'Key differentiator: controlled flexion during weight bearing',
+          ],
+        ),
+        PearlBlock(
+          'Board Pearl: C-Brace Falls Data',
+          'The C-Brace dramatically reduces falls compared to other KAFOs. In trials, '
+          'MPO had only 5 falls vs 38 with stance-control and 15 with locked KAFO. The '
+          'ability to provide controlled flexion during weight bearing (for ramp/stair '
+          'descent) is what differentiates it from mechanical stance-control designs.',
         ),
 
         // --- HKAFO ---
@@ -358,6 +422,8 @@ final leOrthosesContent = TopicData(
             'Indicated for diabetic neuropathy (reduces shear forces)',
             'Indicated for arthrodesis or limited ankle ROM',
             'Apex placement determines where rollover occurs',
+            'Studies show 35-65% pressure reduction under heel and central met heads vs conventional shoes',
+            'Combined with total contact insert: mean peak plantar pressure reduction ~50%',
           ],
         ),
 
@@ -455,10 +521,23 @@ final leOrthosesContent = TopicData(
           backgroundColor: const Color(0xFFFBE9E7),
           points: [
             'MEDIAL heel wedge: tilts heel into eversion, corrects pronation',
+            'MEDIAL wedge: also effective for plantar fasciitis treatment',
             'LATERAL heel wedge: tilts heel into inversion, corrects supination',
             'Can be placed internally or externally',
             'Used for calcaneal alignment correction',
+            'LATERAL wedge for medial knee OA: does NOT reduce pain per meta-analysis',
+            'Lateral wedges decrease peak external knee adduction moment biomechanically',
+            'But biomechanical change does NOT translate into clinical pain benefit',
+            'Current evidence does NOT support lateral wedges for medial knee OA',
           ],
+        ),
+        PearlBlock(
+          'Board Pearl: Lateral Wedge Evidence',
+          'Meta-analysis found NO significant pain reduction from lateral wedge insoles '
+          'for medial compartment knee OA compared to neutral insoles. Although lateral '
+          'wedges do decrease the knee adduction moment biomechanically, this does NOT '
+          'translate into clinical benefit. Current evidence does NOT support lateral '
+          'wedges for medial knee OA.',
         ),
         BulletCardBlock(
           title: 'Steel Shank',

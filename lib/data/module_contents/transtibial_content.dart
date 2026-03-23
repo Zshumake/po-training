@@ -61,6 +61,26 @@ final transtibialContent = TopicData(
           'However, PTB socket principles remain heavily tested on boards because '
           'understanding pressure-tolerant vs pressure-sensitive areas is fundamental.',
         ),
+        TableBlock(
+          title: 'PTB vs TSB: Comparative Evidence',
+          columns: ['Parameter', 'PTB Socket', 'TSB Socket'],
+          rows: [
+            ['Pressure distribution', 'Concentrated on tolerant areas', 'More uniform across entire surface'],
+            ['Rectification', 'Extensive cast modification required', 'Minimal rectification needed'],
+            ['Liner', 'Pelite foam or thin sock', 'Gel liner required (silicone, urethane, TPE)'],
+            ['Stair/incline function', 'Slower ascent/descent times', 'Significantly shorter times'],
+            ['Best candidates', 'Traditional approach; irregular limb shapes', 'Active patients; traumatic amputees; younger users'],
+            ['Cost', 'No significant difference in RCT', 'No significant difference in RCT'],
+          ],
+          headerColor: Colors.blueGrey,
+        ),
+        PearlBlock(
+          'Board Pearl — PTB-SC/SP Indications',
+          'The PTB-SC/SP socket is indicated when both ML and AP stability are required '
+          '— for example, a very short residual limb combined with collateral ligament '
+          'insufficiency. The high anterior wall above the patella prevents genu '
+          'recurvatum and provides an anterior containment force.',
+        ),
         HeaderBlock('Socket Variants for Short Residual Limbs'),
         BulletCardBlock(
           title: 'PTB-SC (Supracondylar)',
@@ -187,6 +207,34 @@ final transtibialContent = TopicData(
           'better cushioning, and enable suspension via pin-lock or suction. '
           'However, they retain more heat.',
         ),
+        MnemonicBlock(
+          'Rectification Principle',
+          'On the positive plaster model: "ADD where you want to RELIEVE, '
+          'REMOVE where you want to LOAD." Adding plaster to the model creates a '
+          'gap (relief) in the socket; removing plaster from the model creates a '
+          'bump (buildup) in the socket.',
+        ),
+        TableBlock(
+          title: 'Liner Material Properties Comparison',
+          columns: ['Property', 'Pelite', 'Silicone Elastomer', 'Silicone Gel', 'Urethane', 'TPE'],
+          rows: [
+            ['Stiffness', 'Low (compresses)', 'Highest', 'Softest', 'High (best impact)', 'Soft'],
+            ['Durability', 'Poor', 'Best', 'Good', 'Good', 'Fair'],
+            ['Skin adherence', 'Low', 'Moderate', 'Moderate', 'Highest', 'Low-Moderate'],
+            ['Cushioning', 'Moderate initially', 'Moderate', 'Best', 'Good (impact)', 'Good'],
+            ['Cost', 'Lowest', 'Moderate-High', 'Moderate-High', 'Moderate-High', 'Low-Moderate'],
+            ['Best for', 'Low-demand; budget', 'Excessive soft tissue', 'Bony prominences', 'Fragile skin', 'Sensitive limbs'],
+            ['Pin/suction compatible', 'No', 'Yes', 'Yes', 'Yes', 'Yes'],
+          ],
+          headerColor: Colors.purple,
+        ),
+        PearlBlock(
+          'Board Pearl — Urethane Liners',
+          'Urethane liners have the highest coefficient of friction (best skin '
+          'adherence), lowest residual displacement (returns to shape most completely), '
+          'and best impact/shock absorption. They are the preferred liner for fragile '
+          'or compromised skin where reducing shear is critical.',
+        ),
       ],
     ),
 
@@ -225,6 +273,43 @@ final transtibialContent = TopicData(
           'proprioception of all suspension systems. It actively maintains '
           'negative pressure between the liner and socket, reducing pistoning '
           'to near zero and helping maintain limb volume throughout the day.',
+        ),
+        TableBlock(
+          title: 'Suspension Systems Quick Comparison',
+          columns: ['System', 'Pistoning', 'Ease of Donning', 'Volume Tolerance', 'ML Stability'],
+          rows: [
+            ['Supracondylar cuff', 'Moderate', 'Easy', 'Good', 'None'],
+            ['PTB-SC brim', 'Low-Moderate', 'Moderate', 'Moderate', 'Good'],
+            ['PTB-SC/SP brim', 'Low', 'Difficult', 'Poor', 'Excellent'],
+            ['Rubber/neoprene sleeve', 'Low-Moderate', 'Moderate', 'Moderate', 'Minimal'],
+            ['Pin/shuttle lock', 'Low-Moderate', 'Easy', 'Moderate', 'None'],
+            ['Passive suction', 'Low', 'Difficult', 'Poor', 'None'],
+            ['Elevated vacuum (VASS)', 'Near zero', 'Moderate', 'Best', 'None'],
+            ['Thigh corset', 'Low', 'Moderate', 'Good', 'Excellent'],
+          ],
+          headerColor: Colors.deepOrange,
+        ),
+        PearlBlock(
+          'Board Pearl — Milking Effect',
+          'The "milking effect" from pin suspension occurs because the pin pulls '
+          'distally on the liner and underlying tissue during swing phase. This can '
+          'lead to chronic distal edema, verrucous hyperplasia (warty skin overgrowth), '
+          'and tissue breakdown. If a patient using pin suspension develops distal skin '
+          'changes, consider switching to suction or elevated vacuum.',
+        ),
+        TableBlock(
+          title: 'Suspension Selection by Patient Profile',
+          columns: ['Patient Scenario', 'Recommended Suspension', 'Rationale'],
+          rows: [
+            ['Active, stable volume (K3-K4)', 'Suction or elevated vacuum', 'Best proprioception, minimal pistoning'],
+            ['Elderly, limited dexterity (K1-K2)', 'Pin/shuttle lock', 'Easiest donning; secure; audible verification'],
+            ['Short residual limb', 'PTB-SC or PTB-SC/SP', 'Added stability; self-suspending'],
+            ['Volume fluctuation (vascular)', 'Elevated vacuum or adjustable socket', 'Best volume management'],
+            ['Ligamentous knee instability', 'PTB-SC/SP or thigh corset', 'Maximum AP and ML control'],
+            ['Painful or ulcerated limb', 'Thigh corset', 'Offloads the residual limb'],
+            ['Budget-conscious, basic needs', 'Supracondylar cuff', 'Simplest and least expensive'],
+          ],
+          headerColor: Colors.purple,
         ),
         BulletCardBlock(
           title: 'Pin Suspension Details',
@@ -316,6 +401,35 @@ final transtibialContent = TopicData(
           'quads or knee instability. Energy-storing feet return up to 90% of '
           'stored energy and are indicated for K3-K4.',
         ),
+        TableBlock(
+          title: 'Prosthetic Foot Selection Summary',
+          columns: ['Foot Type', 'K-Level', 'Energy Return', 'Terrain Adaptation', 'Weight', 'Cost'],
+          rows: [
+            ['SACH', 'K1', 'None', 'None', 'Lightest', 'Lowest'],
+            ['Single-axis', 'K1-K2', 'None', 'None', 'Moderate', 'Low'],
+            ['Multi-axis', 'K2', 'Minimal', 'Good', 'Heavy', 'Moderate'],
+            ['Flexible keel/SAFE', 'K2', 'Moderate', 'Minimal-Moderate', 'Light-Moderate', 'Moderate'],
+            ['ESAR/Dynamic response', 'K3-K4', 'High', 'Variable by model', 'Light', 'High'],
+            ['Powered ankle', 'K3-K4', 'Active power generation', 'Good', 'Heaviest', 'Highest'],
+            ['Microprocessor ankle', 'K3-K4', 'Minimal', 'Good (adaptive)', 'Heavy', 'High'],
+          ],
+          headerColor: Colors.teal,
+        ),
+        PearlBlock(
+          'Board Pearl — Single-Axis Foot for Knee Stability',
+          'The single-axis foot\'s rapid foot-flat creates a GRF vector that passes '
+          'anterior to the knee axis at initial contact, producing a stabilizing '
+          'extension moment. This is why it is preferred for patients with weak '
+          'quadriceps or knee extension instability — a commonly tested concept.',
+        ),
+        PearlBlock(
+          'Board Pearl — ESAR Upgrade Significance',
+          'The most significant functional improvement occurs when upgrading from a '
+          'SACH foot to an ESAR foot. Differences between various ESAR foot models '
+          'are less clinically significant than the jump from non-energy-storing to '
+          'energy-storing technology. ESAR feet retain 94% of initial flexibility '
+          'after 7 years and require 76% fewer component replacements.',
+        ),
         HeaderBlock('Transtibial Residual Limb Considerations'),
         BulletCardBlock(
           title: 'Ideal Residual Limb Characteristics',
@@ -373,6 +487,57 @@ final transtibialContent = TopicData(
           'justified and will not be covered. Under-prescribing limits the '
           'patient\'s functional potential. The physician must clearly document '
           'the patient\'s functional level.',
+        ),
+        HeaderBlock('TT Gait Deviations Master Table'),
+        TableBlock(
+          title: 'TT Gait Deviations Summary',
+          columns: ['Deviation', 'Prosthetic Cause', 'Patient Cause', 'Key Correction'],
+          rows: [
+            ['Foot slap', 'Heel cushion too hard', 'Weak dorsiflexors', 'Soften heel'],
+            ['Excessive knee flexion', 'Socket too flexed', 'Hip flexion contracture', 'Reduce socket flexion'],
+            ['Genu recurvatum', 'Socket too extended', 'Weak quads', 'Increase socket flexion'],
+            ['Lateral thrust', 'Foot inset too far', 'Genu valgum / lateral laxity', 'Outset foot'],
+            ['Medial thrust', 'Foot outset too far', 'Genu varum / medial laxity', 'Inset foot'],
+            ['Short prosthetic step', 'Uncomfortable socket', 'Hip flexion contracture / fear', 'Improve fit; stretch'],
+            ['Circumduction', 'Prosthesis too long', 'Abduction contracture', 'Shorten prosthesis'],
+            ['Vaulting', 'Too long / poor suspension', 'Habit', 'Shorten; improve suspension'],
+            ['Pistoning', 'Inadequate suspension', 'Volume loss', 'Improve suspension'],
+          ],
+          headerColor: Colors.deepOrange,
+        ),
+        PearlBlock(
+          'Board Pearl — Socket Flexion and Knee Flexion',
+          'Excessive knee flexion and genu recurvatum are opposites on the same '
+          'continuum. If the socket has too much flexion, the knee flexes excessively; '
+          'if the socket has too little flexion, the knee hyperextends. Mnemonic: '
+          '"too much socket flexion causes too much knee flexion."',
+        ),
+        PearlBlock(
+          'Board Pearl — Knee Flexion Contracture',
+          'A knee flexion contracture is the most common and most preventable '
+          'complication following transtibial amputation. Post-operative positioning '
+          'should avoid prolonged knee flexion (no pillow under the knee, encourage '
+          'prone lying). A contracture greater than 15 degrees is very difficult to '
+          'accommodate prosthetically.',
+        ),
+        HeaderBlock('Energy Expenditure'),
+        TableBlock(
+          title: 'Metabolic Cost by Amputation Level',
+          columns: ['Level', 'Traumatic', 'Vascular'],
+          rows: [
+            ['Transtibial (unilateral)', '~10-25% above normal', '~40% above normal'],
+            ['Transfemoral (unilateral)', '~60-70% above normal', '~100% above normal'],
+            ['Bilateral transtibial', '~40% above normal', '~60-80% above normal'],
+          ],
+          headerColor: Colors.indigo,
+        ),
+        PearlBlock(
+          'Board Pearl — Socket is Most Important',
+          'The socket is the most important component of any prosthesis. An '
+          'energy-storing carbon fiber foot mounted on a poorly fitting socket will '
+          'produce a worse functional outcome than a basic SACH foot on a well-fitting '
+          'socket. Socket comfort and fit determine whether a patient wears the '
+          'prosthesis or abandons it.',
         ),
       ],
     ),

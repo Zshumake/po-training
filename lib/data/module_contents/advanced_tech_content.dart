@@ -89,20 +89,60 @@ final advancedTechContent = TopicData(
             'Higher durability for physically demanding lifestyles',
           ],
         ),
+        ComparisonCardBlock(
+          title: 'Plie Knee (Proteor)',
+          themeColor: const Color(0xFF5D4037),
+          backgroundColor: const Color(0xFFEFEBE9),
+          icon: Icons.precision_manufacturing,
+          description: 'Uses a combination of hydraulics and pneumatics for flexion '
+              'and extension control. Currently marketed as the Plie 3 by Proteor. '
+              'OASIS 1 data showed comparable mobility but lower QoL scores vs C-Leg.',
+          keyPoints: [
+            'Hydraulic and pneumatic combined resistance mechanism',
+            'Functional mobility comparable to other MPKs (OASIS 1)',
+            'Quality of life scores significantly lower than C-Leg',
+            'Did NOT demonstrate significant falls reduction (unlike C-Leg)',
+            'Functional declines noted with advancing age — less suitable for elderly',
+            'Step-to stair ascent, step-over-step descent',
+          ],
+        ),
         TableBlock(
           title: 'Microprocessor Knee Comparison',
-          columns: ['Feature', 'C-Leg', 'Genium', 'Rheo Knee'],
+          columns: ['Feature', 'C-Leg', 'Genium', 'Rheo Knee', 'Plie 3'],
           rows: [
-            ['Manufacturer', 'Ottobock', 'Ottobock', 'Ossur'],
-            ['Technology', 'Hydraulic + MPU', 'Hydraulic + MPU', 'MR Fluid + MPU'],
-            ['Sensor Rate', '50 Hz', '50+ Hz', 'Continuous'],
-            ['Stair Ascent', 'Step-to (leading sound)', 'Alternating step', 'Step-to'],
-            ['Stair Descent', 'Step-over-step', 'Step-over-step', 'Step-over-step'],
-            ['Stumble Recovery', 'Yes', 'Yes', 'Yes'],
-            ['Waterproof', 'No (X3 variant)', 'No', 'No'],
-            ['Standing Function', 'Flexion lock', 'Intuitive stand', 'Adaptive yield'],
+            ['Manufacturer', 'Ottobock', 'Ottobock', 'Ossur', 'Proteor'],
+            ['Technology', 'Hydraulic + MPU', 'Hydraulic + MPU', 'MR Fluid + MPU', 'Hydraulic/Pneumatic'],
+            ['Sensor Rate', '50 Hz', '50+ Hz', 'Continuous', 'Variable'],
+            ['Stair Ascent', 'Step-to', 'Alternating step', 'Step-to', 'Step-to'],
+            ['Stair Descent', 'Step-over-step', 'Step-over-step', 'Step-over-step', 'Step-over-step'],
+            ['Stumble Recovery', 'Yes', 'Yes', 'Yes', 'Yes'],
+            ['Waterproof', 'No (X3 variant)', 'No', 'No', 'No'],
+            ['Falls Evidence', 'Strong', 'Strong', 'Moderate', 'Weak'],
+            ['K2 Approved', 'Yes', 'Yes', 'Yes', 'No'],
           ],
           headerColor: const Color(0xFF1565C0),
+        ),
+        HeaderBlock('C-Leg Falls Reduction Data'),
+        TableBlock(
+          title: 'C-Leg vs Non-MPK Falls (per 1,000 person-years)',
+          columns: ['Population', 'C-Leg', 'Non-MPK'],
+          rows: [
+            ['Non-diabetic: All falls', '178', '1,102'],
+            ['Diabetic: All falls', '203', '1,201'],
+            ['Non-diabetic: Fatal falls', '3', '17'],
+            ['Diabetic: Fatal falls', '3', '18'],
+            ['Non-diabetic: Fall hospitalizations', '20', '134'],
+            ['Diabetic: Fall hospitalizations', '23', '146'],
+          ],
+          headerColor: const Color(0xFFC62828),
+        ),
+        PearlBlock(
+          'Board Pearl — MPK Falls Data',
+          'C-Leg data shows approximately 80% reduction in overall falls and '
+          '82-85% reduction in fall-related hospitalizations compared to non-MPK. '
+          'A 2024 retrospective cohort analysis confirmed fiscal savings to Medicare '
+          'when MPKs replace mechanical knees. This cost-effectiveness data supports '
+          'the K2 coverage expansion.',
         ),
         HeaderBlock('Advantages of MPKs Over Mechanical Knees'),
         BulletCardBlock(
@@ -156,6 +196,44 @@ final advancedTechContent = TopicData(
           'advantages to remember are stumble recovery, variable cadence control, '
           'and improved safety. Medicare covers MPKs for K3-K4 with documented '
           'functional need.',
+        ),
+        HeaderBlock('Medicare K2 Coverage Expansion (September 2024)'),
+        TextBlock(
+          'In September 2024, CMS expanded MPK coverage to K2-level beneficiaries '
+          '(limited community ambulators). This landmark policy change was driven by '
+          'evidence that K2 ambulators — who are typically older, less stable, and at '
+          'higher fall risk — may benefit most from MPK safety features.',
+        ),
+        BulletCardBlock(
+          title: 'K2 Coverage Criteria (All Must Be Met)',
+          themeColor: const Color(0xFF6A1B9A),
+          backgroundColor: const Color(0xFFF3E5F5),
+          points: [
+            '1. The electronic/microprocessor knee unit is indicated for functional level 2',
+            '2. The knee has integrated stumble-recovery technology with automatic stabilization',
+            '3. The beneficiary can manage daily charging requirements',
+            '4. The beneficiary can understand and respond to error alerts and alarms',
+            'Supporting evidence: ASCENT K2 trial (12-month RCT in K2 ambulators over age 65)',
+            'Rationale: fall-prone K2 ambulators benefit most from stumble recovery',
+          ],
+        ),
+        TableBlock(
+          title: 'Key MPK L-Codes',
+          columns: ['L-Code', 'Description'],
+          rows: [
+            ['L5856', 'MPK with swing AND stance phase control (most common)'],
+            ['L5857', 'MPK with swing phase control only'],
+            ['L5858', 'MPK with stance phase control only (fluid-based)'],
+          ],
+          headerColor: const Color(0xFF6A1B9A),
+        ),
+        PearlBlock(
+          'Board Pearl — K2 MPK Coverage',
+          'The K2 MPK expansion is likely to appear on future board examinations. '
+          'Key points: (1) MPKs are now covered for K2 ambulators, not just K3/K4, '
+          '(2) the knee must have stumble recovery, (3) the patient must manage '
+          'charging and error alerts. The rationale is that fall-prone K2 ambulators '
+          'benefit most from stumble recovery and stability features.',
         ),
       ],
     ),
@@ -291,12 +369,61 @@ final advancedTechContent = TopicData(
             'Inability to comply with post-operative rehabilitation protocol',
           ],
         ),
+        HeaderBlock('OPRA System — FDA Status & Complication Rates'),
+        TextBlock(
+          'The OPRA system received full Premarket Approval (PMA) from the FDA in '
+          'December 2020, based on data from 65 participants. It is indicated for '
+          'transfemoral amputees with rehabilitation problems with conventional sockets.',
+        ),
+        TableBlock(
+          title: 'OPRA 5-Year Complication Rates',
+          columns: ['Complication', 'Rate'],
+          rows: [
+            ['Cumulative fixture survival', '92% at 5 years'],
+            ['Revision-free survival', '45% at 5 years'],
+            ['Superficial infections', '67% of patients (70 events in 34/51)'],
+            ['Deep infections', '22% of patients (14 events in 11/51)'],
+            ['Mechanical complications', '29% of patients (abutment/screw fracture)'],
+          ],
+          headerColor: const Color(0xFFBF360C),
+        ),
+        ComparisonCardBlock(
+          title: 'POP System (Press-Fit Implant)',
+          themeColor: const Color(0xFF4E342E),
+          backgroundColor: const Color(0xFFEFEBE9),
+          icon: Icons.compress,
+          description: 'The POP system uses a press-fit (non-threaded) implant design '
+              'rather than the threaded screw design of the OPRA system. It may allow '
+              'a shorter osseointegration timeline and shows lower deep infection rates.',
+          keyPoints: [
+            'Press-fit (non-threaded) implant vs OPRA threaded screw design',
+            'Lower deep infection rate: 5% vs OPRA 22%',
+            'Zero implant loosening (vs OPRA 6%)',
+            'Superficial infections remain common: 77% of patients',
+            'FDA-approved randomized multicenter trial ongoing',
+            'VA began offering OPRA system in January 2022',
+            'POP trial includes male veterans with unilateral transfemoral amputation',
+          ],
+        ),
+        TableBlock(
+          title: 'Overall Osseointegration Complication Summary',
+          columns: ['Complication', 'Approximate Rate'],
+          rows: [
+            ['Minor stoma discharge', '67.5%'],
+            ['Significant discharge requiring surgery', '13.6%'],
+            ['Prosthesis removal', '9%'],
+            ['Periprosthetic fracture', '4.5%'],
+            ['Infection requiring additional surgery', '5-8%'],
+          ],
+          headerColor: const Color(0xFFBF360C),
+        ),
         PearlBlock(
           'Board Pearl — Osseointegration',
           'Osseointegration eliminates the socket and all socket-related problems, '
           'but infection at the abutment (stoma) site is the MOST COMMON complication. '
-          'The OPRA system uses a two-stage surgery: fixture implantation → 6 months '
-          'healing → abutment placement through skin.',
+          'OPRA = two-stage screw-type, 6-month healing, FDA PMA December 2020. '
+          'POP = press-fit, lower deep infection rate (5% vs 22%). Superficial stoma '
+          'infections occur in roughly two-thirds of patients with either system.',
         ),
       ],
     ),
@@ -361,12 +488,55 @@ final advancedTechContent = TopicData(
             'Can be performed at time of amputation or as secondary procedure',
           ],
         ),
+        HeaderBlock('TMR Surgical Details'),
+        BulletCardBlock(
+          title: 'TMR Surgical Procedure',
+          themeColor: const Color(0xFF4527A0),
+          backgroundColor: const Color(0xFFEDE7F6),
+          points: [
+            '1. Neuroma identification and excision back to healthy fascicular tissue',
+            '2. Proximal nerve stump prepared to expose healthy regenerating fascicles',
+            '3. Recipient motor nerve branch identified via intraoperative nerve stimulation',
+            '4. Recipient branch divided to denervate target muscle segment',
+            '5. Coaptation: donor nerve sutured to recipient using 6-0/7-0 epineural sutures',
+            'Surgical duration: 2-4 hours; hospital stay: 1-5 days',
+            'Reinnervation period: 4-6 months for detectable EMG signals',
+          ],
+        ),
+        HeaderBlock('TMR Transhumeral Nerve Transfer Targets'),
+        TableBlock(
+          title: 'Transhumeral TMR Nerve Transfers',
+          columns: ['Donor Nerve', 'Target Muscle', 'Control Signal'],
+          rows: [
+            ['Musculocutaneous', 'Short head of biceps', 'Elbow flexion'],
+            ['Median', 'Brachialis', 'Hand close'],
+            ['Distal radial', 'Lateral head of triceps', 'Hand open'],
+            ['Ulnar', 'Medial head of triceps', 'Wrist rotation / intrinsic hand'],
+          ],
+          headerColor: const Color(0xFF4527A0),
+        ),
+        HeaderBlock('TMR Pain Prevention Evidence'),
+        BulletCardBlock(
+          title: 'Dumanian RCT (2019) — TMR vs Standard Neuroma Excision',
+          themeColor: const Color(0xFF2E7D32),
+          backgroundColor: const Color(0xFFE8F5E9),
+          points: [
+            'First surgical RCT for post-amputation pain (28 amputees with chronic pain)',
+            'TMR vs standard neuroma excision with muscle burial',
+            'Phantom limb pain improvement: TMR 3.2 points vs standard -0.2 points',
+            'Longitudinal analysis: significantly greater PLP improvement (p=0.03)',
+            'Mechanism: transferred nerves have a target, preventing neuroma formation',
+            'Growing evidence supports acute TMR at time of primary amputation',
+            'Acute TMR prevents neuroma formation from the outset',
+          ],
+        ),
         PearlBlock(
           'Board Pearl — TMR Dual Benefit',
           'TMR provides TWO major benefits: (1) improved myoelectric prosthetic '
           'control with simultaneous multi-joint operation, AND (2) reduced phantom '
           'limb and neuroma pain because the transferred nerves have a target to '
-          'reinnervate rather than forming painful neuromas.',
+          'reinnervate rather than forming painful neuromas. Acute TMR at time of '
+          'amputation is increasingly recommended to prevent neuroma formation.',
         ),
         HeaderBlock('Pattern Recognition Control'),
         TextBlock(
@@ -436,13 +606,44 @@ final advancedTechContent = TopicData(
           ],
           headerColor: const Color(0xFF6A1B9A),
         ),
+        HeaderBlock('COAPT Clinical Evidence'),
+        BulletCardBlock(
+          title: 'COAPT RCT Results (Transhumeral Amputees with TMR)',
+          themeColor: const Color(0xFF0D47A1),
+          backgroundColor: const Color(0xFFBBDEFB),
+          points: [
+            '8-subject RCT: pattern recognition vs conventional direct control',
+            '6-8 week home trial period in transhumeral amputees with TMR',
+            'Significantly superior Southampton Hand Assessment Procedure scores (p=0.04)',
+            'Significantly faster Clothespin Relocation Task performance (p=0.02)',
+            'Better control for tasks requiring wrist function',
+            'Users reported more natural and intuitive control',
+            'FDA Class II clearance obtained in 2017',
+          ],
+        ),
+        HeaderBlock('IMES Clinical Status'),
+        BulletCardBlock(
+          title: 'IMES FDA & Trial Status',
+          themeColor: const Color(0xFF00838F),
+          backgroundColor: const Color(0xFFE0F7FA),
+          points: [
+            'Currently in FDA-approved Early Feasibility Study (NCT03644394)',
+            'Two transhumeral amputees enrolled to date',
+            'First subject demonstrated greater variety and complexity of tasks vs prior prosthesis',
+            'Confirmed feasibility for reliable sensing and wireless EMG transmission',
+            'Achieved 3-degree-of-freedom prosthetic arm control',
+            'NOT yet FDA-approved for commercial use — investigational device only',
+            'Powered wirelessly through electromagnetic coupling (no internal batteries)',
+          ],
+        ),
         PearlBlock(
           'Board Pearl — Pattern Recognition',
           'Pattern recognition classifies EMG patterns across multiple electrodes '
           'to determine user intent, allowing intuitive grip selection without '
           'co-contraction mode switching. The COAPT system is the first commercially '
-          'available pattern recognition system. Combined with TMR, it represents '
-          'the current state-of-the-art in myoelectric control.',
+          'available pattern recognition system (FDA Class II cleared 2017). '
+          'IMES are investigational implanted wireless sensors — not yet FDA-approved. '
+          'Combined with TMR, pattern recognition represents the current state-of-the-art.',
         ),
       ],
     ),

@@ -56,6 +56,19 @@ final specialPopulationsContent = TopicData(
               'vessels are non-compressible, producing an artificially high reading. '
               'Use toe pressures or TBI (Toe-Brachial Index) instead.',
         ),
+        BulletCardBlock(
+          title: 'Toe-Brachial Index (TBI)',
+          themeColor: const Color(0xFF1565C0),
+          backgroundColor: const Color(0xFFE3F2FD),
+          points: [
+            'Used when ABI is falsely elevated (>1.30-1.40) in diabetic/renal patients',
+            'Small digital arteries of toes rarely undergo medial calcification',
+            'Normal TBI: greater than 0.70',
+            'Abnormal TBI: less than 0.70, suggesting PAD',
+            'Always use TBI instead of ABI in patients with non-compressible vessels',
+          ],
+        ),
+
         HeaderBlock('Diabetic Foot Complications'),
         ComparisonCardBlock(
           title: 'Charcot Foot (Neuropathic Arthropathy)',
@@ -95,6 +108,47 @@ final specialPopulationsContent = TopicData(
             'Contraindicated in active infection, untreated osteomyelitis, or ischemic ulcers',
           ],
         ),
+        // --- TCC Evidence Table ---
+        TableBlock(
+          title: 'TCC vs Other Offloading Methods',
+          columns: ['Method', 'Wound Closure Rate', 'Median Time to Healing'],
+          rows: [
+            ['Total Contact Cast', '88.9%', '5.4 weeks'],
+            ['Healing sandal', '50%', '8.9 weeks'],
+            ['Shear-reducing walking boot', '40%', '6.7 weeks'],
+          ],
+          headerColor: const Color(0xFF2E7D32),
+        ),
+        PearlBlock(
+          'Board Pearl - TCC Underutilization',
+          'Despite being the gold standard, TCC is significantly underutilized: '
+          'only 16% of diabetic foot ulcer patients receive TCC (US Wound Registry). '
+          'Barriers include time-consuming application, need for trained staff, '
+          'and concerns about complications. Its non-removable design ensures '
+          '100% compliance with offloading.',
+        ),
+
+        // --- Eichenholtz Classification ---
+        HeaderBlock('Charcot Foot: Eichenholtz Classification'),
+        TableBlock(
+          title: 'Eichenholtz Staging System',
+          columns: ['Stage', 'Name', 'Radiographic Findings', 'Management'],
+          rows: [
+            ['0 (Shibata)', 'Prodromal', 'Normal radiographs; MRI shows bone marrow edema', 'TCC or non-removable offloading'],
+            ['I', 'Fragmentation', 'Osteopenia, joint fragmentation, subluxation', 'TCC; most acute/destructive phase'],
+            ['II', 'Coalescence', 'Bony debris absorption, sclerosis, consolidation', 'Removable boot or custom orthotic'],
+            ['III', 'Reconstruction', 'Reduced sclerosis, attempted joint reformation', 'Custom-molded shoes with accommodative insoles'],
+          ],
+          headerColor: const Color(0xFFBF360C),
+        ),
+        PearlBlock(
+          'Board Pearl - Eichenholtz Staging',
+          'Eichenholtz Stage 0 (prodromal, added by Shibata 1990) shows NORMAL '
+          'radiographs but ABNORMAL MRI findings. Stage I (fragmentation) is the '
+          'most destructive. TCC is used in Stages 0-I. Stage III management: '
+          'custom-molded shoes with total contact insoles and rigid rocker soles.',
+        ),
+
         HeaderBlock('Diabetic Footwear & Orthotic Management'),
         BulletCardBlock(
           title: 'Diabetic Footwear Prescription',
@@ -110,6 +164,43 @@ final specialPopulationsContent = TopicData(
             'Patient education: daily foot inspection, proper shoe fit, moisture management',
           ],
         ),
+        // --- Medicare Therapeutic Shoe Program ---
+        HeaderBlock('Medicare Therapeutic Shoe Program'),
+        BulletCardBlock(
+          title: 'Eligibility Requirements',
+          themeColor: const Color(0xFF00695C),
+          backgroundColor: const Color(0xFFE0F2F1),
+          points: [
+            'Part B benefit (separate from DME and orthotics)',
+            'Must have documented diagnosis of diabetes mellitus',
+            'Must have comprehensive diabetes care plan managed by treating physician',
+            'Must have at least ONE qualifying condition:',
+            '  - Peripheral neuropathy with callus formation',
+            '  - History of pre-ulcerative calluses or previous foot ulceration',
+            '  - Foot deformity or previous partial foot amputation',
+            '  - Poor circulation',
+          ],
+        ),
+        TableBlock(
+          title: 'Medicare Therapeutic Shoe Coverage Options',
+          columns: ['Option', 'Coverage Per Year'],
+          rows: [
+            ['Option A', '1 pair extra-depth shoes + 3 pairs molded inserts'],
+            ['Option B', '1 pair custom-molded shoes + 2 additional pairs of inserts'],
+          ],
+          headerColor: const Color(0xFF00695C),
+        ),
+        BulletCardBlock(
+          title: 'Prescribers & Suppliers',
+          themeColor: const Color(0xFF00695C),
+          backgroundColor: const Color(0xFFE0F2F1),
+          points: [
+            'Prescribers: podiatrist, MD/DO, PA, NP, or clinical nurse specialist',
+            'Suppliers: podiatrist, pedorthist, orthotist, prosthetist, or other qualified individual',
+            'Shoe modifications (rocker soles, metatarsal bars) may substitute for inserts',
+          ],
+        ),
+
         HeaderBlock('Prosthetic Considerations for Dysvascular Patients'),
         BulletCardBlock(
           title: 'Special Prosthetic Modifications',
@@ -166,6 +257,8 @@ final specialPopulationsContent = TopicData(
             'Not designed for walking — fundamentally different mechanics',
             'Dedicated running prosthesis needed (cannot walk and run on same device)',
             'Category and stiffness selected based on user weight and activity level',
+            'Carbon fiber blades return ~90% of stored energy vs ~50-60% for biological tendons',
+            'Models: Cheetah Xcel (sprinting), Cheetah Xplore (distance), Cheetah Xpanse (long jump)',
           ],
         ),
         BulletCardBlock(
@@ -206,6 +299,8 @@ final specialPopulationsContent = TopicData(
             'Cycling adapter: handlebar grip terminal device',
             'Photography adapter: camera mount terminal device',
             'Interchangeable quick-disconnect wrist units allow rapid device changes',
+            'Most effective TDs are those obligatory for participation (weight lifting, violin bows)',
+            'Research: 9 of 15 recreational TDs studied improved performance',
           ],
         ),
         HeaderBlock('Paralympic Classification'),
@@ -319,6 +414,21 @@ final specialPopulationsContent = TopicData(
             'Stepping stone before fitting full-length prostheses with knees',
             'Some patients may use stubbies as their definitive ambulation device',
             'Height can be progressively increased as balance improves',
+            'Reduced energy cost: heart rate and O2 consumption decrease 7-23% vs full-length',
+            'Increased walking speed: up to 25% faster than full-length prostheses in early training',
+          ],
+        ),
+        BulletCardBlock(
+          title: 'Stubby Progressive Training Protocol',
+          themeColor: const Color(0xFF4527A0),
+          backgroundColor: const Color(0xFFEDE7F6),
+          points: [
+            '1. Begin with stubbies for initial gait training (~1 month intensive rehab)',
+            '2. Progress to full-time stubby use (10-16 hours/day)',
+            '3. Master community ambulation on stubbies: stairs, curbs, uneven surfaces',
+            '4. Gradually increase pylon height as strength and balance improve',
+            '5. Transition to articulating knees when FUNCTION (not time) indicates readiness',
+            '6. Some patients may use stubbies as permanent ambulation device',
           ],
         ),
         HeaderBlock('Sequential Fitting Strategy'),
@@ -417,6 +527,8 @@ final specialPopulationsContent = TopicData(
             'Increased fall risk due to impaired judgment and reaction time',
             'May still benefit from prosthesis for transfers with caregiver assistance',
             'Mini-Mental State Exam (MMSE) or MoCA can screen cognitive function',
+            'Clock drawing test: rapid screen for visuospatial and executive function deficits',
+            'Mild impairment may still benefit from prosthesis for supported transfers',
           ],
         ),
         HeaderBlock('Poor Prosthetic Prognosis Indicators'),
@@ -469,6 +581,22 @@ final specialPopulationsContent = TopicData(
             'Assistive devices (cane, walker) should be considered for community ambulation',
           ],
         ),
+        BulletCardBlock(
+          title: 'Fall Risk Factors in Elderly Amputees',
+          themeColor: const Color(0xFFC62828),
+          backgroundColor: const Color(0xFFFFEBEE),
+          points: [
+            'Age 71-80 years',
+            'History of previous falls',
+            'Cognitive impairment or confusion',
+            'Vestibular dysfunction, vertigo, or stroke history',
+            'Medications: anticonvulsants, sedatives, antihypertensives',
+            'Carpet flooring',
+            'Need for transfer assistance',
+            'TUG amputee-specific cutoffs: 8.17 sec = predicts 1+ falls/year',
+            'TUG amputee-specific cutoffs: 9.25 sec = predicts 2+ falls/year',
+          ],
+        ),
         HeaderBlock('Rehabilitation Goals in the Elderly'),
         BulletCardBlock(
           title: 'Realistic Goal Setting',
@@ -506,7 +634,123 @@ final specialPopulationsContent = TopicData(
           'status, motivation, and medical comorbidities are MORE IMPORTANT predictors. '
           'However, age >80 with bilateral TF amputation carries very poor prosthetic '
           'prognosis. Lighter, simpler components are preferred. Microprocessor knees '
-          'reduce falls even in lower-activity elderly patients.',
+          'reduce falls even in lower-activity elderly patients (K2 MPK coverage '
+          'expanded by CMS in September 2024).',
+        ),
+      ],
+    ),
+
+    // ─────────────────────────────────────────────
+    // TAB 5: Military & Trauma
+    // ─────────────────────────────────────────────
+    TopicTab(
+      title: 'Military & Trauma',
+      blocks: [
+        HeaderBlock('Military and Trauma Amputees'),
+        TextBlock(
+          'Military blast injuries and high-energy trauma present unique '
+          'challenges for prosthetic and orthotic management. The Intrepid '
+          'Dynamic Exoskeletal Orthosis (IDEO), return-to-duty rates, and '
+          'blast injury patterns are important board topics.',
+          isIntro: true,
+        ),
+
+        // --- IDEO ---
+        ComparisonCardBlock(
+          title: 'IDEO (Intrepid Dynamic Exoskeletal Orthosis)',
+          themeColor: const Color(0xFF1565C0),
+          backgroundColor: const Color(0xFFE3F2FD),
+          icon: Icons.shield,
+          description: 'A custom passive-dynamic carbon fiber AFO designed by CPO '
+              'Ryan Blanck (2009) at the Center for the Intrepid as a limb '
+              'salvage alternative for severe LE injuries.',
+          keyPoints: [
+            'Custom-molded dynamic-response carbon fiber AFO',
+            'Stabilizes injured ankle while providing energy storage and return',
+            'Enables return to high-level activities including running and agility',
+            'Common indications: ankle injuries (25%), tibia injuries (17.5%), nerve injuries below knee (16.4%)',
+            '>80% of patients fitted with IDEO avoided amputation at 1-year follow-up',
+            'Improved agility, power, and speed vs no brace or conventional bracing',
+            'Used with Return to Run (RTR) clinical pathway',
+            'Paradigm shift: functional limb salvage approaching prosthetic performance levels',
+          ],
+        ),
+
+        // --- Return to Duty Rates ---
+        HeaderBlock('Military Return-to-Duty (RTD) Rates'),
+        TableBlock(
+          title: 'OEF/OIF RTD Rates by Factor',
+          columns: ['Factor', 'Return-to-Duty Rate'],
+          rows: [
+            ['Overall (OEF/OIF era)', '16.5% (vs 2.3% historically)'],
+            ['Transtibial amputees', '22% (highest LE rate)'],
+            ['Single extremity amputees', '20%'],
+            ['Multiple extremity amputees', '3% (lowest rate)'],
+            ['Officers', '35.3%'],
+            ['Senior enlisted', '25.5%'],
+            ['Junior enlisted', '7.0%'],
+            ['Special Forces', 'Significantly higher than all other MOS'],
+          ],
+          headerColor: const Color(0xFF1565C0),
+        ),
+
+        // --- Blast Injury Patterns ---
+        HeaderBlock('Blast Injury Patterns'),
+        BulletCardBlock(
+          title: 'IED Blast Injury Characteristics',
+          themeColor: const Color(0xFFC62828),
+          backgroundColor: const Color(0xFFFFEBEE),
+          points: [
+            'IEDs: predominant cause of combat injuries in OEF/OIF',
+            'Most common cause of military deaths 2008-2011',
+            'Most common amputation level: transtibial (41.8%)',
+            'Second most common: transfemoral (34.5%)',
+            'Bilateral LE amputation: most common bilateral pattern from blast',
+            'Among bilateral amputees: bilateral TF is the most common subgroup',
+            'Heterotopic ossification (HO): very common in blast amputations',
+            'HO can significantly impair prosthetic fitting and may require surgical excision',
+          ],
+        ),
+
+        // --- DCBI ---
+        ComparisonCardBlock(
+          title: 'Dismounted Complex Blast Injury (DCBI)',
+          themeColor: const Color(0xFF4A148C),
+          backgroundColor: const Color(0xFFEDE7F6),
+          icon: Icons.warning,
+          description: 'The most severe injury pattern in modern military conflict, '
+              'involving multiple extremity amputations with associated pelvic '
+              'and soft tissue injuries.',
+          keyPoints: [
+            'Bilateral lower extremity amputations at various levels',
+            'Complex soft tissue blast wounds extending to perineal and gluteal regions',
+            'Associated pelvic and acetabular fractures',
+            'Frequent traumatic amputation of the non-dominant upper extremity',
+            'Represents the most challenging rehabilitation scenario',
+            'Polytrauma: often includes TBI, PTSD, burns, vision/hearing loss',
+          ],
+        ),
+
+        // --- Polytrauma ---
+        BulletCardBlock(
+          title: 'Polytrauma Considerations',
+          themeColor: const Color(0xFFE65100),
+          backgroundColor: const Color(0xFFFFF3E0),
+          points: [
+            'TBI frequently co-occurs with blast amputations — affects cognitive rehab capacity',
+            'PTSD: high prevalence; affects motivation, sleep, pain perception, rehab engagement',
+            'Heterotopic ossification: very common; impairs prosthetic fitting',
+            'Complex wound management: irregular tissue damage, contamination',
+            'Burns: affect skin integrity for prosthetic socket interface',
+            'Vision and hearing loss from blast overpressure',
+          ],
+        ),
+        PearlBlock(
+          'Board Pearl — Military/Trauma',
+          'IDEO is a custom carbon fiber AFO for limb salvage: >80% avoid amputation. '
+          'Military RTD improved from 2.3% historically to 16.5% in OEF/OIF. TT amputees '
+          'have highest LE RTD rate (22%). Blast patterns: TT most common (41.8%). '
+          'Heterotopic ossification is very common and significantly affects prosthetic fitting.',
         ),
       ],
     ),

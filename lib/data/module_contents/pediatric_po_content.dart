@@ -142,6 +142,38 @@ final pediatricPOContent = TopicData(
           'Management depends on predicted limb length discrepancy at maturity: '
           'mild cases may use lengthening; severe cases undergo Syme amputation.',
         ),
+
+        // --- Fibular Hemimelia Management Decision Table ---
+        HeaderBlock('Fibular Hemimelia: Syme vs Lengthening'),
+        TableBlock(
+          title: 'Syme Amputation vs Limb Lengthening',
+          columns: ['Factor', 'Syme Amputation', 'Limb Lengthening'],
+          rows: [
+            ['Number of surgeries', '~2', '~7'],
+            ['Estimated cost', 'Lower (~\$7,000)', 'Higher (~\$27,000)'],
+            ['Complication rate', 'Lower', 'Higher'],
+            ['Time to functional recovery', 'Shorter', 'Significantly longer'],
+            ['Patient satisfaction', 'High', 'Improving with modern techniques'],
+          ],
+          headerColor: Colors.orange,
+        ),
+
+        // --- PFFD: Paley Classification ---
+        HeaderBlock('PFFD: Paley Classification'),
+        BulletCardBlock(
+          title: 'Paley Classification (Treatment-Oriented)',
+          themeColor: Colors.red,
+          backgroundColor: const Color(0xFFFFEBEE),
+          points: [
+            'Type 1: Intact femur with mobile hip and knee (1a: normal ossification, 1b: delayed)',
+            'Type 2: Mobile pseudarthrosis with femoral head in acetabulum (2a: neck, 2b: subtrochanteric)',
+            'Type 3: Diaphyseal deficiency with femoral head mobile in acetabulum (3a: knee ROM >45\u00B0, 3b: <45\u00B0)',
+            'Type 4: Distal femoral deficiency with absent or fused knee joint',
+            'Types 1-2 (Aitken A/B): limb lengthening and reconstruction preferred',
+            'Types 3-4 (Aitken C/D): iliofemoral fusion, extension prosthesis, or rotationplasty',
+            'Hip arthrography useful for differentiating Paley types 2a and 2b',
+          ],
+        ),
       ],
     ),
 
@@ -189,6 +221,26 @@ final pediatricPOContent = TopicData(
           'image incorporation and bilateral motor development.',
         ),
 
+        // --- Prosthesis Replacement Schedule ---
+        HeaderBlock('Prosthesis Replacement Schedule During Growth'),
+        TableBlock(
+          title: 'Replacement Frequency by Age',
+          columns: ['Age Range', 'Replacement Frequency'],
+          rows: [
+            ['Birth to 5 years', 'New prosthesis approximately every year'],
+            ['5-12 years', 'New prosthesis approximately every 2 years'],
+            ['12-21 years', 'New prosthesis approximately every 3-4 years'],
+          ],
+          headerColor: Colors.green,
+        ),
+        PearlBlock(
+          'Board Pearl - Early Fitting Evidence',
+          'Prosthetic fitting BEFORE one year of age is associated with continued '
+          'prosthetic use for at least four years, suggesting that early fitting '
+          'enhances long-term acceptance. For TF amputees under age 3, the initial '
+          'prosthesis should NOT include an articulating knee joint.',
+        ),
+
         // --- Terminal Bony Overgrowth ---
         HeaderBlock('Terminal Bony Overgrowth'),
         ComparisonCardBlock(
@@ -221,6 +273,34 @@ final pediatricPOContent = TopicData(
           'It is NOT a prosthetic problem and NOT caused by the socket. It is '
           'caused by appositional bone growth at the distal stump and may '
           'require surgical revision.',
+        ),
+        BulletCardBlock(
+          title: 'Terminal Bony Overgrowth: Additional Key Facts',
+          themeColor: Colors.red,
+          backgroundColor: const Color(0xFFFFEBEE),
+          points: [
+            'Occurs ONLY in transosseous amputations (through the bone shaft)',
+            'Does NOT occur after disarticulation (through the joint)',
+            'Does NOT occur after approximately age 12 years',
+            'Younger children at time of amputation have higher incidence',
+            'Incidence: 4-50% of pediatric amputations',
+            'Bone frequency order: Humerus > Fibula > Tibia > Radius/Ulna',
+            'This is why disarticulation is PREFERRED over through-bone amputation in children',
+          ],
+        ),
+        HeaderBlock('Surgical Management of Terminal Bony Overgrowth'),
+        BulletCardBlock(
+          title: 'Surgical Options',
+          themeColor: Colors.deepOrange,
+          backgroundColor: const Color(0xFFFBE9E7),
+          points: [
+            'Simple distal resection and stump revision: most straightforward but high recurrence (25-50%)',
+            'Modified Ertl tibiofibular osteomyoplasty: bone bridge between tibia and fibula',
+            'Non-biological capping: silicone or PTFE caps over bone end',
+            'Biological stump capping (Marquardt-Corell technique): autologous osteocartilaginous cap',
+            'Marquardt-Corell limits recurrence to ~10% and provides partial end-bearing capacity',
+            'Multiple revisions may be required during growth years',
+          ],
         ),
 
         // --- Growth Considerations ---
@@ -298,6 +378,33 @@ final pediatricPOContent = TopicData(
           ],
         ),
 
+        // --- Pavlik Harness Efficacy & Complications ---
+        TableBlock(
+          title: 'Pavlik Harness Success by Age at Initiation',
+          columns: ['Age at Initiation', 'Success Rate', 'Notable Risks'],
+          rows: [
+            ['Under 4 weeks', '~96%', 'Minimal'],
+            ['Under 3 months', '>90%', 'AVN 0.9%, residual dysplasia 1.8%'],
+            ['3-6 months', '~88%', 'AVN 9.7%, residual dysplasia 20.3%'],
+            ['After 6 months', 'Not recommended', 'High failure rate; rigid orthosis or surgery needed'],
+          ],
+          headerColor: Colors.blue,
+        ),
+        BulletCardBlock(
+          title: 'Pavlik Harness Complications & Failure Factors',
+          themeColor: Colors.red,
+          backgroundColor: const Color(0xFFFFEBEE),
+          points: [
+            'AVN of femoral head: most feared complication (1-30% depending on age/severity)',
+            'AVN risk increases with EXCESSIVE ABDUCTION (compresses lateral epiphyseal vessels)',
+            'Femoral nerve palsy: can occur with excessive hip flexion',
+            'Femoral nerve palsy recognized by loss of active knee extension — reduce flexion immediately',
+            'Failure factors: older age, higher displacement severity (Graf Type IV), male sex',
+            'Failure factors: bilateral involvement, poor parental compliance',
+            'After failure: rigid abduction bracing, closed reduction with spica cast, or open reduction',
+          ],
+        ),
+
         // --- Clubfoot ---
         HeaderBlock('Clubfoot (Talipes Equinovarus) Management'),
         ComparisonCardBlock(
@@ -340,6 +447,16 @@ final pediatricPOContent = TopicData(
           ],
         ),
 
+        PearlBlock(
+          'Board Pearl - Ponseti Method',
+          'The Ponseti correction sequence is: cavus FIRST, then adductus and '
+          'varus, and equinus LAST. Correcting equinus prematurely creates a '
+          'rocker-bottom deformity. 80-90% of patients require percutaneous '
+          'Achilles tenotomy for residual equinus. Denis Browne bar compliance '
+          'is critical: non-adherent patients have 78% recurrence vs only 7% '
+          'in compliant families.',
+        ),
+
         // --- Legg-Calve-Perthes ---
         HeaderBlock('Legg-Calv\u00E9-Perthes Disease'),
         BulletCardBlock(
@@ -358,6 +475,15 @@ final pediatricPOContent = TopicData(
             'Containment prevents femoral head deformity during revascularization',
             'Younger children (<6 years): better prognosis, more likely to remodel',
           ],
+        ),
+
+        PearlBlock(
+          'Board Pearl - Legg-Calv\u00E9-Perthes',
+          'Scottish Rite brace is the most commonly used orthosis but evidence '
+          'supporting its efficacy is limited. Children over age 8 at onset have '
+          'a worse prognosis due to less remodeling time before skeletal maturity. '
+          'Surgical containment (femoral varus osteotomy, Salter innominate osteotomy) '
+          'may be superior for severe cases.',
         ),
 
         // --- Myelomeningocele ---
@@ -456,6 +582,43 @@ final pediatricPOContent = TopicData(
           'exceeds 45-50\u00B0 despite bracing.',
         ),
 
+        // --- BrAIST Trial ---
+        HeaderBlock('BrAIST Trial (Landmark Evidence)'),
+        BulletCardBlock(
+          title: 'BrAIST Trial Key Results',
+          themeColor: Colors.deepPurple,
+          backgroundColor: const Color(0xFFEDE7F6),
+          points: [
+            'Published 2013 (Weinstein et al, NEJM): highest level evidence for scoliosis bracing',
+            'Multicenter study: 25 sites, 242 participants with adolescent idiopathic scoliosis',
+            'Inclusion: Cobb 20-40\u00B0, Risser 0-2, age 10-15 years',
+            'Treatment success (bracing): 72% combined; 75% randomized ITT',
+            'Treatment success (observation): 48% combined; 42% randomized ITT',
+            'Number Needed to Treat (NNT) = 3',
+            'Trial STOPPED EARLY: evidence for bracing efficacy so strong it was unethical to continue',
+            'Boston brace (TLSO) was the primary brace used in the trial',
+          ],
+        ),
+        TableBlock(
+          title: 'BrAIST Dose-Response: Wear Time vs Success',
+          columns: ['Daily Wear Time', 'Success Rate'],
+          rows: [
+            ['Any wear (>0 hours/day)', '~50%'],
+            ['6 hours/day', '~68%'],
+            ['12 hours/day', '~80%'],
+            ['>13 hours/day', '90-93%'],
+          ],
+          headerColor: Colors.deepPurple,
+        ),
+        PearlBlock(
+          'Board Pearl - BrAIST Trial',
+          'The BrAIST trial showed NNT of 3 for bracing to prevent surgical '
+          'threshold progression. A clear dose-response relationship exists: '
+          '>13 hours/day yields 90-93% success. The trial was stopped early '
+          'because bracing efficacy was so strong. Compliance is the most '
+          'critical modifiable factor.',
+        ),
+
         // --- Milwaukee Brace ---
         ComparisonCardBlock(
           title: 'Milwaukee Brace (CTLSO)',
@@ -522,6 +685,7 @@ final pediatricPOContent = TopicData(
             'Less effective for larger or double curves',
             'Appealing to adolescents who refuse daytime bracing',
             'Wearing schedule: nighttime only (8+ hours during sleep)',
+            'Evidence: ~50% higher surgical rates compared to full-time rigid bracing',
           ],
         ),
 
@@ -538,6 +702,8 @@ final pediatricPOContent = TopicData(
             'Better patient acceptance due to flexibility and low profile',
             'Can be worn under clothing more easily',
             'Evidence for efficacy is mixed compared to rigid braces',
+            'Reported success rates ~59% (lower than rigid bracing in some studies)',
+            'Wearing schedule: ~20 hours/day',
             'May be appropriate for smaller, flexible curves',
           ],
         ),
@@ -557,6 +723,21 @@ final pediatricPOContent = TopicData(
                 'Flexible bands; allows trunk mobility; low profile'],
           ],
           headerColor: Colors.deepOrange,
+        ),
+
+        // --- Extended Cobb Angle Management ---
+        TableBlock(
+          title: 'Cobb Angle Management Guide',
+          columns: ['Cobb Angle', 'Management'],
+          rows: [
+            ['<10\u00B0', 'Within normal limits; not scoliosis'],
+            ['10-24\u00B0', 'Observation with serial radiographs every 6 months'],
+            ['20-25\u00B0 with documented 5-10\u00B0 progression', 'Bracing indicated'],
+            ['25-40\u00B0 (Risser 0-2)', 'Bracing indicated'],
+            ['40-45\u00B0', 'Bracing may be attempted; approaching surgical threshold'],
+            ['>45-50\u00B0', 'Surgical consideration (posterior spinal fusion)'],
+          ],
+          headerColor: Colors.indigo,
         ),
 
         // --- Wearing & Outcomes ---

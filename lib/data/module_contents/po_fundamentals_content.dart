@@ -331,6 +331,330 @@ final poFundamentalsContent = TopicData(
           'also increase energy cost. This is why prosthetic and orthotic design '
           'focuses on restoring normal gait determinants.',
         ),
+        PearlBlock(
+          'Board Pearl',
+          'Prosthetic and orthotic design aims to restore as many gait '
+          'determinants as possible. An energy-storing prosthetic foot partially '
+          'restores determinant 4 (foot mechanisms). A microprocessor knee can '
+          'partially restore determinants 3 (knee flexion in stance) and 5 '
+          '(knee mechanisms).',
+        ),
+      ],
+    ),
+
+    // ─────────────────────────────────────────────
+    // TAB 5: Epidemiology of Limb Loss
+    // ─────────────────────────────────────────────
+    TopicTab(
+      title: 'Epidemiology',
+      blocks: [
+        HeaderBlock('Epidemiology of Limb Loss'),
+        TextBlock(
+          'Understanding the prevalence, etiology, and trends in limb loss is '
+          'essential for board review. The US has a substantial and growing '
+          'population of individuals living with limb loss or limb difference.',
+          isIntro: true,
+        ),
+        TableBlock(
+          title: 'Limb Loss Prevalence in the United States',
+          columns: ['Metric', 'Value'],
+          rows: [
+            ['Total Americans with limb loss or limb difference', '~5.6 million'],
+            ['Acquired limb loss (amputation)', '~2.3 million'],
+            ['Congenital limb difference', '~3.4 million'],
+            ['New amputations per year', '~465,000'],
+            ['Children born with limb difference per year', '~43,000'],
+            ['Lower extremity amputations as % of total', '~83%'],
+            ['Upper extremity amputations as % of total', '~17%'],
+            ['Most common individual procedure', 'Toe amputation'],
+          ],
+          headerColor: Colors.blue,
+        ),
+        PearlBlock(
+          'Board Pearl',
+          'Lower extremity amputations account for 83% of all amputations. '
+          'Toe amputations are the single most common procedure. The typical '
+          'amputee in the US is an older adult with diabetes and peripheral '
+          'vascular disease -- not a young trauma victim.',
+        ),
+        TableBlock(
+          title: 'Ziegler-Graham Prevalence Projections',
+          columns: ['Projection Metric', 'Original (2008)', 'Updated (2024)'],
+          rows: [
+            ['Baseline prevalence', '1.6 million (2005)', '2.3 million (2019)'],
+            ['2050 projection', '3.6 million', 'Significantly higher than original'],
+            ['2060 projection', 'Not calculated', '145% increase from 2019 baseline'],
+            ['Primary disease driver', 'Dysvascular/diabetes (54%)', 'Diabetes (+67% by 2060); PVD (+36% by 2060)'],
+          ],
+          headerColor: Colors.orange,
+        ),
+        PearlBlock(
+          'Board Pearl',
+          'The prevalence of limb loss in the US is projected to more than '
+          'double by 2060, driven primarily by the diabetes epidemic. Current '
+          'estimates already exceed original Ziegler-Graham projections.',
+        ),
+        BulletCardBlock(
+          title: 'Etiology of Amputation',
+          themeColor: Colors.red,
+          backgroundColor: const Color(0xFFFFEBEE),
+          points: [
+            'Dysvascular/diabetic: leading cause (~54% of all amputations)',
+            'Trauma: second leading cause (typical patient: young to middle-aged male)',
+            'Malignancy: ~5-10% (osteosarcoma, Ewing sarcoma, chondrosarcoma)',
+            'Congenital limb deficiency: ~43,000 children born/year in the US',
+            'Trauma is the leading cause of UPPER extremity amputations',
+            'Dysvascular disease is the leading cause of LOWER extremity amputations',
+            'Adults aged 65+ comprise ~45% of limb loss population',
+            'Adults aged 45-64 account for ~42%',
+          ],
+        ),
+        BulletCardBlock(
+          title: 'Age Distribution',
+          themeColor: Colors.purple,
+          backgroundColor: const Color(0xFFF3E5F5),
+          points: [
+            'Adults aged 65+: approximately 45% of limb loss population',
+            'Adults aged 45-64: approximately 42%',
+            'Combined 45+: vast majority of amputees in the US',
+            'Traumatic amputees tend to be younger with better functional outcomes',
+            'Traumatic amputees typically have longer residual limbs (better tissue perfusion)',
+          ],
+        ),
+      ],
+    ),
+
+    // ─────────────────────────────────────────────
+    // TAB 6: Amputation Levels
+    // ─────────────────────────────────────────────
+    TopicTab(
+      title: 'Amputation Levels',
+      blocks: [
+        HeaderBlock('Lower Extremity Amputation Levels'),
+        TextBlock(
+          'Amputation levels are classified from proximal to distal. Each '
+          'level carries different implications for healing, prosthetic fitting, '
+          'functional outcome, and energy expenditure.',
+          isIntro: true,
+        ),
+        TableBlock(
+          title: 'LE Amputation Levels (Proximal to Distal)',
+          columns: ['Level', 'Description', 'Key Features'],
+          rows: [
+            ['Hemipelvectomy', 'Removal of entire LE including half the pelvis', 'Most proximal LE amputation; rarely performed; pelvic tumors'],
+            ['Hip disarticulation', 'Through the hip joint', 'No residual femoral lever arm; significant prosthetic challenges'],
+            ['Transfemoral (AKA)', 'Through femoral shaft, above the knee', 'Loss of anatomic knee; energy expenditure 60-100% above normal'],
+            ['Knee disarticulation', 'Through the knee joint', 'Excellent end-bearing; bulbous distal end; long lever arm'],
+            ['Transtibial (BKA)', 'Through tibia and fibula, below the knee', 'Preserves the knee; most common major LE amputation for prosthetic rehab'],
+            ['Syme amputation', 'Ankle disarticulation with heel pad preservation', 'Allows limited end-bearing; requires patent posterior tibial artery'],
+            ['Chopart', 'Through talonavicular and calcaneocuboid joints', 'Preserves hindfoot; risk of equinovarus without tendon balancing'],
+            ['Lisfranc', 'Through tarsometatarsal joints', 'Preserves hindfoot and midfoot; may require AFO for push-off'],
+            ['Transmetatarsal', 'Through metatarsal shafts', 'Good functional outcome; shoe filler often sufficient'],
+            ['Ray resection', 'Removal of toe and corresponding metatarsal', 'Narrows forefoot; minimal gait impact with single ray'],
+            ['Toe amputation', 'Removal of one or more toes', 'Most common amputation overall; great toe loss most significant'],
+          ],
+          headerColor: Colors.indigo,
+        ),
+        PearlBlock(
+          'Board Pearl',
+          'Toe amputation is the most common amputation procedure overall. '
+          'Among major amputations, transtibial (BKA) is most important for '
+          'prosthetic rehab because it preserves the knee -- ~90% of TT amputees '
+          'achieve prosthetic walking vs only ~25% of geriatric vascular TF amputees.',
+        ),
+        HeaderBlock('Transtibial Amputation - Optimal Residual Limb'),
+        BulletCardBlock(
+          title: 'TT Residual Limb Considerations',
+          themeColor: Colors.blue,
+          backgroundColor: const Color(0xFFE3F2FD),
+          points: [
+            'Ideal tibial length: 12-15 cm retained',
+            'Fibula cut 1-2 cm shorter than tibia to prevent distal prominence',
+            'Anterior tibial crest beveled to reduce pressure on overlying skin',
+            'Avoid distal third of tibia (poorest soft tissue coverage)',
+            'Need 17-22 cm clearance between residual limb end and ground for prosthetic foot-pylon system',
+          ],
+        ),
+        HeaderBlock('Transfemoral Amputation Considerations'),
+        BulletCardBlock(
+          title: 'TF Residual Limb Considerations',
+          themeColor: Colors.deepOrange,
+          backgroundColor: const Color(0xFFFBE9E7),
+          points: [
+            'Longer residual limb is generally preferable (greater lever arm, more muscle retention)',
+            'Minimum ~10 cm above knee joint line needed for prosthetic fitting',
+            'Very short TF limbs (<5-7 cm below greater trochanter) function like hip disarticulations',
+            'Insufficient lever arm for effective prosthetic control with very short limbs',
+          ],
+        ),
+        HeaderBlock('Knee Disarticulation'),
+        TableBlock(
+          title: 'Knee Disarticulation: Advantages vs Disadvantages',
+          columns: ['Advantages', 'Disadvantages'],
+          rows: [
+            ['Excellent end-bearing surface (femoral condyles)', 'Bulbous distal end creates cosmetic/fitting challenges'],
+            ['Long lever arm for prosthetic control', 'Knee center of prosthetic knee is distal to contralateral knee'],
+            ['Easier donning/doffing (self-suspending shape)', 'Prosthetic knee options more limited than shorter TF limbs'],
+            ['Preserves femoral muscle attachments', 'Leg length discrepancy with prosthetic knee added distally'],
+            ['Good proprioceptive feedback via intact condyles', ''],
+          ],
+          headerColor: Colors.teal,
+        ),
+        HeaderBlock('Upper Extremity Amputation Levels'),
+        TableBlock(
+          title: 'UE Amputation Levels (Proximal to Distal)',
+          columns: ['Level', 'Description', 'Prosthetic Implications'],
+          rows: [
+            ['Forequarter (interscapulothoracic)', 'Removal of entire UE including scapula and lateral clavicle', 'Most proximal UE amputation; primarily cosmetic'],
+            ['Shoulder disarticulation', 'Through the glenohumeral joint', 'Very limited prosthetic function'],
+            ['Transhumeral (AEA)', 'Through the humeral shaft, above the elbow', 'Loss of anatomic elbow; dual-cable body-powered system needed'],
+            ['Elbow disarticulation', 'Through the elbow joint', 'Preserves humeral rotation; self-suspending; cosmetic length issue'],
+            ['Transradial (BEA)', 'Through radius and ulna, below the elbow', 'Preserves elbow; MOST FUNCTIONAL level for prosthetic use'],
+            ['Wrist disarticulation', 'Through the wrist joint', 'Excellent forearm rotation; limited space for wrist unit'],
+            ['Transcarpal (partial hand)', 'Through the carpal bones', 'Preserves some wrist function'],
+            ['Finger amputation', 'Through the phalanges', 'Thumb loss is most functionally significant'],
+          ],
+          headerColor: Colors.deepPurple,
+        ),
+        PearlBlock(
+          'Board Pearl',
+          'Trauma is the leading cause of UPPER extremity amputation (unlike '
+          'LE, where vascular disease predominates). The transradial level is '
+          'the most functional UE amputation level because it preserves the '
+          'elbow, provides good lever arm, and retains forearm rotation.',
+        ),
+        PearlBlock(
+          'Board Pearl',
+          'Syme amputation requires a patent posterior tibial artery. Despite '
+          'being more proximal than Chopart or Lisfranc, it is often more '
+          'energy-efficient because midfoot amputations frequently develop '
+          'equinovarus contracture that impairs function.',
+        ),
+      ],
+    ),
+
+    // ─────────────────────────────────────────────
+    // TAB 7: Level Selection & MESS
+    // ─────────────────────────────────────────────
+    TopicTab(
+      title: 'Level Selection & MESS',
+      blocks: [
+        HeaderBlock('Amputation Level Selection Principles'),
+        TextBlock(
+          'The decision regarding amputation level balances maximizing healing '
+          'potential (favors proximal) versus maximizing functional outcome '
+          '(favors distal to preserve joints and lever arm).',
+          isIntro: true,
+        ),
+        TableBlock(
+          title: 'Fundamental Decision-Making Principles',
+          columns: ['Principle', 'Clinical Application'],
+          rows: [
+            ['Preserve length whenever possible', 'Longer residual limbs provide better lever arms and retain more musculature'],
+            ['Preserve joints whenever possible', 'Knee preservation is the single most important factor for prosthetic walking success'],
+            ['Ensure adequate tissue perfusion', 'TcPO2 >40 mmHg at proposed level predicts healing'],
+            ['Provide adequate soft tissue coverage', 'Muscle and skin flaps must cover bone end without tension'],
+            ['Preserve functional muscle attachments', 'Myodesis or myoplasty secures muscles to bone for active control'],
+            ['Create a durable, pain-free residual limb', 'Free of adherent scars, neuromas, bone spurs, bony prominences'],
+          ],
+          headerColor: Colors.blue,
+        ),
+        HeaderBlock('Knee Preservation - The Critical Decision'),
+        TableBlock(
+          title: 'BKA vs AKA Comparison',
+          columns: ['Factor', 'Transtibial (BKA)', 'Transfemoral (AKA)'],
+          rows: [
+            ['Prosthetic walking success rate', '~90% (overall); higher in traumatic', '~25% (geriatric vascular)'],
+            ['Energy cost increase', '~25-40% above normal', '~60-100% above normal'],
+            ['Healing rate', 'Lower in vascular patients', 'Higher in vascular patients'],
+            ['Rehabilitation potential', 'Substantially better', 'Substantially worse'],
+          ],
+          headerColor: Colors.green,
+        ),
+        PearlBlock(
+          'Board Pearl',
+          'Knee preservation is the single most important factor for prosthetic '
+          'rehabilitation success. ~90% of transtibial amputees achieve prosthetic '
+          'walking vs only ~25% of geriatric vascular transfemoral amputees. Every '
+          'effort should be made to preserve the knee when tissue perfusion is adequate.',
+        ),
+        HeaderBlock('Tissue Perfusion Assessment'),
+        TableBlock(
+          title: 'Methods for Predicting Healing',
+          columns: ['Assessment Method', 'Threshold for Predicted Healing'],
+          rows: [
+            ['Transcutaneous oxygen pressure (TcPO2)', '>40 mmHg predicts healing; <20 mmHg predicts failure'],
+            ['Ankle-brachial index (ABI)', '>0.5 suggests adequate perfusion for TTA healing'],
+            ['Skin perfusion pressure', '>30 mmHg associated with healing'],
+            ['Clinical assessment', 'Skin color, temperature, capillary refill, bleeding at incision'],
+          ],
+          headerColor: Colors.red,
+        ),
+        PearlBlock(
+          'Board Pearl',
+          'TcPO2 >40 mmHg predicts healing at the proposed amputation level. '
+          'TcPO2 <20 mmHg predicts failure. This is the most commonly tested '
+          'perfusion assessment threshold.',
+        ),
+        HeaderBlock('Impact of Fixed Flexion Contractures'),
+        BulletCardBlock(
+          title: 'Contracture Thresholds for Level Selection',
+          themeColor: Colors.orange,
+          backgroundColor: const Color(0xFFFFF3E0),
+          points: [
+            'Hip flexion contracture >15 degrees: makes TT prosthetic fitting extremely difficult',
+            'Knee flexion contracture >15 degrees: renders TT prosthesis unusable (foot cannot be loaded properly)',
+            'Knee flexion contracture >45 degrees: associated with stump healing failure at TT level',
+            'Patients with knee flexion contractures >15 degrees often better served by TF amputation',
+          ],
+        ),
+        HeaderBlock('Mangled Extremity Severity Score (MESS)'),
+        TextBlock(
+          'The MESS is a clinical scoring system to assist surgeons in deciding '
+          'between limb salvage and primary amputation following severe extremity '
+          'trauma. It is the most widely used scoring system for this purpose.',
+        ),
+        TableBlock(
+          title: 'MESS Score Components',
+          columns: ['Component', 'Points', 'Criteria'],
+          rows: [
+            ['Skeletal/soft tissue injury', '1', 'Low energy (stab, simple fracture, civilian GSW)'],
+            ['', '2', 'Medium energy (open or multiple fractures, dislocation)'],
+            ['', '3', 'High energy (high speed MVA or rifle GSW)'],
+            ['', '4', 'Very high energy (high speed trauma + gross contamination)'],
+            ['Limb ischemia', '1', 'Reduced/absent pulses but normal perfusion'],
+            ['', '2', 'Pulseless, paresthesias, diminished cap refill'],
+            ['', '3', 'Cool, paralyzed, insensate, numb'],
+            ['', '*', 'DOUBLE score if ischemia >6 hours'],
+            ['Shock', '0', 'SBP consistently >90 mmHg'],
+            ['', '1', 'Transient hypotension'],
+            ['', '2', 'Persistent hypotension'],
+            ['Age', '0', '<30 years'],
+            ['', '1', '30-50 years'],
+            ['', '2', '>50 years'],
+          ],
+          headerColor: Colors.red,
+        ),
+        PearlBlock(
+          'Board Pearl',
+          'MESS score >=7 predicts the need for amputation with high specificity '
+          '(100% amputation rate in original validation). The ischemia score is '
+          'DOUBLED if ischemia has been present >6 hours, reflecting the critical '
+          'importance of revascularization timing.',
+        ),
+        BulletCardBlock(
+          title: 'MESS Interpretation',
+          themeColor: Colors.red,
+          backgroundColor: const Color(0xFFFFEBEE),
+          points: [
+            'MESS score >=7: amputation recommended (100% amputation rate in original study)',
+            'MESS score <7: limb salvage may be attempted',
+            'Ischemia score is DOUBLED if ischemia >6 hours',
+            'Four components: skeletal/soft tissue injury, limb ischemia, shock, age',
+            'LEAP study: no single scoring system reliably predicts amputation with both high sensitivity and specificity',
+            'Clinical judgment remains essential alongside MESS scoring',
+          ],
+        ),
       ],
     ),
   ],

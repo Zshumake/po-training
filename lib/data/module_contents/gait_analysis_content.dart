@@ -150,6 +150,13 @@ final gaitAnalysisContent = TopicData(
           'heel kicks laterally (external rotation issue). Whips occur at the '
           'initiation of knee flexion in preswing/initial swing.',
         ),
+        PearlBlock(
+          'Board Pearl',
+          'Circumduction is the most common transfemoral prosthetic gait deviation. '
+          'Vaulting is the most energy-consuming compensation. Abducted gait '
+          '(wide-based walking) can result from a prosthesis that is too long, '
+          'lateral wall discomfort, or inadequate socket alignment.',
+        ),
         BulletCardBlock(
           title: 'Key Transfemoral Alignment Concepts',
           themeColor: Colors.amber,
@@ -364,6 +371,101 @@ final gaitAnalysisContent = TopicData(
           'K0 patients do not receive functional prostheses. K3/K4 patients '
           'qualify for energy-storing feet and microprocessor knees. The '
           'prescribing physician must document the K-level.',
+        ),
+        PearlBlock(
+          'Board Pearl',
+          'K-level is based on FUNCTIONAL POTENTIAL, not just current ability. '
+          'A fit 45-year-old who just had a traumatic BKA may be classified K3 '
+          '(community ambulator) even before receiving a prosthesis, based on '
+          'expected recovery trajectory.',
+        ),
+      ],
+    ),
+
+    // ─────────────────────────────────────────────
+    // TAB 5: Instrumented Gait Analysis
+    // ─────────────────────────────────────────────
+    TopicTab(
+      title: 'Instrumented Gait Analysis',
+      blocks: [
+        HeaderBlock('Instrumented Gait Analysis'),
+        TextBlock(
+          'Instrumented gait analysis provides objective, quantitative measurement '
+          'of gait parameters that supplements clinical (observational) gait '
+          'analysis. Understanding the components and their measurements is '
+          'board-relevant.',
+          isIntro: true,
+        ),
+        TableBlock(
+          title: 'Components of Instrumented Gait Analysis',
+          columns: ['Component', 'What It Measures'],
+          rows: [
+            ['Motion capture (kinematics)', 'Joint angles and segment positions in three dimensions'],
+            ['Force plates (kinetics)', 'Ground reaction forces in three planes'],
+            ['Electromyography (EMG)', 'Timing and relative intensity of muscle activation'],
+            ['Metabolic cart', 'Oxygen consumption and energy expenditure'],
+            ['Pedobarography', 'Plantar pressure distribution'],
+          ],
+          headerColor: Colors.blueGrey,
+        ),
+        PearlBlock(
+          'Board Pearl',
+          'Marker-based optoelectronic systems (e.g., Vicon, Qualisys) remain '
+          'the gold standard for 3D kinematic analysis. Reflective markers are '
+          'placed on anatomical landmarks and tracked by multiple infrared cameras.',
+        ),
+        HeaderBlock('Joint Kinetics Definitions'),
+        TableBlock(
+          title: 'Key Kinetic Definitions',
+          columns: ['Term', 'Definition'],
+          rows: [
+            ['Joint moment (torque)', 'Net rotational force about a joint; product of internal muscle force and its moment arm'],
+            ['Joint power', 'Rate of energy generation or absorption at a joint; product of moment and angular velocity'],
+            ['Positive power', 'Concentric muscle contraction; energy is generated'],
+            ['Negative power', 'Eccentric muscle contraction; energy is absorbed'],
+          ],
+          headerColor: Colors.deepPurple,
+        ),
+        TableBlock(
+          title: 'Major Power Events in Gait',
+          columns: ['Power Event', 'Joint', 'Phase', 'Type', 'Clinical Significance'],
+          rows: [
+            ['H1', 'Hip', 'Loading response', 'Absorption (eccentric)', 'Gluteus maximus controls hip flexion'],
+            ['H3', 'Hip', 'Preswing', 'Generation (concentric)', 'Iliopsoas advances the limb'],
+            ['K1', 'Knee', 'Loading response', 'Absorption (eccentric)', 'Quadriceps absorb shock'],
+            ['K3', 'Knee', 'Preswing', 'Absorption (eccentric)', 'Quadriceps control rapid knee flexion'],
+            ['A1', 'Ankle', 'Midstance', 'Absorption (eccentric)', 'Plantar flexors control tibial advancement'],
+            ['A2', 'Ankle', 'Preswing', 'Generation (concentric)', 'Plantar flexors generate push-off (LARGEST power burst)'],
+          ],
+          headerColor: Colors.red,
+        ),
+        PearlBlock(
+          'Board Pearl',
+          'The A2 power burst at the ankle during preswing (push-off) is the '
+          'single largest power event in gait and generates ~80% of the energy '
+          'for forward propulsion. The ankle plantar flexors are therefore the '
+          'most important muscle group for energy-efficient walking.',
+        ),
+        HeaderBlock('Anterior-Posterior Ground Reaction Force'),
+        BulletCardBlock(
+          title: 'AP GRF Components',
+          themeColor: Colors.green,
+          backgroundColor: const Color(0xFFE8F5E9),
+          points: [
+            'Braking force (posteriorly directed): occurs during loading response and early midstance',
+            'Propulsive force (anteriorly directed): occurs during terminal stance and preswing (push-off)',
+            'In normal symmetric gait, braking impulse of one limb equals propulsive impulse of the other',
+            'Prosthetic limbs typically generate reduced peak vertical forces and braking forces vs intact limb',
+            'Chronic overloading of the intact (sound) limb may contribute to accelerated joint degeneration',
+            'Greater knee adduction moment on intact side = risk factor for medial compartment OA',
+          ],
+        ),
+        PearlBlock(
+          'Board Pearl',
+          'GRF vector position relative to joint centers determines joint moments. '
+          'GRF posterior to knee = flexion moment (quads needed). GRF anterior to '
+          'knee = extension moment (passive stability). In TF prosthetics, the socket '
+          'is aligned so GRF passes anterior to the prosthetic knee axis for stance stability.',
         ),
       ],
     ),

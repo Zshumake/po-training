@@ -506,6 +506,122 @@ final spinalOrthosesContent = TopicData(
           'immature patients (Risser 0-2) with curves 25-40 degrees. Curves >45 degrees '
           'generally require surgical consideration.',
         ),
+
+        // --- Providence Brace ---
+        ComparisonCardBlock(
+          title: 'Providence Brace (Nighttime Only)',
+          themeColor: Colors.deepPurple,
+          backgroundColor: const Color(0xFFEDE7F6),
+          icon: Icons.nightlight_round,
+          description:
+              'A nighttime-only scoliosis orthosis that uses pads and straps adjusted '
+              'to the specific curve pattern. Research has demonstrated equal effectiveness '
+              'to the Boston fulltime brace for female adolescent idiopathic scoliosis.',
+          keyPoints: [
+            'Nighttime-only wear — worn during sleep only',
+            'Pads and straps adjusted to the patient\'s specific curve pattern',
+            'Equal effectiveness to the Boston fulltime brace across all curve subtypes',
+            'Dramatically improved quality of life and compliance vs fulltime bracing',
+            'Nighttime-only wear eliminates daytime brace use during school and social activities',
+            'Significant board relevance: nighttime brace can equal fulltime brace outcomes',
+          ],
+        ),
+
+        // --- BrAIST Trial ---
+        HeaderBlock('BrAIST Trial (Landmark Scoliosis Evidence)'),
+        TextBlock(
+          'The Bracing in Adolescent Idiopathic Scoliosis Trial (BrAIST) is the landmark '
+          'study in scoliosis bracing, published in the New England Journal of Medicine '
+          'in 2013. This multicenter trial provided Level I evidence for bracing effectiveness '
+          'and was stopped early due to a significant treatment effect.',
+        ),
+        BulletCardBlock(
+          title: 'BrAIST Trial Key Results',
+          themeColor: const Color(0xFF1565C0),
+          backgroundColor: const Color(0xFFE3F2FD),
+          points: [
+            '242 patients analyzed (116 randomized + 126 preference-based cohort)',
+            'Compared bracing vs observation in skeletally immature patients with moderate AIS',
+            'Trial stopped early (January 2013) due to significant treatment effect',
+            'Success rate (curve not progressing to 50-degree surgical threshold):',
+            'Bracing: 72% success vs Observation: 48% success',
+            'Clear dose-response relationship established between wear time and success',
+          ],
+        ),
+        TableBlock(
+          title: 'BrAIST Dose-Response Data',
+          columns: ['Daily Brace Wear', 'Success Rate'],
+          rows: [
+            ['0-6 hours/day', '42%'],
+            ['6-12 hours/day', '~60%'],
+            ['12.9+ hours/day', '90-93%'],
+            ['13+ hours/day', '90-93%'],
+          ],
+          headerColor: const Color(0xFF1565C0),
+        ),
+        PearlBlock(
+          'Board Pearl — BrAIST Trial',
+          'The BrAIST dose-response data is highly board-relevant. Overall success: '
+          'bracing 72% vs observation 48%. With 13+ hours/day of wear, success rate '
+          'reaches 90-93%. Compliance is the single most important modifiable factor '
+          'in bracing outcomes. The benefit is directly proportional to wearing time.',
+        ),
+
+        // --- Risser Sign ---
+        HeaderBlock('Risser Sign Staging'),
+        TextBlock(
+          'The Risser sign is a radiographic assessment of skeletal maturity based on '
+          'the degree of ossification of the iliac apophysis. It is fundamental to '
+          'scoliosis management and bracing decisions.',
+        ),
+        TableBlock(
+          title: 'Risser Sign Stages',
+          columns: ['Risser Grade', 'Iliac Apophysis Ossification', 'Skeletal Maturity'],
+          rows: [
+            ['0', 'No ossification', 'Immature (highest growth potential)'],
+            ['1', '0-25% ossification', 'Immature'],
+            ['2', '25-50% ossification', 'Immature'],
+            ['3', '50-75% ossification', 'Approaching maturity'],
+            ['4', '75-100% ossification (not fused)', 'Near mature'],
+            ['5', 'Complete ossification and fusion to ilium', 'Mature (no remaining growth)'],
+          ],
+          headerColor: Colors.deepPurple,
+        ),
+        BulletCardBlock(
+          title: 'Risser Sign Clinical Significance',
+          themeColor: Colors.deepPurple,
+          backgroundColor: const Color(0xFFEDE7F6),
+          points: [
+            'Risser 0-2: bracing IS indicated (significant remaining growth)',
+            'Risser 3: transitional — bracing may still be appropriate',
+            'Risser 4-5: bracing is generally NOT effective (little or no remaining growth)',
+            'Maturity endpoint: Risser 4, or 2+ years post-menarche in females',
+            'Risser 0 with curves \u226540\u00B0: 70-100% risk of progression despite bracing',
+            'High-risk Risser 0 patients may require early surgical consideration',
+          ],
+        ),
+
+        // --- Cobb Angle Thresholds ---
+        HeaderBlock('Cobb Angle Thresholds'),
+        TableBlock(
+          title: 'Cobb Angle Decision Thresholds',
+          columns: ['Cobb Angle', 'Management'],
+          rows: [
+            ['< 25\u00B0', 'Observation with serial radiographs every 4-6 months'],
+            ['25-40\u00B0 (Risser 0-2)', 'Bracing indicated'],
+            ['> 20\u00B0 with rapid progression (> 5\u00B0/visit)', 'Bracing may be initiated if > 2 years growth remaining'],
+            ['40-50\u00B0', 'Gray zone — conflicting evidence for bracing vs surgery'],
+            ['> 50\u00B0', 'Surgery generally indicated regardless of maturity'],
+          ],
+          headerColor: Colors.red,
+        ),
+        PearlBlock(
+          'Board Pearl — Cobb Angle Thresholds',
+          'The three critical Cobb angle thresholds: 25\u00B0 (initiate bracing), '
+          '40-50\u00B0 (surgical gray zone), and 50\u00B0 (surgery generally indicated). '
+          'These thresholds apply only in the context of skeletal immaturity — curve '
+          'magnitude alone does not dictate treatment without considering growth remaining.',
+        ),
       ],
     ),
 

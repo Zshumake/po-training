@@ -690,5 +690,428 @@ final prostheticComponentsContent = TopicData(
         ),
       ],
     ),
+
+    // ─────────────────────────────────────────────
+    // TAB 5: Energy Expenditure
+    // ─────────────────────────────────────────────
+    TopicTab(
+      title: 'Energy Expenditure',
+      blocks: [
+        HeaderBlock('Energy Expenditure in Amputee Ambulation'),
+        TextBlock(
+          'The metabolic cost of walking with a prosthesis increases with more '
+          'proximal amputation levels and with vascular (vs traumatic) etiology. '
+          'Two distinct measures are clinically important: oxygen consumption rate '
+          '(mL O2/kg/min) and oxygen cost (mL O2/kg/m). Amputees self-select '
+          'slower walking speeds to maintain tolerable metabolic rates.',
+          isIntro: true,
+        ),
+
+        // --- Comprehensive Energy Table ---
+        TableBlock(
+          title: 'Energy Expenditure by Amputation Level',
+          columns: ['Level', 'O2 Cost Increase', 'Speed vs Normal', 'Clinical Implication'],
+          rows: [
+            ['Unilateral Syme', 'Minimal', 'Minimal decrease', 'Lowest energy cost among amputations'],
+            ['Unilateral TT (traumatic)', '10-25%', '10-15% decrease', 'Most achieve community ambulation'],
+            ['Unilateral TT (vascular)', '20-40%', 'Moderately decreased', 'Limited community ambulation'],
+            ['Unilateral TF (traumatic)', '60-70%', '30-40% decrease', 'Community ambulation possible'],
+            ['Unilateral TF (vascular)', '65-100%', 'Significantly decreased', 'Household to limited community'],
+            ['Bilateral TT', '~41%', '20-30% decrease', 'Most can ambulate; assistive device often needed'],
+            ['Bilateral TF', '>200%', '>50% decrease', 'Often non-ambulatory with prostheses'],
+            ['Hip disarticulation', '100-200%', '>40% decrease', 'Very limited ambulation potential'],
+            ['Wheelchair (level)', 'Similar to normal walking', 'N/A', 'May be more efficient than prosthetic walking at higher levels'],
+          ],
+          headerColor: const Color(0xFFC62828),
+        ),
+        BulletCardBlock(
+          title: 'Key Energy Expenditure Concepts',
+          themeColor: const Color(0xFFC62828),
+          backgroundColor: const Color(0xFFFFEBEE),
+          points: [
+            'O2 consumption rate (mL/kg/min): metabolic demand per unit TIME',
+            'O2 cost (mL/kg/m): metabolic expense per unit DISTANCE (accounts for speed)',
+            'Amputees self-select slower speeds to keep O2 consumption rate tolerable',
+            'Per-minute rate may appear near-normal but per-meter cost is elevated',
+            'Vascular amputees have HIGHER energy costs than traumatic at SAME level',
+            'Hierarchy: Syme < unilateral TT < bilateral TT < unilateral TF < bilateral TF',
+          ],
+        ),
+
+        // --- Metabolic Comparisons ---
+        HeaderBlock('Metabolic Cost Comparisons'),
+        BulletCardBlock(
+          title: 'Prosthetic Walking vs Alternatives',
+          themeColor: const Color(0xFF1565C0),
+          backgroundColor: const Color(0xFFE3F2FD),
+          points: [
+            'Wheelchair propulsion on level ground: similar to or slightly lower than normal walking',
+            'For bilateral TF: wheelchair may be MORE energy-efficient than prosthetic ambulation',
+            'Crutch walking (swing-through): requires considerable UE strength and CV fitness',
+            'Crutch walking may demand energy comparable to or exceeding prosthetic ambulation',
+          ],
+        ),
+        HeaderBlock('Impact of Advanced Components on Energy Cost'),
+        BulletCardBlock(
+          title: 'Microprocessor Knees (MPK) Energy Benefits',
+          themeColor: Colors.deepPurple,
+          backgroundColor: const Color(0xFFEDE7F6),
+          points: [
+            'C-Leg: significant reductions in O2 consumption at typical and fast walking speeds',
+            'Rheo Knee: 5% metabolic rate reduction vs Mauch Knee; 3% reduction vs C-Leg',
+            'MPK users show increased physical activity in free-living environments',
+            'Reduced cognitive demand during ambulation (less concentration needed)',
+          ],
+        ),
+        BulletCardBlock(
+          title: 'Powered Ankle-Foot Systems (BiOM/Empower)',
+          themeColor: Colors.teal,
+          backgroundColor: const Color(0xFFE0F2F1),
+          points: [
+            '16% decrease in metabolic rate in highly active individuals vs dynamic-response feet',
+            'Significant metabolic cost reduction at speeds >0.75 m/s',
+            '15% faster self-selected walking speed',
+            'Not all patients benefit equally; outcomes are mixed across population',
+          ],
+        ),
+        PearlBlock(
+          'Board Pearl - Energy & Components',
+          'Microprocessor knees reduce O2 consumption and cognitive demands. '
+          'Rheo Knee: 5% reduction vs Mauch. Powered ankles (BiOM/Empower) '
+          'reduce metabolic rate by 16% in highly active users. For bilateral TF '
+          'amputees, wheelchair may be more energy-efficient than prosthetic ambulation.',
+        ),
+      ],
+    ),
+
+    // ─────────────────────────────────────────────
+    // TAB 6: K-Levels & Classification
+    // ─────────────────────────────────────────────
+    TopicTab(
+      title: 'K-Levels & Classification',
+      blocks: [
+        HeaderBlock('Medicare K-Level Classification System'),
+        TextBlock(
+          'The Medicare Functional Classification Level (MFCL) system, known as '
+          'the K-level system, classifies amputee functional ability and determines '
+          'prosthetic component eligibility for Medicare reimbursement. K-levels '
+          'range from K0 (no ambulation) to K4 (high-impact activity).',
+          isIntro: true,
+        ),
+        TableBlock(
+          title: 'K-Level Definitions & Component Eligibility',
+          columns: ['K-Level', 'Description', 'Components'],
+          rows: [
+            ['K0', 'No ability to ambulate or transfer with prosthesis', 'No prosthesis; may receive cosmetic cover'],
+            ['K1', 'Transfers or ambulation on level surfaces at fixed cadence', 'SACH foot, single-axis knee, manual-locking knee'],
+            ['K2', 'Traverses low-level environmental barriers (curbs, stairs)', 'Multiaxial foot, polycentric knee, MPK (since Sept 2024)'],
+            ['K3', 'Variable cadence; traverses most barriers; exercise demands', 'Dynamic-response feet, MPK, hydraulic stance/swing control'],
+            ['K4', 'Exceeds basic ambulation: high impact, stress, energy', 'Running/sport prostheses, highest technology components'],
+          ],
+          headerColor: const Color(0xFF4A148C),
+        ),
+
+        // --- K2 MPK Expansion ---
+        HeaderBlock('CMS K2 Microprocessor Knee Coverage (2024)'),
+        BulletCardBlock(
+          title: 'K2 MPK Coverage Expansion',
+          themeColor: Colors.deepPurple,
+          backgroundColor: const Color(0xFFEDE7F6),
+          points: [
+            'September 2024: CMS extended MPK coverage to K2 beneficiaries',
+            'Previously K2 patients were limited to non-microprocessor components',
+            'Based on evidence that MPKs reduce fall frequency even in lower-activity patients',
+            'Coverage criteria (ALL must be met):',
+            '  1. Electronic/microprocessor knee indicated for functional level 2',
+            '  2. Knee must have integrated stumble-recovery technology',
+            '  3. Beneficiary must manage daily charging requirements',
+            '  4. Beneficiary must understand and respond to error alerts',
+            'L-codes: L5856 (swing+stance), L5857 (swing only), L5858 (stance only)',
+          ],
+        ),
+
+        // --- K-Level Limitations ---
+        HeaderBlock('K-Level System Limitations'),
+        BulletCardBlock(
+          title: 'Known Limitations',
+          themeColor: const Color(0xFFE65100),
+          backgroundColor: const Color(0xFFFFF3E0),
+          points: [
+            'NO published validity or reliability evidence',
+            'Vague language and subjective assignment by clinician judgment',
+            '>50% of patients classified as high-functioning (K3/K4) in clinic exhibit LOW activity in community',
+            'Clinic-community discrepancy: clinic assessment frequently overestimates true function',
+            'Binary coverage decisions: small K-level differences create dramatic component access differences',
+            'No paired standardized assessment instrument',
+            'Acceptance driven by reimbursement policy, NOT scientific evidence',
+          ],
+        ),
+        PearlBlock(
+          'Board Pearl - K-Level System',
+          'K-levels determine prosthetic component eligibility and Medicare coverage. '
+          'As of September 2024, MPKs are covered for K2 ambulators (previously K3/K4 only) '
+          'with stumble recovery and patient ability to manage charging/alerts. The system '
+          'has NO published reliability or validity, and >50% of high-functioning patients '
+          'in clinic are low-functioning in the community.',
+        ),
+
+        // --- Functional Prognosis ---
+        HeaderBlock('Functional Prognosis by Amputation Level'),
+        BulletCardBlock(
+          title: 'Transtibial (Below-Knee) Prognosis',
+          themeColor: const Color(0xFF2E7D32),
+          backgroundColor: const Color(0xFFE8F5E9),
+          points: [
+            'Generally favorable for prosthetic ambulation',
+            'Most TT amputees achieve K2-K3; traumatic TT frequently achieve K3-K4',
+            'Energy expenditure: 10-25% above normal (traumatic); 20-40% (vascular)',
+            'Highest return-to-work rates among LE amputees',
+            'Knee preservation is the MOST CRITICAL determinant of favorable outcomes',
+          ],
+        ),
+        BulletCardBlock(
+          title: 'Transfemoral (Above-Knee) Prognosis',
+          themeColor: const Color(0xFFE65100),
+          backgroundColor: const Color(0xFFFFF3E0),
+          points: [
+            'Moderate prognosis; more dependent on etiology, age, comorbidities',
+            'Traumatic TF: often K2-K3; Vascular TF: typically K1-K2',
+            'Energy expenditure: 60-70% above normal (traumatic); 65-100% (vascular)',
+            'Loss of knee eliminates major proprioception and active control source',
+            'Requires mastery of prosthetic knee control for safe ambulation',
+          ],
+        ),
+        TableBlock(
+          title: 'Factors Modifying Prosthetic Prognosis',
+          columns: ['Factor', 'Favorable', 'Unfavorable'],
+          rows: [
+            ['Etiology', 'Traumatic', 'Vascular/diabetic'],
+            ['Age', 'Younger', 'Older (especially >80)'],
+            ['Cognitive status', 'Intact', 'Impaired'],
+            ['Motivation', 'High', 'Low/depressed'],
+            ['Comorbidities', 'Few/mild', 'Multiple/severe'],
+            ['Residual limb length', 'Long', 'Short'],
+            ['Contralateral limb', 'Intact', 'Compromised'],
+            ['Pre-amputation mobility', 'Community ambulatory', 'Non-ambulatory'],
+          ],
+          headerColor: const Color(0xFF283593),
+        ),
+        PearlBlock(
+          'Board Pearl - Functional Prognosis',
+          'Knee preservation is the single most important anatomical factor in '
+          'prosthetic prognosis. TT consistently outperforms TF in energy expenditure, '
+          'speed, functional level, and satisfaction. The combination of bilateral TF + '
+          'age >45 + vascular etiology carries the POOREST prosthetic prognosis.',
+        ),
+      ],
+    ),
+
+    // ─────────────────────────────────────────────
+    // TAB 7: Outcome Measures
+    // ─────────────────────────────────────────────
+    TopicTab(
+      title: 'Outcome Measures',
+      blocks: [
+        HeaderBlock('Amputee Outcome Measures'),
+        TextBlock(
+          'Validated outcome measures are essential for assessing prosthetic '
+          'function, predicting K-level classification, monitoring rehabilitation '
+          'progress, and justifying component prescription. Both performance-based '
+          'and patient-reported measures are tested on board exams.',
+          isIntro: true,
+        ),
+
+        // --- AMP ---
+        ComparisonCardBlock(
+          title: 'Amputee Mobility Predictor (AMP)',
+          themeColor: const Color(0xFF1565C0),
+          backgroundColor: const Color(0xFFE3F2FD),
+          icon: Icons.assessment,
+          description: '21-item performance-based assessment of ambulatory potential. '
+              'The AMPnoPRO version (without prosthesis) uniquely predicts K-level '
+              'BEFORE fitting.',
+          keyPoints: [
+            'AMPnoPRO: administered WITHOUT prosthesis — predicts pre-prosthetic potential',
+            'AMPPRO: administered WITH prosthesis — documents current function',
+            'Interrater reliability: ICC = 0.99 (EXCELLENT)',
+            'Intrarater reliability: ICC = 0.96-0.97',
+            'Concurrent validity with 6MWT: r = 0.82 (AMPPRO)',
+            'Distinguishes among ALL 4 Medicare K-levels',
+            'Negatively correlates with age (r = -0.69) and comorbidity (r = -0.43)',
+            'Can track functional progress during rehabilitation serially',
+          ],
+        ),
+
+        // --- PLUS-M ---
+        ComparisonCardBlock(
+          title: 'PLUS-M (Prosthetic Limb Users Survey of Mobility)',
+          themeColor: const Color(0xFF2E7D32),
+          backgroundColor: const Color(0xFFE8F5E9),
+          icon: Icons.poll,
+          description: 'Self-report measure of prosthetic mobility developed using '
+              'Item Response Theory (IRT). Available as 7-item, 12-item short '
+              'forms, or computer adaptive testing (CAT) version.',
+          keyPoints: [
+            'Test-retest reliability: ICC > 0.90 (excellent)',
+            'Convergent validity with PEQ-Mobility: r = 0.78',
+            'Convergent validity with ABC Scale: r = 0.81',
+            'Administration time: 2-3 minutes',
+            'Psychometrically SUPERIOR to LCI, LCI-5, PEQ-MS, and PMQ',
+            'IRT-based: precise measurement across full range of prosthetic mobility',
+            'CAT version adapts items to each respondent for maximum precision',
+          ],
+        ),
+
+        // --- ABC Scale ---
+        ComparisonCardBlock(
+          title: 'ABC Scale (Activities-Specific Balance Confidence)',
+          themeColor: const Color(0xFF4527A0),
+          backgroundColor: const Color(0xFFEDE7F6),
+          icon: Icons.balance,
+          description: '16-item self-report questionnaire rating confidence (0-100%) '
+              'in maintaining balance during specific ambulatory activities.',
+          keyPoints: [
+            'Test-retest reliability: ICC = 0.91 (excellent)',
+            'Internal consistency: Cronbach alpha = 0.95 (excellent)',
+            'Concurrent validity with 2-Minute Walk Test: r = 0.72',
+            'Concurrent validity with TUG: r = -0.70',
+            'Scores BELOW 67% = ELEVATED FALL RISK',
+            'Measures perceived balance CONFIDENCE, not actual balance ability',
+            'Part of ISPO COMPASS recommended outcome measure battery',
+            'Does NOT reliably discriminate by amputation level',
+          ],
+        ),
+
+        // --- 6MWT ---
+        ComparisonCardBlock(
+          title: '6-Minute Walk Test (6MWT)',
+          themeColor: const Color(0xFF00695C),
+          backgroundColor: const Color(0xFFE0F2F1),
+          icon: Icons.directions_walk,
+          description: 'Performance-based measure of functional walking capacity and '
+              'aerobic endurance. Patient walks as far as possible over 6 minutes.',
+          keyPoints: [
+            'Strong correlation with AMP: r = 0.82 (AMPPRO)',
+            'Correlates with oxygen consumption measures',
+            'Useful for differentiating K3 vs K4 functional levels',
+            'Reference values available stratified by amputation level and age',
+            'Sensitive to prosthetic component changes and rehab interventions',
+            'Part of COMPASS recommended outcome measure battery',
+          ],
+        ),
+
+        // --- TUG ---
+        ComparisonCardBlock(
+          title: 'Timed Up and Go (TUG)',
+          themeColor: const Color(0xFFE65100),
+          backgroundColor: const Color(0xFFFFF3E0),
+          icon: Icons.timer,
+          description: 'Measures basic functional mobility: stand from chair, walk '
+              '3 meters, turn, walk back, sit down. Time recorded in seconds.',
+          keyPoints: [
+            '<12 seconds: independent community ambulator',
+            '12-20 seconds: moderate functional mobility; may need assistive device',
+            '>30 seconds: dependent in most ADLs; significant fall risk',
+            'Amputee-specific cutoffs: 8.17 sec = 1+ falls/year; 9.25 sec = 2+ falls/year',
+            'CEILING EFFECT in higher-functioning amputees',
+            'Correlates with ABC Scale: r = -0.70',
+            'Quick, minimal equipment, widely available',
+          ],
+        ),
+
+        // --- L-Test ---
+        ComparisonCardBlock(
+          title: 'L-Test',
+          themeColor: const Color(0xFF6A1B9A),
+          backgroundColor: const Color(0xFFF3E5F5),
+          icon: Icons.turn_right,
+          description: 'Modified TUG using an L-shaped path (3m + 7m with 2 '
+              'directional changes). Designed to address TUG ceiling effect.',
+          keyPoints: [
+            'Greater walking distance provides wider measurement range',
+            'Two directional changes increase task complexity',
+            'Better discriminates higher-functioning patients',
+            'Validated specifically for lower limb amputee population',
+            'Part of ISPO COMPASS recommended outcome measure battery',
+            'Useful for evaluating MPK functional impact during complex tasks',
+          ],
+        ),
+
+        // --- SCS ---
+        ComparisonCardBlock(
+          title: 'Socket Comfort Score (SCS)',
+          themeColor: Colors.grey,
+          backgroundColor: const Color(0xFFF5F5F5),
+          icon: Icons.star_rate,
+          description: 'Single-item patient-reported outcome using 0-10 numeric '
+              'rating scale for socket comfort.',
+          keyPoints: [
+            '0 = most uncomfortable; 10 = most comfortable',
+            'Test-retest reliability: ICC = 0.63-0.79 (RELATIVELY POOR)',
+            'Expanded version (best, worst, average): ICC = 0.77-0.88',
+            'Neither version consistently reaches ICC 0.90 threshold',
+            'Best used for group-level comparisons or clinical screening',
+            'Despite limitations, widely used due to simplicity and face validity',
+            'Responsive to socket adjustments, repair, or replacement',
+          ],
+        ),
+
+        // --- Outcome Summary Table ---
+        HeaderBlock('Outcome Measure Quick Reference'),
+        TableBlock(
+          title: 'Performance-Based Measures',
+          columns: ['Measure', 'What It Assesses', 'Key Metric', 'Unique Value'],
+          rows: [
+            ['AMP', 'Ambulatory potential', 'Predicts K-level; 21 items', 'Pre-prosthetic prediction'],
+            ['6MWT', 'Walking endurance', 'Distance in meters/6 min', 'Endurance assessment'],
+            ['TUG', 'Basic functional mobility', 'Time in seconds', 'Quick screen; ceiling effect'],
+            ['L-Test', 'Advanced functional mobility', 'Time (L-shaped path)', 'Addresses TUG ceiling effect'],
+            ['10MWT', 'Walking speed', 'Speed in m/s', 'Differentiates K3 vs K4'],
+          ],
+          headerColor: const Color(0xFF1565C0),
+        ),
+        TableBlock(
+          title: 'Patient-Reported Outcome Measures (PROMs)',
+          columns: ['Measure', 'What It Assesses', 'Key Metric', 'Unique Value'],
+          rows: [
+            ['PLUS-M', 'Prosthetic mobility', 'T-score (IRT)', 'Superior to older scales'],
+            ['ABC Scale', 'Balance confidence', '0-100%', 'Fall risk: <67% = elevated'],
+            ['SCS', 'Socket comfort', '0-10 scale', 'Poor reliability (ICC 0.63-0.79)'],
+            ['Houghton', 'Prosthetic use patterns', '4 items', 'Quick use screening'],
+            ['PEQ', 'Prosthetic QoL', '10 scales/4 domains', 'Most comprehensive QoL'],
+            ['TAPES', 'Psychosocial adaptation', '3 domains', 'Psychological adjustment'],
+          ],
+          headerColor: const Color(0xFF2E7D32),
+        ),
+
+        // --- COMPASS Battery ---
+        BulletCardBlock(
+          title: 'ISPO COMPASS Recommended Battery (2021)',
+          themeColor: const Color(0xFF00838F),
+          backgroundColor: const Color(0xFFE0F7FA),
+          points: [
+            'Houghton Scale',
+            'PEQ-Mobility Subscale',
+            'PLUS-M',
+            'ABC Scale',
+            'AMP',
+            'CHAMP (Comprehensive High-Level Activity Mobility Predictor)',
+            'FSST (Four Square Step Test)',
+            'NBWT (Narrow Beam Walk Test)',
+            'L-Test',
+            '10-Meter Walk Test',
+            '6-Minute Walk Test',
+          ],
+        ),
+        PearlBlock(
+          'Board Pearl - Outcome Measures',
+          'AMP predicts K-level pre-prosthetically (ICC = 0.99). ABC Scale: '
+          '<67% = elevated fall risk (ICC = 0.91). PLUS-M is psychometrically '
+          'superior to LCI and PEQ-MS (ICC > 0.90). SCS has relatively POOR '
+          'reliability (ICC 0.63-0.79). 6MWT and TUG are performance-based '
+          'standards. L-Test addresses TUG ceiling effect.',
+        ),
+      ],
+    ),
   ],
 );

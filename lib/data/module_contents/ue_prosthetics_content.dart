@@ -151,6 +151,21 @@ final ueProstheticsContent = TopicData(
           'co-contraction switching or pattern recognition. However, they remain '
           'expensive, heavier than body-powered options, and require battery charging.',
         ),
+
+        // --- Multi-Articulating Hands Table ---
+        HeaderBlock('Commercially Available Multi-Articulating Hands'),
+        TableBlock(
+          title: 'Multi-Articulating Hands Comparison',
+          columns: ['Hand', 'Manufacturer', 'Key Features'],
+          rows: [
+            ['i-Limb Quantum', 'Ossur', 'Multiple grip patterns; gesture control; app-programmable'],
+            ['bebionic', 'Ottobock', '14 grip patterns; proportional speed; individual motors per finger'],
+            ['LUKE Arm', 'Mobius Bionics', 'Multiple simultaneous powered movements; wireless foot IMU control'],
+            ['TASKA Gen2', 'TASKA', 'Waterproof (IP67); individual finger control; durable'],
+            ['Michelangelo', 'Ottobock', 'Axial rotation wrist; 7 grip patterns; natural wrist movement'],
+          ],
+          headerColor: Colors.deepPurple,
+        ),
       ],
     ),
 
@@ -304,6 +319,57 @@ final ueProstheticsContent = TopicData(
           'UE prostheses. The dual-control cable system is used for transhumeral '
           'prostheses, where one cable serves two functions based on elbow lock state.',
         ),
+
+        // --- Wrist Units ---
+        HeaderBlock('Wrist Units'),
+        ComparisonCardBlock(
+          title: 'Friction Wrist Unit',
+          themeColor: Colors.teal,
+          backgroundColor: const Color(0xFFE0F2F1),
+          icon: Icons.rotate_right,
+          description: 'Allows the terminal device to be manually rotated (pronated or '
+              'supinated) and held in position by friction between internal components. '
+              'The degree of friction can be adjusted.',
+          keyPoints: [
+            'TD manually rotated and held by friction',
+            'Quick repositioning for different tasks',
+            'Friction adjustable to prevent inadvertent rotation',
+            'May rotate under heavy load if friction is insufficient',
+          ],
+        ),
+        ComparisonCardBlock(
+          title: 'Locking Wrist Unit',
+          themeColor: Colors.indigo,
+          backgroundColor: const Color(0xFFE8EAF6),
+          icon: Icons.lock,
+          description: 'Uses a positive locking mechanism (typically button-release) to '
+              'hold the TD in discrete rotational positions. Only rotates when the lock '
+              'is deliberately released.',
+          keyPoints: [
+            'Positive locking mechanism holds TD securely',
+            'Button-release to change rotational position',
+            'Will NOT rotate under load (secure hold)',
+            'Appropriate for heavy-duty tasks',
+            'Slower repositioning; limited to preset positions',
+          ],
+        ),
+        BulletCardBlock(
+          title: 'Quick-Disconnect Wrist Unit',
+          themeColor: Colors.orange,
+          backgroundColor: const Color(0xFFFFF3E0),
+          points: [
+            'Allows rapid interchange of terminal devices',
+            'Patient can switch between hook (work) and hand (social) in seconds',
+            'Increases overall prosthetic versatility and use',
+            'Interchangeable wrist units are a key practical advantage',
+          ],
+        ),
+        PearlBlock(
+          'Board Pearl',
+          'Friction wrist units allow quick TD repositioning but may rotate under load. '
+          'Locking wrist units hold securely under load but require deliberate release '
+          'to reposition. Quick-disconnect units allow rapid TD interchange.',
+        ),
       ],
     ),
 
@@ -427,6 +493,26 @@ final ueProstheticsContent = TopicData(
             'Enables simultaneous multi-joint control with pattern recognition',
             'May be combined with RPNI (Regenerative Peripheral Nerve Interface)',
           ],
+        ),
+        BulletCardBlock(
+          title: 'TMR Pain Management Benefits',
+          themeColor: Colors.deepOrange,
+          backgroundColor: const Color(0xFFFBE9E7),
+          points: [
+            'Effective for prevention AND treatment of phantom limb pain',
+            'Effective for residual limb pain reduction',
+            '9 out of 10 patients experience improved or resolved phantom pain after delayed TMR',
+            'Acute TMR (within 14 days of amputation) now considered standard of care at many centers',
+            'Evidence supports dual indication: improved prosthetic control AND pain reduction',
+            'TMR has evolved from purely prosthetic procedure to dual-purpose intervention',
+          ],
+        ),
+        PearlBlock(
+          'Board Pearl',
+          'TMR is now a dual-purpose intervention: it improves prosthetic control AND '
+          'reduces neuropathic pain. Acute TMR at initial amputation is becoming standard '
+          'of care. Board questions may test both the prosthetic control and pain '
+          'reduction indications for TMR.',
         ),
 
         // --- Comparison Table ---
@@ -586,6 +672,35 @@ final ueProstheticsContent = TopicData(
             'Elbow extension: passive (gravity-assisted) in body-powered systems',
             'Forearm lift assist: spring mechanism reduces cable force needed for elbow flexion',
             'Longer residual limb = better lever arm and rotational control',
+          ],
+        ),
+        NumberedListBlock([
+          MapEntry('Position the elbow',
+              'With elbow unlocked, GH flexion + biscapular abduction pulls cable to flex elbow to desired angle'),
+          MapEntry('Lock the elbow',
+              'Shoulder depression + extension + abduction ("Down, Back, Out") toggles alternating lock ON'),
+          MapEntry('Operate the TD',
+              'With elbow locked, same cable pull now operates the terminal device'),
+          MapEntry('Reposition',
+              'Toggle lock OFF, gravity/manual extension, cable-flex to new angle, re-lock'),
+        ]),
+        PearlBlock(
+          'Board Pearl',
+          'There is NO cable-powered elbow extension in body-powered transhumeral '
+          'prostheses. Extension relies on gravity or manual repositioning. A forearm '
+          'lift assist (spring) can reduce force needed for cable-powered flexion.',
+        ),
+
+        // --- Wrist Disarticulation ---
+        BulletCardBlock(
+          title: 'Wrist Disarticulation',
+          themeColor: Colors.cyan,
+          backgroundColor: const Color(0xFFE0F7FA),
+          points: [
+            'Preserves full forearm length with excellent pronation/supination',
+            'Bulbous distal end (flared epicondyles) provides natural self-suspension',
+            'Socket must accommodate the wider distal end',
+            'Longer lever arm provides superior rotational control',
           ],
         ),
 

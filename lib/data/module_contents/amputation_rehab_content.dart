@@ -229,6 +229,114 @@ final amputationRehabContent = TopicData(
           'For BKA: fibula is cut 2-3 cm shorter than tibia, and the tibia is '
           'beveled anteriorly. For AKA: adductor myodesis maintains femoral adduction.',
         ),
+        TableBlock(
+          title: 'Myodesis vs Myoplasty Comparison',
+          columns: ['Feature', 'Myodesis', 'Myoplasty'],
+          rows: [
+            ['Definition', 'Muscles sutured directly to bone through drill holes', 'Muscles sutured to each other (agonist to antagonist)'],
+            ['Anchor point', 'Bone', 'Opposing muscle group'],
+            ['Muscle tension', 'Maintained at physiologic resting length', 'Less consistent; muscles may atrophy more'],
+            ['Residual limb shaping', 'Firm, stable envelope resisting displacement', 'Softer distal padding; adequate for lower-demand'],
+            ['Preferred use', 'TF amputation (hip abductors/extensors to femur); active patients', 'TT amputation (gastrosoleus flap); less active patients'],
+            ['Prosthetic implications', 'Better active control; stabilizes bone in soft tissue', 'Adequate for most TT prosthetic users'],
+          ],
+          headerColor: const Color(0xFF2E7D32),
+        ),
+        PearlBlock(
+          'Board Pearl — Myodesis Preserves Function',
+          'Myodesis (muscle-to-bone) maintains physiologic tension on severed muscles, '
+          'preserving contractile function and preventing atrophy. It is the preferred '
+          'technique for TF amputation, where hip adductors and extensors must remain '
+          'under tension to resist the abduction-flexion posture that hip flexors and '
+          'abductors would otherwise produce unopposed.',
+        ),
+        TableBlock(
+          title: 'Ertl Procedure Complication Profile',
+          columns: ['Complication', 'Rate'],
+          rows: [
+            ['Overall complications', 'Significantly higher than Burgess'],
+            ['Infection', '34%'],
+            ['Neuroma requiring excision', '18%'],
+            ['Heterotopic ossification requiring excision', '15%'],
+            ['Delayed union/nonunion of synostosis', '11%'],
+            ['Implant-related complications', '27%'],
+            ['Myodesis failure', '4%'],
+            ['Scar revision', '7%'],
+          ],
+          headerColor: const Color(0xFFE65100),
+        ),
+        PearlBlock(
+          'Board Pearl — Ertl vs Burgess',
+          'The Ertl procedure creates a tibiofibular bone bridge for distal weight '
+          'bearing and has shown higher return-to-duty rates in military populations '
+          '(46% vs 22%). However, its complication rate is significantly higher than '
+          'standard Burgess technique, including infection (34%), neuroma excision '
+          '(18%), and HO excision (15%). The TAOS RCT will provide definitive data.',
+        ),
+        HeaderBlock('Nerve Management — TMR and RPNI'),
+        TextBlock(
+          'Targeted Muscle Reinnervation (TMR) and Regenerative Peripheral Nerve '
+          'Interface (RPNI) represent paradigm-shifting surgical innovations for '
+          'preventing neuroma formation and phantom limb pain after amputation.',
+        ),
+        ComparisonCardBlock(
+          title: 'Targeted Muscle Reinnervation (TMR)',
+          themeColor: const Color(0xFF1565C0),
+          backgroundColor: const Color(0xFFE3F2FD),
+          icon: Icons.electrical_services,
+          description: 'TMR transfers severed peripheral nerve stumps to nearby motor '
+              'nerve entry points in residual muscles. Regenerating axons find '
+              'denervated motor end plates, preventing disorganized neuroma formation.',
+          keyPoints: [
+            'Originally developed for intuitive myoelectric prosthetic control',
+            'Pain prevention benefit was discovered subsequently',
+            'Requires accessible motor nerve targets nearby',
+            'Can serve as EMG signal source for myoelectric control',
+            'Dumanian RCT (N=28): greater phantom pain reduction vs standard neurectomy at 1 year',
+            'Prophylactic TMR at initial amputation: 27% symptomatic neuroma rate (lower than historical)',
+            'Secondary TMR for existing neuromas: ~90% near-complete pain resolution',
+          ],
+        ),
+        ComparisonCardBlock(
+          title: 'Regenerative Peripheral Nerve Interface (RPNI)',
+          themeColor: const Color(0xFF2E7D32),
+          backgroundColor: const Color(0xFFE8F5E9),
+          icon: Icons.healing,
+          description: 'RPNI wraps each transected nerve end in a small autologous free '
+              'muscle graft. The graft revascularizes and reinnervates, providing a '
+              'biologic target that absorbs regenerating nerve fibers.',
+          keyPoints: [
+            'Uses autologous free muscle graft — no nearby motor nerve needed',
+            'Simpler technique than TMR (muscle graft wrapping)',
+            'Can be applied to any nerve in any location',
+            'Prophylactic RPNI: 0% symptomatic neuroma (vs 13.3% controls)',
+            'Prophylactic RPNI: phantom limb pain 51.1% vs 91.1% controls',
+            'At latest follow-up: 97% free of neuroma pain and PLP',
+            'In oncology patients: 90% opioid discontinuation within 6 months (vs 50% controls)',
+          ],
+        ),
+        TableBlock(
+          title: 'TMR vs RPNI Comparison',
+          columns: ['Feature', 'TMR', 'RPNI'],
+          rows: [
+            ['Mechanism', 'Nerve-to-motor-point transfer', 'Nerve wrapped in free muscle graft'],
+            ['Requires nearby motor nerve', 'Yes', 'No (uses autologous muscle graft)'],
+            ['Myoelectric signal source', 'Yes (primary purpose originally)', 'Yes (emerging application)'],
+            ['Evidence for pain prevention', '1 RCT + prospective studies', 'Prospective cohort studies (no RCT yet)'],
+            ['Applicability', 'Requires accessible motor nerve targets', 'Any nerve in any location'],
+            ['Surgical complexity', 'Moderate (nerve coaptation under magnification)', 'Simpler technique (muscle graft wrapping)'],
+          ],
+          headerColor: const Color(0xFF4527A0),
+        ),
+        PearlBlock(
+          'Board Pearl — TMR and RPNI',
+          'TMR was originally developed for myoelectric prosthetic control but was '
+          'subsequently found to prevent neuroma and phantom limb pain. RPNI achieved '
+          '0% symptomatic neuroma incidence prophylactically (vs 13.3% controls) and '
+          '97% combined neuroma/PLP-free rate at latest follow-up. Both represent a '
+          'conceptual advance: providing a physiologic target for nerve regeneration '
+          'rather than suppressing it.',
+        ),
       ],
     ),
 
@@ -373,6 +481,35 @@ final amputationRehabContent = TopicData(
           'For TT amputees, never place a pillow under the knee — keep it extended. '
           'These are high-yield board concepts.',
         ),
+        TableBlock(
+          title: 'Common Contracture Patterns by Amputation Level',
+          columns: ['Level', 'Contracture', 'Muscles Responsible', 'Prevention'],
+          rows: [
+            ['Transtibial', 'Knee flexion', 'Hamstrings (gastrocnemius removed)', 'Knee extension positioning; avoid pillow under knee; prone lying'],
+            ['Transfemoral', 'Hip flexion', 'Iliopsoas (gluteus maximus detached/weakened)', 'Prone lying; hip extension stretching; avoid prolonged sitting'],
+            ['Transfemoral', 'Hip abduction', 'Tensor fasciae latae / IT band', 'Avoid abduction pillow; adduction stretching'],
+            ['Transfemoral', 'Hip external rotation', 'External rotators', 'Neutral positioning; avoid ER postures'],
+          ],
+          headerColor: const Color(0xFFC62828),
+        ),
+        TableBlock(
+          title: 'Critical Contracture Thresholds',
+          columns: ['Contracture', 'Threshold', 'Prosthetic Consequence'],
+          rows: [
+            ['Knee flexion >15 degrees', 'Makes TT prosthesis unusable', 'Cannot fully load prosthetic foot; dramatic energy cost increase'],
+            ['Knee flexion >45 degrees', 'Healing failure at TT level', 'Should undergo TF amputation instead'],
+            ['Hip flexion >15-20 degrees', 'Impairs TF prosthetic alignment', 'Socket cannot compensate adequately; increased lumbar lordosis'],
+            ['Hip abduction contracture', 'Widens prosthetic base', 'Increases lateral trunk bending and energy expenditure'],
+          ],
+          headerColor: const Color(0xFFBF360C),
+        ),
+        PearlBlock(
+          'Board Pearl — Knee Flexion Contracture Threshold',
+          'A knee flexion contracture greater than 15 degrees renders a transtibial '
+          'prosthesis unusable because the foot cannot be loaded in terminal stance. '
+          'A contracture greater than 45 degrees at the TT level indicates healing '
+          'failure and the patient should undergo TF amputation instead.',
+        ),
         HeaderBlock('Prosthetic Fitting Timeline'),
         NumberedListBlock([
           MapEntry('1', 'Immediate post-op: wound care, pain control, edema management, '
@@ -398,6 +535,123 @@ final amputationRehabContent = TopicData(
             'Stage 5: Independent ambulation — no assistive device',
             'Not all patients progress through every stage',
           ],
+        ),
+        PearlBlock(
+          'Board Pearl — VA/DoD CPG Dressing Recommendation',
+          'The VA/DoD CPG (2017 and 2025) strongly recommends rigid or semi-rigid '
+          'dressings following transtibial amputation. Rigid dressings provide superior '
+          'edema control, wound protection, and knee contracture prevention compared to '
+          'soft dressings or elastic wraps. Elastic bandages must be applied in a '
+          'figure-of-eight pattern (never circular) to avoid tourniquet effect.',
+        ),
+        TableBlock(
+          title: 'Postoperative Dressing Comparison',
+          columns: ['Feature', 'Rigid Removable (RRD)', 'Elastic Bandage', 'IPOP'],
+          rows: [
+            ['Edema control', 'Excellent', 'Moderate (technique-dependent)', 'Excellent'],
+            ['Wound protection', 'Excellent', 'Moderate', 'Excellent'],
+            ['Knee contracture prevention', 'Excellent (maintains extension)', 'Poor', 'Excellent'],
+            ['Allows early ambulation', 'No', 'No', 'Yes (pylon and foot attached)'],
+            ['Wound inspection', 'Possible (removable)', 'Easy', 'Difficult (requires removal)'],
+            ['Skill required', 'Moderate (casting)', 'Variable (wrapping critical)', 'High (prosthetist/surgeon)'],
+            ['VA/DoD CPG', 'Strongly recommended for TTA', 'Acceptable alternative', 'Acceptable; requires experienced team'],
+          ],
+          headerColor: const Color(0xFF2E7D32),
+        ),
+        HeaderBlock('Nine-Phase Rehabilitation Model'),
+        TableBlock(
+          title: 'Amputation Rehabilitation Phases',
+          columns: ['Phase', 'Timeline', 'Key Activities'],
+          rows: [
+            ['1. Preoperative', 'Before surgery', 'Education; psychological preparation; contralateral limb strengthening'],
+            ['2. Acute postoperative', 'Days 0-14', 'Wound care; edema control; pain management; bed mobility; positioning'],
+            ['3. Pre-prosthetic', 'Weeks 2-8+', 'Limb shaping; desensitization; strengthening; cardiovascular conditioning'],
+            ['4. Prosthetic prescription', '~6-8 weeks', 'Team assessment; K-level determination; component selection'],
+            ['5. Prosthetic fabrication', 'Variable', 'Preparatory prosthesis fitting; alignment optimization'],
+            ['6. Prosthetic training', 'Weeks to months', 'Donning/doffing; gait training; stair/ramp negotiation; fall recovery'],
+            ['7. Community integration', 'Months 3-12', 'Advanced gait; uneven surfaces; vocational planning; driving assessment'],
+            ['8. Vocational rehabilitation', 'Months 6+', 'Return-to-work assessment; workplace modifications'],
+            ['9. Lifelong follow-up', 'Ongoing', 'Annual assessments; socket replacements; component upgrades; monitoring'],
+          ],
+          headerColor: const Color(0xFF1565C0),
+        ),
+        HeaderBlock('Prosthetic Fitting Milestones'),
+        TableBlock(
+          title: 'Key Prosthetic Milestones',
+          columns: ['Milestone', 'Timeline', 'Notes'],
+          rows: [
+            ['Hospital discharge', '3-10 days post-op', 'Depends on wound healing, medical stability'],
+            ['Wound healing', '3-6 weeks', 'Sutures/staples removed at 2-3 weeks'],
+            ['Prosthetic casting/fitting', '6-8 weeks post-op (minimum)', 'Earlier in traumatic; later in vascular'],
+            ['Preparatory prosthesis', '8-12 weeks post-op', 'Adjustable socket; standard components'],
+            ['Intensive gait training', '8-16 weeks post-op', 'Inpatient or intensive outpatient'],
+            ['Definitive prosthesis', '6-18 months post-op', 'After residual limb volume stabilizes'],
+          ],
+          headerColor: const Color(0xFF00695C),
+        ),
+        PearlBlock(
+          'Board Pearl — Definitive Prosthesis Timing',
+          'The definitive prosthesis should not be fabricated until residual limb '
+          'volume has stabilized, typically 6-18 months after amputation. A preparatory '
+          'prosthesis with a modifiable socket accommodates rapid volume changes. '
+          'Premature definitive fitting results in a socket that quickly becomes too large.',
+        ),
+        HeaderBlock('Energy Expenditure by Amputation Level'),
+        TableBlock(
+          title: 'Metabolic Cost of Prosthetic Ambulation',
+          columns: ['Amputation Level', 'Traumatic', 'Vascular'],
+          rows: [
+            ['Transtibial (unilateral)', '~10-25% above normal', '~40% above normal'],
+            ['Transfemoral (unilateral)', '~60-70% above normal', '~100% above normal'],
+            ['Bilateral transtibial', '~40% above normal', '~60-80% above normal'],
+          ],
+          headerColor: const Color(0xFF4527A0),
+        ),
+        PearlBlock(
+          'Board Pearl — Energy Expenditure',
+          'Vascular amputees require significantly more energy than traumatic amputees '
+          'at the same amputation level. This reflects older age, cardiovascular disease, '
+          'and limited reserve. Knee preservation (TT vs TF) is critical because '
+          'the energy cost drops dramatically: ~40% (TT vascular) vs ~100% (TF vascular).',
+        ),
+        HeaderBlock('Phantom Limb Pain'),
+        TextBlock(
+          'Phantom limb pain (PLP) affects 50-80% of amputees and can persist for '
+          'years. It is distinct from residual limb pain (stump pain localized to the '
+          'remaining limb) and phantom sensation (non-painful awareness of the missing '
+          'limb, which is very common and not pathologic).',
+        ),
+        TableBlock(
+          title: 'PLP Mechanisms',
+          columns: ['Level', 'Mechanism', 'Description'],
+          rows: [
+            ['Peripheral', 'Neuroma formation', 'Disorganized nerve sprouting produces ectopic, spontaneous firing'],
+            ['Spinal', 'Dorsal horn hyperexcitability', 'Loss of afferent input leads to increased sensitivity and widened receptive fields'],
+            ['Central (cortical)', 'Cortical reorganization', 'Cortical representation of amputated limb invaded by adjacent areas; correlates with pain intensity'],
+          ],
+          headerColor: const Color(0xFF6A1B9A),
+        ),
+        TableBlock(
+          title: 'PLP Treatment Evidence Summary',
+          columns: ['Treatment', 'Evidence', 'Key Finding'],
+          rows: [
+            ['TMR (surgical)', '1 RCT (N=28)', 'Significant PLP reduction vs standard neurectomy at 1 year'],
+            ['RPNI (surgical)', 'Prospective cohorts', '97% prophylactic patients free of PLP; 53% reduction with secondary RPNI'],
+            ['Mirror therapy', 'Mixed (5 RCTs)', 'Only 1 of 5 RCTs showed significant benefit'],
+            ['Graded motor imagery (GMI)', 'Moderate', 'Expert consensus endorsement; weighted mean difference -21.29'],
+            ['Gabapentin', 'Negative', '2.4 g/day for 6 weeks showed no benefit over placebo'],
+            ['Memantine', 'Negative', 'No benefit over placebo'],
+            ['Amitriptyline', 'Negative', 'No benefit over placebo'],
+          ],
+          headerColor: const Color(0xFFC62828),
+        ),
+        PearlBlock(
+          'Board Pearl — Phantom Limb Pain Treatments',
+          'Traditional pharmacologic treatments for PLP (gabapentin, amitriptyline, '
+          'memantine) have failed to show benefit over placebo in rigorous trials. '
+          'Surgical prevention with TMR or RPNI at the time of amputation represents '
+          'a paradigm shift. Among non-surgical approaches, graded motor imagery has '
+          'the most expert consensus support.',
         ),
       ],
     ),
@@ -443,9 +697,32 @@ final amputationRehabContent = TopicData(
                 'levels (child, athlete, active adult)', 'Running/sport '
                 'prostheses, highest technology components'],
           ],
-          boardPearl: 'K-levels determine prosthetic component eligibility. '
-              'Microprocessor knees require K3 or K4 classification. K2 ambulators '
-              'get hydraulic swing control but not microprocessor features.',
+          boardPearl: 'K-levels are based on FUNCTIONAL POTENTIAL, not just '
+              'current ability. As of September 2024, K2 patients are eligible '
+              'for microprocessor knees with integrated stumble-recovery technology.',
+        ),
+        PearlBlock(
+          'Board Pearl — K-Level Is Functional Potential',
+          'The K-level is assigned based on the patient\'s functional POTENTIAL — '
+          'their expected highest level of function with appropriate components and '
+          'rehabilitation — not solely their current ability. This prevents '
+          'inappropriate underclassification of recently injured patients who have '
+          'not yet had the opportunity to demonstrate their capabilities.',
+        ),
+        TableBlock(
+          title: 'K-Level Assignment Considerations',
+          columns: ['Factor', 'Influence on K-Level'],
+          rows: [
+            ['Pre-amputation activity level', 'Higher pre-amp activity predicts higher K-level'],
+            ['Age', 'Younger patients generally have higher potential'],
+            ['Comorbidities', 'Cardiac, pulmonary, neurologic disease may limit potential'],
+            ['Cognitive status', 'Must understand and participate in prosthetic training'],
+            ['Motivation/psychosocial support', 'Strong motivation improves outcomes'],
+            ['Residual limb characteristics', 'Length, shape, skin quality, ROM, strength'],
+            ['Amputation etiology', 'Traumatic patients generally achieve higher K-levels'],
+            ['Contralateral limb status', 'Intact contralateral limb improves function'],
+          ],
+          headerColor: const Color(0xFF6A1B9A),
         ),
         HeaderBlock('Amputee Mobility Predictor (AMP)'),
         ComparisonCardBlock(
@@ -572,8 +849,49 @@ final amputationRehabContent = TopicData(
             ['Houghton', 'Self-report', 'Prosthesis use frequency in daily life'],
             ['SCS', 'Self-report', '0-10 socket comfort rating'],
             ['ABC Scale', 'Self-report', 'Balance confidence; <67% = fall risk'],
+            ['PEQ', 'Self-report', 'Prosthetic satisfaction (function, appearance, frustration)'],
+            ['TAPES', 'Self-report', 'Psychosocial adjustment, activity restriction, satisfaction'],
           ],
           headerColor: const Color(0xFF00838F),
+        ),
+        HeaderBlock('VA/DoD Clinical Practice Guidelines'),
+        TableBlock(
+          title: 'VA/DoD 2017 CPG — Four Strong Recommendations',
+          columns: ['#', 'Recommendation'],
+          rows: [
+            ['1', 'Patient and caregiver education throughout rehabilitation'],
+            ['2', 'Rigid or semi-rigid dressings after transtibial amputation'],
+            ['3', 'Microprocessor knees over mechanical knees for appropriate candidates'],
+            ['4', 'Annual transdisciplinary assessments for lifetime care'],
+          ],
+          headerColor: const Color(0xFF1565C0),
+        ),
+        TableBlock(
+          title: 'VA/DoD 2025 CPG — Key Updates',
+          columns: ['Topic', 'Recommendation'],
+          rows: [
+            ['MPK units', 'Suggested over non-MPK for reducing falls, improving mobility and satisfaction'],
+            ['ESAR / MPC foot-ankle', 'Suggested over SACH feet for eligible candidates'],
+            ['Osseointegration', 'Suggested as option for eligible TFA patients who cannot tolerate sockets'],
+            ['Postoperative dressing', 'Rigid/semi-rigid for TTA maintained from 2017'],
+            ['Rehabilitation setting', 'IRF suggested over other post-acute care settings'],
+          ],
+          headerColor: const Color(0xFF2E7D32),
+        ),
+        PearlBlock(
+          'Board Pearl — VA/DoD CPG High-Yield',
+          'The 2017 VA/DoD CPG had 18 total recommendations, with only 4 reaching '
+          '"strong" evidence level: (1) education, (2) rigid dressings, (3) MPK, '
+          'and (4) annual assessments. These four are most likely to appear on board '
+          'examinations. The 2025 update adds osseointegration and ESAR feet.',
+        ),
+        PearlBlock(
+          'Board Pearl — K2 MPK Coverage Expansion',
+          'As of September 2024, K2 patients are eligible for microprocessor knees '
+          'under Medicare if: the knee has integrated stumble-recovery technology, '
+          'the patient can manage daily charging and error alerts, and the medical '
+          'record documents the functional level and clinical rationale. This is a '
+          'major expansion of access reflecting MPK safety evidence.',
         ),
       ],
     ),

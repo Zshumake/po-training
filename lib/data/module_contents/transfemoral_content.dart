@@ -95,6 +95,27 @@ final transfemoralContent = TopicData(
             'More energy-efficient gait pattern',
           ],
         ),
+        BulletCardBlock(
+          title: 'MAS (Marlo Anatomical Socket) Features',
+          themeColor: Colors.teal,
+          backgroundColor: const Color(0xFFE0F2F1),
+          points: [
+            'Further evolution of IRC design developed by Marlo Ortiz (late 1990s)',
+            'Skeletal support concentrated along medial ischial-ramal complex',
+            'Bone-on-bone force distribution at medial wall',
+            'Low posterior trim line: patient sits on gluteus maximus, not socket edge',
+            'Low gluteal trim lines reduce tissue impingement during sitting',
+            'Distinguishable containment buttress at medial wall captures ischium',
+            'Improved seated comfort compared to standard IRC',
+          ],
+        ),
+        PearlBlock(
+          'Board Pearl — IRC Data',
+          'IRC demonstrated significantly greater hip ROM (~140 degrees) vs '
+          'quadrilateral (~127 degrees) (p=0.01). IRC also significantly lowered '
+          'energy cost of walking compared to IC sockets. IRC provides improved step '
+          'length, better seated comfort, and narrower base of support.',
+        ),
         HeaderBlock('Flexible Socket Design'),
         ComparisonCardBlock(
           title: 'Flexible Thermoplastic Socket with Rigid Frame',
@@ -256,6 +277,47 @@ final transfemoralContent = TopicData(
           'disarticulation because it shortens in swing and provides inherent '
           'stance-phase stability.',
         ),
+        HeaderBlock('Microprocessor Knee Profiles'),
+        TableBlock(
+          title: 'Specific MPK Models',
+          columns: ['MPK', 'Manufacturer', 'Distinguishing Features'],
+          rows: [
+            ['C-Leg 4', 'Ottobock', 'Most studied MPK; Stumble Recovery Plus active at all times; up to 80% fall reduction'],
+            ['Genium', 'Ottobock', 'More physiological gait than C-Leg; improved stair navigation; multi-directional stepping'],
+            ['Genium X3', 'Ottobock', 'IP68 waterproof/dustproof (only fully waterproof MPK); Bluetooth modes for cycling, jogging'],
+            ['Rheo Knee 3', 'Ossur', 'Magnetorheological fluid-based stance control; IP34 (splash-proof only)'],
+          ],
+          headerColor: Colors.purple,
+        ),
+        PearlBlock(
+          'Board Pearl — MPK Evidence',
+          'The C-Leg has demonstrated up to 80% reduction in stumbles and falls vs '
+          'non-microprocessor knees. Users report 88% increase in confidence. '
+          'The VA/DoD guideline (2025) suggests MPKs over non-MPK units for prosthetic '
+          'ambulators. The Genium X3 is the only fully waterproof MPK (IP68).',
+        ),
+        HeaderBlock('K2 MPK Coverage (September 2024)'),
+        BulletCardBlock(
+          title: 'K2 MPK Medicare Coverage Criteria',
+          themeColor: Colors.blue,
+          backgroundColor: const Color(0xFFE3F2FD),
+          points: [
+            'Effective September 1, 2024 — major expansion of access',
+            'MPK must incorporate integrated stumble-recovery technology',
+            'Beneficiary must be able to charge the device battery daily',
+            'Beneficiary must understand and respond to error alerts',
+            'Medical records must include K2 functional level documentation',
+            'Clear clinical rationale for MPK selection required in records',
+            'L-Codes: L5856, L5857, L5858 for electronic/microprocessor knee components',
+          ],
+        ),
+        PearlBlock(
+          'Board Pearl — K2 MPK Access',
+          'As of September 2024, K2 patients are eligible for microprocessor knees '
+          'under Medicare if the knee has integrated stumble-recovery technology, '
+          'the patient can manage daily charging and error alerts, and the medical '
+          'record documents the functional level and clinical rationale.',
+        ),
       ],
     ),
 
@@ -341,6 +403,26 @@ final transfemoralContent = TopicData(
           'MAXIMUM control but is the bulkiest and most uncomfortable option. '
           'Know the hierarchy: suction > partial suction > belts > pelvic band.',
         ),
+        TableBlock(
+          title: 'TF Suspension Comparison',
+          columns: ['System', 'Vertical Suspension', 'Rotational Control', 'ML Stability', 'Ease of Donning'],
+          rows: [
+            ['Suction', 'Excellent', 'Good', 'None', 'Difficult'],
+            ['Partial suction + auxiliary', 'Very good', 'Good (with belt)', 'None-Minimal', 'Moderate'],
+            ['Silesian belt', 'Fair', 'Excellent', 'None', 'Easy'],
+            ['TES belt', 'Good', 'Good', 'Minimal', 'Easy'],
+            ['Pelvic band + hip joint', 'Excellent', 'Excellent', 'Excellent', 'Moderate'],
+            ['Gel liner + pin', 'Good', 'Fair', 'None', 'Easy'],
+          ],
+          headerColor: Colors.amber,
+        ),
+        NumberedListBlock([
+          MapEntry('1', 'Suction — best proprioception, minimal pistoning, no external hardware'),
+          MapEntry('2', 'Partial suction with auxiliary — good compromise'),
+          MapEntry('3', 'TES belt or Silesian belt — when suction is not feasible'),
+          MapEntry('4', 'Gel liner with pin — when dexterity limits suction use'),
+          MapEntry('5', 'Pelvic band with hip joint — last resort; maximum control at maximum cost'),
+        ]),
         BulletCardBlock(
           title: 'Suspension Selection by Patient Profile',
           themeColor: Colors.orange,
@@ -405,6 +487,35 @@ final transfemoralContent = TopicData(
           'stability (make swing easier): move the knee anterior, soften the heel, '
           'or decrease socket flexion. Balance between stability and mobility is key.',
         ),
+        BulletCardBlock(
+          title: 'Increasing Knee Stability',
+          themeColor: Colors.green,
+          backgroundColor: const Color(0xFFE8F5E9),
+          points: [
+            'Move prosthetic knee axis posteriorly relative to socket and foot',
+            'Stiffen the heel cushion (keeps GRF anterior to knee longer)',
+            'Increase socket initial flexion (shifts GRF vector anteriorly)',
+            'Select a knee with stance-phase control (weight-activated or MPK)',
+          ],
+        ),
+        BulletCardBlock(
+          title: 'Decreasing Knee Stability (Easier Swing Initiation)',
+          themeColor: Colors.orange,
+          backgroundColor: const Color(0xFFFFF3E0),
+          points: [
+            'Move the knee axis anteriorly',
+            'Soften the heel cushion',
+            'Decrease socket initial flexion',
+            'Reduce stance-phase resistance',
+          ],
+        ),
+        PearlBlock(
+          'Board Pearl — Stability-Mobility Trade-off',
+          'There is always a trade-off between stance-phase stability and swing-phase '
+          'mobility. Maximum stability (GRF far anterior to the knee) makes it very '
+          'difficult for the patient to "break" the knee into flexion to initiate swing. '
+          'The prosthetist must find the optimal balance point.',
+        ),
         HeaderBlock('TF Prosthetic Gait Deviations'),
         TableBlock(
           title: 'Transfemoral Gait Deviations and Causes',
@@ -430,6 +541,22 @@ final transfemoralContent = TopicData(
           'hip abductors. WHIPS are best seen from behind: medial whip = heel '
           'goes medially (internal rotation), lateral whip = heel goes laterally '
           '(external rotation).',
+        ),
+        PearlBlock(
+          'Board Pearl — Whip Corrections',
+          'Whips are best observed from BEHIND the patient. Medial whip means the '
+          'heel moves medially (the knee is externally rotated). Lateral whip means '
+          'the heel moves laterally (the knee is internally rotated). The correction '
+          'is to rotate the knee bolt in the OPPOSITE direction of the whip. If the '
+          'heel goes medial, rotate the knee bolt medially (internally).',
+        ),
+        PearlBlock(
+          'Board Pearl — Lateral Trunk Bend',
+          'Lateral trunk bending is the most common and most heavily tested TF gait '
+          'deviation. The most common prosthetic cause is that the prosthesis is too '
+          'short. The most common patient cause is weak hip abductors. An IRC socket '
+          'with proper adduction reduces lateral trunk bend by optimizing gluteus '
+          'medius leverage.',
         ),
         HeaderBlock('Transfemoral Residual Limb Considerations'),
         BulletCardBlock(
@@ -461,6 +588,16 @@ final transfemoralContent = TopicData(
             'Avoid prolonged sitting and pillow under the knee post-operatively',
             'Abduction contracture managed by IRC socket with adduction alignment',
           ],
+        ),
+        TableBlock(
+          title: 'Hip Flexion Contracture Severity and Accommodation',
+          columns: ['Severity', 'Prosthetic Accommodation', 'Clinical Impact'],
+          rows: [
+            ['0-10 degrees', 'Easily accommodated with standard socket flexion', 'Minimal gait impact'],
+            ['10-20 degrees', 'Increase initial socket flexion to match contracture', 'Moderate energy cost increase; shortened prosthetic-side step'],
+            ['>20 degrees', 'Very difficult to accommodate; may preclude function', 'Marked energy increase; lumbar hyperlordosis; anterior pelvic tilt'],
+          ],
+          headerColor: Colors.orange,
         ),
         TableBlock(
           title: 'Amputation Level Comparison',
@@ -497,6 +634,55 @@ final transfemoralContent = TopicData(
             'Foot selection must complement knee unit for optimal function',
             'Single-axis foot with stance-control knee: good combination for K2 patients',
           ],
+        ),
+        HeaderBlock('Amputation Level Functional Comparison'),
+        TableBlock(
+          title: 'Functional Comparison by Amputation Level',
+          columns: ['Feature', 'Transtibial', 'Transfemoral', 'Knee Disartic', 'Hip Disartic'],
+          rows: [
+            ['Ideal shape', 'Cylindrical', 'Conical', 'Bulbous (condyles)', 'N/A'],
+            ['Bone preparation', 'Fibula 2-3 cm shorter; bevel crest', 'Smooth distal femur; preserve length', 'Condyles intact', 'Pelvic preservation'],
+            ['Critical muscle', 'Quads/hams (knee control)', 'Hip extensors/abductors', 'Quads over patella', 'Trunk muscles only'],
+            ['Energy cost (traumatic)', '~10-25%', '~60-70%', '~40%', '~80-100%'],
+            ['Energy cost (vascular)', '~40%', '~100%', '~60%', 'Rarely functional'],
+            ['Prosthetic knee', 'No', 'Yes (most complex)', 'Yes (polycentric preferred)', 'Yes (with hip joint)'],
+            ['End-bearing', 'Partial', 'None (proximal loading)', 'Full end-bearing', 'Ischial/pelvic'],
+            ['Socket type', 'PTB or TSB', 'Quad or IRC/MAS', 'Bulbous specialized', 'Bucket/pelvic'],
+            ['Ambulation rate', 'High (~75-85%)', 'Moderate (~30-50%)', 'Moderate-Good (~50-60%)', 'Low (~20-30%)'],
+          ],
+          headerColor: Colors.indigo,
+        ),
+        HeaderBlock('85% Vascular Disease — Clinical Implications'),
+        TableBlock(
+          title: 'Vascular Amputee Profile and Prosthetic Implications',
+          columns: ['Factor', 'Vascular Amputee Profile', 'Prosthetic Implication'],
+          rows: [
+            ['Age', 'Typically 60-80 years', 'Reduced reserve; lower K-level expected'],
+            ['Cardiovascular fitness', 'Compromised by atherosclerosis', 'Cannot tolerate high metabolic cost of TF'],
+            ['Contralateral limb', 'At risk (~50% at 5 years)', 'May progress to bilateral amputee'],
+            ['Skin integrity', 'Compromised by neuropathy', 'Increased socket-related skin breakdown risk'],
+            ['Volume stability', 'Unstable (edema, dialysis)', 'Volume-tolerant suspension needed'],
+            ['Sensation', 'Reduced (diabetic neuropathy)', 'Cannot feel pressure points; frequent inspection'],
+            ['Hand dexterity', 'May be compromised', 'Pin lock preferred over suction donning'],
+            ['Cognitive function', 'May be impaired', 'Limits prosthetic learning; affects safety'],
+          ],
+          headerColor: Colors.red,
+        ),
+        PearlBlock(
+          'Board Pearl — 85% Vascular Disease',
+          '85% of amputations are vascular (PVD/diabetes). Most vascular TF amputees '
+          'are K1-K2 at best. Energy cost of TF prosthetic ambulation for vascular '
+          'patients (~100% above baseline) often exceeds cardiovascular capacity. '
+          'Knee preservation (TT) is critical: energy cost drops to ~40%. The '
+          'contralateral limb is at ~50% risk of amputation within 5 years.',
+        ),
+        PearlBlock(
+          'Board Pearl — Hip Disarticulation Prosthesis',
+          'For hip disarticulation and hemipelvectomy prostheses, the prosthetic '
+          'hip joint is positioned ANTERIOR to the midline of the body. This ensures '
+          'that when the patient shifts weight onto the prosthesis, the GRF passes '
+          'anterior to the hip axis, creating a stabilizing extension moment. '
+          'Energy cost is approximately 80-100% above baseline.',
         ),
       ],
     ),

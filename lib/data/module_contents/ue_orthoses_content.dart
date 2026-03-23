@@ -49,6 +49,28 @@ final ueOrthosesContent = TopicData(
             'Must apply LOW-LOAD PROLONGED STRETCH for contracture management',
           ],
         ),
+        BulletCardBlock(
+          title: 'Static-Progressive Splinting Principles',
+          themeColor: Colors.orange,
+          backgroundColor: const Color(0xFFFFF3E0),
+          points: [
+            'Hybrid approach: no elastic/spring components like dynamic splints',
+            'Uses adjustable mechanism (turnbuckle, ratchet) for incremental stretch',
+            'Holds joint at current end-range WITHOUT dynamic recoil',
+            'Exploits tissue CREEP (gradual deformation under sustained load)',
+            'Exploits STRESS RELAXATION (decreasing resistance at maintained length)',
+            'Example: turnbuckle splint for elbow flexion contracture',
+            'Both dynamic and static-progressive produce comparable ROM gains',
+          ],
+        ),
+        PearlBlock(
+          'Board Pearl: Dynamic vs Static-Progressive',
+          'Dynamic splints apply a CONSTANT mobilizing force through elastic elements '
+          '(springs, rubber bands). Static-progressive splints hold the joint at '
+          'end-range with a NON-ELASTIC, incrementally adjustable mechanism. Both aim '
+          'to improve ROM but use fundamentally different mechanical strategies. This '
+          'distinction is frequently tested.',
+        ),
 
         // --- Resting Hand Splint ---
         ComparisonCardBlock(
@@ -159,6 +181,28 @@ final ueOrthosesContent = TopicData(
             'IP joint typically left free to allow pinch function',
           ],
         ),
+
+        // --- Dynamic WHO Applications ---
+        HeaderBlock('Dynamic Wrist-Hand Orthoses'),
+        TableBlock(
+          title: 'Dynamic WHO Applications',
+          columns: ['Condition', 'Dynamic WHO Type', 'Mechanism'],
+          rows: [
+            ['Radial nerve palsy', 'Dynamic wrist-finger extension assist', 'Rubber bands provide MCP extension via outrigger'],
+            ['Flexor tendon repair (zone II)', 'Dorsal blocking splint with dynamic traction', 'Wrist/MCP flexed; rubber bands maintain digit flexion (Kleinert protocol)'],
+            ['Extensor tendon repair', 'Volar splint with dynamic extension assist', 'Rubber bands pull fingers into extension'],
+            ['MCP flexion contracture', 'Dynamic MCP extension splint', 'Low-load spring applies sustained extension force'],
+            ['PIP flexion contracture', 'Dynamic PIP extension splint (Capener)', 'Spring-wire mechanism applies extension torque at PIP'],
+          ],
+          headerColor: Colors.green,
+        ),
+        PearlBlock(
+          'Board Pearl: Kleinert Protocol',
+          'The Kleinert protocol for flexor tendon repair uses a dorsal blocking splint '
+          'with rubber band traction maintaining protected finger flexion. This allows '
+          'controlled passive flexion and active extension, preventing adhesion formation '
+          'while protecting the repair from excessive tension.',
+        ),
       ],
     ),
 
@@ -198,6 +242,15 @@ final ueOrthosesContent = TopicData(
             'Keeps wrist in 20-30 deg extension to restore tenodesis grip',
             'Sensation lost: dorsal first web space (anatomical snuffbox)',
           ],
+        ),
+
+        PearlBlock(
+          'Board Pearl: Dynamic vs Static Splinting in Radial Nerve Palsy',
+          'Evidence shows dynamic splinting produces significantly greater manual '
+          'dexterity than static splinting in radial nerve palsy. In 9-hole peg testing, '
+          'patients with dynamic splints completed tasks substantially faster than with '
+          'static splints or no splint. Dynamic splints preferred for daytime function; '
+          'static cock-up splints for nighttime positioning.',
         ),
 
         // --- Ulnar Nerve ---
@@ -304,6 +357,33 @@ final ueOrthosesContent = TopicData(
           'splint. If you see "claw hand" think ulnar nerve and anti-claw splint. '
           'If you see "ape hand" or "loss of opposition" think median nerve and '
           'opponens splint.',
+        ),
+
+        // --- Extended Nerve Injury Table ---
+        TableBlock(
+          title: 'Complete Nerve Injury Summary (High vs Low)',
+          columns: ['Nerve', 'Level', 'Deformity', 'Splint', 'Sensory Loss'],
+          rows: [
+            ['Radial', 'Any', 'Wrist drop', 'Cock-up splint', 'Dorsal first web space'],
+            ['Ulnar', 'Low (wrist)', 'Claw hand (SEVERE)', 'Anti-claw splint', 'Ulnar 1.5 digits'],
+            ['Ulnar', 'High (elbow)', 'Claw hand (MILD)', 'Anti-claw splint', 'Ulnar 1.5 digits'],
+            ['Median', 'Low (wrist)', 'Ape hand', 'Opponens splint', 'Radial 3.5 digits (palmar)'],
+            ['Median', 'High (elbow)', 'Hand of benediction', 'Opponens + functional position', 'Radial 3.5 digits (palmar)'],
+            ['Combined median-ulnar', 'Any', 'Flattened hand', 'Functional position splint', 'Most of hand'],
+          ],
+          headerColor: const Color(0xFFC62828),
+        ),
+        BulletCardBlock(
+          title: 'Additional Nerve Injury Pearls',
+          themeColor: Colors.red,
+          backgroundColor: const Color(0xFFFFEBEE),
+          points: [
+            'Froment sign: thumb IP flexion via FPL compensating for lost adductor pollicis (ulnar nerve)',
+            'Hand of benediction: index and middle fingers stay extended during fist attempt (high median)',
+            'Anti-claw splint only needs to block MCP hyperextension in digits 4-5',
+            'Index and middle fingers spared in ulnar palsy (lumbricals 1-2 = median nerve)',
+            'Median sensory loss (thumb/index/middle) may be more disabling than motor loss',
+          ],
         ),
       ],
     ),
@@ -436,6 +516,15 @@ final ueOrthosesContent = TopicData(
           'If the question says "axillary nerve injury" or "deltoid paralysis," '
           'think airplane splint.',
         ),
+
+        PearlBlock(
+          'Board Pearl: Sarmiento Brace + Radial Nerve',
+          'Humeral shaft fractures carry significant risk of radial nerve palsy '
+          'because the radial nerve courses in the spiral groove of the humerus. '
+          'When radial nerve palsy accompanies a humeral shaft fracture, add a '
+          'cock-up splint to manage wrist drop while the Sarmiento brace treats '
+          'the fracture. Union rates exceed 95% with the Sarmiento brace.',
+        ),
       ],
     ),
 
@@ -452,6 +541,27 @@ final ueOrthosesContent = TopicData(
           'which muscles are functional, which drives the choice of orthosis and '
           'functional goals. This is heavily tested on boards.',
           isIntro: true,
+        ),
+
+        // --- C4 SCI ---
+        ComparisonCardBlock(
+          title: 'C4 SCI: No Effective UE Orthosis',
+          themeColor: Colors.grey,
+          backgroundColor: const Color(0xFFEEEEEE),
+          icon: Icons.block,
+          description:
+              'C4 SCI patients have no volitional upper extremity function. No UE '
+              'orthosis can restore meaningful arm function at this level. The patient '
+              'depends entirely on assistive technology for environmental interaction.',
+          keyPoints: [
+            'Intact: diaphragm (C3-5), upper trapezius, some neck musculature',
+            'Lost: ALL shoulder, arm, and hand muscles',
+            'No upper extremity orthosis is effective',
+            'Sip-and-puff controls for wheelchair and environment',
+            'Head-controlled or eye-tracking interfaces',
+            'Voice-activated controls',
+            'Complete dependence for all UE ADLs',
+          ],
         ),
 
         // --- C5 SCI ---
@@ -528,6 +638,7 @@ final ueOrthosesContent = TopicData(
           title: 'SCI Level and Upper Extremity Orthoses',
           columns: ['SCI Level', 'Key Muscle Gain', 'Orthosis', 'Functional Goal'],
           rows: [
+            ['C4', 'None (UE)', 'No UE orthosis effective', 'Sip-and-puff controls'],
             ['C5', 'Deltoid, biceps', 'BFO / Mobile arm support', 'Assisted feeding, grooming'],
             ['C6', 'Wrist extensors (ECRL)', 'Tenodesis splint, universal cuff', 'Tenodesis grasp, self-feeding'],
             ['C7', 'Triceps, finger extensors', 'Short opponens (if needed)', 'Independent transfers, ADLs'],
@@ -581,6 +692,13 @@ final ueOrthosesContent = TopicData(
           'C6: wrist extension = tenodesis grasp, major independence gain. '
           'C7: triceps = transfers, functional independence level. '
           'C8-T1: near-normal hand function, intrinsic weakness only.',
+        ),
+        PearlBlock(
+          'Board Pearl: Preserve Tenodesis in C6 SCI',
+          'Therapists must AVOID overstretching finger flexors during C6 SCI rehab. '
+          'If finger flexors become too lax, the natural tenodesis effect is lost and '
+          'neither natural grasp nor WDFHO will produce adequate pinch. Maintaining '
+          'appropriate finger flexor tightness is a critical rehabilitation principle.',
         ),
       ],
     ),

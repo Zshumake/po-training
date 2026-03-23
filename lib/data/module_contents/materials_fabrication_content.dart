@@ -129,6 +129,26 @@ final materialsFabricationContent = TopicData(
           'patient; high-temp thermoplastics require a model.',
         ),
 
+        // --- Thermoset Resins Comparison ---
+        HeaderBlock('Thermoset Resin Comparison'),
+        TableBlock(
+          title: 'Common Thermoset Resins in Prosthetics',
+          columns: ['Resin', 'Properties', 'Applications'],
+          rows: [
+            ['Acrylic resin', 'Clear, rigid, good impact resistance', 'Standard prosthetic socket lamination'],
+            ['Polyester resin', 'Strong, moderate cost, amber color', 'Socket lamination, structural components'],
+            ['Epoxy resin', 'Highest strength, excellent adhesion', 'High-performance structural applications'],
+          ],
+          headerColor: Colors.red,
+        ),
+        PearlBlock(
+          'Board Pearl — Thermoset Reheat',
+          'If a board question asks what happens when you try to reheat a laminated '
+          'prosthetic socket, the answer is that it will char or burn — it will NOT '
+          'become pliable. Thermosets have permanent covalent cross-links that are '
+          'destroyed (not reversibly broken) by heat.',
+        ),
+
         // --- Silicone & Foam ---
         HeaderBlock('Silicone, Gel & Foam Materials'),
         BulletCardBlock(
@@ -323,12 +343,104 @@ final materialsFabricationContent = TopicData(
             'Plastic deformation: permanent shape change after load removed',
             'Yield point: stress level where elastic becomes plastic deformation',
             'Ultimate tensile strength: maximum stress before failure',
+            'Modulus of elasticity (Young\'s modulus): slope of elastic region, quantifies stiffness',
             'Fatigue: failure from repeated cyclic loading below ultimate strength',
             'Creep: slow deformation under sustained constant load over time',
+            'Stress relaxation: decrease in stress when held at constant deformation over time',
             'Ductile failure: bending/stretching before breaking (metals)',
             'Brittle failure: sudden fracture without warning (carbon fiber, ceramics)',
             'Viscoelastic: exhibits both viscous and elastic behavior (foams, gels)',
           ],
+        ),
+
+        // --- Creep Clinical Relevance ---
+        HeaderBlock('Creep — Clinical Relevance'),
+        BulletCardBlock(
+          title: 'Creep in P&O Applications',
+          themeColor: const Color(0xFF4527A0),
+          backgroundColor: const Color(0xFFEDE7F6),
+          points: [
+            'Polypropylene AFOs gradually deform (lose corrective angle) under daily loads — this is creep',
+            'Foam padding compresses and loses cushioning over time — this is creep',
+            'Pelite liners thin and flatten with use — this is creep',
+            'Turnbuckle splint exploits creep in biological tissue to increase joint ROM',
+            'Static-progressive splints hold joints at end-range to induce creep in shortened tissues',
+            'Creep occurs even at stress levels below the yield point',
+          ],
+        ),
+
+        // --- Stress Relaxation ---
+        HeaderBlock('Stress Relaxation'),
+        BulletCardBlock(
+          title: 'Stress Relaxation in Clinical Context',
+          themeColor: const Color(0xFF00695C),
+          backgroundColor: const Color(0xFFE0F2F1),
+          points: [
+            'Decrease in internal stress when material is held at constant deformation over time',
+            'Tissue "relaxes" and accommodates to imposed stretch',
+            'Used in splinting for joint contractures: tissue stress diminishes at maintained length',
+            'Creep AND stress relaxation together produce tissue remodeling that increases ROM',
+            'Both are manifestations of viscoelastic behavior',
+            'Static-progressive splints leverage both phenomena simultaneously',
+          ],
+        ),
+
+        // --- Viscoelasticity ---
+        HeaderBlock('Viscoelasticity'),
+        BulletCardBlock(
+          title: 'Viscoelastic Material Behavior',
+          themeColor: const Color(0xFF1565C0),
+          backgroundColor: const Color(0xFFE3F2FD),
+          points: [
+            'Combines viscous (fluid-like, time-dependent) and elastic (solid-like, instantaneous) behavior',
+            'Biological tissues (skin, ligaments, tendons, muscle) are viscoelastic',
+            'P&O materials: foams, gels, silicone liners are viscoelastic',
+            'Rate-dependent: stiffer under rapid loading, more compliant under slow loading',
+            'Hysteresis: energy absorbed as heat during each loading-unloading cycle',
+            'Clinically beneficial: sudden impact = more resistance (protective), sustained load = gradual compression',
+            'Creep and stress relaxation are manifestations of viscoelastic behavior',
+          ],
+        ),
+
+        // --- Fatigue Expanded ---
+        HeaderBlock('Fatigue Failure'),
+        BulletCardBlock(
+          title: 'Fatigue in P&O Devices',
+          themeColor: const Color(0xFFC62828),
+          backgroundColor: const Color(0xFFFFEBEE),
+          points: [
+            'Most common mode of structural failure in prosthetic and orthotic devices',
+            'Progressive damage from repeated cyclic loading below ultimate tensile strength',
+            'Prosthetic pylons may develop fatigue cracks after months/years of gait cycles',
+            'Metal orthotic joints can fracture at stress concentrators (corners, holes, welds)',
+            'Carbon fiber can develop internal delamination from fatigue without visible signs',
+            'Fatigue life depends on: stress amplitude, cycle count, material, surface finish',
+          ],
+        ),
+
+        // --- Ductile vs Brittle ---
+        HeaderBlock('Ductile vs Brittle Failure'),
+        BulletCardBlock(
+          title: 'Failure Mode Comparison',
+          themeColor: Colors.blueGrey,
+          backgroundColor: const Color(0xFFECEFF1),
+          points: [
+            'Ductile: visible bending/stretching before breaking — provides WARNING of failure',
+            'All metals in P&O (steel, aluminum, titanium) exhibit ductile failure',
+            'Brittle: sudden fracture without significant deformation — NO warning',
+            'Carbon fiber composites and ceramics exhibit brittle failure',
+            'Safety implication: metal components can be visually inspected for deformation',
+            'Carbon fiber may show NO visible damage before sudden catastrophic fracture',
+            'Carbon fiber devices must be regularly inspected for hairline cracks, delamination, or whitening',
+          ],
+        ),
+        PearlBlock(
+          'Board Pearl — Failure Modes & Viscoelasticity',
+          'Metals fail in a ductile manner (bending before breaking = warning). '
+          'Carbon fiber fails in a brittle manner (shattering without warning). '
+          'Fatigue is the most common structural failure mode in P&O devices. '
+          'Creep and stress relaxation are viscoelastic phenomena exploited in '
+          'splinting for contractures: "hold at end-range to induce tissue remodeling."',
         ),
       ],
     ),
