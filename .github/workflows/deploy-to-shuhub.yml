@@ -1,0 +1,53 @@
+name: Deploy to shuhub.xyz
+
+on:
+  push:
+    branches:
+      - main
+  workflow_dispatch:
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout po-training repo
+        uses: actions/checkout@v4
+
+      - name: Set up Flutter
+        uses: subosito/flutter-action@v2
+        with:
+          channel: stable
+          flutter-version: '3.41.2'
+
+      - name: Install dependencies
+        run: flutter pub get
+
+      - name: Build Flutter web
+        run: flutter build web --release --base-href /po-training/
+
+      - name: Checkout Zshumake.github.io repo
+        uses: actions/checkout@v4
+        with:
+          repository: Zshumake/Zshumake.github.io
+          token: ${{ secrets.SHUHUB_DEPLOY_TOKEN }}
+          path: shuhub-repo
+
+      - name: Copy build to shuhub-repo/po-training
+        run: |
+          rm -rf shuhub-repo/po-training
+          mkdir -p shuhub-repo/po-training
+          cp -R build/web/* shuhub-repo/po-training/
+
+      - name: Commit and push to shuhub
+        run: |
+          cd shuhub-repo
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add po-training/
+          if git diff --cached --quiet; then
+            echo "No changes to deploy"
+          else
+            git commit -m "Deploy po-training from ${{ github.sha }}"
+            git push
+          fi
