@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import '../models/topic_content_model.dart';
+import '../flowcharts/clinical_flowcharts.dart';
 
 final spinalOrthosesContent = TopicData(
   id: 'spinal_orthoses',
@@ -26,7 +27,7 @@ final spinalOrthosesContent = TopicData(
         ComparisonCardBlock(
           title: 'Soft Collar',
           themeColor: Colors.grey,
-          backgroundColor: const Color(0xFFF5F5F5),
+          backgroundColor: const Color(0xFF232A3B),
           icon: Icons.accessibility_new,
           description:
               'A flexible foam collar that provides minimal cervical motion restriction. '
@@ -46,7 +47,7 @@ final spinalOrthosesContent = TopicData(
         ComparisonCardBlock(
           title: 'Philadelphia Collar',
           themeColor: Colors.blue,
-          backgroundColor: const Color(0xFFE3F2FD),
+          backgroundColor: const Color(0xFF1A2332),
           icon: Icons.shield,
           description:
               'A two-piece rigid plastic collar (anterior and posterior sections) connected '
@@ -66,7 +67,7 @@ final spinalOrthosesContent = TopicData(
         ComparisonCardBlock(
           title: 'Miami J Collar',
           themeColor: Colors.teal,
-          backgroundColor: const Color(0xFFE0F2F1),
+          backgroundColor: const Color(0xFF152A27),
           icon: Icons.tune,
           description:
               'A two-piece rigid cervical collar similar to the Philadelphia collar but '
@@ -87,7 +88,7 @@ final spinalOrthosesContent = TopicData(
         ComparisonCardBlock(
           title: 'Aspen Collar',
           themeColor: Colors.green,
-          backgroundColor: const Color(0xFFE8F5E9),
+          backgroundColor: const Color(0xFF152A1A),
           icon: Icons.settings,
           description:
               'A rigid two-piece cervical collar with a four-piece padded liner system '
@@ -109,7 +110,7 @@ final spinalOrthosesContent = TopicData(
         ComparisonCardBlock(
           title: 'SOMI (Sternal Occipital Mandibular Immobilizer)',
           themeColor: Colors.deepOrange,
-          backgroundColor: const Color(0xFFFBE9E7),
+          backgroundColor: const Color(0xFF2A1D19),
           icon: Icons.vertical_align_top,
           description:
               'A cervicothoracic orthosis with a rigid sternal plate, occipital plate, '
@@ -146,7 +147,7 @@ final spinalOrthosesContent = TopicData(
         ComparisonCardBlock(
           title: 'Four-Poster Brace',
           themeColor: Colors.brown,
-          backgroundColor: const Color(0xFFEFEBE9),
+          backgroundColor: const Color(0xFF2A2522),
           icon: Icons.view_column,
           description:
               'A cervical orthosis consisting of four adjustable metal posts connecting '
@@ -174,7 +175,7 @@ final spinalOrthosesContent = TopicData(
         ComparisonCardBlock(
           title: 'Yale Brace (CTO)',
           themeColor: Colors.indigo,
-          backgroundColor: const Color(0xFFE8EAF6),
+          backgroundColor: const Color(0xFF1A1D2E),
           icon: Icons.security,
           description:
               'A cervicothoracic orthosis that combines a rigid cervical collar with '
@@ -192,7 +193,7 @@ final spinalOrthosesContent = TopicData(
         ComparisonCardBlock(
           title: 'Minerva Body Jacket (CTO)',
           themeColor: Colors.purple,
-          backgroundColor: const Color(0xFFF3E5F5),
+          backgroundColor: const Color(0xFF2A1A2E),
           icon: Icons.shield_outlined,
           description:
               'A custom-molded cervicothoracic orthosis with a circumferential forehead '
@@ -221,7 +222,7 @@ final spinalOrthosesContent = TopicData(
         ComparisonCardBlock(
           title: 'Halo Vest — Gold Standard',
           themeColor: Colors.red,
-          backgroundColor: const Color(0xFFFFEBEE),
+          backgroundColor: const Color(0xFF2A1519),
           icon: Icons.stars,
           description:
               'The halo vest is the gold standard for cervical immobilization, providing '
@@ -243,7 +244,7 @@ final spinalOrthosesContent = TopicData(
         BulletCardBlock(
           title: 'Halo Vest Complications',
           themeColor: Colors.red,
-          backgroundColor: const Color(0xFFFFCDD2),
+          backgroundColor: const Color(0xFF2A1519),
           points: [
             'Pin loosening — most common complication overall',
             'Pin site infection — most common infection; requires pin site care',
@@ -306,6 +307,35 @@ final spinalOrthosesContent = TopicData(
 
         // --- Custom Widget ---
         CustomWidgetBlock(CustomWidgetType.cervicalOrthosisComparison),
+        CustomWidgetBlock(CustomWidgetType.cervicalRestrictionDemo),
+
+        CheckpointBlock(
+          question: 'Which cervical orthosis provides the BEST overall motion restriction across all planes?',
+          options: ['Philadelphia collar', 'SOMI brace', 'Four-poster brace', 'Halo vest'],
+          correctIndex: 3,
+          explanation: 'The halo vest is the gold standard for cervical immobilization, providing the best restriction in ALL planes: flexion, extension, lateral bending, and rotation. SOMI is best for flexion ONLY (93%) but poor for extension (42%). No other orthosis approaches the halo for overall restriction.',
+        ),
+
+        cervicalOrthosisFlowchart,
+        CaseScenarioBlock(
+          title: 'Cervical Fracture Orthosis Selection',
+          vignette: 'A 72-year-old male presents after a fall with a stable C2 odontoid fracture (Type II). He has no neurological deficits. The neurosurgery team recommends non-operative management with external immobilization.',
+          decisionPoints: [
+            CaseDecisionPoint(
+              prompt: 'For a C2 odontoid fracture requiring maximum immobilization, what orthosis would you recommend?',
+              options: ['Soft collar', 'Philadelphia collar', 'SOMI brace', 'Halo vest'],
+              optimalIndex: 3,
+              explanation: 'C2 fractures are upper cervical — the halo vest provides the best immobilization for upper C-spine injuries. SOMI and Philadelphia collars do not provide adequate restriction for unstable upper cervical fractures.',
+            ),
+            CaseDecisionPoint(
+              prompt: 'The patient develops pin-site infection at one of the halo pins. What is your management?',
+              options: ['Remove the halo immediately', 'Oral antibiotics and pin care', 'Replace all four pins', 'Switch to a SOMI brace'],
+              optimalIndex: 1,
+              explanation: 'Pin-site infection is the most common halo complication (20%). First-line management is local pin care and oral antibiotics. Pin replacement is only needed if the pin loosens. Premature halo removal risks fracture displacement.',
+            ),
+          ],
+          summaryPearl: 'Upper cervical fractures (C1-C2) require the halo vest — no other orthosis provides adequate immobilization. Pin-site infection (20%) is the most common complication and is managed with antibiotics and pin care, not halo removal.',
+        ),
       ],
     ),
 
@@ -336,7 +366,7 @@ final spinalOrthosesContent = TopicData(
         ComparisonCardBlock(
           title: 'Jewett Hyperextension Orthosis',
           themeColor: Colors.orange,
-          backgroundColor: const Color(0xFFFFF3E0),
+          backgroundColor: const Color(0xFF2A2215),
           icon: Icons.straighten,
           description:
               'A three-point pressure system hyperextension orthosis that limits thoracolumbar '
@@ -359,7 +389,7 @@ final spinalOrthosesContent = TopicData(
         ComparisonCardBlock(
           title: 'CASH (Cruciform Anterior Spinal Hyperextension)',
           themeColor: Colors.amber,
-          backgroundColor: const Color(0xFFFFF8E1),
+          backgroundColor: const Color(0xFF2A2515),
           icon: Icons.add,
           description:
               'Similar to the Jewett orthosis in function (flexion control via 3-point '
@@ -389,7 +419,7 @@ final spinalOrthosesContent = TopicData(
         ComparisonCardBlock(
           title: 'Custom-Molded TLSO (Body Jacket)',
           themeColor: Colors.blueGrey,
-          backgroundColor: const Color(0xFFECEFF1),
+          backgroundColor: const Color(0xFF1E2530),
           icon: Icons.person,
           description:
               'A custom-fabricated total-contact TLSO that provides the most comprehensive '
@@ -445,7 +475,7 @@ final spinalOrthosesContent = TopicData(
         BulletCardBlock(
           title: '3-Point Pressure in Hyperextension Orthoses',
           themeColor: Colors.deepOrange,
-          backgroundColor: const Color(0xFFFBE9E7),
+          backgroundColor: const Color(0xFF2A1D19),
           points: [
             'Anterior force #1: Sternal pad pushes posteriorly',
             'Anterior force #2: Suprapubic pad pushes posteriorly',
@@ -457,12 +487,19 @@ final spinalOrthosesContent = TopicData(
           ],
         ),
 
+        CheckpointBlock(
+          question: 'A Jewett hyperextension brace applies a 3-point force system to limit which motion?',
+          options: ['Extension', 'Flexion', 'Lateral bending', 'Rotation'],
+          correctIndex: 1,
+          explanation: 'The Jewett brace is a 3-point hyperextension orthosis that limits FLEXION. The three pressure points are: sternum (anterior), pubic symphysis (anterior), and thoracolumbar junction (posterior). It is indicated for stable compression fractures in the thoracolumbar region.',
+        ),
+
         // --- Scoliosis Orthoses ---
         HeaderBlock('Scoliosis Orthoses'),
         ComparisonCardBlock(
           title: 'Milwaukee Brace (CTLSO)',
           themeColor: Colors.cyan,
-          backgroundColor: const Color(0xFFE0F7FA),
+          backgroundColor: const Color(0xFF152A2E),
           icon: Icons.swap_vert,
           description:
               'A cervicothoracolumbosacral orthosis (CTLSO) used for scoliosis management. '
@@ -482,7 +519,7 @@ final spinalOrthosesContent = TopicData(
         ComparisonCardBlock(
           title: 'Boston Brace (Underarm TLSO)',
           themeColor: Colors.lightBlue,
-          backgroundColor: const Color(0xFFE1F5FE),
+          backgroundColor: const Color(0xFF1A2332),
           icon: Icons.crop_square,
           description:
               'An underarm TLSO used for scoliosis curves with an apex at or BELOW T8. '
@@ -503,15 +540,16 @@ final spinalOrthosesContent = TopicData(
           'Board Pearl — Scoliosis Orthoses',
           'Milwaukee brace = apex ABOVE T8 (has neck ring). Boston brace = apex AT or '
           'BELOW T8 (underarm, no neck ring). Bracing is effective only in skeletally '
-          'immature patients (Risser 0-2) with curves 25-40 degrees. Curves >45 degrees '
-          'generally require surgical consideration.',
+          'immature patients (Risser 0-2) with curves 25-40 degrees. Curves 40-50 degrees '
+          'are the surgical gray zone, and curves >50 degrees generally warrant surgery '
+          'regardless of skeletal maturity.',
         ),
 
         // --- Providence Brace ---
         ComparisonCardBlock(
           title: 'Providence Brace (Nighttime Only)',
           themeColor: Colors.deepPurple,
-          backgroundColor: const Color(0xFFEDE7F6),
+          backgroundColor: const Color(0xFF1F1A2E),
           icon: Icons.nightlight_round,
           description:
               'A nighttime-only scoliosis orthosis that uses pads and straps adjusted '
@@ -538,7 +576,7 @@ final spinalOrthosesContent = TopicData(
         BulletCardBlock(
           title: 'BrAIST Trial Key Results',
           themeColor: const Color(0xFF1565C0),
-          backgroundColor: const Color(0xFFE3F2FD),
+          backgroundColor: const Color(0xFF1A2332),
           points: [
             '242 patients analyzed (116 randomized + 126 preference-based cohort)',
             'Compared bracing vs observation in skeletally immature patients with moderate AIS',
@@ -590,7 +628,7 @@ final spinalOrthosesContent = TopicData(
         BulletCardBlock(
           title: 'Risser Sign Clinical Significance',
           themeColor: Colors.deepPurple,
-          backgroundColor: const Color(0xFFEDE7F6),
+          backgroundColor: const Color(0xFF1F1A2E),
           points: [
             'Risser 0-2: bracing IS indicated (significant remaining growth)',
             'Risser 3: transitional — bracing may still be appropriate',
@@ -644,7 +682,7 @@ final spinalOrthosesContent = TopicData(
         ComparisonCardBlock(
           title: 'Lumbosacral Corset',
           themeColor: Colors.grey,
-          backgroundColor: const Color(0xFFF5F5F5),
+          backgroundColor: const Color(0xFF232A3B),
           icon: Icons.wrap_text,
           description:
               'A flexible fabric support with optional posterior stays that provides '
@@ -666,7 +704,7 @@ final spinalOrthosesContent = TopicData(
         ComparisonCardBlock(
           title: 'Knight LSO (Chair-Back Brace)',
           themeColor: Colors.blue,
-          backgroundColor: const Color(0xFFE3F2FD),
+          backgroundColor: const Color(0xFF1A2332),
           icon: Icons.weekend,
           description:
               'A rigid LSO with a posterior metal frame and two lateral uprights connected '
@@ -688,7 +726,7 @@ final spinalOrthosesContent = TopicData(
         ComparisonCardBlock(
           title: 'Knight-Taylor TLSO',
           themeColor: Colors.indigo,
-          backgroundColor: const Color(0xFFE8EAF6),
+          backgroundColor: const Color(0xFF1A1D2E),
           icon: Icons.expand,
           description:
               'An extension of the Knight LSO that adds full-length paraspinal uprights '
@@ -718,7 +756,7 @@ final spinalOrthosesContent = TopicData(
         ComparisonCardBlock(
           title: 'Williams Flexion LSO — Board Favorite',
           themeColor: Colors.deepPurple,
-          backgroundColor: const Color(0xFFEDE7F6),
+          backgroundColor: const Color(0xFF1F1A2E),
           icon: Icons.compare_arrows,
           description:
               'A unique LSO that LIMITS EXTENSION and ALLOWS FLEXION. This is the OPPOSITE '
@@ -748,7 +786,7 @@ final spinalOrthosesContent = TopicData(
         BulletCardBlock(
           title: 'Williams LSO — Clinical Rationale',
           themeColor: Colors.deepPurple,
-          backgroundColor: const Color(0xFFD1C4E9),
+          backgroundColor: const Color(0xFF1F1A2E),
           points: [
             'Spondylolisthesis: flexion reduces anterior vertebral slippage',
             'Spinal stenosis: flexion opens the spinal canal, relieves neurogenic claudication',
@@ -764,7 +802,7 @@ final spinalOrthosesContent = TopicData(
         BulletCardBlock(
           title: 'SI Belt / Trochanteric Belt',
           themeColor: Colors.teal,
-          backgroundColor: const Color(0xFFE0F2F1),
+          backgroundColor: const Color(0xFF152A27),
           points: [
             'Circumferential elastic belt worn around the pelvis at the SI joint level',
             'Provides compression and stabilization of the sacroiliac joints',
@@ -844,7 +882,7 @@ final spinalOrthosesContent = TopicData(
         BulletCardBlock(
           title: 'Post-Operative Orthosis Use',
           themeColor: Colors.green,
-          backgroundColor: const Color(0xFFE8F5E9),
+          backgroundColor: const Color(0xFF152A1A),
           points: [
             'Post-cervical fusion: rigid collar (Miami J, Aspen) or halo depending on construct stability',
             'Post-thoracolumbar fusion: custom TLSO for 8-12 weeks typical',
@@ -862,7 +900,7 @@ final spinalOrthosesContent = TopicData(
         BulletCardBlock(
           title: 'Orthosis Management of Osteoporotic Fractures',
           themeColor: Colors.amber,
-          backgroundColor: const Color(0xFFFFF8E1),
+          backgroundColor: const Color(0xFF2A2515),
           points: [
             'Most common indication for thoracolumbar orthoses in elderly patients',
             'Typically stable anterior compression (wedge) fractures',
@@ -903,7 +941,7 @@ final spinalOrthosesContent = TopicData(
         BulletCardBlock(
           title: 'Mechanisms of Spinal Orthosis Action',
           themeColor: Colors.blueGrey,
-          backgroundColor: const Color(0xFFECEFF1),
+          backgroundColor: const Color(0xFF1E2530),
           points: [
             'Three-point pressure: two forces in one direction, counterforce in opposite direction (Jewett, CASH, Williams)',
             'Total contact: distributes forces over maximum surface area (custom TLSO)',
@@ -920,7 +958,7 @@ final spinalOrthosesContent = TopicData(
         BulletCardBlock(
           title: 'Commonly Tested Scenarios',
           themeColor: Colors.red,
-          backgroundColor: const Color(0xFFFFEBEE),
+          backgroundColor: const Color(0xFF2A1519),
           points: [
             '"Best orthosis for flexion control of the cervical spine (non-halo)?" → SOMI',
             '"Best orthosis for extension control of the cervical spine (non-halo)?" → Minerva',

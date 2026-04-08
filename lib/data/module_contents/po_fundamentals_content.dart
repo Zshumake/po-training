@@ -21,7 +21,7 @@ final poFundamentalsContent = TopicData(
         BulletCardBlock(
           title: 'Key Definitions',
           themeColor: Colors.blue,
-          backgroundColor: const Color(0xFFE3F2FD),
+          backgroundColor: const Color(0xFF1A2332),
           points: [
             'Gait cycle (stride): interval from initial contact of one foot to next initial contact of the SAME foot',
             'Step: interval from initial contact of one foot to initial contact of the OPPOSITE foot',
@@ -40,7 +40,7 @@ final poFundamentalsContent = TopicData(
         BulletCardBlock(
           title: 'Center of Gravity (COG)',
           themeColor: Colors.teal,
-          backgroundColor: const Color(0xFFE0F2F1),
+          backgroundColor: const Color(0xFF152A27),
           points: [
             'Located 5 cm anterior to S2 vertebral body',
             'Vertical displacement: <5 cm (approximately 5 cm total excursion)',
@@ -59,7 +59,7 @@ final poFundamentalsContent = TopicData(
         BulletCardBlock(
           title: 'Normal Gait Parameters',
           themeColor: Colors.indigo,
-          backgroundColor: const Color(0xFFE8EAF6),
+          backgroundColor: const Color(0xFF1A1D2E),
           points: [
             'Comfortable walking speed: 80 m/min (approximately 3 mph)',
             'Normal cadence: ~113 steps/min',
@@ -86,6 +86,9 @@ final poFundamentalsContent = TopicData(
     TopicTab(
       title: 'Gait Cycle',
       blocks: [
+        HeaderBlock('Interactive Gait Cycle'),
+        TextBlock('Tap each phase below to explore details. The timeline shows stance (teal, 0-60%) vs swing (amber, 60-100%).'),
+        GaitCycleBlock(),
         HeaderBlock('Phases of the Gait Cycle'),
         TextBlock(
           'The gait cycle is divided into stance phase (60%) and swing phase (40%). '
@@ -177,6 +180,12 @@ final poFundamentalsContent = TopicData(
           '(2nd) at midstance, Forefoot rocker (3rd) at terminal stance. '
           'Loss of any rocker significantly impairs gait efficiency.',
         ),
+        CheckpointBlock(
+          question: 'During which phase of gait does the body\'s center of gravity reach its highest point?',
+          options: ['Loading response', 'Midstance', 'Terminal stance', 'Midswing'],
+          correctIndex: 1,
+          explanation: 'The center of gravity reaches its highest point during midstance, when the body vaults over the stance limb. This is one of the six determinants of gait that minimizes vertical displacement.',
+        ),
       ],
     ),
 
@@ -217,7 +226,7 @@ final poFundamentalsContent = TopicData(
         BulletCardBlock(
           title: 'Joint Moments and Powers',
           themeColor: Colors.deepOrange,
-          backgroundColor: const Color(0xFFFBE9E7),
+          backgroundColor: const Color(0xFF2A1D19),
           points: [
             'Ankle generates the largest power burst during gait (A2 power burst at push-off)',
             'Push-off generates ~80% of the energy for forward propulsion',
@@ -230,7 +239,7 @@ final poFundamentalsContent = TopicData(
         BulletCardBlock(
           title: 'Ground Reaction Force (GRF)',
           themeColor: Colors.green,
-          backgroundColor: const Color(0xFFE8F5E9),
+          backgroundColor: const Color(0xFF152A1A),
           points: [
             'GRF has three components: vertical, anterior-posterior, medial-lateral',
             'Vertical GRF shows M-shaped pattern with peaks at loading response and terminal stance',
@@ -245,6 +254,12 @@ final poFundamentalsContent = TopicData(
           'The M-shaped vertical GRF pattern with two peaks exceeding body weight '
           'and a trough at midstance is a classic board question. The trough occurs '
           'because COG is at its highest (potential energy peak) at midstance.',
+        ),
+        CheckpointBlock(
+          question: 'Which power event generates the LARGEST burst of energy during normal gait?',
+          options: ['H1 (hip flexion at push-off)', 'K1 (knee extension at loading)', 'A2 (ankle plantarflexion at push-off)', 'H3 (hip extension at initial contact)'],
+          correctIndex: 2,
+          explanation: 'The A2 power burst (ankle plantarflexion at push-off) is the largest power event in normal gait, generating the propulsive force for forward progression. This is why ESAR prosthetic feet that store and return energy at push-off improve gait efficiency.',
         ),
       ],
     ),
@@ -287,7 +302,7 @@ final poFundamentalsContent = TopicData(
         BulletCardBlock(
           title: 'Clinical Significance',
           themeColor: Colors.orange,
-          backgroundColor: const Color(0xFFFFF3E0),
+          backgroundColor: const Color(0xFF2A2215),
           points: [
             'Loss of any determinant increases energy expenditure of gait',
             'Knee fusion eliminates determinant #3 (knee flexion in stance) and increases vertical COG excursion',
@@ -300,7 +315,7 @@ final poFundamentalsContent = TopicData(
         ComparisonCardBlock(
           title: 'Compass Gait (Without Determinants)',
           themeColor: Colors.red,
-          backgroundColor: const Color(0xFFFFEBEE),
+          backgroundColor: const Color(0xFF2A1519),
           icon: Icons.warning_amber_rounded,
           description: 'Without the 6 determinants, walking would resemble the arc of '
               'a compass with stiff legs, resulting in much greater COG displacement '
@@ -315,7 +330,7 @@ final poFundamentalsContent = TopicData(
         BulletCardBlock(
           title: 'Pathologic Gait Compensations',
           themeColor: Colors.purple,
-          backgroundColor: const Color(0xFFF3E5F5),
+          backgroundColor: const Color(0xFF2A1A2E),
           points: [
             'Vaulting: rising on toes of stance limb to clear swing limb (compensates for limb length discrepancy or inadequate knee flexion)',
             'Circumduction: semicircular swing of leg (compensates for inability to shorten limb in swing)',
@@ -397,7 +412,7 @@ final poFundamentalsContent = TopicData(
         BulletCardBlock(
           title: 'Etiology of Amputation',
           themeColor: Colors.red,
-          backgroundColor: const Color(0xFFFFEBEE),
+          backgroundColor: const Color(0xFF2A1519),
           points: [
             'Dysvascular/diabetic: leading cause (~54% of all amputations)',
             'Trauma: second leading cause (typical patient: young to middle-aged male)',
@@ -412,7 +427,7 @@ final poFundamentalsContent = TopicData(
         BulletCardBlock(
           title: 'Age Distribution',
           themeColor: Colors.purple,
-          backgroundColor: const Color(0xFFF3E5F5),
+          backgroundColor: const Color(0xFF2A1A2E),
           points: [
             'Adults aged 65+: approximately 45% of limb loss population',
             'Adults aged 45-64: approximately 42%',
@@ -420,6 +435,12 @@ final poFundamentalsContent = TopicData(
             'Traumatic amputees tend to be younger with better functional outcomes',
             'Traumatic amputees typically have longer residual limbs (better tissue perfusion)',
           ],
+        ),
+        CheckpointBlock(
+          question: 'What is the most common level of lower extremity amputation?',
+          options: ['Transtibial (BKA)', 'Transfemoral (AKA)', 'Toe amputation', 'Syme amputation'],
+          correctIndex: 2,
+          explanation: 'Toe amputation is the most common level of LE amputation, largely due to the high prevalence of diabetes and peripheral vascular disease. However, transtibial is the most common major amputation level.',
         ),
       ],
     ),
@@ -443,7 +464,7 @@ final poFundamentalsContent = TopicData(
           rows: [
             ['Hemipelvectomy', 'Removal of entire LE including half the pelvis', 'Most proximal LE amputation; rarely performed; pelvic tumors'],
             ['Hip disarticulation', 'Through the hip joint', 'No residual femoral lever arm; significant prosthetic challenges'],
-            ['Transfemoral (AKA)', 'Through femoral shaft, above the knee', 'Loss of anatomic knee; energy expenditure 60-100% above normal'],
+            ['Transfemoral (AKA)', 'Through femoral shaft, above the knee', 'Loss of anatomic knee; energy expenditure traumatic TF 60-70% / vascular TF 65-100% above normal'],
             ['Knee disarticulation', 'Through the knee joint', 'Excellent end-bearing; bulbous distal end; long lever arm'],
             ['Transtibial (BKA)', 'Through tibia and fibula, below the knee', 'Preserves the knee; most common major LE amputation for prosthetic rehab'],
             ['Syme amputation', 'Ankle disarticulation with heel pad preservation', 'Allows limited end-bearing; requires patent posterior tibial artery'],
@@ -466,7 +487,7 @@ final poFundamentalsContent = TopicData(
         BulletCardBlock(
           title: 'TT Residual Limb Considerations',
           themeColor: Colors.blue,
-          backgroundColor: const Color(0xFFE3F2FD),
+          backgroundColor: const Color(0xFF1A2332),
           points: [
             'Ideal tibial length: 12-15 cm retained',
             'Fibula cut 1-2 cm shorter than tibia to prevent distal prominence',
@@ -479,7 +500,7 @@ final poFundamentalsContent = TopicData(
         BulletCardBlock(
           title: 'TF Residual Limb Considerations',
           themeColor: Colors.deepOrange,
-          backgroundColor: const Color(0xFFFBE9E7),
+          backgroundColor: const Color(0xFF2A1D19),
           points: [
             'Longer residual limb is generally preferable (greater lever arm, more muscle retention)',
             'Minimum ~10 cm above knee joint line needed for prosthetic fitting',
@@ -600,7 +621,7 @@ final poFundamentalsContent = TopicData(
         BulletCardBlock(
           title: 'Contracture Thresholds for Level Selection',
           themeColor: Colors.orange,
-          backgroundColor: const Color(0xFFFFF3E0),
+          backgroundColor: const Color(0xFF2A2215),
           points: [
             'Hip flexion contracture >15 degrees: makes TT prosthetic fitting extremely difficult',
             'Knee flexion contracture >15 degrees: renders TT prosthesis unusable (foot cannot be loaded properly)',
@@ -645,7 +666,7 @@ final poFundamentalsContent = TopicData(
         BulletCardBlock(
           title: 'MESS Interpretation',
           themeColor: Colors.red,
-          backgroundColor: const Color(0xFFFFEBEE),
+          backgroundColor: const Color(0xFF2A1519),
           points: [
             'MESS score >=7: amputation recommended (100% amputation rate in original study)',
             'MESS score <7: limb salvage may be attempted',

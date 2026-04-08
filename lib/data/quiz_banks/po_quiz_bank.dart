@@ -94,7 +94,7 @@ class POQuizBank {
       ],
       correctIndex: 1,
       explanation:
-          'A posterior leaf spring (PLS) AFO is the ideal choice for isolated foot drop with intact quadriceps. The PLS provides dorsiflexion assist during swing phase to clear the foot while allowing near-normal plantarflexion during stance. It is lightweight, fits in most shoes, and does not restrict mediolateral ankle motion significantly, making it suitable for patients whose primary deficit is dorsiflexor weakness.',
+          'A posterior leaf spring (PLS) AFO is the ideal choice for isolated foot drop with intact quadriceps. The PLS provides dorsiflexion assist during swing phase to clear the foot while allowing near-normal plantarflexion during stance. It is lightweight, fits in most shoes, and provides only minimal mediolateral ankle control — so it should be reserved for patients whose primary deficit is dorsiflexor weakness without significant ML instability.',
       moduleId: 'le-orthoses',
       difficulty: 'board',
     ),
@@ -540,7 +540,7 @@ class POQuizBank {
       ],
       correctIndex: 2,
       explanation:
-          'Polycentric (four-bar or multiaxial) knees are especially advantageous for knee disarticulation amputees. The polycentric design shortens the shank during swing phase through its linkage mechanism, improving cosmesis and toe clearance when the patient is seated. Additionally, the instantaneous center of rotation moves posteriorly during flexion, enhancing stance stability.',
+          'Polycentric (four-bar or multiaxial) knees are especially advantageous for knee disarticulation amputees. The polycentric design shortens the shank during swing phase through its linkage mechanism, improving cosmesis and toe clearance when the patient is seated. In a four-bar polycentric knee, the instantaneous center of rotation (ICR) sits posterior and proximal to the anatomical knee in extension/early stance — this places the weight line anterior to the ICR and provides voluntary stance stability. As the knee flexes for swing, the ICR translates anteriorly and distally, allowing the knee to break into swing.',
       moduleId: 'prosthetic-components',
       difficulty: 'board',
     ),

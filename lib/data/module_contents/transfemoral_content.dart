@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import '../models/topic_content_model.dart';
+import '../flowcharts/clinical_flowcharts.dart';
 
 final transfemoralContent = TopicData(
   id: 'transfemoral',
@@ -22,7 +23,7 @@ final transfemoralContent = TopicData(
         ComparisonCardBlock(
           title: 'Quadrilateral Socket',
           themeColor: Colors.blue,
-          backgroundColor: const Color(0xFFE3F2FD),
+          backgroundColor: const Color(0xFF1A2332),
           icon: Icons.crop_square,
           description: 'The traditional TF socket design with a quadrilateral cross-section. '
               'The ML dimension is WIDER than the AP dimension. The ischial tuberosity '
@@ -30,8 +31,8 @@ final transfemoralContent = TopicData(
           keyPoints: [
             'Narrow AP dimension, wide ML dimension',
             'Ischial tuberosity sits ON the posterior brim (ischial seat)',
-            'Anterior wall height: at the level of the inguinal ligament (Scarpa\'s triangle)',
-            'Scarpa\'s triangle has a bulge to contain the femoral triangle (neurovascular bundle)',
+            'Anterior wall rises to the level of the inguinal ligament',
+            'A Scarpa\'s bulge is built into the anterior wall to accommodate the contents of the femoral triangle (femoral artery, vein, nerve)',
             'Reliefs for: adductor longus tendon, hamstring tendons, greater trochanter, rectus femoris',
             'Relief channel for gluteus maximus posterolaterally',
             'Posterior shelf (ischial seat) is flat for IT weight-bearing',
@@ -40,7 +41,7 @@ final transfemoralContent = TopicData(
         ComparisonCardBlock(
           title: 'Ischial Containment (IRC/CAT-CAM/NSNA) Socket',
           themeColor: Colors.teal,
-          backgroundColor: const Color(0xFFE0F2F1),
+          backgroundColor: const Color(0xFF152A27),
           icon: Icons.radio_button_unchecked,
           description: 'Modern socket design where the ischial tuberosity is contained '
               'INSIDE the socket. ML dimension is NARROWER than AP. Also known as '
@@ -80,10 +81,21 @@ final transfemoralContent = TopicData(
           ],
           headerColor: Colors.deepPurple,
         ),
+        AnnotatedImageBlock(
+          title: 'Quadrilateral vs IRC Socket Comparison',
+          diagramType: 'socket-irc',
+          hotspots: [
+            HotspotData(id: 'it', xPercent: 0.5, yPercent: 0.15, label: 'Ischial Tuberosity Position', description: 'Quad socket: IT sits ON the posterior brim. IRC: IT is captured WITHIN the socket for better ML control.', clinicalSignificance: 'IRC provides better femoral adduction and ML stability — this is the key design difference.', pinColor: Color(0xFF0D9488)),
+            HotspotData(id: 'ml', xPercent: 0.25, yPercent: 0.4, label: 'ML Dimension', description: 'IRC has a narrower ML dimension than quad socket, maintaining femur in adduction.', pinColor: Color(0xFF0D9488)),
+            HotspotData(id: 'ap', xPercent: 0.5, yPercent: 0.4, label: 'AP Dimension', description: 'IRC has a wider AP dimension to accommodate the adducted femur.', pinColor: Color(0xFF0D9488)),
+            HotspotData(id: 'scarpa', xPercent: 0.4, yPercent: 0.2, label: 'Scarpa Triangle', description: 'Quad socket applies pressure here for weight-bearing. Contains femoral artery, vein, and nerve.', clinicalSignificance: 'Excessive pressure can compromise vascular flow — particularly relevant for dysvascular patients.', pinColor: Color(0xFFDC2626)),
+          ],
+          aspectRatio: 1.3,
+        ),
         BulletCardBlock(
           title: 'IRC Socket Advantages',
           themeColor: Colors.green,
-          backgroundColor: const Color(0xFFE8F5E9),
+          backgroundColor: const Color(0xFF152A1A),
           points: [
             'Better medial-lateral stability through bony lock mechanism',
             'Femur maintained in adduction: more anatomic, efficient abductor function',
@@ -98,7 +110,7 @@ final transfemoralContent = TopicData(
         BulletCardBlock(
           title: 'MAS (Marlo Anatomical Socket) Features',
           themeColor: Colors.teal,
-          backgroundColor: const Color(0xFFE0F2F1),
+          backgroundColor: const Color(0xFF152A27),
           points: [
             'Further evolution of IRC design developed by Marlo Ortiz (late 1990s)',
             'Skeletal support concentrated along medial ischial-ramal complex',
@@ -120,7 +132,7 @@ final transfemoralContent = TopicData(
         ComparisonCardBlock(
           title: 'Flexible Thermoplastic Socket with Rigid Frame',
           themeColor: Colors.orange,
-          backgroundColor: const Color(0xFFFFF3E0),
+          backgroundColor: const Color(0xFF2A2215),
           icon: Icons.layers,
           description: 'A two-part socket system with a flexible inner socket made of '
               'thermoplastic material contained within a rigid laminated outer frame '
@@ -177,7 +189,7 @@ final transfemoralContent = TopicData(
         BulletCardBlock(
           title: 'Single-Axis Constant Friction Knee',
           themeColor: Colors.grey,
-          backgroundColor: const Color(0xFFEEEEEE),
+          backgroundColor: const Color(0xFF232A3B),
           points: [
             'Simplest mechanical knee design',
             'Stability depends entirely on alignment (GRF anterior to knee axis)',
@@ -191,7 +203,7 @@ final transfemoralContent = TopicData(
         BulletCardBlock(
           title: 'Stance-Control (Weight-Activated Safety) Knee',
           themeColor: Colors.blue,
-          backgroundColor: const Color(0xFFE3F2FD),
+          backgroundColor: const Color(0xFF1A2332),
           points: [
             'Friction brake engages when weight is applied (axial loading)',
             'Provides stance-phase stability independent of alignment',
@@ -205,7 +217,7 @@ final transfemoralContent = TopicData(
         BulletCardBlock(
           title: 'Polycentric (Four-Bar/Multiaxis) Knee',
           themeColor: Colors.teal,
-          backgroundColor: const Color(0xFFE0F2F1),
+          backgroundColor: const Color(0xFF152A27),
           points: [
             'Multiple pivot points create an instantaneous center of rotation (ICR)',
             'ICR located POSTERIOR and PROXIMAL to the knee during stance = inherent stability',
@@ -219,7 +231,7 @@ final transfemoralContent = TopicData(
         ComparisonCardBlock(
           title: 'Hydraulic/Pneumatic Knee Units',
           themeColor: Colors.deepOrange,
-          backgroundColor: const Color(0xFFFBE9E7),
+          backgroundColor: const Color(0xFF2A1D19),
           icon: Icons.speed,
           description: 'Fluid-controlled knees provide variable resistance that changes '
               'with walking speed, allowing for a more natural gait pattern at '
@@ -237,7 +249,7 @@ final transfemoralContent = TopicData(
         ComparisonCardBlock(
           title: 'Microprocessor Knees (C-Leg, Genium, X3, Rheo)',
           themeColor: Colors.purple,
-          backgroundColor: const Color(0xFFF3E5F5),
+          backgroundColor: const Color(0xFF2A1A2E),
           icon: Icons.memory,
           description: 'Computer-controlled knee units use sensors to detect gait phase '
               'and adjust resistance in real-time. They provide the most natural '
@@ -257,7 +269,7 @@ final transfemoralContent = TopicData(
         BulletCardBlock(
           title: 'Manual Locking Knee',
           themeColor: Colors.red,
-          backgroundColor: const Color(0xFFFFEBEE),
+          backgroundColor: const Color(0xFF2A1519),
           points: [
             'Knee is LOCKED in full extension during ambulation',
             'Patient must manually unlock to sit (pull-cable or push-button release)',
@@ -300,7 +312,7 @@ final transfemoralContent = TopicData(
         BulletCardBlock(
           title: 'K2 MPK Medicare Coverage Criteria',
           themeColor: Colors.blue,
-          backgroundColor: const Color(0xFFE3F2FD),
+          backgroundColor: const Color(0xFF1A2332),
           points: [
             'Effective September 1, 2024 — major expansion of access',
             'MPK must incorporate integrated stumble-recovery technology',
@@ -318,6 +330,13 @@ final transfemoralContent = TopicData(
           'the patient can manage daily charging and error alerts, and the medical '
           'record documents the functional level and clinical rationale.',
         ),
+        CheckpointBlock(
+          question: 'A K2 transfemoral amputee is being considered for a microprocessor knee. Per the September 2024 CMS ruling (LCD L33787), which criteria must be met?',
+          options: ['Patient must be K3 or higher', 'MPK has integrated stumble-recovery technology and the patient can manage daily charging and error alerts', 'Patient must be under age 65', 'Microprocessor knees are never covered for K2'],
+          correctIndex: 1,
+          explanation: 'Per CMS LCD L33787 (effective September 1, 2024), K2 beneficiaries are eligible for an MPK when ALL of the following are met: the MPK incorporates integrated stumble-recovery technology, the beneficiary can charge the device daily, the beneficiary can understand and respond to error alerts, and the medical record documents the K2 functional level and clinical rationale for MPK selection. "History of falls" is NOT a codified coverage criterion.',
+        ),
+        tfKneeSelectionFlowchart,
       ],
     ),
 
@@ -350,7 +369,7 @@ final transfemoralContent = TopicData(
         ComparisonCardBlock(
           title: 'Suction Suspension (Gold Standard)',
           themeColor: Colors.amber,
-          backgroundColor: const Color(0xFFFFF8E1),
+          backgroundColor: const Color(0xFF2A2515),
           icon: Icons.air,
           description: 'Suction suspension is considered the gold standard for transfemoral '
               'prosthetics when the patient has adequate dexterity and stable '
@@ -368,7 +387,7 @@ final transfemoralContent = TopicData(
         BulletCardBlock(
           title: 'Silesian Belt Details',
           themeColor: Colors.green,
-          backgroundColor: const Color(0xFFE8F5E9),
+          backgroundColor: const Color(0xFF152A1A),
           points: [
             'Flexible webbing strap originating from the lateral wall of the socket',
             'Wraps around the pelvis to the contralateral iliac crest',
@@ -383,7 +402,7 @@ final transfemoralContent = TopicData(
         BulletCardBlock(
           title: 'Pelvic Band with Hip Joint',
           themeColor: Colors.red,
-          backgroundColor: const Color(0xFFFFEBEE),
+          backgroundColor: const Color(0xFF2A1519),
           points: [
             'Metal hip joint attached to the lateral wall of the socket',
             'Connected to a rigid or semi-rigid pelvic band encircling the pelvis',
@@ -426,7 +445,7 @@ final transfemoralContent = TopicData(
         BulletCardBlock(
           title: 'Suspension Selection by Patient Profile',
           themeColor: Colors.orange,
-          backgroundColor: const Color(0xFFFFF3E0),
+          backgroundColor: const Color(0xFF2A2215),
           points: [
             'Active, stable volume: suction socket (gold standard)',
             'Active, minor volume fluctuation: partial suction + auxiliary',
@@ -457,7 +476,7 @@ final transfemoralContent = TopicData(
         BulletCardBlock(
           title: 'TF Alignment Fundamentals',
           themeColor: Colors.indigo,
-          backgroundColor: const Color(0xFFE8EAF6),
+          backgroundColor: const Color(0xFF1A1D2E),
           points: [
             'TKA line: trochanter-knee-ankle reference line for alignment',
             'Stance stability: GRF must pass ANTERIOR to the knee axis',
@@ -490,7 +509,7 @@ final transfemoralContent = TopicData(
         BulletCardBlock(
           title: 'Increasing Knee Stability',
           themeColor: Colors.green,
-          backgroundColor: const Color(0xFFE8F5E9),
+          backgroundColor: const Color(0xFF152A1A),
           points: [
             'Move prosthetic knee axis posteriorly relative to socket and foot',
             'Stiffen the heel cushion (keeps GRF anterior to knee longer)',
@@ -501,7 +520,7 @@ final transfemoralContent = TopicData(
         BulletCardBlock(
           title: 'Decreasing Knee Stability (Easier Swing Initiation)',
           themeColor: Colors.orange,
-          backgroundColor: const Color(0xFFFFF3E0),
+          backgroundColor: const Color(0xFF2A2215),
           points: [
             'Move the knee axis anteriorly',
             'Soften the heel cushion',
@@ -550,6 +569,12 @@ final transfemoralContent = TopicData(
           'is to rotate the knee bolt in the OPPOSITE direction of the whip. If the '
           'heel goes medial, rotate the knee bolt medially (internally).',
         ),
+        CheckpointBlock(
+          question: 'A TF amputee demonstrates a medial whip during swing phase. What is the most likely cause?',
+          options: ['Excessive internal rotation of the knee unit', 'Excessive external rotation of the knee unit', 'Socket too loose', 'Prosthesis too long'],
+          correctIndex: 1,
+          explanation: 'Medial whip = heel kicks MEDIALLY during swing = excessive EXTERNAL rotation of the knee unit. Remember: the whip direction tells you the rotation direction — medial whip = external rotation, lateral whip = internal rotation. Correction: rotate the knee unit in the opposite direction.',
+        ),
         PearlBlock(
           'Board Pearl — Lateral Trunk Bend',
           'Lateral trunk bending is the most common and most heavily tested TF gait '
@@ -562,7 +587,7 @@ final transfemoralContent = TopicData(
         BulletCardBlock(
           title: 'Ideal TF Residual Limb',
           themeColor: Colors.green,
-          backgroundColor: const Color(0xFFE8F5E9),
+          backgroundColor: const Color(0xFF152A1A),
           points: [
             'Conical shape (not bulbous or cylindrical)',
             'Longer residual limb = better lever arm = better function',
@@ -577,7 +602,7 @@ final transfemoralContent = TopicData(
         BulletCardBlock(
           title: 'Hip Flexion Contracture Management',
           themeColor: Colors.orange,
-          backgroundColor: const Color(0xFFFFF3E0),
+          backgroundColor: const Color(0xFF2A2215),
           points: [
             'Thomas test used to assess hip flexion contracture',
             'Hip flexion contracture up to 20 degrees can be accommodated in the socket',
@@ -624,7 +649,7 @@ final transfemoralContent = TopicData(
         BulletCardBlock(
           title: 'Prosthetic Foot Selection for TF',
           themeColor: Colors.deepPurple,
-          backgroundColor: const Color(0xFFEDE7F6),
+          backgroundColor: const Color(0xFF1F1A2E),
           points: [
             'Same foot types available as for TT (SACH, single-axis, multiaxis, energy-storing)',
             'Single-axis foot: quick foot-flat improves knee stability at initial contact',
@@ -643,7 +668,7 @@ final transfemoralContent = TopicData(
             ['Ideal shape', 'Cylindrical', 'Conical', 'Bulbous (condyles)', 'N/A'],
             ['Bone preparation', 'Fibula 2-3 cm shorter; bevel crest', 'Smooth distal femur; preserve length', 'Condyles intact', 'Pelvic preservation'],
             ['Critical muscle', 'Quads/hams (knee control)', 'Hip extensors/abductors', 'Quads over patella', 'Trunk muscles only'],
-            ['Energy cost (traumatic)', '~10-25%', '~60-70%', '~40%', '~80-100%'],
+            ['Energy cost (traumatic)', '~10-25%', '~60-70%', '~40%', '~100-200%'],
             ['Energy cost (vascular)', '~40%', '~100%', '~60%', 'Rarely functional'],
             ['Prosthetic knee', 'No', 'Yes (most complex)', 'Yes (polycentric preferred)', 'Yes (with hip joint)'],
             ['End-bearing', 'Partial', 'None (proximal loading)', 'Full end-bearing', 'Ischial/pelvic'],
@@ -682,7 +707,17 @@ final transfemoralContent = TopicData(
           'hip joint is positioned ANTERIOR to the midline of the body. This ensures '
           'that when the patient shifts weight onto the prosthesis, the GRF passes '
           'anterior to the hip axis, creating a stabilizing extension moment. '
-          'Energy cost is approximately 80-100% above baseline.',
+          'Energy cost is approximately 100-200% above baseline.',
+        ),
+        VideoBlock(
+          url: 'https://www.youtube.com/watch?v=lWTobetG7h8',
+          title: 'AKA Prosthetic Gait with Microprocessor Knee',
+          description: 'Compare gait with microprocessor knee (C-Leg) vs mechanical knee. Note improved stance control, reduced stumbles, and more natural cadence with microprocessor knees.',
+        ),
+        VideoBlock(
+          url: 'https://www.youtube.com/watch?v=b2n0USprXmQ',
+          title: 'Lateral Trunk Bend in TF Amputees',
+          description: 'The most common transfemoral gait deviation. Trunk leans ipsilaterally during stance. Causes: weak hip abductors, short residual limb, prosthesis too short, wide socket. IRC socket reduces this.',
         ),
       ],
     ),

@@ -25,7 +25,7 @@ final pediatricPOContent = TopicData(
         ComparisonCardBlock(
           title: 'Transverse Deficiency',
           themeColor: Colors.blue,
-          backgroundColor: const Color(0xFFE3F2FD),
+          backgroundColor: const Color(0xFF1A2332),
           icon: Icons.horizontal_rule,
           description: 'The limb is normally formed to a certain level, then absent '
               'distally. Resembles a surgical amputation. The limb simply ends '
@@ -43,7 +43,7 @@ final pediatricPOContent = TopicData(
         ComparisonCardBlock(
           title: 'Longitudinal Deficiency',
           themeColor: Colors.teal,
-          backgroundColor: const Color(0xFFE0F2F1),
+          backgroundColor: const Color(0xFF152A27),
           icon: Icons.straighten,
           description: 'A specific bone or segment is absent or deficient along the '
               'long axis of the limb, but distal structures may be partially '
@@ -79,7 +79,7 @@ final pediatricPOContent = TopicData(
         ComparisonCardBlock(
           title: 'Fibular Hemimelia',
           themeColor: Colors.orange,
-          backgroundColor: const Color(0xFFFFF3E0),
+          backgroundColor: const Color(0xFF2A2215),
           icon: Icons.accessibility_new,
           description: 'The MOST COMMON congenital long bone deficiency in the lower '
               'extremity. The fibula is partially or completely absent, leading '
@@ -100,7 +100,7 @@ final pediatricPOContent = TopicData(
         ComparisonCardBlock(
           title: 'Proximal Femoral Focal Deficiency (PFFD)',
           themeColor: Colors.red,
-          backgroundColor: const Color(0xFFFFEBEE),
+          backgroundColor: const Color(0xFF2A1519),
           icon: Icons.accessibility,
           description: 'A deficiency of the proximal femur ranging from mild shortening '
               'to complete absence. Classified by the Aitken classification '
@@ -122,7 +122,7 @@ final pediatricPOContent = TopicData(
         BulletCardBlock(
           title: 'Other Congenital Deficiencies',
           themeColor: Colors.deepPurple,
-          backgroundColor: const Color(0xFFEDE7F6),
+          backgroundColor: const Color(0xFF1F1A2E),
           points: [
             'Radial club hand: absent/deficient radius, hand deviates radially',
             'Ulnar club hand: absent/deficient ulna, hand deviates ulnarly (less common)',
@@ -163,7 +163,7 @@ final pediatricPOContent = TopicData(
         BulletCardBlock(
           title: 'Paley Classification (Treatment-Oriented)',
           themeColor: Colors.red,
-          backgroundColor: const Color(0xFFFFEBEE),
+          backgroundColor: const Color(0xFF2A1519),
           points: [
             'Type 1: Intact femur with mobile hip and knee (1a: normal ossification, 1b: delayed)',
             'Type 2: Mobile pseudarthrosis with femoral head in acetabulum (2a: neck, 2b: subtrochanteric)',
@@ -220,6 +220,12 @@ final pediatricPOContent = TopicData(
           'commonly tested fitting milestones. Early fitting promotes body '
           'image incorporation and bilateral motor development.',
         ),
+        CheckpointBlock(
+          question: 'At what age should a child with a congenital upper extremity deficiency first be fitted with a passive prosthesis?',
+          options: ['At birth', 'At 3-6 months (when sitting independently)', 'At 12 months (when walking)', 'At 2 years (when showing hand preference)'],
+          correctIndex: 1,
+          explanation: 'UE prosthetic fitting begins at 3-6 months when the child achieves independent sitting. A passive mitt promotes bilateral hand use and body awareness. Active terminal devices are introduced at 15-18 months. Early fitting (before age 1) correlates with long-term prosthesis acceptance and use.',
+        ),
 
         // --- Prosthesis Replacement Schedule ---
         HeaderBlock('Prosthesis Replacement Schedule During Growth'),
@@ -246,7 +252,7 @@ final pediatricPOContent = TopicData(
         ComparisonCardBlock(
           title: 'Terminal Bony Overgrowth',
           themeColor: Colors.red,
-          backgroundColor: const Color(0xFFFFEBEE),
+          backgroundColor: const Color(0xFF2A1519),
           icon: Icons.warning,
           description: 'Appositional bone growth at the distal end of the residual '
               'limb in PEDIATRIC amputees. New bone grows beyond the cut end '
@@ -277,7 +283,7 @@ final pediatricPOContent = TopicData(
         BulletCardBlock(
           title: 'Terminal Bony Overgrowth: Additional Key Facts',
           themeColor: Colors.red,
-          backgroundColor: const Color(0xFFFFEBEE),
+          backgroundColor: const Color(0xFF2A1519),
           points: [
             'Occurs ONLY in transosseous amputations (through the bone shaft)',
             'Does NOT occur after disarticulation (through the joint)',
@@ -292,7 +298,7 @@ final pediatricPOContent = TopicData(
         BulletCardBlock(
           title: 'Surgical Options',
           themeColor: Colors.deepOrange,
-          backgroundColor: const Color(0xFFFBE9E7),
+          backgroundColor: const Color(0xFF2A1D19),
           points: [
             'Simple distal resection and stump revision: most straightforward but high recurrence (25-50%)',
             'Modified Ertl tibiofibular osteomyoplasty: bone bridge between tibia and fibula',
@@ -308,7 +314,7 @@ final pediatricPOContent = TopicData(
         BulletCardBlock(
           title: 'Prosthetic Management During Growth',
           themeColor: Colors.green,
-          backgroundColor: const Color(0xFFE8F5E9),
+          backgroundColor: const Color(0xFF152A1A),
           points: [
             'Growth plates (physes) remain active until skeletal maturity',
             'Prosthesis must accommodate ongoing limb growth',
@@ -325,7 +331,7 @@ final pediatricPOContent = TopicData(
         BulletCardBlock(
           title: 'Psychosocial Considerations',
           themeColor: Colors.purple,
-          backgroundColor: const Color(0xFFF3E5F5),
+          backgroundColor: const Color(0xFF2A1A2E),
           points: [
             'Early prosthetic fitting promotes incorporation into body image',
             'Peer acceptance important during school-age years',
@@ -357,7 +363,7 @@ final pediatricPOContent = TopicData(
         ComparisonCardBlock(
           title: 'Pavlik Harness',
           themeColor: Colors.blue,
-          backgroundColor: const Color(0xFFE3F2FD),
+          backgroundColor: const Color(0xFF1A2332),
           icon: Icons.child_care,
           description: 'The primary orthotic treatment for developmental dysplasia of '
               'the hip (DDH) in infants. Maintains the hips in flexion and '
@@ -393,7 +399,7 @@ final pediatricPOContent = TopicData(
         BulletCardBlock(
           title: 'Pavlik Harness Complications & Failure Factors',
           themeColor: Colors.red,
-          backgroundColor: const Color(0xFFFFEBEE),
+          backgroundColor: const Color(0xFF2A1519),
           points: [
             'AVN of femoral head: most feared complication (1-30% depending on age/severity)',
             'AVN risk increases with EXCESSIVE ABDUCTION (compresses lateral epiphyseal vessels)',
@@ -410,7 +416,7 @@ final pediatricPOContent = TopicData(
         ComparisonCardBlock(
           title: 'Ponseti Method',
           themeColor: Colors.teal,
-          backgroundColor: const Color(0xFFE0F2F1),
+          backgroundColor: const Color(0xFF152A27),
           icon: Icons.sync,
           description: 'The gold standard treatment for congenital clubfoot (talipes '
               'equinovarus). Involves serial manipulation and casting to '
@@ -430,7 +436,7 @@ final pediatricPOContent = TopicData(
         ComparisonCardBlock(
           title: 'Denis Browne Bar (Foot Abduction Brace)',
           themeColor: Colors.indigo,
-          backgroundColor: const Color(0xFFE8EAF6),
+          backgroundColor: const Color(0xFF1A1D2E),
           icon: Icons.straighten,
           description: 'A bar connecting two shoes/boots in abduction and dorsiflexion. '
               'Used as a maintenance device after successful Ponseti serial casting '
@@ -462,7 +468,7 @@ final pediatricPOContent = TopicData(
         BulletCardBlock(
           title: 'Legg-Calv\u00E9-Perthes: Orthotic Management',
           themeColor: Colors.orange,
-          backgroundColor: const Color(0xFFFFF3E0),
+          backgroundColor: const Color(0xFF2A2215),
           points: [
             'Idiopathic avascular necrosis (AVN) of the femoral head in children',
             'Age of onset: typically 4-10 years (peak 5-7 years)',
@@ -491,7 +497,7 @@ final pediatricPOContent = TopicData(
         BulletCardBlock(
           title: 'Orthotic Management by Neurologic Level',
           themeColor: Colors.red,
-          backgroundColor: const Color(0xFFFFEBEE),
+          backgroundColor: const Color(0xFF2A1519),
           points: [
             'Thoracic level: standing frame or parapodium for supported standing',
             'Thoracic level: RGO (Reciprocating Gait Orthosis) for reciprocal gait',
@@ -506,7 +512,7 @@ final pediatricPOContent = TopicData(
         ComparisonCardBlock(
           title: 'Reciprocating Gait Orthosis (RGO)',
           themeColor: Colors.deepPurple,
-          backgroundColor: const Color(0xFFEDE7F6),
+          backgroundColor: const Color(0xFF1F1A2E),
           icon: Icons.directions_walk,
           description: 'A bilateral HKAFO with a hip joint coupling mechanism that '
               'links hip extension on one side to hip flexion on the other, '
@@ -527,7 +533,7 @@ final pediatricPOContent = TopicData(
         BulletCardBlock(
           title: 'Standing Frames & Parapodia',
           themeColor: Colors.green,
-          backgroundColor: const Color(0xFFE8F5E9),
+          backgroundColor: const Color(0xFF152A1A),
           points: [
             'Static standing frames: support non-ambulatory children in upright position',
             'Parapodium (swivel walker): standing frame with swivel base for limited mobility',
@@ -562,7 +568,7 @@ final pediatricPOContent = TopicData(
         BulletCardBlock(
           title: 'Bracing Criteria',
           themeColor: Colors.blue,
-          backgroundColor: const Color(0xFFE3F2FD),
+          backgroundColor: const Color(0xFF1A2332),
           points: [
             'Cobb angle 25-45 degrees (moderate curves)',
             'Skeletal immaturity: Risser sign 0, 1, or 2',
@@ -587,7 +593,7 @@ final pediatricPOContent = TopicData(
         BulletCardBlock(
           title: 'BrAIST Trial Key Results',
           themeColor: Colors.deepPurple,
-          backgroundColor: const Color(0xFFEDE7F6),
+          backgroundColor: const Color(0xFF1F1A2E),
           points: [
             'Published 2013 (Weinstein et al, NEJM): highest level evidence for scoliosis bracing',
             'Multicenter study: 25 sites, 242 participants with adolescent idiopathic scoliosis',
@@ -618,12 +624,18 @@ final pediatricPOContent = TopicData(
           'because bracing efficacy was so strong. Compliance is the most '
           'critical modifiable factor.',
         ),
+        CheckpointBlock(
+          question: 'Based on the BrAIST trial, what is the minimum daily brace wear time needed to achieve >90% success in preventing scoliosis progression?',
+          options: ['4-6 hours/day', '6-8 hours/day', '8-12 hours/day', '13+ hours/day'],
+          correctIndex: 3,
+          explanation: 'The BrAIST trial (NEJM 2013) demonstrated a clear dose-response: 0-6 hours/day = 42% success, 6-12 hours/day = ~60%, and 13+ hours/day = 90-93% success. This landmark trial was stopped early because of the strong treatment effect (NNT=3).',
+        ),
 
         // --- Milwaukee Brace ---
         ComparisonCardBlock(
           title: 'Milwaukee Brace (CTLSO)',
           themeColor: Colors.teal,
-          backgroundColor: const Color(0xFFE0F2F1),
+          backgroundColor: const Color(0xFF152A27),
           icon: Icons.accessibility_new,
           description: 'The oldest and most traditional scoliosis brace. A cervico-'
               'thoraco-lumbo-sacral orthosis (CTLSO) with a pelvic girdle, '
@@ -647,7 +659,7 @@ final pediatricPOContent = TopicData(
         ComparisonCardBlock(
           title: 'Boston Brace (TLSO)',
           themeColor: Colors.indigo,
-          backgroundColor: const Color(0xFFE8EAF6),
+          backgroundColor: const Color(0xFF1A1D2E),
           icon: Icons.view_module,
           description: 'A custom-molded thoraco-lumbo-sacral orthosis (TLSO) without '
               'a neck ring. The most commonly prescribed scoliosis brace. '
@@ -670,7 +682,7 @@ final pediatricPOContent = TopicData(
         ComparisonCardBlock(
           title: 'Charleston Bending Brace',
           themeColor: Colors.orange,
-          backgroundColor: const Color(0xFFFFF3E0),
+          backgroundColor: const Color(0xFF2A2215),
           icon: Icons.nightlight,
           description: 'A nighttime-only scoliosis brace that overcorrects the curve '
               'during sleep by bending the patient toward the convexity. '
@@ -693,7 +705,7 @@ final pediatricPOContent = TopicData(
         BulletCardBlock(
           title: 'SpineCor Dynamic Brace',
           themeColor: Colors.green,
-          backgroundColor: const Color(0xFFE8F5E9),
+          backgroundColor: const Color(0xFF152A1A),
           points: [
             'Flexible dynamic scoliosis brace',
             'Uses elastic bands rather than rigid plastic',
@@ -745,7 +757,7 @@ final pediatricPOContent = TopicData(
         BulletCardBlock(
           title: 'Bracing Outcomes & Key Concepts',
           themeColor: Colors.deepPurple,
-          backgroundColor: const Color(0xFFEDE7F6),
+          backgroundColor: const Color(0xFF1F1A2E),
           points: [
             'Typical wearing schedule: 16-23 hours per day (varies by protocol)',
             'Charleston brace: nighttime only (8+ hours during sleep)',

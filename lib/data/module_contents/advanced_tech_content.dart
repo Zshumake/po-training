@@ -23,7 +23,7 @@ final advancedTechContent = TopicData(
         ComparisonCardBlock(
           title: 'C-Leg (Ottobock)',
           themeColor: const Color(0xFF1565C0),
-          backgroundColor: const Color(0xFFE3F2FD),
+          backgroundColor: const Color(0xFF1A2332),
           icon: Icons.memory,
           description: 'The first widely adopted microprocessor knee, introduced in 1997. '
               'Revolutionized transfemoral prosthetics by offering real-time stance '
@@ -41,7 +41,7 @@ final advancedTechContent = TopicData(
         ComparisonCardBlock(
           title: 'Genium (Ottobock)',
           themeColor: const Color(0xFF0D47A1),
-          backgroundColor: const Color(0xFFBBDEFB),
+          backgroundColor: const Color(0xFF1A2332),
           icon: Icons.rocket_launch,
           description: 'Next-generation microprocessor knee from Ottobock, offering more '
               'intuitive gait patterns and advanced features beyond the C-Leg, including '
@@ -58,7 +58,7 @@ final advancedTechContent = TopicData(
         ComparisonCardBlock(
           title: 'Rheo Knee (Ossur)',
           themeColor: const Color(0xFF00838F),
-          backgroundColor: const Color(0xFFE0F7FA),
+          backgroundColor: const Color(0xFF152A2E),
           icon: Icons.water_drop,
           description: 'Uses magnetorheological (MR) fluid technology, where the viscosity '
               'of the fluid changes instantly in response to a magnetic field, providing '
@@ -75,7 +75,7 @@ final advancedTechContent = TopicData(
         ComparisonCardBlock(
           title: 'X3 (Ottobock)',
           themeColor: const Color(0xFF2E7D32),
-          backgroundColor: const Color(0xFFE8F5E9),
+          backgroundColor: const Color(0xFF152A1A),
           icon: Icons.pool,
           description: 'The first waterproof microprocessor knee, designed for active users '
               'who require a durable, all-environment prosthetic knee. Based on C-Leg '
@@ -92,7 +92,7 @@ final advancedTechContent = TopicData(
         ComparisonCardBlock(
           title: 'Plie Knee (Proteor)',
           themeColor: const Color(0xFF5D4037),
-          backgroundColor: const Color(0xFFEFEBE9),
+          backgroundColor: const Color(0xFF2A2522),
           icon: Icons.precision_manufacturing,
           description: 'Uses a combination of hydraulics and pneumatics for flexion '
               'and extension control. Currently marketed as the Plie 3 by Proteor. '
@@ -144,11 +144,17 @@ final advancedTechContent = TopicData(
           'when MPKs replace mechanical knees. This cost-effectiveness data supports '
           'the K2 coverage expansion.',
         ),
+        CheckpointBlock(
+          question: 'The C-Leg microprocessor knee reduces falls by approximately what percentage compared to mechanical knees?',
+          options: ['20%', '50%', '80%', '95%'],
+          correctIndex: 2,
+          explanation: 'The C-Leg reduces falls by approximately 80% compared to mechanical knees (178 vs 1,102 falls per 1,000 person-years). It also reduces stumbles by 59% and has been shown to reduce Medicare costs through fewer fall-related hospitalizations.',
+        ),
         HeaderBlock('Advantages of MPKs Over Mechanical Knees'),
         BulletCardBlock(
           title: 'Clinical Benefits',
           themeColor: const Color(0xFF2E7D32),
-          backgroundColor: const Color(0xFFE8F5E9),
+          backgroundColor: const Color(0xFF152A1A),
           points: [
             'Variable cadence response — adjusts to walking speed changes automatically',
             'Stumble recovery — rapid stance resistance increase prevents falls',
@@ -164,7 +170,7 @@ final advancedTechContent = TopicData(
         BulletCardBlock(
           title: 'Drawbacks of Microprocessor Knees',
           themeColor: const Color(0xFFC62828),
-          backgroundColor: const Color(0xFFFFEBEE),
+          backgroundColor: const Color(0xFF2A1519),
           points: [
             'High cost: \$40,000–\$100,000+ per unit',
             'Increased weight compared to mechanical alternatives',
@@ -179,7 +185,7 @@ final advancedTechContent = TopicData(
         BulletCardBlock(
           title: 'Candidacy and Coverage',
           themeColor: const Color(0xFF6A1B9A),
-          backgroundColor: const Color(0xFFF3E5F5),
+          backgroundColor: const Color(0xFF2A1A2E),
           points: [
             'Indicated for K3 and K4 functional ambulators',
             'Documented functional need required for Medicare coverage',
@@ -207,7 +213,7 @@ final advancedTechContent = TopicData(
         BulletCardBlock(
           title: 'K2 Coverage Criteria (All Must Be Met)',
           themeColor: const Color(0xFF6A1B9A),
-          backgroundColor: const Color(0xFFF3E5F5),
+          backgroundColor: const Color(0xFF2A1A2E),
           points: [
             '1. The electronic/microprocessor knee unit is indicated for functional level 2',
             '2. The knee has integrated stumble-recovery technology with automatic stabilization',
@@ -255,7 +261,7 @@ final advancedTechContent = TopicData(
         ComparisonCardBlock(
           title: 'BiOM / Empower Ankle (Ottobock)',
           themeColor: const Color(0xFF00695C),
-          backgroundColor: const Color(0xFFE0F2F1),
+          backgroundColor: const Color(0xFF152A27),
           icon: Icons.electric_bolt,
           description: 'A powered ankle-foot prosthesis that provides active plantar flexion '
               'push-off at terminal stance, mimicking the gastrocnemius-soleus complex. '
@@ -273,7 +279,7 @@ final advancedTechContent = TopicData(
         ComparisonCardBlock(
           title: 'Power Knee (Ossur)',
           themeColor: const Color(0xFF4527A0),
-          backgroundColor: const Color(0xFFEDE7F6),
+          backgroundColor: const Color(0xFF1F1A2E),
           icon: Icons.settings_accessibility,
           description: 'A powered prosthetic knee that provides active knee extension, '
               'supplementing the user\'s effort during sit-to-stand transfers, stair '
@@ -291,7 +297,7 @@ final advancedTechContent = TopicData(
         BulletCardBlock(
           title: 'Combined Powered Knee-Ankle Systems',
           themeColor: const Color(0xFF1565C0),
-          backgroundColor: const Color(0xFFE3F2FD),
+          backgroundColor: const Color(0xFF1A2332),
           points: [
             'Emerging technology combining powered knee and ankle in single system',
             'Promising for bilateral transfemoral amputees and high-level amputations',
@@ -312,7 +318,7 @@ final advancedTechContent = TopicData(
         ComparisonCardBlock(
           title: 'OPRA System (Integrum, Sweden)',
           themeColor: const Color(0xFFBF360C),
-          backgroundColor: const Color(0xFFFBE9E7),
+          backgroundColor: const Color(0xFF2A1D19),
           icon: Icons.hardware,
           description: 'The original and most studied osseointegration system, developed '
               'in Sweden. Uses a two-stage surgical procedure to implant a titanium '
@@ -329,7 +335,7 @@ final advancedTechContent = TopicData(
         BulletCardBlock(
           title: 'Advantages of Osseointegration',
           themeColor: const Color(0xFF2E7D32),
-          backgroundColor: const Color(0xFFE8F5E9),
+          backgroundColor: const Color(0xFF152A1A),
           points: [
             'Eliminates socket completely — no heat, sweating, or skin breakdown',
             'No pressure sores, pistoning, or socket discomfort',
@@ -343,7 +349,7 @@ final advancedTechContent = TopicData(
         BulletCardBlock(
           title: 'Disadvantages and Risks',
           themeColor: const Color(0xFFC62828),
-          backgroundColor: const Color(0xFFFFEBEE),
+          backgroundColor: const Color(0xFF2A1519),
           points: [
             'Infection at skin-implant interface (stoma) — MOST COMMON complication',
             'Superficial infections: up to 30-50% of patients experience at least one episode',
@@ -358,7 +364,7 @@ final advancedTechContent = TopicData(
         BulletCardBlock(
           title: 'Contraindications',
           themeColor: const Color(0xFFE65100),
-          backgroundColor: const Color(0xFFFFF3E0),
+          backgroundColor: const Color(0xFF2A2215),
           points: [
             'Active infection at the residual limb',
             'Insufficient bone stock or severe osteoporosis',
@@ -390,7 +396,7 @@ final advancedTechContent = TopicData(
         ComparisonCardBlock(
           title: 'POP System (Press-Fit Implant)',
           themeColor: const Color(0xFF4E342E),
-          backgroundColor: const Color(0xFFEFEBE9),
+          backgroundColor: const Color(0xFF2A2522),
           icon: Icons.compress,
           description: 'The POP system uses a press-fit (non-threaded) implant design '
               'rather than the threaded screw design of the OPRA system. It may allow '
@@ -445,7 +451,7 @@ final advancedTechContent = TopicData(
         ComparisonCardBlock(
           title: 'TMR Surgical Technique',
           themeColor: const Color(0xFF6A1B9A),
-          backgroundColor: const Color(0xFFF3E5F5),
+          backgroundColor: const Color(0xFF2A1A2E),
           icon: Icons.content_cut,
           description: 'Nerves that previously innervated the amputated limb are surgically '
               'transferred to denervated segments of remaining muscles. These muscles '
@@ -464,7 +470,7 @@ final advancedTechContent = TopicData(
         BulletCardBlock(
           title: 'Nerve Transfer Targets',
           themeColor: const Color(0xFF4527A0),
-          backgroundColor: const Color(0xFFEDE7F6),
+          backgroundColor: const Color(0xFF1F1A2E),
           points: [
             'Musculocutaneous nerve → clavicular head of pectoralis major (elbow flexion signal)',
             'Median nerve → sternal head of pectoralis major (hand close signal)',
@@ -477,7 +483,7 @@ final advancedTechContent = TopicData(
         BulletCardBlock(
           title: 'Clinical Benefits of TMR',
           themeColor: const Color(0xFF2E7D32),
-          backgroundColor: const Color(0xFFE8F5E9),
+          backgroundColor: const Color(0xFF152A1A),
           points: [
             'Simultaneous control of elbow, wrist, and hand (vs sequential control)',
             'More intuitive control — think about the movement, it happens naturally',
@@ -492,7 +498,7 @@ final advancedTechContent = TopicData(
         BulletCardBlock(
           title: 'TMR Surgical Procedure',
           themeColor: const Color(0xFF4527A0),
-          backgroundColor: const Color(0xFFEDE7F6),
+          backgroundColor: const Color(0xFF1F1A2E),
           points: [
             '1. Neuroma identification and excision back to healthy fascicular tissue',
             '2. Proximal nerve stump prepared to expose healthy regenerating fascicles',
@@ -519,7 +525,7 @@ final advancedTechContent = TopicData(
         BulletCardBlock(
           title: 'Dumanian RCT (2019) — TMR vs Standard Neuroma Excision',
           themeColor: const Color(0xFF2E7D32),
-          backgroundColor: const Color(0xFFE8F5E9),
+          backgroundColor: const Color(0xFF152A1A),
           points: [
             'First surgical RCT for post-amputation pain (28 amputees with chronic pain)',
             'TMR vs standard neuroma excision with muscle burial',
@@ -538,6 +544,12 @@ final advancedTechContent = TopicData(
           'reinnervate rather than forming painful neuromas. Acute TMR at time of '
           'amputation is increasingly recommended to prevent neuroma formation.',
         ),
+        CheckpointBlock(
+          question: 'Targeted muscle reinnervation (TMR) serves a dual purpose. What are its two primary benefits?',
+          options: ['Better cosmesis and lighter weight', 'Improved myoelectric control AND reduced phantom limb pain', 'Faster rehabilitation AND lower cost', 'Better socket fit AND improved suspension'],
+          correctIndex: 1,
+          explanation: 'TMR provides dual benefits: (1) additional myoelectric control sites by transferring amputated limb nerves to new muscle targets, and (2) significant reduction in phantom limb pain (Dumanian RCT, N=28, p=0.03). TMR is now recommended as standard of care at time of primary amputation.',
+        ),
         HeaderBlock('Pattern Recognition Control'),
         TextBlock(
           'Pattern recognition uses machine learning algorithms to classify complex '
@@ -548,7 +560,7 @@ final advancedTechContent = TopicData(
         ComparisonCardBlock(
           title: 'Pattern Recognition Systems',
           themeColor: const Color(0xFF0D47A1),
-          backgroundColor: const Color(0xFFE3F2FD),
+          backgroundColor: const Color(0xFF1A2332),
           icon: Icons.psychology,
           description: 'Machine learning classifiers analyze the pattern of muscle activation '
               'across multiple electrodes to determine the user\'s intended movement, '
@@ -565,7 +577,7 @@ final advancedTechContent = TopicData(
         BulletCardBlock(
           title: 'COAPT Pattern Recognition System',
           themeColor: const Color(0xFF1565C0),
-          backgroundColor: const Color(0xFFBBDEFB),
+          backgroundColor: const Color(0xFF1A2332),
           points: [
             'First commercially available pattern recognition system for upper limb prosthetics',
             'FDA-cleared for clinical use in the United States',
@@ -580,7 +592,7 @@ final advancedTechContent = TopicData(
         ComparisonCardBlock(
           title: 'IMES Technology',
           themeColor: const Color(0xFF00838F),
-          backgroundColor: const Color(0xFFE0F7FA),
+          backgroundColor: const Color(0xFF152A2E),
           icon: Icons.sensors,
           description: 'Wireless sensors surgically implanted within individual muscles that '
               'detect EMG signals and transmit them wirelessly through the skin to the '
@@ -610,7 +622,7 @@ final advancedTechContent = TopicData(
         BulletCardBlock(
           title: 'COAPT RCT Results (Transhumeral Amputees with TMR)',
           themeColor: const Color(0xFF0D47A1),
-          backgroundColor: const Color(0xFFBBDEFB),
+          backgroundColor: const Color(0xFF1A2332),
           points: [
             '8-subject RCT: pattern recognition vs conventional direct control',
             '6-8 week home trial period in transhumeral amputees with TMR',
@@ -625,7 +637,7 @@ final advancedTechContent = TopicData(
         BulletCardBlock(
           title: 'IMES FDA & Trial Status',
           themeColor: const Color(0xFF00838F),
-          backgroundColor: const Color(0xFFE0F7FA),
+          backgroundColor: const Color(0xFF152A2E),
           points: [
             'Currently in FDA-approved Early Feasibility Study (NCT03644394)',
             'Two transhumeral amputees enrolled to date',

@@ -31,7 +31,7 @@ final materialsFabricationContent = TopicData(
         ComparisonCardBlock(
           title: 'Low-Temperature Thermoplastics (150-170\u00B0F)',
           themeColor: Colors.blue,
-          backgroundColor: const Color(0xFFE3F2FD),
+          backgroundColor: const Color(0xFF1A2332),
           icon: Icons.thermostat,
           description: 'Soften at low temperatures (150-170\u00B0F / 65-77\u00B0C) and can '
               'be molded DIRECTLY ON THE PATIENT. Used primarily for splints and '
@@ -50,7 +50,7 @@ final materialsFabricationContent = TopicData(
         ComparisonCardBlock(
           title: 'High-Temperature Thermoplastics (300-500\u00B0F)',
           themeColor: Colors.orange,
-          backgroundColor: const Color(0xFFFFF3E0),
+          backgroundColor: const Color(0xFF2A2215),
           icon: Icons.local_fire_department,
           description: 'Require high temperatures (300-500\u00B0F / 150-260\u00B0C) to soften. '
               'CANNOT be molded directly on the patient. Must be molded over a '
@@ -70,7 +70,7 @@ final materialsFabricationContent = TopicData(
         BulletCardBlock(
           title: 'Common High-Temp Thermoplastic Applications',
           themeColor: Colors.indigo,
-          backgroundColor: const Color(0xFFE8EAF6),
+          backgroundColor: const Color(0xFF1A1D2E),
           points: [
             'Polypropylene (PP): solid AFOs, rigid KAFOs, socket inner walls, spinal orthoses',
             'Polyethylene (PE): flexible AFOs, flexible inner sockets, liners',
@@ -86,7 +86,7 @@ final materialsFabricationContent = TopicData(
         ComparisonCardBlock(
           title: 'Thermoset (Thermosetting) Plastics',
           themeColor: Colors.red,
-          backgroundColor: const Color(0xFFFFEBEE),
+          backgroundColor: const Color(0xFF2A1519),
           icon: Icons.lock,
           description: 'Thermosets undergo an irreversible chemical reaction (curing) '
               'that creates permanent cross-linked polymer bonds. Once cured, they '
@@ -129,6 +129,14 @@ final materialsFabricationContent = TopicData(
           'patient; high-temp thermoplastics require a model.',
         ),
 
+        // --- Checkpoint: Plastics ---
+        CheckpointBlock(
+          question: 'What is the key difference between thermoplastics and thermosets in P&O fabrication?',
+          options: ['Thermoplastics are stronger', 'Thermosets can be remolded when reheated; thermoplastics cannot', 'Thermoplastics can be remolded when reheated; thermosets cannot', 'There is no practical difference'],
+          correctIndex: 2,
+          explanation: 'Thermoplastics soften when heated and can be remolded multiple times (e.g., polypropylene for AFOs, Kydex for splints). Thermosets undergo irreversible chemical cross-linking — once cured, they CANNOT be reshaped (reheating causes charring). Thermosets are used for laminated sockets.',
+        ),
+
         // --- Thermoset Resins Comparison ---
         HeaderBlock('Thermoset Resin Comparison'),
         TableBlock(
@@ -154,7 +162,7 @@ final materialsFabricationContent = TopicData(
         BulletCardBlock(
           title: 'Silicone & Gel Materials',
           themeColor: Colors.teal,
-          backgroundColor: const Color(0xFFE0F2F1),
+          backgroundColor: const Color(0xFF152A27),
           points: [
             'Silicone elastomers: used for prosthetic liners, cosmetic covers, and finger prostheses',
             'Medical-grade silicone: biocompatible, durable, skin-safe',
@@ -167,7 +175,7 @@ final materialsFabricationContent = TopicData(
         BulletCardBlock(
           title: 'Foam Materials',
           themeColor: Colors.green,
-          backgroundColor: const Color(0xFFE8F5E9),
+          backgroundColor: const Color(0xFF152A1A),
           points: [
             'Closed-cell foam (Pelite): for prosthetic liners, shoe inserts, padding',
             'Pelite: closed-cell polyethylene foam, compresses over time',
@@ -200,7 +208,7 @@ final materialsFabricationContent = TopicData(
         ComparisonCardBlock(
           title: 'Steel',
           themeColor: Colors.blueGrey,
-          backgroundColor: const Color(0xFFECEFF1),
+          backgroundColor: const Color(0xFF1E2530),
           icon: Icons.shield,
           description: 'The strongest and heaviest metal used in O&P. Stainless steel '
               'provides excellent corrosion resistance. Historically the primary '
@@ -221,7 +229,7 @@ final materialsFabricationContent = TopicData(
         ComparisonCardBlock(
           title: 'Aluminum',
           themeColor: Colors.blue,
-          backgroundColor: const Color(0xFFE3F2FD),
+          backgroundColor: const Color(0xFF1A2332),
           icon: Icons.fitness_center,
           description: 'Approximately one-third the weight of steel with adequate '
               'strength for many orthotic and prosthetic applications. The most '
@@ -242,7 +250,7 @@ final materialsFabricationContent = TopicData(
         ComparisonCardBlock(
           title: 'Titanium',
           themeColor: Colors.teal,
-          backgroundColor: const Color(0xFFE0F2F1),
+          backgroundColor: const Color(0xFF152A27),
           icon: Icons.diamond,
           description: 'The best strength-to-weight ratio of any metal used in P&O. '
               'Lightweight, extremely corrosion resistant, and biocompatible. '
@@ -263,7 +271,7 @@ final materialsFabricationContent = TopicData(
         ComparisonCardBlock(
           title: 'Carbon Fiber',
           themeColor: Colors.grey,
-          backgroundColor: const Color(0xFFF5F5F5),
+          backgroundColor: const Color(0xFF232A3B),
           icon: Icons.layers,
           description: 'A composite material with the highest strength-to-weight ratio '
               'in P&O. Carbon fiber reinforced polymer (CFRP) consists of carbon '
@@ -286,7 +294,7 @@ final materialsFabricationContent = TopicData(
         ComparisonCardBlock(
           title: 'Fiberglass',
           themeColor: Colors.green,
-          backgroundColor: const Color(0xFFE8F5E9),
+          backgroundColor: const Color(0xFF152A1A),
           icon: Icons.view_in_ar,
           description: 'Glass fiber reinforcement in a resin matrix. Less expensive '
               'than carbon fiber with moderate strength. The standard '
@@ -335,7 +343,7 @@ final materialsFabricationContent = TopicData(
         BulletCardBlock(
           title: 'Key Material Science Terms',
           themeColor: Colors.deepPurple,
-          backgroundColor: const Color(0xFFEDE7F6),
+          backgroundColor: const Color(0xFF1F1A2E),
           points: [
             'Stress: force per unit area (internal resistance to deformation)',
             'Strain: deformation relative to original dimensions',
@@ -358,7 +366,7 @@ final materialsFabricationContent = TopicData(
         BulletCardBlock(
           title: 'Creep in P&O Applications',
           themeColor: const Color(0xFF4527A0),
-          backgroundColor: const Color(0xFFEDE7F6),
+          backgroundColor: const Color(0xFF1F1A2E),
           points: [
             'Polypropylene AFOs gradually deform (lose corrective angle) under daily loads — this is creep',
             'Foam padding compresses and loses cushioning over time — this is creep',
@@ -374,7 +382,7 @@ final materialsFabricationContent = TopicData(
         BulletCardBlock(
           title: 'Stress Relaxation in Clinical Context',
           themeColor: const Color(0xFF00695C),
-          backgroundColor: const Color(0xFFE0F2F1),
+          backgroundColor: const Color(0xFF152A27),
           points: [
             'Decrease in internal stress when material is held at constant deformation over time',
             'Tissue "relaxes" and accommodates to imposed stretch',
@@ -390,7 +398,7 @@ final materialsFabricationContent = TopicData(
         BulletCardBlock(
           title: 'Viscoelastic Material Behavior',
           themeColor: const Color(0xFF1565C0),
-          backgroundColor: const Color(0xFFE3F2FD),
+          backgroundColor: const Color(0xFF1A2332),
           points: [
             'Combines viscous (fluid-like, time-dependent) and elastic (solid-like, instantaneous) behavior',
             'Biological tissues (skin, ligaments, tendons, muscle) are viscoelastic',
@@ -407,7 +415,7 @@ final materialsFabricationContent = TopicData(
         BulletCardBlock(
           title: 'Fatigue in P&O Devices',
           themeColor: const Color(0xFFC62828),
-          backgroundColor: const Color(0xFFFFEBEE),
+          backgroundColor: const Color(0xFF2A1519),
           points: [
             'Most common mode of structural failure in prosthetic and orthotic devices',
             'Progressive damage from repeated cyclic loading below ultimate tensile strength',
@@ -423,7 +431,7 @@ final materialsFabricationContent = TopicData(
         BulletCardBlock(
           title: 'Failure Mode Comparison',
           themeColor: Colors.blueGrey,
-          backgroundColor: const Color(0xFFECEFF1),
+          backgroundColor: const Color(0xFF1E2530),
           points: [
             'Ductile: visible bending/stretching before breaking — provides WARNING of failure',
             'All metals in P&O (steel, aluminum, titanium) exhibit ductile failure',
@@ -441,6 +449,14 @@ final materialsFabricationContent = TopicData(
           'Fatigue is the most common structural failure mode in P&O devices. '
           'Creep and stress relaxation are viscoelastic phenomena exploited in '
           'splinting for contractures: "hold at end-range to induce tissue remodeling."',
+        ),
+
+        // --- Checkpoint: Metals ---
+        CheckpointBlock(
+          question: 'Fatigue failure is the MOST COMMON structural failure mode in prosthetic and orthotic devices. Which material is MOST susceptible?',
+          options: ['Titanium', 'Carbon fiber composite', 'Stainless steel', 'Polypropylene'],
+          correctIndex: 1,
+          explanation: 'Carbon fiber composite fails catastrophically (brittle failure) with no warning deformation. Metals (steel, titanium) undergo ductile failure with visible bending before breaking, giving warning. This is why carbon fiber components require regular inspection for delamination or stress whitening.',
         ),
       ],
     ),
@@ -473,7 +489,7 @@ final materialsFabricationContent = TopicData(
         BulletCardBlock(
           title: 'Casting Key Concepts',
           themeColor: Colors.blue,
-          backgroundColor: const Color(0xFFE3F2FD),
+          backgroundColor: const Color(0xFF1A2332),
           points: [
             'Negative mold: hollow cast taken from the patient (impression of limb)',
             'Positive model: solid plaster replica made from the negative mold',
@@ -490,7 +506,7 @@ final materialsFabricationContent = TopicData(
         ComparisonCardBlock(
           title: 'Positive Model Rectification',
           themeColor: Colors.orange,
-          backgroundColor: const Color(0xFFFFF3E0),
+          backgroundColor: const Color(0xFF2A2215),
           icon: Icons.build,
           description: 'The positive model is modified to create a socket that loads '
               'pressure-tolerant areas and relieves pressure-sensitive areas. '
@@ -519,7 +535,7 @@ final materialsFabricationContent = TopicData(
         BulletCardBlock(
           title: 'Thermoplastic Draping / Vacuum Forming',
           themeColor: Colors.teal,
-          backgroundColor: const Color(0xFFE0F2F1),
+          backgroundColor: const Color(0xFF152A27),
           points: [
             'Heat thermoplastic sheet in oven to softening temperature',
             'Drape heated sheet over the modified positive model',
@@ -538,7 +554,7 @@ final materialsFabricationContent = TopicData(
         BulletCardBlock(
           title: 'Resin Lamination Process',
           themeColor: Colors.deepPurple,
-          backgroundColor: const Color(0xFFEDE7F6),
+          backgroundColor: const Color(0xFF1F1A2E),
           points: [
             'Used to create thermoset (permanent) prosthetic sockets and frames',
             'Wrap layers of reinforcement fabric over the positive model',
@@ -576,7 +592,7 @@ final materialsFabricationContent = TopicData(
         ComparisonCardBlock(
           title: 'CAD/CAM Fabrication',
           themeColor: Colors.indigo,
-          backgroundColor: const Color(0xFFE8EAF6),
+          backgroundColor: const Color(0xFF1A1D2E),
           icon: Icons.computer,
           description: 'Computer-Aided Design / Computer-Aided Manufacturing. Digital '
               'technology replaces manual casting and modification with scanning, '
@@ -598,7 +614,7 @@ final materialsFabricationContent = TopicData(
         ComparisonCardBlock(
           title: '3D Printing (Additive Manufacturing)',
           themeColor: Colors.green,
-          backgroundColor: const Color(0xFFE8F5E9),
+          backgroundColor: const Color(0xFF152A1A),
           icon: Icons.view_in_ar,
           description: 'Emerging technology that builds devices layer-by-layer from '
               'digital files. Shows promise for rapid prototyping, custom designs, '
@@ -622,7 +638,7 @@ final materialsFabricationContent = TopicData(
         BulletCardBlock(
           title: 'Check Socket Fabrication & Purpose',
           themeColor: Colors.red,
-          backgroundColor: const Color(0xFFFFEBEE),
+          backgroundColor: const Color(0xFF2A1519),
           points: [
             'Transparent or translucent test socket for fitting evaluation',
             'Made from clear thermoplastic (PETG or acrylic)',

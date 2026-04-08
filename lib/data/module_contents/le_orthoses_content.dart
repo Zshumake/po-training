@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import '../models/topic_content_model.dart';
+import '../flowcharts/clinical_flowcharts.dart';
 
 final leOrthosesContent = TopicData(
   id: 'le_orthoses',
@@ -22,11 +23,23 @@ final leOrthosesContent = TopicData(
           isIntro: true,
         ),
 
+        AnnotatedImageBlock(
+          title: 'AFO Types: Biomechanical Comparison',
+          diagramType: 'afo-types',
+          hotspots: [
+            HotspotData(id: 'solid', xPercent: 0.125, yPercent: 0.5, label: 'Solid AFO', description: 'Controls dorsiflexion AND plantarflexion. Blocks all ankle motion. Provides maximum stability.', clinicalSignificance: 'Indicated for severe spasticity, flaccid ankle, or when complete ankle control is needed. Contraindicated if patient has adequate ankle strength.', pinColor: Color(0xFF0D9488)),
+            HotspotData(id: 'pls', xPercent: 0.375, yPercent: 0.5, label: 'Posterior Leaf Spring', description: 'Thin, flexible posterior strut. Allows controlled plantarflexion at initial contact and assists dorsiflexion in swing via elastic recoil. Lighter and more cosmetic than a solid AFO.', clinicalSignificance: 'Best for pure foot drop (peroneal nerve palsy) with intact ankle plantarflexors. NOT for spasticity or mediolateral instability.', pinColor: Color(0xFF3B82F6)),
+            HotspotData(id: 'artic', xPercent: 0.625, yPercent: 0.5, label: 'Articulated AFO', description: 'Has an ankle joint allowing dorsiflexion. Plantarflexion stop prevents foot drop. Most versatile AFO.', clinicalSignificance: 'Best for patients who need foot drop control but benefit from free dorsiflexion (e.g., stroke with mild-moderate spasticity). Selected on the basis of needing foot-drop control combined with preserved dorsiflexion; no specific quadriceps requirement.', pinColor: Color(0xFF8B5CF6)),
+            HotspotData(id: 'fro', xPercent: 0.875, yPercent: 0.5, label: 'Floor Reaction (FRO/GRAFO)', description: 'Anterior shell creates knee extension moment via ground reaction force. Requires ankle to be blocked in slight plantarflexion.', clinicalSignificance: 'FRO = Floor Reaction = Knee EXTENSION. Indicated for crouch gait (CP, myelomeningocele). Requires intact quads. Contraindicated in recurvatum.', pinColor: Color(0xFFFF9800)),
+          ],
+          aspectRatio: 1.5,
+        ),
+
         // --- Solid AFO ---
         ComparisonCardBlock(
           title: 'Solid AFO (Rigid AFO)',
           themeColor: Colors.blue,
-          backgroundColor: const Color(0xFFE3F2FD),
+          backgroundColor: const Color(0xFF1A2332),
           icon: Icons.shield,
           description:
               'A rigid plastic AFO that completely blocks all ankle motion in all planes. '
@@ -49,7 +62,7 @@ final leOrthosesContent = TopicData(
         ComparisonCardBlock(
           title: 'Posterior Leaf Spring (PLS)',
           themeColor: Colors.green,
-          backgroundColor: const Color(0xFFE8F5E9),
+          backgroundColor: const Color(0xFF152A1A),
           icon: Icons.eco,
           description:
               'A thin, narrow posterior strut AFO that flexes to allow plantarflexion '
@@ -78,7 +91,7 @@ final leOrthosesContent = TopicData(
         ComparisonCardBlock(
           title: 'Articulated AFO (Hinged AFO)',
           themeColor: Colors.orange,
-          backgroundColor: const Color(0xFFFFF3E0),
+          backgroundColor: const Color(0xFF2A2215),
           icon: Icons.compare_arrows,
           description:
               'An AFO with a mechanical ankle joint that allows dorsiflexion while '
@@ -102,7 +115,7 @@ final leOrthosesContent = TopicData(
         ComparisonCardBlock(
           title: 'Floor Reaction Orthosis (FRO / Ground Reaction AFO)',
           themeColor: Colors.red,
-          backgroundColor: const Color(0xFFFFEBEE),
+          backgroundColor: const Color(0xFF2A1519),
           icon: Icons.arrow_upward,
           description:
               'A solid AFO with an ANTERIOR SHELL (anterior tibial section) that '
@@ -129,12 +142,13 @@ final leOrthosesContent = TopicData(
           'If a question describes crouch gait with intact quads, the answer '
           'is FRO. If the question describes knee hyperextension, FRO is WRONG.',
         ),
+        CustomWidgetBlock(CustomWidgetType.froBiomechanicsDemo),
 
         // --- Metal Double Upright AFO ---
         ComparisonCardBlock(
           title: 'Metal Double Upright AFO',
           themeColor: Colors.blueGrey,
-          backgroundColor: const Color(0xFFECEFF1),
+          backgroundColor: const Color(0xFF1E2530),
           icon: Icons.construction,
           description:
               'A traditional metal AFO with medial and lateral metal uprights '
@@ -180,7 +194,7 @@ final leOrthosesContent = TopicData(
         BulletCardBlock(
           title: 'Stroke AFO Selection',
           themeColor: Colors.indigo,
-          backgroundColor: const Color(0xFFE8EAF6),
+          backgroundColor: const Color(0xFF1A1D2E),
           points: [
             'AFOs improve walking speed, cadence, step length, stride length, TUG, and FAC in stroke',
             'Also improve Berg Balance Scale, 6MWT, and Timed Up-Stairs',
@@ -194,7 +208,7 @@ final leOrthosesContent = TopicData(
         BulletCardBlock(
           title: 'Foot Drop (Peroneal Nerve Palsy)',
           themeColor: Colors.green,
-          backgroundColor: const Color(0xFFE8F5E9),
+          backgroundColor: const Color(0xFF152A1A),
           points: [
             'Isolated peroneal nerve palsy = most common indication for PLS AFO',
             'PLS provides swing-phase DF assist via elastic recoil',
@@ -208,6 +222,42 @@ final leOrthosesContent = TopicData(
           'to create a knee FLEXION moment at loading response. This is the OPPOSITE of '
           'FRO strategy. FRO creates extension moment (for crouch); slight PF creates '
           'flexion moment (for recurvatum).',
+        ),
+        CheckpointBlock(
+          question: 'A patient with stroke presents with foot drop and mild spasticity but adequate quadriceps strength. Which AFO is MOST appropriate?',
+          options: ['Solid AFO', 'Posterior leaf spring (PLS)', 'Articulated AFO with plantarflexion stop', 'Floor reaction orthosis (FRO)'],
+          correctIndex: 2,
+          explanation: 'An articulated AFO with plantarflexion stop is ideal: it prevents foot drop (plantarflexion stop), allows free dorsiflexion for tibial advancement in stance, and is appropriate for mild spasticity. PLS lacks the stability for spasticity. Solid AFO is excessive. FRO is for crouch gait, not foot drop.',
+        ),
+        VideoBlock(
+          url: 'https://www.youtube.com/watch?v=OJRsMOJ_U3I',
+          title: 'AFO Types: Solid vs Articulated vs PLS',
+          description: 'Compare solid AFO (blocks all ankle motion), articulated AFO (allows dorsiflexion, blocks plantarflexion), and PLS (posterior leaf spring — flexible, allows some plantarflexion). Selection depends on spasticity and ankle control.',
+        ),
+        VideoBlock(
+          url: 'https://www.youtube.com/watch?v=xHttY-gyORQ',
+          title: 'Foot Drop: Walking With vs Without AFO',
+          description: 'Dramatic before/after comparison of gait with foot drop. Without AFO: steppage gait with foot slap. With AFO: normalized heel-toe progression and improved clearance.',
+        ),
+        afoSelectionFlowchart,
+        CaseScenarioBlock(
+          title: 'AFO Selection for Stroke Patient',
+          vignette: 'A 58-year-old female, 3 months post-right MCA stroke, presents with left hemiparesis. She has foot drop, mild spasticity (Modified Ashworth 1+), adequate but weak quadriceps (4-/5), and knee recurvatum tendency during midstance.',
+          decisionPoints: [
+            CaseDecisionPoint(
+              prompt: 'Given her foot drop and mild spasticity, which AFO type would you initially consider?',
+              options: ['Posterior leaf spring', 'Solid AFO', 'Articulated AFO with plantarflexion stop', 'No AFO — use FES instead'],
+              optimalIndex: 2,
+              explanation: 'Articulated AFO with plantarflexion stop addresses foot drop while allowing free dorsiflexion. PLS is inappropriate for spasticity. Solid AFO would restrict beneficial ankle motion.',
+            ),
+            CaseDecisionPoint(
+              prompt: 'However, you note she has knee recurvatum during midstance. How does this change your AFO prescription?',
+              options: ['Switch to solid AFO', 'Add dorsiflexion stop to the articulated AFO', 'Switch to FRO/GRAFO', 'Add a plantarflexion assist spring'],
+              optimalIndex: 1,
+              explanation: 'Adding a dorsiflexion stop (typically set at 5-10 degrees) prevents the tibia from advancing too far forward, which controls recurvatum. This maintains the benefit of the articulated design while addressing the knee hyperextension.',
+            ),
+          ],
+          summaryPearl: 'AFO selection is iterative: start with the least restrictive option that addresses the primary deficit. Recurvatum requires limiting dorsiflexion — set the dorsiflexion stop at 5-10 degrees. Always reassess as the patient recovers.',
         ),
       ],
     ),
@@ -231,7 +281,7 @@ final leOrthosesContent = TopicData(
         ComparisonCardBlock(
           title: 'Drop-Lock KAFO (Ring Lock)',
           themeColor: Colors.indigo,
-          backgroundColor: const Color(0xFFE8EAF6),
+          backgroundColor: const Color(0xFF1A1D2E),
           icon: Icons.lock,
           description:
               'The most common KAFO knee joint. A metal ring drops over the knee '
@@ -252,7 +302,7 @@ final leOrthosesContent = TopicData(
         ComparisonCardBlock(
           title: 'Offset Knee Joint',
           themeColor: Colors.teal,
-          backgroundColor: const Color(0xFFE0F2F1),
+          backgroundColor: const Color(0xFF152A27),
           icon: Icons.adjust,
           description:
               'The knee joint axis is positioned POSTERIOR to the weight-bearing '
@@ -273,7 +323,7 @@ final leOrthosesContent = TopicData(
         ComparisonCardBlock(
           title: 'Stance Control KAFO (SCO)',
           themeColor: Colors.purple,
-          backgroundColor: const Color(0xFFF3E5F5),
+          backgroundColor: const Color(0xFF2A1A2E),
           icon: Icons.sync_alt,
           description:
               'An advanced KAFO that allows FREE knee motion in swing phase '
@@ -295,7 +345,7 @@ final leOrthosesContent = TopicData(
         ComparisonCardBlock(
           title: 'C-Brace (Microprocessor-Controlled KAFO)',
           themeColor: Colors.red,
-          backgroundColor: const Color(0xFFFFEBEE),
+          backgroundColor: const Color(0xFF2A1519),
           icon: Icons.memory,
           description:
               'The C-Brace (Ottobock) is a microprocessor-controlled stance-control KAFO '
@@ -330,7 +380,7 @@ final leOrthosesContent = TopicData(
         BulletCardBlock(
           title: 'HKAFO Indications and Features',
           themeColor: Colors.deepOrange,
-          backgroundColor: const Color(0xFFFBE9E7),
+          backgroundColor: const Color(0xFF2A1D19),
           points: [
             'Adds hip joint and pelvic band to KAFO',
             'Indicated for paraplegia (thoracic or high lumbar spinal cord injury)',
@@ -345,7 +395,7 @@ final leOrthosesContent = TopicData(
         ComparisonCardBlock(
           title: 'Reciprocating Gait Orthosis (RGO)',
           themeColor: Colors.deepPurple,
-          backgroundColor: const Color(0xFFEDE7F6),
+          backgroundColor: const Color(0xFF1F1A2E),
           icon: Icons.swap_horiz,
           description:
               'A bilateral HKAFO with cable-linked hip joints. When one hip extends, '
@@ -368,7 +418,7 @@ final leOrthosesContent = TopicData(
         BulletCardBlock(
           title: 'Standing Frames and Walkers',
           themeColor: Colors.brown,
-          backgroundColor: const Color(0xFFEFEBE9),
+          backgroundColor: const Color(0xFF2A2522),
           points: [
             'Parapodium: static standing frame, allows hands-free standing',
             'Swivel walker: standing frame with swivel base plates for ambulation',
@@ -408,7 +458,7 @@ final leOrthosesContent = TopicData(
         ComparisonCardBlock(
           title: 'Rocker Bottom Sole',
           themeColor: Colors.brown,
-          backgroundColor: const Color(0xFFEFEBE9),
+          backgroundColor: const Color(0xFF2A2522),
           icon: Icons.skateboarding,
           description:
               'A rigid convex sole that allows the foot to roll over the apex '
@@ -432,7 +482,7 @@ final leOrthosesContent = TopicData(
         BulletCardBlock(
           title: 'Metatarsal Bar (External)',
           themeColor: Colors.teal,
-          backgroundColor: const Color(0xFFE0F2F1),
+          backgroundColor: const Color(0xFF152A27),
           points: [
             'External bar applied to the sole PROXIMAL to metatarsal heads',
             'Transfers weight-bearing proximal to met heads',
@@ -444,7 +494,7 @@ final leOrthosesContent = TopicData(
         BulletCardBlock(
           title: 'Metatarsal Pad (Internal)',
           themeColor: Colors.green,
-          backgroundColor: const Color(0xFFE8F5E9),
+          backgroundColor: const Color(0xFF152A1A),
           points: [
             'Internal pad placed INSIDE the shoe proximal to met heads',
             'Supports the transverse metatarsal arch',
@@ -460,7 +510,7 @@ final leOrthosesContent = TopicData(
         ComparisonCardBlock(
           title: 'Thomas Heel',
           themeColor: Colors.indigo,
-          backgroundColor: const Color(0xFFE8EAF6),
+          backgroundColor: const Color(0xFF1A1D2E),
           icon: Icons.expand,
           description:
               'A heel with a MEDIAL extension (the heel extends anteriorly on the '
@@ -476,7 +526,7 @@ final leOrthosesContent = TopicData(
         ComparisonCardBlock(
           title: 'Reverse Thomas Heel',
           themeColor: Colors.amber,
-          backgroundColor: const Color(0xFFFFF8E1),
+          backgroundColor: const Color(0xFF2A2515),
           icon: Icons.compare,
           description:
               'A heel with a LATERAL extension (the heel extends anteriorly on the '
@@ -495,7 +545,7 @@ final leOrthosesContent = TopicData(
         BulletCardBlock(
           title: 'SACH Heel (Solid Ankle Cushion Heel)',
           themeColor: Colors.blue,
-          backgroundColor: const Color(0xFFE3F2FD),
+          backgroundColor: const Color(0xFF1A2332),
           points: [
             'Compressible wedge heel cushion',
             'Simulates plantarflexion at initial contact (heel strike)',
@@ -506,7 +556,7 @@ final leOrthosesContent = TopicData(
         BulletCardBlock(
           title: 'Heel Lift / Sole Lift',
           themeColor: Colors.orange,
-          backgroundColor: const Color(0xFFFFF3E0),
+          backgroundColor: const Color(0xFF2A2215),
           points: [
             'Used for limb length discrepancy (LLD) compensation',
             'Internal heel lift: up to 1/4 inch (6 mm) inside shoe',
@@ -518,7 +568,7 @@ final leOrthosesContent = TopicData(
         BulletCardBlock(
           title: 'Heel Wedges',
           themeColor: Colors.deepOrange,
-          backgroundColor: const Color(0xFFFBE9E7),
+          backgroundColor: const Color(0xFF2A1D19),
           points: [
             'MEDIAL heel wedge: tilts heel into eversion, corrects pronation',
             'MEDIAL wedge: also effective for plantar fasciitis treatment',
@@ -542,7 +592,7 @@ final leOrthosesContent = TopicData(
         BulletCardBlock(
           title: 'Steel Shank',
           themeColor: Colors.blueGrey,
-          backgroundColor: const Color(0xFFECEFF1),
+          backgroundColor: const Color(0xFF1E2530),
           points: [
             'Metal reinforcement placed within the sole of the shoe',
             'Stiffens the sole and limits MTP joint motion',
@@ -569,6 +619,12 @@ final leOrthosesContent = TopicData(
           ],
           headerColor: const Color(0xFF4E342E),
         ),
+        CheckpointBlock(
+          question: 'A rocker bottom sole modification primarily achieves which biomechanical effect?',
+          options: ['Increases ankle dorsiflexion range', 'Substitutes for lost forefoot motion during terminal stance', 'Increases mediolateral stability', 'Reduces heel strike impact'],
+          correctIndex: 1,
+          explanation: 'A rocker bottom sole substitutes for lost forefoot rocker mechanism, allowing smooth rollover during terminal stance without requiring toe dorsiflexion. This reduces plantar pressure by 35-65% and is critical for patients with rigid ankles (solid AFO users, fused ankles, Charcot foot).',
+        ),
       ],
     ),
 
@@ -591,7 +647,7 @@ final leOrthosesContent = TopicData(
         ComparisonCardBlock(
           title: 'UCBL (University of California Biomechanics Laboratory)',
           themeColor: Colors.blue,
-          backgroundColor: const Color(0xFFE3F2FD),
+          backgroundColor: const Color(0xFF1A2332),
           icon: Icons.back_hand,
           description:
               'A rigid custom-molded foot orthosis with a deep heel cup and high '
@@ -621,7 +677,7 @@ final leOrthosesContent = TopicData(
         ComparisonCardBlock(
           title: 'Custom Molded Total Contact Insoles',
           themeColor: Colors.teal,
-          backgroundColor: const Color(0xFFE0F2F1),
+          backgroundColor: const Color(0xFF152A27),
           icon: Icons.layers,
           description:
               'Custom-fabricated insoles that conform to the exact contours of the '
@@ -644,7 +700,7 @@ final leOrthosesContent = TopicData(
         BulletCardBlock(
           title: 'Arch Supports',
           themeColor: Colors.green,
-          backgroundColor: const Color(0xFFE8F5E9),
+          backgroundColor: const Color(0xFF152A1A),
           points: [
             'Medial longitudinal arch support: most common, for pes planus',
             'Prefabricated (OTC) vs custom-molded',
@@ -656,7 +712,7 @@ final leOrthosesContent = TopicData(
         BulletCardBlock(
           title: 'Metatarsal Pads and Bars (In-Shoe)',
           themeColor: Colors.orange,
-          backgroundColor: const Color(0xFFFFF3E0),
+          backgroundColor: const Color(0xFF2A2215),
           points: [
             'Metatarsal pad: dome-shaped pad proximal to met heads',
             'Supports transverse metatarsal arch',
@@ -671,7 +727,7 @@ final leOrthosesContent = TopicData(
         BulletCardBlock(
           title: 'Accommodative vs Corrective Orthoses',
           themeColor: Colors.purple,
-          backgroundColor: const Color(0xFFF3E5F5),
+          backgroundColor: const Color(0xFF2A1A2E),
           points: [
             'ACCOMMODATIVE: soft, conforms to foot, redistributes pressure',
             'Accommodative: for fixed (rigid) deformities, insensate feet, DM',

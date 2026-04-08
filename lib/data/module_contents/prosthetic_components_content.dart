@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import '../models/topic_content_model.dart';
+import '../flowcharts/clinical_flowcharts.dart';
 
 final prostheticComponentsContent = TopicData(
   id: 'prosthetic_components',
@@ -25,7 +26,7 @@ final prostheticComponentsContent = TopicData(
         ComparisonCardBlock(
           title: 'SACH Foot (Solid Ankle Cushion Heel)',
           themeColor: Colors.blue,
-          backgroundColor: const Color(0xFFE3F2FD),
+          backgroundColor: const Color(0xFF1A2332),
           icon: Icons.square_foot,
           description:
               'The simplest prosthetic foot. A rigid wooden or plastic keel with a '
@@ -35,7 +36,7 @@ final prostheticComponentsContent = TopicData(
             'Rigid internal keel (wood or rigid foam) — no articulation',
             'Compressible heel cushion simulates PF at initial contact',
             'NO actual ankle motion (no PF/DF joint)',
-            'K-Level: K1-K2 (limited household or community ambulator)',
+            'K-Level: K1 (limited household ambulator)',
             'LIGHTEST, most DURABLE, and CHEAPEST prosthetic foot',
             'Best performance on flat, level surfaces',
             'Poor performance on uneven terrain (no multiaxial motion)',
@@ -49,7 +50,7 @@ final prostheticComponentsContent = TopicData(
         ComparisonCardBlock(
           title: 'Single-Axis Foot',
           themeColor: Colors.orange,
-          backgroundColor: const Color(0xFFFFF3E0),
+          backgroundColor: const Color(0xFF2A2215),
           icon: Icons.swap_vert,
           description:
               'A prosthetic foot with a mechanical ankle joint that allows '
@@ -61,7 +62,7 @@ final prostheticComponentsContent = TopicData(
             'DF bumper (anterior): controls DF range and resistance',
             'Goes to foot-flat QUICKLY — enhances knee stability at heel strike',
             'K-Level: K1-K2',
-            'Better knee stability than SACH for transfemoral amputees',
+            'Provides a stabilizing knee extension moment at initial contact via rapid foot-flat — primarily benefits TT patients with weak quadriceps or knee extension instability, and secondarily TF patients needing additional stance-phase knee security',
             'HEAVIER and requires more MAINTENANCE than SACH',
             'PF at heel strike reduces knee flexion moment (stabilizing)',
             'Higher cost and complexity than SACH foot',
@@ -72,7 +73,7 @@ final prostheticComponentsContent = TopicData(
         ComparisonCardBlock(
           title: 'Multi-Axis Foot',
           themeColor: Colors.teal,
-          backgroundColor: const Color(0xFFE0F2F1),
+          backgroundColor: const Color(0xFF152A27),
           icon: Icons.open_with,
           description:
               'A prosthetic foot allowing motion in multiple planes: plantarflexion/'
@@ -95,7 +96,7 @@ final prostheticComponentsContent = TopicData(
         ComparisonCardBlock(
           title: 'Flexible Keel Foot (SAFE II)',
           themeColor: Colors.green,
-          backgroundColor: const Color(0xFFE8F5E9),
+          backgroundColor: const Color(0xFF152A1A),
           icon: Icons.waves,
           description:
               'Replaces the rigid keel of the SACH foot with a flexible keel that '
@@ -117,7 +118,7 @@ final prostheticComponentsContent = TopicData(
         ComparisonCardBlock(
           title: 'Energy-Storing / Dynamic Response Foot',
           themeColor: Colors.deepOrange,
-          backgroundColor: const Color(0xFFFBE9E7),
+          backgroundColor: const Color(0xFF2A1D19),
           icon: Icons.bolt,
           description:
               'A high-performance prosthetic foot made of carbon fiber or fiberglass '
@@ -151,7 +152,7 @@ final prostheticComponentsContent = TopicData(
           title: 'Prosthetic Feet Comparison',
           columns: ['Foot Type', 'K-Level', 'Advantages', 'Disadvantages', 'Best For'],
           rows: [
-            ['SACH', 'K1-K2', 'Lightest, cheapest, durable, low maintenance', 'No ankle motion, no energy return, flat surfaces only', 'Limited household ambulators'],
+            ['SACH', 'K1', 'Lightest, cheapest, durable, low maintenance', 'No ankle motion, no energy return, flat surfaces only', 'Limited household ambulators'],
             ['Single-Axis', 'K1-K2', 'Quick to foot-flat, knee stability', 'Heavy, high maintenance, no energy return', 'TF amputees needing knee stability'],
             ['Multi-Axis', 'K2', 'Uneven terrain, reduces socket torque', 'Heavy, expensive, high maintenance', 'Uneven terrain walkers'],
             ['Flexible Keel (SAFE)', 'K2', 'Smoother rollover than SACH', 'Minimal energy return', 'Moderate community ambulators'],
@@ -159,6 +160,30 @@ final prostheticComponentsContent = TopicData(
           ],
           headerColor: const Color(0xFFBF360C),
         ),
+
+        // --- Interactive: Annotated Image ---
+        AnnotatedImageBlock(
+          title: 'Prosthetic Foot Types',
+          diagramType: 'prosthetic-feet',
+          hotspots: [
+            HotspotData(id: 'sach', xPercent: 0.1, yPercent: 0.5, label: 'SACH Foot', description: 'Solid Ankle Cushion Heel. Compressible heel simulates plantarflexion. No moving parts — most durable, lowest maintenance.', clinicalSignificance: 'K1 patients. Best for stability. No energy return.', pinColor: Color(0xFF0D9488)),
+            HotspotData(id: 'single', xPercent: 0.3, yPercent: 0.5, label: 'Single-Axis Foot', description: 'Hinged ankle joint allows plantarflexion/dorsiflexion. Rapid foot flat at loading response.', clinicalSignificance: 'Enhances KNEE STABILITY at loading response — good for K2. Key board concept.', pinColor: Color(0xFF3B82F6)),
+            HotspotData(id: 'multi', xPercent: 0.5, yPercent: 0.5, label: 'Multi-Axis Foot', description: 'Allows motion in all planes: plantarflexion/dorsiflexion, inversion/eversion, rotation.', clinicalSignificance: 'Best for uneven terrain. Accommodates ground irregularities. K2-K3.', pinColor: Color(0xFF8B5CF6)),
+            HotspotData(id: 'flex', xPercent: 0.7, yPercent: 0.5, label: 'Flexible Keel', description: 'Compliant forefoot simulates metatarsal rocker. Smooth rollover in terminal stance.', pinColor: Color(0xFFFF9800)),
+            HotspotData(id: 'esar', xPercent: 0.9, yPercent: 0.5, label: 'ESAR (Dynamic Response)', description: 'Carbon fiber stores energy during midstance, returns it at push-off. Highest energy return of passive feet.', clinicalSignificance: 'K3-K4. Running blades (Cheetah) return ~90% energy. Gold standard for active amputees.', pinColor: Color(0xFF16A34A)),
+          ],
+          aspectRatio: 2.0,
+        ),
+
+        // --- Checkpoint: Prosthetic Feet ---
+        CheckpointBlock(
+          question: 'Which prosthetic foot type ENHANCES knee stability at loading response by allowing rapid plantarflexion to foot flat?',
+          options: ['SACH foot', 'Single-axis foot', 'Energy-storing (ESAR) foot', 'Multi-axis foot'],
+          correctIndex: 1,
+          explanation: 'The single-axis foot has a hinged ankle that allows rapid plantarflexion at loading response, bringing the foot flat quickly. This creates a knee extension moment that enhances knee stability — critical concept for K2 patients with weak quadriceps or knee instability.',
+        ),
+        prostheticFootFlowchart,
+        CustomWidgetBlock(CustomWidgetType.prostheticFootDemo),
       ],
     ),
 
@@ -181,7 +206,7 @@ final prostheticComponentsContent = TopicData(
         ComparisonCardBlock(
           title: 'Constant Friction (Single-Axis) Knee',
           themeColor: Colors.grey,
-          backgroundColor: const Color(0xFFF5F5F5),
+          backgroundColor: const Color(0xFF232A3B),
           icon: Icons.settings,
           description:
               'The simplest prosthetic knee. A single pivot point with a friction '
@@ -203,7 +228,7 @@ final prostheticComponentsContent = TopicData(
         ComparisonCardBlock(
           title: 'Stance-Control (Weight-Activated) Safety Knee',
           themeColor: Colors.blue,
-          backgroundColor: const Color(0xFFE3F2FD),
+          backgroundColor: const Color(0xFF1A2332),
           icon: Icons.security,
           description:
               'A knee unit with a weight-activated friction brake that resists '
@@ -232,7 +257,7 @@ final prostheticComponentsContent = TopicData(
         ComparisonCardBlock(
           title: 'Polycentric (Four-Bar) Knee',
           themeColor: Colors.teal,
-          backgroundColor: const Color(0xFFE0F2F1),
+          backgroundColor: const Color(0xFF152A27),
           icon: Icons.hub,
           description:
               'A knee with multiple linkage bars creating an instantaneous center '
@@ -243,7 +268,7 @@ final prostheticComponentsContent = TopicData(
             'Instantaneous center of rotation (ICR) moves with knee flexion',
             'Inherently STABLE in stance when ICR is above and posterior',
             'SHORTENS the shank during swing (great for knee disarticulation)',
-            'K-Level: K1-K2',
+            'K-Level: K2-K3',
             'BEST choice for KNEE DISARTICULATION amputation',
             'Shortening effect prevents foot dragging despite long residual limb',
             'Good cosmesis in sitting due to matching knee centers',
@@ -263,7 +288,7 @@ final prostheticComponentsContent = TopicData(
         ComparisonCardBlock(
           title: 'Manual Locking Knee',
           themeColor: Colors.red,
-          backgroundColor: const Color(0xFFFFEBEE),
+          backgroundColor: const Color(0xFF2A1519),
           icon: Icons.lock_outline,
           description:
               'A knee unit that is locked in full extension throughout the ENTIRE '
@@ -286,7 +311,7 @@ final prostheticComponentsContent = TopicData(
         ComparisonCardBlock(
           title: 'Hydraulic Knee',
           themeColor: Colors.indigo,
-          backgroundColor: const Color(0xFFE8EAF6),
+          backgroundColor: const Color(0xFF1A1D2E),
           icon: Icons.water_drop,
           description:
               'A fluid-controlled knee unit using hydraulic cylinders to provide '
@@ -309,7 +334,7 @@ final prostheticComponentsContent = TopicData(
         ComparisonCardBlock(
           title: 'Pneumatic Knee',
           themeColor: Colors.cyan,
-          backgroundColor: const Color(0xFFE0F7FA),
+          backgroundColor: const Color(0xFF152A2E),
           icon: Icons.air,
           description:
               'An air-controlled knee unit providing swing phase control through '
@@ -319,7 +344,7 @@ final prostheticComponentsContent = TopicData(
             'Pneumatic (air) cylinders control SWING PHASE ONLY',
             'Variable cadence in swing phase',
             'LIGHTER than hydraulic knee units',
-            'K-Level: K2-K3',
+            'K-Level: K3',
             'Does NOT provide stance phase control',
             'Less resistance range than hydraulic',
             'Good intermediate option between friction and hydraulic',
@@ -331,7 +356,7 @@ final prostheticComponentsContent = TopicData(
         ComparisonCardBlock(
           title: 'Microprocessor-Controlled Knee (MPK)',
           themeColor: Colors.deepPurple,
-          backgroundColor: const Color(0xFFEDE7F6),
+          backgroundColor: const Color(0xFF1F1A2E),
           icon: Icons.computer,
           description:
               'A computer-controlled knee unit that uses sensors and a '
@@ -359,10 +384,10 @@ final prostheticComponentsContent = TopicData(
           rows: [
             ['Constant friction', 'K1', 'Fixed only', 'Simplest, cheapest', 'Single speed only'],
             ['Stance-control (safety)', 'K1-K2', 'Fixed', 'Weight-activated brake', 'Cannot use bilaterally'],
-            ['Polycentric (4-bar)', 'K1-K2', 'Fixed', 'Shortens in swing', 'Complex, heavy'],
+            ['Polycentric (4-bar)', 'K2-K3', 'Fixed', 'Shortens in swing', 'Complex, heavy'],
             ['Manual locking', 'K1', 'N/A (locked)', 'Maximum stability', 'Last resort, abnormal gait'],
             ['Hydraulic', 'K3-K4', 'Variable', 'Stance + swing control', 'Heavy, expensive, maintenance'],
-            ['Pneumatic', 'K2-K3', 'Variable (swing)', 'Lighter than hydraulic', 'Swing control only'],
+            ['Pneumatic', 'K3', 'Variable (swing)', 'Lighter than hydraulic', 'Swing control only'],
             ['Microprocessor', 'K3-K4', 'Variable', 'Computer-controlled, fall prevention', 'Most expensive, needs battery'],
           ],
           headerColor: const Color(0xFF4A148C),
@@ -397,7 +422,7 @@ final prostheticComponentsContent = TopicData(
         ComparisonCardBlock(
           title: 'Endoskeletal (Modular) Design',
           themeColor: Colors.blue,
-          backgroundColor: const Color(0xFFE3F2FD),
+          backgroundColor: const Color(0xFF1A2332),
           icon: Icons.view_column,
           description:
               'An internal pylon (metal tube) provides structural support, covered '
@@ -420,7 +445,7 @@ final prostheticComponentsContent = TopicData(
         ComparisonCardBlock(
           title: 'Exoskeletal (Crustacean) Design',
           themeColor: Colors.brown,
-          backgroundColor: const Color(0xFFEFEBE9),
+          backgroundColor: const Color(0xFF2A2522),
           icon: Icons.shield,
           description:
               'A rigid outer laminated shell provides both structural support and '
@@ -461,7 +486,7 @@ final prostheticComponentsContent = TopicData(
         BulletCardBlock(
           title: 'Preparatory (Temporary) Prosthesis',
           themeColor: Colors.orange,
-          backgroundColor: const Color(0xFFFFF3E0),
+          backgroundColor: const Color(0xFF2A2215),
           points: [
             'Fabricated early after amputation during limb maturation',
             'Allows immediate or early prosthetic training',
@@ -475,7 +500,7 @@ final prostheticComponentsContent = TopicData(
         BulletCardBlock(
           title: 'Definitive Prosthesis',
           themeColor: Colors.green,
-          backgroundColor: const Color(0xFFE8F5E9),
+          backgroundColor: const Color(0xFF152A1A),
           points: [
             'Fabricated after residual limb volume has stabilized',
             'Typically 4-6 months post-amputation (volume plateau)',
@@ -501,7 +526,7 @@ final prostheticComponentsContent = TopicData(
         BulletCardBlock(
           title: 'CAD/CAM in Socket Design',
           themeColor: Colors.purple,
-          backgroundColor: const Color(0xFFF3E5F5),
+          backgroundColor: const Color(0xFF2A1A2E),
           points: [
             'CAD/CAM: Computer-Aided Design / Computer-Aided Manufacturing',
             'Digital scanning replaces plaster casting',
@@ -535,7 +560,7 @@ final prostheticComponentsContent = TopicData(
         BulletCardBlock(
           title: 'Toe Amputations',
           themeColor: Colors.blue,
-          backgroundColor: const Color(0xFFE3F2FD),
+          backgroundColor: const Color(0xFF1A2332),
           points: [
             'Great toe amputation: loss of push-off power, balance affected',
             'Lesser toe amputations: minimal functional loss',
@@ -550,7 +575,7 @@ final prostheticComponentsContent = TopicData(
         ComparisonCardBlock(
           title: 'Transmetatarsal Amputation (TMA)',
           themeColor: Colors.teal,
-          backgroundColor: const Color(0xFFE0F2F1),
+          backgroundColor: const Color(0xFF152A27),
           icon: Icons.content_cut,
           description:
               'Amputation through the metatarsal shafts, preserving the entire '
@@ -573,7 +598,7 @@ final prostheticComponentsContent = TopicData(
         ComparisonCardBlock(
           title: 'Lisfranc (Tarsometatarsal) Amputation',
           themeColor: Colors.orange,
-          backgroundColor: const Color(0xFFFFF3E0),
+          backgroundColor: const Color(0xFF2A2215),
           icon: Icons.low_priority,
           description:
               'Disarticulation through the tarsometatarsal joints. Preserves the '
@@ -583,8 +608,8 @@ final prostheticComponentsContent = TopicData(
             'Disarticulation at the tarsometatarsal (Lisfranc) joints',
             'Preserves cuneiforms, navicular, cuboid, talus, calcaneus',
             'All metatarsals and toes removed',
-            'EQUINOVARUS tendency: loss of peroneus brevis (everts) and dorsiflexors',
-            'Ankle dorsiflexors (tibialis anterior) lose insertion point',
+            'EQUINOVARUS tendency: peroneus brevis (5th MT base) and peroneus longus (1st MT base) insertions lost; extensor digitorum and extensor hallucis longus insertions lost',
+            'Tibialis anterior insertion on the medial cuneiform may be preserved depending on the disarticulation plane, so dorsiflexion loss is less complete than at Chopart',
             'Must reattach/rebalance tendons to prevent equinovarus',
             'Prosthetic: custom partial foot prosthesis or clamshell AFO',
             'May need ankle-foot orthosis to control equinovarus',
@@ -596,7 +621,7 @@ final prostheticComponentsContent = TopicData(
         ComparisonCardBlock(
           title: 'Chopart (Midtarsal) Amputation',
           themeColor: Colors.red,
-          backgroundColor: const Color(0xFFFFEBEE),
+          backgroundColor: const Color(0xFF2A1519),
           icon: Icons.warning_amber,
           description:
               'Disarticulation through the midtarsal (talonavicular and calcaneocuboid) '
@@ -629,7 +654,7 @@ final prostheticComponentsContent = TopicData(
         ComparisonCardBlock(
           title: 'Syme\'s Amputation (Ankle Disarticulation)',
           themeColor: Colors.indigo,
-          backgroundColor: const Color(0xFFE8EAF6),
+          backgroundColor: const Color(0xFF1A1D2E),
           icon: Icons.accessibility,
           description:
               'Disarticulation through the ankle joint with preservation of the '
@@ -678,7 +703,7 @@ final prostheticComponentsContent = TopicData(
         BulletCardBlock(
           title: 'Energy Expenditure by Amputation Level',
           themeColor: Colors.deepPurple,
-          backgroundColor: const Color(0xFFEDE7F6),
+          backgroundColor: const Color(0xFF1F1A2E),
           points: [
             'More proximal amputation = higher energy expenditure',
             'Partial foot < Syme\'s < Transtibial < Knee disartic < Transfemoral',
@@ -727,7 +752,7 @@ final prostheticComponentsContent = TopicData(
         BulletCardBlock(
           title: 'Key Energy Expenditure Concepts',
           themeColor: const Color(0xFFC62828),
-          backgroundColor: const Color(0xFFFFEBEE),
+          backgroundColor: const Color(0xFF2A1519),
           points: [
             'O2 consumption rate (mL/kg/min): metabolic demand per unit TIME',
             'O2 cost (mL/kg/m): metabolic expense per unit DISTANCE (accounts for speed)',
@@ -743,7 +768,7 @@ final prostheticComponentsContent = TopicData(
         BulletCardBlock(
           title: 'Prosthetic Walking vs Alternatives',
           themeColor: const Color(0xFF1565C0),
-          backgroundColor: const Color(0xFFE3F2FD),
+          backgroundColor: const Color(0xFF1A2332),
           points: [
             'Wheelchair propulsion on level ground: similar to or slightly lower than normal walking',
             'For bilateral TF: wheelchair may be MORE energy-efficient than prosthetic ambulation',
@@ -755,7 +780,7 @@ final prostheticComponentsContent = TopicData(
         BulletCardBlock(
           title: 'Microprocessor Knees (MPK) Energy Benefits',
           themeColor: Colors.deepPurple,
-          backgroundColor: const Color(0xFFEDE7F6),
+          backgroundColor: const Color(0xFF1F1A2E),
           points: [
             'C-Leg: significant reductions in O2 consumption at typical and fast walking speeds',
             'Rheo Knee: 5% metabolic rate reduction vs Mauch Knee; 3% reduction vs C-Leg',
@@ -766,7 +791,7 @@ final prostheticComponentsContent = TopicData(
         BulletCardBlock(
           title: 'Powered Ankle-Foot Systems (BiOM/Empower)',
           themeColor: Colors.teal,
-          backgroundColor: const Color(0xFFE0F2F1),
+          backgroundColor: const Color(0xFF152A27),
           points: [
             '16% decrease in metabolic rate in highly active individuals vs dynamic-response feet',
             'Significant metabolic cost reduction at speeds >0.75 m/s',
@@ -816,7 +841,7 @@ final prostheticComponentsContent = TopicData(
         BulletCardBlock(
           title: 'K2 MPK Coverage Expansion',
           themeColor: Colors.deepPurple,
-          backgroundColor: const Color(0xFFEDE7F6),
+          backgroundColor: const Color(0xFF1F1A2E),
           points: [
             'September 2024: CMS extended MPK coverage to K2 beneficiaries',
             'Previously K2 patients were limited to non-microprocessor components',
@@ -835,7 +860,7 @@ final prostheticComponentsContent = TopicData(
         BulletCardBlock(
           title: 'Known Limitations',
           themeColor: const Color(0xFFE65100),
-          backgroundColor: const Color(0xFFFFF3E0),
+          backgroundColor: const Color(0xFF2A2215),
           points: [
             'NO published validity or reliability evidence',
             'Vague language and subjective assignment by clinician judgment',
@@ -855,12 +880,20 @@ final prostheticComponentsContent = TopicData(
           'in clinic are low-functioning in the community.',
         ),
 
+        // --- Checkpoint: K-Levels ---
+        CheckpointBlock(
+          question: 'A K0 patient is classified as:',
+          options: ['Limited household ambulator', 'Limited community ambulator', 'Non-ambulatory — does not have ability or potential to ambulate', 'Community ambulator with variable cadence'],
+          correctIndex: 2,
+          explanation: 'K0 = non-ambulatory. Does not have the ability or potential to ambulate or transfer with a prosthesis. K0 patients do not qualify for a prosthetic limb under Medicare. K1 = limited household, K2 = limited community, K3 = community with variable cadence, K4 = high activity/athlete.',
+        ),
+
         // --- Functional Prognosis ---
         HeaderBlock('Functional Prognosis by Amputation Level'),
         BulletCardBlock(
           title: 'Transtibial (Below-Knee) Prognosis',
           themeColor: const Color(0xFF2E7D32),
-          backgroundColor: const Color(0xFFE8F5E9),
+          backgroundColor: const Color(0xFF152A1A),
           points: [
             'Generally favorable for prosthetic ambulation',
             'Most TT amputees achieve K2-K3; traumatic TT frequently achieve K3-K4',
@@ -872,7 +905,7 @@ final prostheticComponentsContent = TopicData(
         BulletCardBlock(
           title: 'Transfemoral (Above-Knee) Prognosis',
           themeColor: const Color(0xFFE65100),
-          backgroundColor: const Color(0xFFFFF3E0),
+          backgroundColor: const Color(0xFF2A2215),
           points: [
             'Moderate prognosis; more dependent on etiology, age, comorbidities',
             'Traumatic TF: often K2-K3; Vascular TF: typically K1-K2',
@@ -925,7 +958,7 @@ final prostheticComponentsContent = TopicData(
         ComparisonCardBlock(
           title: 'Amputee Mobility Predictor (AMP)',
           themeColor: const Color(0xFF1565C0),
-          backgroundColor: const Color(0xFFE3F2FD),
+          backgroundColor: const Color(0xFF1A2332),
           icon: Icons.assessment,
           description: '21-item performance-based assessment of ambulatory potential. '
               'The AMPnoPRO version (without prosthesis) uniquely predicts K-level '
@@ -946,7 +979,7 @@ final prostheticComponentsContent = TopicData(
         ComparisonCardBlock(
           title: 'PLUS-M (Prosthetic Limb Users Survey of Mobility)',
           themeColor: const Color(0xFF2E7D32),
-          backgroundColor: const Color(0xFFE8F5E9),
+          backgroundColor: const Color(0xFF152A1A),
           icon: Icons.poll,
           description: 'Self-report measure of prosthetic mobility developed using '
               'Item Response Theory (IRT). Available as 7-item, 12-item short '
@@ -966,7 +999,7 @@ final prostheticComponentsContent = TopicData(
         ComparisonCardBlock(
           title: 'ABC Scale (Activities-Specific Balance Confidence)',
           themeColor: const Color(0xFF4527A0),
-          backgroundColor: const Color(0xFFEDE7F6),
+          backgroundColor: const Color(0xFF1F1A2E),
           icon: Icons.balance,
           description: '16-item self-report questionnaire rating confidence (0-100%) '
               'in maintaining balance during specific ambulatory activities.',
@@ -986,7 +1019,7 @@ final prostheticComponentsContent = TopicData(
         ComparisonCardBlock(
           title: '6-Minute Walk Test (6MWT)',
           themeColor: const Color(0xFF00695C),
-          backgroundColor: const Color(0xFFE0F2F1),
+          backgroundColor: const Color(0xFF152A27),
           icon: Icons.directions_walk,
           description: 'Performance-based measure of functional walking capacity and '
               'aerobic endurance. Patient walks as far as possible over 6 minutes.',
@@ -1004,7 +1037,7 @@ final prostheticComponentsContent = TopicData(
         ComparisonCardBlock(
           title: 'Timed Up and Go (TUG)',
           themeColor: const Color(0xFFE65100),
-          backgroundColor: const Color(0xFFFFF3E0),
+          backgroundColor: const Color(0xFF2A2215),
           icon: Icons.timer,
           description: 'Measures basic functional mobility: stand from chair, walk '
               '3 meters, turn, walk back, sit down. Time recorded in seconds.',
@@ -1023,7 +1056,7 @@ final prostheticComponentsContent = TopicData(
         ComparisonCardBlock(
           title: 'L-Test',
           themeColor: const Color(0xFF6A1B9A),
-          backgroundColor: const Color(0xFFF3E5F5),
+          backgroundColor: const Color(0xFF2A1A2E),
           icon: Icons.turn_right,
           description: 'Modified TUG using an L-shaped path (3m + 7m with 2 '
               'directional changes). Designed to address TUG ceiling effect.',
@@ -1041,7 +1074,7 @@ final prostheticComponentsContent = TopicData(
         ComparisonCardBlock(
           title: 'Socket Comfort Score (SCS)',
           themeColor: Colors.grey,
-          backgroundColor: const Color(0xFFF5F5F5),
+          backgroundColor: const Color(0xFF232A3B),
           icon: Icons.star_rate,
           description: 'Single-item patient-reported outcome using 0-10 numeric '
               'rating scale for socket comfort.',
@@ -1088,7 +1121,7 @@ final prostheticComponentsContent = TopicData(
         BulletCardBlock(
           title: 'ISPO COMPASS Recommended Battery (2021)',
           themeColor: const Color(0xFF00838F),
-          backgroundColor: const Color(0xFFE0F7FA),
+          backgroundColor: const Color(0xFF152A2E),
           points: [
             'Houghton Scale',
             'PEQ-Mobility Subscale',
@@ -1111,6 +1144,18 @@ final prostheticComponentsContent = TopicData(
           'reliability (ICC 0.63-0.79). 6MWT and TUG are performance-based '
           'standards. L-Test addresses TUG ceiling effect.',
         ),
+      ],
+    ),
+    TopicTab(
+      title: 'Prescription Builder',
+      blocks: [
+        HeaderBlock('Interactive Prosthetic Prescription Builder'),
+        TextBlock(
+          'Select an amputation level and functional K-level to see the '
+          'recommended prosthetic components. Each prescription includes socket, '
+          'suspension, liner, foot, and knee (if applicable) with clinical pearls.',
+        ),
+        PrescriptionBuilderBlock(),
       ],
     ),
   ],

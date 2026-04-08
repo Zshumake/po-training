@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
 import '../../data/models/module_model.dart';
+import '../../data/module_contents/module_content_registry.dart';
+import '../../core/services/progress_service.dart';
 import '../../core/theme/app_theme.dart';
 
-class ContentCard extends StatelessWidget {
+class ContentCard extends StatefulWidget {
   final ModuleModel module;
   final int index;
   final VoidCallback onTap;
@@ -13,6 +15,17 @@ class ContentCard extends StatelessWidget {
     required this.index,
     required this.onTap,
   });
+
+  @override
+  State<ContentCard> createState() => _ContentCardState();
+}
+
+class _ContentCardState extends State<ContentCard> {
+  double _progress = 0.0;
+
+  ModuleModel get module => widget.module;
+  int get index => widget.index;
+  VoidCallback get onTap => widget.onTap;
 
   Color get _moduleColor => AppTheme.moduleColors[index % AppTheme.moduleColors.length];
 
@@ -37,9 +50,41 @@ class ContentCard extends StatelessWidget {
   }
 
   @override
+  void initState() {
+    super.initState();
+    _loadProgress();
+  }
+
+  @override
+  void didUpdateWidget(ContentCard oldWidget) {
+    super.didUpdateWidget(oldWidget);
+    if (oldWidget.module.id != widget.module.id) {
+      _loadProgress();
+    }
+  }
+
+  Future<void> _loadProgress() async {
+    final topicData = moduleContentRegistry[module.id];
+    if (topicData == null) return;
+    final percent = await ProgressService.getModuleCompletionPercent(
+      module.id,
+      topicData.tabs.length,
+    );
+    if (mounted) {
+      setState(() => _progress = percent);
+    }
+  }
+
+  @override
   Widget build(BuildContext context) {
     return GestureDetector(
-      onTap: onTap,
+      onTap: () {
+        onTap();
+        // Reload progress when returning from module screen
+        Future.delayed(const Duration(milliseconds: 300), () {
+          if (mounted) _loadProgress();
+        });
+      },
       child: Container(
         margin: const EdgeInsets.symmetric(horizontal: 16, vertical: 5),
         decoration: BoxDecoration(
@@ -177,10 +222,52 @@ class ContentCard extends StatelessWidget {
               ),
               Padding(
                 padding: const EdgeInsets.only(right: 12),
-                child: Icon(
-                  Icons.chevron_right_rounded,
-                  color: AppTheme.textTertiary,
-                  size: 20,
+                child: Column(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    if (_progress > 0) ...[
+                      SizedBox(
+                        width: 28,
+                        height: 28,
+                        child: Stack(
+                          alignment: Alignment.center,
+                          children: [
+                            CircularProgressIndicator(
+                              value: _progress,
+                              strokeWidth: 2.5,
+                              backgroundColor: AppTheme.surfaceBorder,
+                              valueColor: AlwaysStoppedAnimation<Color>(
+                                _progress >= 1.0
+                                    ? AppTheme.successGreen
+                                    : _moduleColor,
+                              ),
+                            ),
+                            if (_progress >= 1.0)
+                              const Icon(
+                                Icons.check_rounded,
+                                color: AppTheme.successGreen,
+                                size: 14,
+                              )
+                            else
+                              Text(
+                                '${(_progress * 100).round()}',
+                                style: TextStyle(
+                                  fontSize: 8,
+                                  fontWeight: FontWeight.w800,
+                                  color: _moduleColor,
+                                ),
+                              ),
+                          ],
+                        ),
+                      ),
+                      const SizedBox(height: 4),
+                    ],
+                    Icon(
+                      Icons.chevron_right_rounded,
+                      color: AppTheme.textTertiary,
+                      size: 20,
+                    ),
+                  ],
                 ),
               ),
             ],

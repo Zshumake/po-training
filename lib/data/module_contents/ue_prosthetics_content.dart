@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import '../models/topic_content_model.dart';
+import '../flowcharts/clinical_flowcharts.dart';
 
 final ueProstheticsContent = TopicData(
   id: 'ue_prosthetics',
@@ -25,7 +26,7 @@ final ueProstheticsContent = TopicData(
         BulletCardBlock(
           title: 'Passive (Non-Functional) Terminal Devices',
           themeColor: Colors.blueGrey,
-          backgroundColor: const Color(0xFFECEFF1),
+          backgroundColor: const Color(0xFF1E2530),
           points: [
             'Cosmetic hand: realistic appearance, silicone glove cover, NO prehensile function',
             'Passive mitt: flexible, padded, used for sports and recreational activities',
@@ -41,7 +42,7 @@ final ueProstheticsContent = TopicData(
         ComparisonCardBlock(
           title: 'Voluntary Opening (VO)',
           themeColor: Colors.blue,
-          backgroundColor: const Color(0xFFE3F2FD),
+          backgroundColor: const Color(0xFF1A2332),
           icon: Icons.open_in_full,
           description: 'The MOST COMMON body-powered terminal device. Rubber bands '
               'or springs hold the TD in a closed (grasping) position at rest. '
@@ -61,7 +62,7 @@ final ueProstheticsContent = TopicData(
         ComparisonCardBlock(
           title: 'Voluntary Closing (VC)',
           themeColor: Colors.teal,
-          backgroundColor: const Color(0xFFE0F2F1),
+          backgroundColor: const Color(0xFF152A27),
           icon: Icons.close_fullscreen,
           description: 'Open at rest; cable pull CLOSES the device. Provides a more '
               'physiological grasp pattern because prehensile force equals the '
@@ -104,7 +105,7 @@ final ueProstheticsContent = TopicData(
         BulletCardBlock(
           title: 'Prosthetic Hand Prehension',
           themeColor: Colors.deepPurple,
-          backgroundColor: const Color(0xFFEDE7F6),
+          backgroundColor: const Color(0xFF1F1A2E),
           points: [
             'Three-jaw chuck pinch: thumb opposes index and middle fingers',
             'Ring and small fingers are passive (do not actively participate)',
@@ -119,7 +120,7 @@ final ueProstheticsContent = TopicData(
         BulletCardBlock(
           title: 'Myoelectric Hands & Electric Hooks',
           themeColor: Colors.orange,
-          backgroundColor: const Color(0xFFFFF3E0),
+          backgroundColor: const Color(0xFF2A2215),
           points: [
             'Powered by rechargeable battery housed in the prosthesis',
             'Controlled by surface EMG electrodes on residual limb muscles',
@@ -132,7 +133,7 @@ final ueProstheticsContent = TopicData(
         BulletCardBlock(
           title: 'Multi-Articulating ("Smart") Hands',
           themeColor: Colors.purple,
-          backgroundColor: const Color(0xFFF3E5F5),
+          backgroundColor: const Color(0xFF2A1A2E),
           points: [
             'Individually powered digits allow multiple grip patterns',
             'Power grip: all fingers wrap around object',
@@ -151,6 +152,16 @@ final ueProstheticsContent = TopicData(
           'co-contraction switching or pattern recognition. However, they remain '
           'expensive, heavier than body-powered options, and require battery charging.',
         ),
+        VideoBlock(
+          url: 'https://www.youtube.com/watch?v=7qR_2n5Y9Pw',
+          title: 'Multi-Articulating Myoelectric Hands',
+          description: 'Watch i-Limb, bebionic, and LUKE arm in action. Note the multiple grip patterns (power grip, precision pinch, key grip, tripod) and how pattern recognition allows intuitive switching.',
+        ),
+        VideoBlock(
+          url: 'https://www.youtube.com/watch?v=Ii7ByNe5SiM',
+          title: 'Body-Powered Prosthesis: Hook Operation',
+          description: 'Watch the figure-8 harness and cable control system. Forward flexion + biscapular abduction = open terminal device. VO hook opens against rubber bands; release = grasp via rubber band tension.',
+        ),
 
         // --- Multi-Articulating Hands Table ---
         HeaderBlock('Commercially Available Multi-Articulating Hands'),
@@ -165,6 +176,35 @@ final ueProstheticsContent = TopicData(
             ['Michelangelo', 'Ottobock', 'Axial rotation wrist; 7 grip patterns; natural wrist movement'],
           ],
           headerColor: Colors.deepPurple,
+        ),
+
+        CheckpointBlock(
+          question: 'What is the key functional difference between voluntary opening (VO) and voluntary closing (VC) terminal devices?',
+          options: ['VO provides stronger grip force', 'VC provides better proprioceptive feedback because grip force is proportional to cable pull effort', 'VO is more cosmetic', 'VC is lighter weight'],
+          correctIndex: 1,
+          explanation: 'VC (voluntary closing) hooks provide proportional grip — the harder you pull the cable, the stronger the grip. This gives better proprioceptive feedback about grip force. VO hooks open with cable pull and close passively with rubber bands — grip force is fixed by rubber band number.',
+        ),
+
+        CustomWidgetBlock(CustomWidgetType.terminalDeviceDemo),
+        ueProstheticFlowchart,
+        CaseScenarioBlock(
+          title: 'UE Prosthetic Selection',
+          vignette: 'A 28-year-old right-hand-dominant female construction worker sustains a left transradial amputation (traumatic). She has an 18 cm residual limb (mid-forearm). She wants to return to her construction job and also desires a cosmetic option for social situations.',
+          decisionPoints: [
+            CaseDecisionPoint(
+              prompt: 'For her work needs (construction, tools, outdoor), what primary prosthesis type would you recommend?',
+              options: ['Myoelectric hand', 'Body-powered with VO hook', 'Passive cosmetic hand', 'Activity-specific terminal device only'],
+              optimalIndex: 1,
+              explanation: 'Body-powered with VO hook is best for construction work: durable, water-resistant, provides proprioceptive feedback, and works in dirty/wet environments. Myoelectric hands are not suitable for heavy labor, wet conditions, or dusty environments.',
+            ),
+            CaseDecisionPoint(
+              prompt: 'She asks about having a second prosthesis for social situations. What would you recommend?',
+              options: ['A second body-powered hook', 'Myoelectric hand with silicone glove', 'Custom silicone passive restoration', 'No second prosthesis is justified'],
+              optimalIndex: 1,
+              explanation: 'A myoelectric hand provides both function and cosmesis for social/community situations. Multi-articulating hands (i-Limb, bebionic) offer multiple grip patterns. Having two prostheses for different life roles is standard practice for active patients.',
+            ),
+          ],
+          summaryPearl: 'Prosthetic selection should match the patient\'s life roles. Body-powered is superior for rugged work (durable, feedback, water-resistant). Myoelectric excels for cosmesis and community use. Many patients benefit from multiple prostheses for different activities.',
         ),
       ],
     ),
@@ -188,7 +228,7 @@ final ueProstheticsContent = TopicData(
         ComparisonCardBlock(
           title: 'Single-Control Cable System (Bowden Cable)',
           themeColor: Colors.blue,
-          backgroundColor: const Color(0xFFE3F2FD),
+          backgroundColor: const Color(0xFF1A2332),
           icon: Icons.cable,
           description: 'Used for TRANSRADIAL prostheses. One cable controls one '
               'function: terminal device operation. The cable runs through a '
@@ -208,7 +248,7 @@ final ueProstheticsContent = TopicData(
         ComparisonCardBlock(
           title: 'Dual-Control Cable System (Fair-Lead)',
           themeColor: Colors.teal,
-          backgroundColor: const Color(0xFFE0F2F1),
+          backgroundColor: const Color(0xFF152A27),
           icon: Icons.settings_input_component,
           description: 'Used for TRANSHUMERAL prostheses. A single cable serves '
               'two functions depending on the state of the elbow lock: when the '
@@ -229,7 +269,7 @@ final ueProstheticsContent = TopicData(
         BulletCardBlock(
           title: 'Elbow Lock/Unlock Mechanism',
           themeColor: Colors.orange,
-          backgroundColor: const Color(0xFFFFF3E0),
+          backgroundColor: const Color(0xFF2A2215),
           points: [
             'Alternating locking mechanism: toggles between locked and unlocked',
             'Activation motion: shoulder depression + extension + abduction',
@@ -268,7 +308,7 @@ final ueProstheticsContent = TopicData(
         ComparisonCardBlock(
           title: 'Figure-8 (O-Ring) Harness',
           themeColor: Colors.indigo,
-          backgroundColor: const Color(0xFFE8EAF6),
+          backgroundColor: const Color(0xFF1A1D2E),
           icon: Icons.all_inclusive,
           description: 'The MOST COMMONLY used harness for body-powered UE prostheses. '
               'Named for its figure-8 configuration across the upper back. The '
@@ -286,7 +326,7 @@ final ueProstheticsContent = TopicData(
         ComparisonCardBlock(
           title: 'Figure-9 Harness',
           themeColor: Colors.green,
-          backgroundColor: const Color(0xFFE8F5E9),
+          backgroundColor: const Color(0xFF152A1A),
           icon: Icons.looks_3,
           description: 'A lighter, simpler harness used when the socket is self-suspending '
               '(e.g., Muenster socket for transradial). Eliminates the anterior '
@@ -303,7 +343,7 @@ final ueProstheticsContent = TopicData(
         BulletCardBlock(
           title: 'Chest Strap with Shoulder Saddle',
           themeColor: Colors.red,
-          backgroundColor: const Color(0xFFFFEBEE),
+          backgroundColor: const Color(0xFF2A1519),
           points: [
             'Used when patient cannot tolerate axillary pressure',
             'For heavy-duty lifting requiring greater stability',
@@ -325,7 +365,7 @@ final ueProstheticsContent = TopicData(
         ComparisonCardBlock(
           title: 'Friction Wrist Unit',
           themeColor: Colors.teal,
-          backgroundColor: const Color(0xFFE0F2F1),
+          backgroundColor: const Color(0xFF152A27),
           icon: Icons.rotate_right,
           description: 'Allows the terminal device to be manually rotated (pronated or '
               'supinated) and held in position by friction between internal components. '
@@ -340,7 +380,7 @@ final ueProstheticsContent = TopicData(
         ComparisonCardBlock(
           title: 'Locking Wrist Unit',
           themeColor: Colors.indigo,
-          backgroundColor: const Color(0xFFE8EAF6),
+          backgroundColor: const Color(0xFF1A1D2E),
           icon: Icons.lock,
           description: 'Uses a positive locking mechanism (typically button-release) to '
               'hold the TD in discrete rotational positions. Only rotates when the lock '
@@ -356,7 +396,7 @@ final ueProstheticsContent = TopicData(
         BulletCardBlock(
           title: 'Quick-Disconnect Wrist Unit',
           themeColor: Colors.orange,
-          backgroundColor: const Color(0xFFFFF3E0),
+          backgroundColor: const Color(0xFF2A2215),
           points: [
             'Allows rapid interchange of terminal devices',
             'Patient can switch between hook (work) and hand (social) in seconds',
@@ -393,7 +433,7 @@ final ueProstheticsContent = TopicData(
         ComparisonCardBlock(
           title: 'Digital (On/Off) Control',
           themeColor: Colors.blue,
-          backgroundColor: const Color(0xFFE3F2FD),
+          backgroundColor: const Color(0xFF1A2332),
           icon: Icons.toggle_on,
           description: 'Threshold-based control: when the EMG signal exceeds a preset '
               'threshold, the motor activates at full speed. Below threshold = no '
@@ -410,7 +450,7 @@ final ueProstheticsContent = TopicData(
         ComparisonCardBlock(
           title: 'Proportional Control',
           themeColor: Colors.teal,
-          backgroundColor: const Color(0xFFE0F2F1),
+          backgroundColor: const Color(0xFF152A27),
           icon: Icons.speed,
           description: 'Signal strength proportionally controls motor speed and force. '
               'Stronger muscle contraction = faster movement and stronger grip. '
@@ -429,7 +469,7 @@ final ueProstheticsContent = TopicData(
         BulletCardBlock(
           title: 'Two-Site Electrode Control',
           themeColor: Colors.deepPurple,
-          backgroundColor: const Color(0xFFEDE7F6),
+          backgroundColor: const Color(0xFF1F1A2E),
           points: [
             'Two independent electrode sites on residual limb',
             'Each electrode controls one direction of movement',
@@ -446,7 +486,7 @@ final ueProstheticsContent = TopicData(
         BulletCardBlock(
           title: 'Co-Contraction Switching',
           themeColor: Colors.orange,
-          backgroundColor: const Color(0xFFFFF3E0),
+          backgroundColor: const Color(0xFF2A2215),
           points: [
             'Simultaneous contraction of both muscle sites triggers mode switch',
             'Used to toggle between grip patterns in multi-articulating hands',
@@ -459,7 +499,7 @@ final ueProstheticsContent = TopicData(
         BulletCardBlock(
           title: 'Pattern Recognition',
           themeColor: Colors.purple,
-          backgroundColor: const Color(0xFFF3E5F5),
+          backgroundColor: const Color(0xFF2A1A2E),
           points: [
             'Multiple EMG electrodes (6-8+) capture complex muscle activation patterns',
             'Algorithms classify intended movement from combined signal patterns',
@@ -476,7 +516,7 @@ final ueProstheticsContent = TopicData(
         ComparisonCardBlock(
           title: 'Targeted Muscle Reinnervation (TMR)',
           themeColor: Colors.red,
-          backgroundColor: const Color(0xFFFFEBEE),
+          backgroundColor: const Color(0xFF2A1519),
           icon: Icons.psychology,
           description: 'Surgical procedure in which residual nerves from the amputated '
               'limb are transferred to new muscle targets (typically pectoralis '
@@ -497,7 +537,7 @@ final ueProstheticsContent = TopicData(
         BulletCardBlock(
           title: 'TMR Pain Management Benefits',
           themeColor: Colors.deepOrange,
-          backgroundColor: const Color(0xFFFBE9E7),
+          backgroundColor: const Color(0xFF2A1D19),
           points: [
             'Effective for prevention AND treatment of phantom limb pain',
             'Effective for residual limb pain reduction',
@@ -549,7 +589,7 @@ final ueProstheticsContent = TopicData(
         BulletCardBlock(
           title: 'Myoelectric Advantages',
           themeColor: Colors.green,
-          backgroundColor: const Color(0xFFE8F5E9),
+          backgroundColor: const Color(0xFF152A1A),
           points: [
             'Better cosmesis (no harness, hand-like appearance)',
             'No harness needed for TD operation',
@@ -562,7 +602,7 @@ final ueProstheticsContent = TopicData(
         BulletCardBlock(
           title: 'Myoelectric Disadvantages',
           themeColor: Colors.red,
-          backgroundColor: const Color(0xFFFFEBEE),
+          backgroundColor: const Color(0xFF2A1519),
           points: [
             'Heavier (motors, battery, electronics)',
             'Significantly more expensive',
@@ -573,6 +613,13 @@ final ueProstheticsContent = TopicData(
             'Slower response time compared to body-powered',
             'Requires sufficient muscle signal strength for control',
           ],
+        ),
+
+        CheckpointBlock(
+          question: 'In a standard two-site myoelectric transradial prosthesis, wrist extensors control which function?',
+          options: ['Hand closing', 'Hand opening', 'Wrist rotation', 'Elbow flexion'],
+          correctIndex: 1,
+          explanation: 'In standard two-site myoelectric control: wrist EXTENSORS = hand OPEN, wrist FLEXORS = hand CLOSE. This is physiologically intuitive — extending the wrist opens the hand. Pattern recognition (COAPT) can decode more complex movement patterns for multi-DOF control.',
         ),
       ],
     ),
@@ -598,7 +645,7 @@ final ueProstheticsContent = TopicData(
         BulletCardBlock(
           title: 'Transradial Components',
           themeColor: Colors.blue,
-          backgroundColor: const Color(0xFFE3F2FD),
+          backgroundColor: const Color(0xFF1A2332),
           points: [
             'Socket: interfaces with forearm residual limb',
             'Elbow hinge: flexible (Dacron) or rigid (metal) connects socket to upper arm cuff',
@@ -612,7 +659,7 @@ final ueProstheticsContent = TopicData(
         ComparisonCardBlock(
           title: 'Transradial Socket Types',
           themeColor: Colors.indigo,
-          backgroundColor: const Color(0xFFE8EAF6),
+          backgroundColor: const Color(0xFF1A1D2E),
           icon: Icons.back_hand,
           description: 'Socket design depends on residual limb length. The socket extends '
               'to the olecranon posteriorly and the elbow crease anteriorly. Longer '
@@ -634,7 +681,7 @@ final ueProstheticsContent = TopicData(
         BulletCardBlock(
           title: 'Transhumeral Components',
           themeColor: Colors.teal,
-          backgroundColor: const Color(0xFFE0F2F1),
+          backgroundColor: const Color(0xFF152A27),
           points: [
             'Socket: interfaces with upper arm residual limb',
             'Elbow unit: internal or external mechanical elbow joint',
@@ -663,7 +710,7 @@ final ueProstheticsContent = TopicData(
         BulletCardBlock(
           title: 'Transhumeral Key Concepts',
           themeColor: Colors.orange,
-          backgroundColor: const Color(0xFFFFF3E0),
+          backgroundColor: const Color(0xFF2A2215),
           points: [
             'Internal elbow joint: preferred when residual limb length permits',
             'External elbow joint: for short residual limbs where internal housing not feasible',
@@ -695,7 +742,7 @@ final ueProstheticsContent = TopicData(
         BulletCardBlock(
           title: 'Wrist Disarticulation',
           themeColor: Colors.cyan,
-          backgroundColor: const Color(0xFFE0F7FA),
+          backgroundColor: const Color(0xFF152A2E),
           points: [
             'Preserves full forearm length with excellent pronation/supination',
             'Bulbous distal end (flared epicondyles) provides natural self-suspension',
@@ -709,7 +756,7 @@ final ueProstheticsContent = TopicData(
         BulletCardBlock(
           title: 'Elbow Disarticulation Features',
           themeColor: Colors.deepPurple,
-          backgroundColor: const Color(0xFFEDE7F6),
+          backgroundColor: const Color(0xFF1F1A2E),
           points: [
             'Amputation through the elbow joint (preserves full humeral length)',
             'Variation of transhumeral prosthetic design',
@@ -727,7 +774,7 @@ final ueProstheticsContent = TopicData(
         BulletCardBlock(
           title: 'Shoulder Disarticulation & Forequarter Amputation',
           themeColor: Colors.red,
-          backgroundColor: const Color(0xFFFFEBEE),
+          backgroundColor: const Color(0xFF2A1519),
           points: [
             'Shoulder disarticulation: removal of entire upper extremity at glenohumeral joint',
             'Forequarter (interscapulothoracic): removal including scapula and clavicle',

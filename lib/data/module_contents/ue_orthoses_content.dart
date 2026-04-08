@@ -26,7 +26,7 @@ final ueOrthosesContent = TopicData(
         BulletCardBlock(
           title: 'Static Splinting Principles',
           themeColor: Colors.blue,
-          backgroundColor: const Color(0xFFE3F2FD),
+          backgroundColor: const Color(0xFF1A2332),
           points: [
             'NO movable parts; rigid immobilization',
             'Used for REST, protection, and immobilization',
@@ -39,7 +39,7 @@ final ueOrthosesContent = TopicData(
         BulletCardBlock(
           title: 'Dynamic Splinting Principles',
           themeColor: Colors.green,
-          backgroundColor: const Color(0xFFE8F5E9),
+          backgroundColor: const Color(0xFF152A1A),
           points: [
             'Has movable components: rubber bands, springs, or outriggers',
             'Used for MOBILIZATION, exercise, and functional assistance',
@@ -52,7 +52,7 @@ final ueOrthosesContent = TopicData(
         BulletCardBlock(
           title: 'Static-Progressive Splinting Principles',
           themeColor: Colors.orange,
-          backgroundColor: const Color(0xFFFFF3E0),
+          backgroundColor: const Color(0xFF2A2215),
           points: [
             'Hybrid approach: no elastic/spring components like dynamic splints',
             'Uses adjustable mechanism (turnbuckle, ratchet) for incremental stretch',
@@ -76,7 +76,7 @@ final ueOrthosesContent = TopicData(
         ComparisonCardBlock(
           title: 'Resting Hand Splint (Static)',
           themeColor: Colors.indigo,
-          backgroundColor: const Color(0xFFE8EAF6),
+          backgroundColor: const Color(0xFF1A1D2E),
           icon: Icons.back_hand,
           description:
               'A static splint that positions the wrist and hand in a resting '
@@ -99,7 +99,7 @@ final ueOrthosesContent = TopicData(
         ComparisonCardBlock(
           title: 'Functional Position Splint',
           themeColor: Colors.teal,
-          backgroundColor: const Color(0xFFE0F2F1),
+          backgroundColor: const Color(0xFF152A27),
           icon: Icons.pan_tool,
           description:
               'A static splint that positions the hand in the position of optimal '
@@ -120,7 +120,7 @@ final ueOrthosesContent = TopicData(
         ComparisonCardBlock(
           title: 'Tenodesis Splint (Wrist-Driven Prehension Orthosis)',
           themeColor: Colors.deepOrange,
-          backgroundColor: const Color(0xFFFBE9E7),
+          backgroundColor: const Color(0xFF2A1D19),
           icon: Icons.precision_manufacturing,
           description:
               'A dynamic orthosis that uses wrist EXTENSION to drive finger '
@@ -132,7 +132,7 @@ final ueOrthosesContent = TopicData(
             'Wrist flexion opens the hand (releases grasp)',
             'Exploits the natural tenodesis effect via mechanical linkage',
             'REQUIRES intact wrist extensors (ECRL, ECRB)',
-            'Indicated for C6-C7 SCI (intact wrist extensors, no finger flexors)',
+            'Indicated for C6 SCI (intact wrist extensors ECRL/ECRB, absent finger flexors); not indicated for C7, where the patient typically grasps functionally without orthotic assistance',
             'Provides functional three-jaw chuck or lateral pinch',
             'Patient must have at least 3+/5 wrist extension strength',
             'Training required for effective use and coordination',
@@ -143,7 +143,7 @@ final ueOrthosesContent = TopicData(
         ComparisonCardBlock(
           title: 'Cock-Up Splint (Wrist Extension Splint)',
           themeColor: Colors.amber,
-          backgroundColor: const Color(0xFFFFF8E1),
+          backgroundColor: const Color(0xFF2A2515),
           icon: Icons.front_hand,
           description:
               'A static volar or dorsal splint that maintains the wrist in '
@@ -164,7 +164,7 @@ final ueOrthosesContent = TopicData(
         ComparisonCardBlock(
           title: 'Thumb Spica Splint',
           themeColor: Colors.purple,
-          backgroundColor: const Color(0xFFF3E5F5),
+          backgroundColor: const Color(0xFF2A1A2E),
           icon: Icons.thumb_up,
           description:
               'A static splint that immobilizes the thumb CMC and MCP joints '
@@ -226,7 +226,7 @@ final ueOrthosesContent = TopicData(
         ComparisonCardBlock(
           title: 'Radial Nerve Palsy → Wrist Drop',
           themeColor: Colors.red,
-          backgroundColor: const Color(0xFFFFEBEE),
+          backgroundColor: const Color(0xFF2A1519),
           icon: Icons.arrow_downward,
           description:
               'Radial nerve injury causes loss of wrist extensors, finger extensors, '
@@ -257,7 +257,7 @@ final ueOrthosesContent = TopicData(
         ComparisonCardBlock(
           title: 'Ulnar Nerve Palsy → Claw Hand',
           themeColor: Colors.orange,
-          backgroundColor: const Color(0xFFFFF3E0),
+          backgroundColor: const Color(0xFF2A2215),
           icon: Icons.do_not_touch,
           description:
               'Ulnar nerve injury causes loss of intrinsic muscles (interossei, '
@@ -288,7 +288,7 @@ final ueOrthosesContent = TopicData(
         ComparisonCardBlock(
           title: 'Median Nerve Palsy → Ape Hand',
           themeColor: Colors.green,
-          backgroundColor: const Color(0xFFE8F5E9),
+          backgroundColor: const Color(0xFF152A1A),
           icon: Icons.swipe,
           description:
               'Median nerve injury causes loss of thenar muscles (opponens pollicis, '
@@ -312,7 +312,7 @@ final ueOrthosesContent = TopicData(
         ComparisonCardBlock(
           title: 'Combined High Median-Ulnar Palsy',
           themeColor: Colors.purple,
-          backgroundColor: const Color(0xFFF3E5F5),
+          backgroundColor: const Color(0xFF2A1A2E),
           icon: Icons.warning,
           description:
               'Combined injury to both median and ulnar nerves causes loss of ALL '
@@ -376,7 +376,7 @@ final ueOrthosesContent = TopicData(
         BulletCardBlock(
           title: 'Additional Nerve Injury Pearls',
           themeColor: Colors.red,
-          backgroundColor: const Color(0xFFFFEBEE),
+          backgroundColor: const Color(0xFF2A1519),
           points: [
             'Froment sign: thumb IP flexion via FPL compensating for lost adductor pollicis (ulnar nerve)',
             'Hand of benediction: index and middle fingers stay extended during fist attempt (high median)',
@@ -384,6 +384,33 @@ final ueOrthosesContent = TopicData(
             'Index and middle fingers spared in ulnar palsy (lumbricals 1-2 = median nerve)',
             'Median sensory loss (thumb/index/middle) may be more disabling than motor loss',
           ],
+        ),
+
+        CheckpointBlock(
+          question: 'A patient presents with wrist drop after a humeral shaft fracture. Which nerve is most likely injured, and what splint is indicated?',
+          options: ['Ulnar nerve — anti-claw splint', 'Median nerve — opponens splint', 'Radial nerve — dorsal wrist cock-up splint', 'Musculocutaneous nerve — elbow extension splint'],
+          correctIndex: 2,
+          explanation: 'Radial nerve palsy causes wrist drop (loss of wrist and finger extension). The dorsal wrist cock-up splint holds the wrist in extension, allowing finger flexors to function. Radial nerve injury is the most common nerve injury with humeral shaft fractures.',
+        ),
+
+        CaseScenarioBlock(
+          title: 'Nerve Injury Splinting Case',
+          vignette: 'A 35-year-old male sustains a deep laceration to the medial elbow during a construction accident. On examination, he has loss of sensation to the ulnar 1.5 fingers, weakness of finger abduction/adduction, and a positive Froment sign. MCP joints of the ring and small fingers are hyperextended.',
+          decisionPoints: [
+            CaseDecisionPoint(
+              prompt: 'Based on the clinical presentation, which nerve is injured?',
+              options: ['Radial nerve', 'Median nerve', 'Ulnar nerve', 'Combined median-ulnar'],
+              optimalIndex: 2,
+              explanation: 'Ulnar nerve injury at the elbow causes: clawing of ring/small fingers (MCP hyperextension), weak interossei (loss of finger abduction/adduction), positive Froment sign (thumb IP flexion compensating for weak adductor pollicis), and ulnar 1.5 finger sensory loss.',
+            ),
+            CaseDecisionPoint(
+              prompt: 'What orthosis should you prescribe for this patient\'s claw hand deformity?',
+              options: ['Dorsal wrist cock-up splint', 'MCP flexion block splint (anti-claw)', 'Opponens splint', 'Resting hand splint'],
+              optimalIndex: 1,
+              explanation: 'An MCP flexion block (anti-claw) splint prevents MCP hyperextension of the ring and small fingers, redirecting extensor force to the IP joints to allow finger extension. This restores a more functional hand position.',
+            ),
+          ],
+          summaryPearl: 'Ulnar nerve injury = claw hand (ring/small fingers) + Froment sign + weak interossei. The anti-claw splint blocks MCP hyperextension. Remember the ulnar paradox: HIGH ulnar lesions cause LESS clawing than low lesions because the FDP is also paralyzed.',
         ),
       ],
     ),
@@ -406,7 +433,7 @@ final ueOrthosesContent = TopicData(
         ComparisonCardBlock(
           title: 'Hinged Elbow Orthosis',
           themeColor: Colors.blue,
-          backgroundColor: const Color(0xFFE3F2FD),
+          backgroundColor: const Color(0xFF1A2332),
           icon: Icons.compare_arrows,
           description:
               'A brace with medial and lateral hinges allowing controlled '
@@ -426,7 +453,7 @@ final ueOrthosesContent = TopicData(
         ComparisonCardBlock(
           title: 'Turnbuckle Splint',
           themeColor: Colors.orange,
-          backgroundColor: const Color(0xFFFFF3E0),
+          backgroundColor: const Color(0xFF2A2215),
           icon: Icons.rotate_right,
           description:
               'A static-progressive splint that applies a LOW-LOAD PROLONGED '
@@ -450,7 +477,7 @@ final ueOrthosesContent = TopicData(
         ComparisonCardBlock(
           title: 'Airplane Splint (Shoulder Abduction Orthosis)',
           themeColor: Colors.indigo,
-          backgroundColor: const Color(0xFFE8EAF6),
+          backgroundColor: const Color(0xFF1A1D2E),
           icon: Icons.flight,
           description:
               'A shoulder orthosis that holds the arm in approximately 90 degrees '
@@ -469,7 +496,7 @@ final ueOrthosesContent = TopicData(
         ComparisonCardBlock(
           title: 'Gunslinger Orthosis',
           themeColor: Colors.brown,
-          backgroundColor: const Color(0xFFEFEBE9),
+          backgroundColor: const Color(0xFF2A2522),
           icon: Icons.sports_martial_arts,
           description:
               'A forearm trough mounted on a body frame that supports a flail arm '
@@ -490,7 +517,7 @@ final ueOrthosesContent = TopicData(
         ComparisonCardBlock(
           title: 'Fracture Bracing (Functional Brace)',
           themeColor: Colors.teal,
-          backgroundColor: const Color(0xFFE0F2F1),
+          backgroundColor: const Color(0xFF152A27),
           icon: Icons.healing,
           description:
               'A circumferential thermoplastic brace for humeral shaft fractures '
@@ -502,7 +529,7 @@ final ueOrthosesContent = TopicData(
             'Hydraulic mechanism: compresses soft tissue around fracture',
             'Allows ELBOW and SHOULDER motion during healing',
             'Early mobilization promotes fracture healing',
-            'Applied after initial immobilization (2-3 weeks post-injury)',
+            'Typically applied within the first 1-2 weeks after injury, once initial swelling subsides, replacing the coaptation splint',
             'High union rates (>95%) for isolated humeral shaft fractures',
             'Contraindicated for open fractures, vascular injury, or polytrauma',
             'Radial nerve palsy may occur with humeral shaft fractures',
@@ -547,7 +574,7 @@ final ueOrthosesContent = TopicData(
         ComparisonCardBlock(
           title: 'C4 SCI: No Effective UE Orthosis',
           themeColor: Colors.grey,
-          backgroundColor: const Color(0xFFEEEEEE),
+          backgroundColor: const Color(0xFF232A3B),
           icon: Icons.block,
           description:
               'C4 SCI patients have no volitional upper extremity function. No UE '
@@ -568,7 +595,7 @@ final ueOrthosesContent = TopicData(
         ComparisonCardBlock(
           title: 'C5 SCI: Balanced Forearm Orthosis',
           themeColor: Colors.red,
-          backgroundColor: const Color(0xFFFFEBEE),
+          backgroundColor: const Color(0xFF2A1519),
           icon: Icons.fitness_center,
           description:
               'C5 SCI patients have functional deltoid and biceps but NO wrist '
@@ -591,7 +618,7 @@ final ueOrthosesContent = TopicData(
         ComparisonCardBlock(
           title: 'C6 SCI: Tenodesis Splint',
           themeColor: Colors.orange,
-          backgroundColor: const Color(0xFFFFF3E0),
+          backgroundColor: const Color(0xFF2A2215),
           icon: Icons.precision_manufacturing,
           description:
               'C6 SCI patients gain wrist EXTENSORS (ECRL, ECRB) in addition to '
@@ -614,7 +641,7 @@ final ueOrthosesContent = TopicData(
         ComparisonCardBlock(
           title: 'C7 SCI: Minimal Orthotic Needs',
           themeColor: Colors.green,
-          backgroundColor: const Color(0xFFE8F5E9),
+          backgroundColor: const Color(0xFF152A1A),
           icon: Icons.check_circle,
           description:
               'C7 SCI patients gain triceps, wrist flexors, and finger extensors. '
@@ -661,7 +688,7 @@ final ueOrthosesContent = TopicData(
         BulletCardBlock(
           title: 'Universal Cuff (Palmar Clip)',
           themeColor: Colors.deepPurple,
-          backgroundColor: const Color(0xFFEDE7F6),
+          backgroundColor: const Color(0xFF1F1A2E),
           points: [
             'Simple strap around the palm with a pocket/slot for utensils',
             'Holds fork, spoon, pen, toothbrush, or other implements',
@@ -674,7 +701,7 @@ final ueOrthosesContent = TopicData(
         BulletCardBlock(
           title: 'Wrist-Driven Flexor Hinge Splint',
           themeColor: Colors.cyan,
-          backgroundColor: const Color(0xFFE0F7FA),
+          backgroundColor: const Color(0xFF152A2E),
           points: [
             'A more precise term for the tenodesis splint mechanism',
             'Flexor hinge at the MCP joints driven by wrist extension',
@@ -699,6 +726,13 @@ final ueOrthosesContent = TopicData(
           'If finger flexors become too lax, the natural tenodesis effect is lost and '
           'neither natural grasp nor WDFHO will produce adequate pinch. Maintaining '
           'appropriate finger flexor tightness is a critical rehabilitation principle.',
+        ),
+
+        CheckpointBlock(
+          question: 'A C6 complete SCI patient has wrist extension but no finger flexion. What orthotic principle allows them to grasp objects?',
+          options: ['Dynamic finger extension splint', 'Tenodesis (wrist-driven flexor hinge)', 'BFO (balanced forearm orthosis)', 'Opponens splint'],
+          correctIndex: 1,
+          explanation: 'Tenodesis uses active wrist extension to passively flex the fingers via the tenodesis effect. A WDFHO (wrist-driven flexor hinge orthosis) mechanically links wrist extension to finger flexion. Critical pearl: do NOT overstretch the finger flexors in C6 SCI patients — this destroys the tenodesis grasp.',
         ),
       ],
     ),

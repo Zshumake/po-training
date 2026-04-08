@@ -22,7 +22,7 @@ final transtibialContent = TopicData(
         ComparisonCardBlock(
           title: 'PTB (Patellar Tendon Bearing) Socket',
           themeColor: Colors.blue,
-          backgroundColor: const Color(0xFFE3F2FD),
+          backgroundColor: const Color(0xFF1A2332),
           icon: Icons.precision_manufacturing,
           description: 'The traditional transtibial socket design. Custom-molded with '
               'specific buildups (concavities) over pressure-sensitive areas and '
@@ -40,7 +40,7 @@ final transtibialContent = TopicData(
         ComparisonCardBlock(
           title: 'TSB (Total Surface Bearing) Socket',
           themeColor: Colors.teal,
-          backgroundColor: const Color(0xFFE0F2F1),
+          backgroundColor: const Color(0xFF152A27),
           icon: Icons.lens_blur,
           description: 'A modern socket design that distributes pressure more uniformly '
               'across the entire surface of the residual limb using a gel liner. '
@@ -85,7 +85,7 @@ final transtibialContent = TopicData(
         BulletCardBlock(
           title: 'PTB-SC (Supracondylar)',
           themeColor: Colors.indigo,
-          backgroundColor: const Color(0xFFE8EAF6),
+          backgroundColor: const Color(0xFF1A1D2E),
           points: [
             'Socket extends above the femoral condyles medially and laterally',
             'Provides additional medial-lateral stability',
@@ -97,7 +97,7 @@ final transtibialContent = TopicData(
         BulletCardBlock(
           title: 'PTB-SC/SP (Supracondylar/Suprapatellar)',
           themeColor: Colors.deepPurple,
-          backgroundColor: const Color(0xFFEDE7F6),
+          backgroundColor: const Color(0xFF1F1A2E),
           points: [
             'Socket extends above the condyles AND above the patella',
             'Maximum medial-lateral and anterior-posterior stability',
@@ -110,7 +110,7 @@ final transtibialContent = TopicData(
         BulletCardBlock(
           title: 'Socket Alignment Principles',
           themeColor: Colors.orange,
-          backgroundColor: const Color(0xFFFFF3E0),
+          backgroundColor: const Color(0xFF2A2215),
           points: [
             'Initial flexion: ~5 degrees to enhance quadriceps function and patellar tendon loading',
             'Slight lateral tilt: accommodates normal tibial anatomy',
@@ -119,6 +119,12 @@ final transtibialContent = TopicData(
             'Dynamic alignment: final adjustment based on observational gait analysis',
             'Foot placed slightly lateral and externally rotated to mimic normal foot progression angle',
           ],
+        ),
+        CheckpointBlock(
+          question: 'Which area is the PRIMARY weight-bearing surface in a PTB (patellar tendon bearing) socket?',
+          options: ['Tibial crest', 'Patellar tendon', 'Fibular head', 'Popliteal fossa'],
+          correctIndex: 1,
+          explanation: 'The patellar tendon is the primary weight-bearing surface in a PTB socket. A patellar bar is built into the socket to apply pressure to this area. The tibial crest and fibular head are pressure-SENSITIVE areas that must be relieved.',
         ),
       ],
     ),
@@ -139,7 +145,7 @@ final transtibialContent = TopicData(
         BulletCardBlock(
           title: 'Pressure-TOLERANT Areas (Load Here)',
           themeColor: Colors.green,
-          backgroundColor: const Color(0xFFE8F5E9),
+          backgroundColor: const Color(0xFF152A1A),
           points: [
             'Patellar tendon: primary weight-bearing surface in PTB socket',
             'Medial tibial flare (medial tibial condyle): broad, flat bony surface',
@@ -153,7 +159,7 @@ final transtibialContent = TopicData(
         BulletCardBlock(
           title: 'Pressure-SENSITIVE Areas (Relieve Here)',
           themeColor: Colors.red,
-          backgroundColor: const Color(0xFFFFEBEE),
+          backgroundColor: const Color(0xFF2A1519),
           points: [
             'Tibial crest (shin): subcutaneous bone, no soft tissue coverage',
             'Tibial tubercle: prominent bony landmark, very sensitive',
@@ -214,6 +220,21 @@ final transtibialContent = TopicData(
           'gap (relief) in the socket; removing plaster from the model creates a '
           'bump (buildup) in the socket.',
         ),
+        AnnotatedImageBlock(
+          title: 'PTB Socket Pressure Areas',
+          diagramType: 'socket-ptb',
+          hotspots: [
+            HotspotData(id: 'pt', xPercent: 0.5, yPercent: 0.25, label: 'Patellar Tendon', description: 'Primary weight-bearing area in PTB socket. The patellar bar applies pressure here.', clinicalSignificance: 'Most tested pressure-tolerant area on boards.', pinColor: Color(0xFF16A34A)),
+            HotspotData(id: 'mtf', xPercent: 0.35, yPercent: 0.35, label: 'Medial Tibial Flare', description: 'Broad, flat bony surface tolerates pressure well.', pinColor: Color(0xFF16A34A)),
+            HotspotData(id: 'lf', xPercent: 0.65, yPercent: 0.45, label: 'Lateral Fibular Shaft', description: 'Muscular area along the lateral fibular shaft can bear load.', pinColor: Color(0xFF16A34A)),
+            HotspotData(id: 'pop', xPercent: 0.5, yPercent: 0.55, label: 'Popliteal Fossa', description: 'Soft tissue area posterior to knee. Tolerates moderate pressure for counter-force.', pinColor: Color(0xFF16A34A)),
+            HotspotData(id: 'fh', xPercent: 0.7, yPercent: 0.3, label: 'Fibular Head', description: 'Prominent bony landmark. Common peroneal nerve runs directly over it.', clinicalSignificance: 'MUST be relieved — pressure here causes peroneal nerve palsy (foot drop).', pinColor: Color(0xFFDC2626)),
+            HotspotData(id: 'tc', xPercent: 0.5, yPercent: 0.2, label: 'Tibial Crest', description: 'Sharp anterior border of tibia with minimal soft tissue coverage.', clinicalSignificance: 'Subcutaneous bone — direct pressure causes pain and skin breakdown.', pinColor: Color(0xFFDC2626)),
+            HotspotData(id: 'dt', xPercent: 0.5, yPercent: 0.75, label: 'Distal Tibia', description: 'Cut end of the tibia. Sensitive to end-bearing pressure in most TT amputees.', pinColor: Color(0xFFDC2626)),
+            HotspotData(id: 'tcond', xPercent: 0.4, yPercent: 0.18, label: 'Tibial Condyles', description: 'Medial and lateral tibial condyles. Bony prominences that need relief.', pinColor: Color(0xFFDC2626)),
+          ],
+          aspectRatio: 1.2,
+        ),
         TableBlock(
           title: 'Liner Material Properties Comparison',
           columns: ['Property', 'Pelite', 'Silicone Elastomer', 'Silicone Gel', 'Urethane', 'TPE'],
@@ -235,6 +256,7 @@ final transtibialContent = TopicData(
           'and best impact/shock absorption. They are the preferred liner for fragile '
           'or compromised skin where reducing shear is critical.',
         ),
+        CustomWidgetBlock(CustomWidgetType.socketPressureDemo),
       ],
     ),
 
@@ -314,7 +336,7 @@ final transtibialContent = TopicData(
         BulletCardBlock(
           title: 'Pin Suspension Details',
           themeColor: Colors.blue,
-          backgroundColor: const Color(0xFFE3F2FD),
+          backgroundColor: const Color(0xFF1A2332),
           points: [
             'A metal pin extends from the distal end of the gel liner',
             'Pin engages a shuttle lock mechanism at the bottom of the socket',
@@ -327,7 +349,7 @@ final transtibialContent = TopicData(
         BulletCardBlock(
           title: 'Suction Suspension Details',
           themeColor: Colors.teal,
-          backgroundColor: const Color(0xFFE0F2F1),
+          backgroundColor: const Color(0xFF152A27),
           points: [
             'One-way expulsion valve at the distal socket',
             'Air is expelled as the limb is donned; valve prevents air re-entry',
@@ -340,7 +362,7 @@ final transtibialContent = TopicData(
         BulletCardBlock(
           title: 'Suspension Selection by Situation',
           themeColor: Colors.purple,
-          backgroundColor: const Color(0xFFF3E5F5),
+          backgroundColor: const Color(0xFF2A1A2E),
           points: [
             'Short residual limb: PTB-SC or PTB-SC/SP for added stability',
             'Active patient (K3-K4): suction or elevated vacuum',
@@ -349,6 +371,12 @@ final transtibialContent = TopicData(
             'Very short or bony limb: thigh corset (reduces direct weight-bearing)',
             'Ligamentous knee instability: PTB-SC/SP or thigh corset with side joints',
           ],
+        ),
+        CheckpointBlock(
+          question: 'Which TT suspension system is MOST appropriate for a geriatric K1 amputee with limited hand dexterity?',
+          options: ['Elevated vacuum', 'Pin/shuttle lock', 'Supracondylar cuff', 'Suction with expulsion valve'],
+          correctIndex: 2,
+          explanation: 'Supracondylar cuff suspension is easiest to don/doff and requires minimal hand dexterity, making it ideal for geriatric patients. Pin lock requires aligning the pin with the shuttle. Elevated vacuum and suction require more upper body strength and dexterity.',
         ),
       ],
     ),
@@ -370,7 +398,7 @@ final transtibialContent = TopicData(
         BulletCardBlock(
           title: 'Alignment Stages',
           themeColor: Colors.indigo,
-          backgroundColor: const Color(0xFFE8EAF6),
+          backgroundColor: const Color(0xFF1A1D2E),
           points: [
             'Bench alignment: initial setup on the workbench using anatomic landmarks and measurements',
             'Static alignment: patient stands in prosthesis; check height, alignment, plumb line',
@@ -434,7 +462,7 @@ final transtibialContent = TopicData(
         BulletCardBlock(
           title: 'Ideal Residual Limb Characteristics',
           themeColor: Colors.green,
-          backgroundColor: const Color(0xFFE8F5E9),
+          backgroundColor: const Color(0xFF152A1A),
           points: [
             'Cylindrical or slightly conical shape',
             'Nontender, well-healed surgical scar (ideally posterior)',
@@ -456,7 +484,7 @@ final transtibialContent = TopicData(
         BulletCardBlock(
           title: 'Common TT Gait Deviations - Quick Reference',
           themeColor: Colors.red,
-          backgroundColor: const Color(0xFFFFEBEE),
+          backgroundColor: const Color(0xFF2A1519),
           points: [
             'Foot slap: heel cushion too hard OR weak dorsiflexors',
             'Excessive knee flexion: socket too flexed, too much dorsiflexion, or hip flexion contracture',
@@ -538,6 +566,36 @@ final transtibialContent = TopicData(
           'produce a worse functional outcome than a basic SACH foot on a well-fitting '
           'socket. Socket comfort and fit determine whether a patient wears the '
           'prosthesis or abandons it.',
+        ),
+        VideoBlock(
+          url: 'https://www.youtube.com/watch?v=S07Kig8h_a8',
+          title: 'BKA Prosthetic Gait Training',
+          description: 'Watch the progression from parallel bars to independent ambulation. Note weight shifting, knee stability, and equal step length. Training begins with static standing balance.',
+        ),
+        CaseScenarioBlock(
+          title: 'New TT Prosthetic Prescription',
+          vignette: 'A 62-year-old male with diabetes presents 8 weeks post-left BKA (vascular etiology). His residual limb is well-healed, cylindrical, 15 cm in length. He ambulates with a walker at home and wants to walk to his mailbox (50 meters). He has mild diabetic neuropathy in his remaining foot.',
+          decisionPoints: [
+            CaseDecisionPoint(
+              prompt: 'Based on his functional goals and current status, what K-level would you assign?',
+              options: ['K0 — Non-ambulatory', 'K1 — Limited household ambulator', 'K2 — Limited community ambulator', 'K3 — Community ambulator'],
+              optimalIndex: 2,
+              explanation: 'K-level is based on functional POTENTIAL, not just current ability. His goal of walking to the mailbox (50m) represents limited community ambulation. K2 is appropriate — he has the potential for low-level outdoor ambulation with a prosthesis.',
+            ),
+            CaseDecisionPoint(
+              prompt: 'What prosthetic foot would you prescribe for this K2 patient?',
+              options: ['SACH foot', 'Single-axis foot', 'Energy-storing (ESAR) foot', 'Microprocessor ankle'],
+              optimalIndex: 1,
+              explanation: 'A single-axis foot is ideal for K2 patients because it enhances knee stability at loading response by allowing rapid plantarflexion to foot flat. This is particularly important for this patient who may have balance concerns. SACH is more appropriate for K1; ESAR for K3+.',
+            ),
+            CaseDecisionPoint(
+              prompt: 'Given his diabetic neuropathy in the contralateral foot, what additional intervention is critical?',
+              options: ['Prescribe a running blade for exercise', 'Order custom diabetic footwear for the sound limb', 'Recommend bilateral amputation', 'No additional intervention needed'],
+              optimalIndex: 1,
+              explanation: 'Protecting the remaining foot is critical — 55% of dysvascular amputees lose the contralateral limb within 5 years. Custom diabetic footwear with total-contact insoles reduces plantar pressure and ulceration risk. Medicare covers therapeutic shoes for diabetic patients.',
+            ),
+          ],
+          summaryPearl: 'K-level assignment is based on functional POTENTIAL. Single-axis feet provide knee stability for K2 patients. Always protect the contralateral limb — 55% of vascular amputees lose the other leg within 5 years.',
         ),
       ],
     ),

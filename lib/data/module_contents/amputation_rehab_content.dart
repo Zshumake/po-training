@@ -80,21 +80,20 @@ final amputationRehabContent = TopicData(
         BulletCardBlock(
           title: 'LE Amputation Level Distribution',
           themeColor: const Color(0xFF1565C0),
-          backgroundColor: const Color(0xFFE3F2FD),
+          backgroundColor: const Color(0xFF1A2332),
           points: [
-            'Transtibial (BKA): 59% — most common LE amputation level',
-            'Transfemoral (AKA): 35%',
-            'Syme\'s: 3%',
-            'Hip disarticulation: 2%',
-            'Knee disarticulation: 1%',
+            'Among MAJOR LE amputations (excluding toe/partial foot): transtibial and transfemoral together account for the vast majority, with TT predominant (approximately 55-60% TT vs 35-40% TF in published series; Dillingham 2002)',
+            'When all levels are included, toe amputation is the single most common LE amputation overall, followed by transtibial then transfemoral',
+            'Knee disarticulation, hip disarticulation, and Syme\'s amputations are each uncommon (collectively a small minority of major LE amputations)',
             'Overall: LE amputations outnumber UE amputations ~10:1',
           ],
         ),
         PearlBlock(
           'Board Pearl — Amputation Epidemiology',
-          'Transtibial is the most common LE amputation level (59%). The majority '
-          'of LE amputations are due to dysvascular disease (82%), with diabetes '
-          'contributing to approximately two-thirds of all LE amputations.',
+          'Transtibial is the most common MAJOR LE amputation level for prosthetic '
+          'rehabilitation. Approximately 82% of inpatient hospital discharges for limb '
+          'loss are dysvascular (Ziegler-Graham 2008); diabetes is a comorbidity in '
+          'roughly 65% of dysvascular amputees.',
         ),
         PearlBlock(
           'Board Pearl — Vascular Amputee Prognosis',
@@ -123,7 +122,7 @@ final amputationRehabContent = TopicData(
         ComparisonCardBlock(
           title: 'Myodesis',
           themeColor: const Color(0xFF2E7D32),
-          backgroundColor: const Color(0xFFE8F5E9),
+          backgroundColor: const Color(0xFF152A1A),
           icon: Icons.link,
           description: 'Muscle is sutured directly to bone through drill holes in the '
               'distal residual bone. Creates a strong, stable muscle attachment that '
@@ -141,7 +140,7 @@ final amputationRehabContent = TopicData(
         ComparisonCardBlock(
           title: 'Myoplasty',
           themeColor: const Color(0xFF1565C0),
-          backgroundColor: const Color(0xFFE3F2FD),
+          backgroundColor: const Color(0xFF1A2332),
           icon: Icons.compare_arrows,
           description: 'Opposing muscle groups are sutured to each other over the bone '
               'end, creating a padded soft tissue envelope. Faster and less demanding '
@@ -163,11 +162,17 @@ final amputationRehabContent = TopicData(
           'For transfemoral amputations, myodesis of the adductors is critical to '
           'maintain femoral adduction within the socket.',
         ),
+        CheckpointBlock(
+          question: 'What is the key difference between myodesis and myoplasty in amputation surgery?',
+          options: ['Myodesis is used only for UE amputations', 'Myodesis anchors muscle to bone; myoplasty sutures muscle to muscle/fascia', 'Myoplasty provides better prosthetic control', 'There is no clinical difference'],
+          correctIndex: 1,
+          explanation: 'Myodesis anchors muscle directly to bone (via drill holes or periosteum), preserving physiologic muscle tension for better prosthetic control. Myoplasty sutures muscle to opposing muscle or fascia — simpler but less stable. Myodesis is preferred for most amputations when tissue quality allows.',
+        ),
         HeaderBlock('Transfemoral Surgical Considerations'),
         BulletCardBlock(
           title: 'TF Amputation Key Principles',
           themeColor: const Color(0xFF4527A0),
-          backgroundColor: const Color(0xFFEDE7F6),
+          backgroundColor: const Color(0xFF1F1A2E),
           points: [
             'Adductor myodesis is essential — maintains femoral adduction in socket',
             'Without adductor stabilization: femur falls into abduction → lateral distal pressure',
@@ -181,7 +186,7 @@ final amputationRehabContent = TopicData(
         BulletCardBlock(
           title: 'TT Amputation Key Principles',
           themeColor: const Color(0xFF00695C),
-          backgroundColor: const Color(0xFFE0F2F1),
+          backgroundColor: const Color(0xFF152A27),
           points: [
             'Ideal TT residual limb shape: CYLINDRICAL',
             'Fibula cut 2-3 cm shorter than tibia to avoid distal lateral pressure',
@@ -196,7 +201,7 @@ final amputationRehabContent = TopicData(
         BulletCardBlock(
           title: 'Levels to Avoid',
           themeColor: const Color(0xFFC62828),
-          backgroundColor: const Color(0xFFFFEBEE),
+          backgroundColor: const Color(0xFF2A1519),
           points: [
             'Distal 2/5 of tibia: poor soft tissue coverage, tendinous area, poor healing',
             'Very short BKA proximal to tibial tubercle: insufficient lever arm for prosthetic control',
@@ -208,7 +213,7 @@ final amputationRehabContent = TopicData(
         ComparisonCardBlock(
           title: 'Ertl Procedure',
           themeColor: const Color(0xFFE65100),
-          backgroundColor: const Color(0xFFFFF3E0),
+          backgroundColor: const Color(0xFF2A2215),
           icon: Icons.construction,
           description: 'A bone bridge procedure creating a synostosis between the distal '
               'tibia and fibula, potentially creating an end-bearing residual limb '
@@ -282,7 +287,7 @@ final amputationRehabContent = TopicData(
         ComparisonCardBlock(
           title: 'Targeted Muscle Reinnervation (TMR)',
           themeColor: const Color(0xFF1565C0),
-          backgroundColor: const Color(0xFFE3F2FD),
+          backgroundColor: const Color(0xFF1A2332),
           icon: Icons.electrical_services,
           description: 'TMR transfers severed peripheral nerve stumps to nearby motor '
               'nerve entry points in residual muscles. Regenerating axons find '
@@ -300,7 +305,7 @@ final amputationRehabContent = TopicData(
         ComparisonCardBlock(
           title: 'Regenerative Peripheral Nerve Interface (RPNI)',
           themeColor: const Color(0xFF2E7D32),
-          backgroundColor: const Color(0xFFE8F5E9),
+          backgroundColor: const Color(0xFF152A1A),
           icon: Icons.healing,
           description: 'RPNI wraps each transected nerve end in a small autologous free '
               'muscle graft. The graft revascularizes and reinnervates, providing a '
@@ -357,7 +362,7 @@ final amputationRehabContent = TopicData(
         BulletCardBlock(
           title: 'Pre-Prosthetic Phase Goals',
           themeColor: const Color(0xFF1565C0),
-          backgroundColor: const Color(0xFFE3F2FD),
+          backgroundColor: const Color(0xFF1A2332),
           points: [
             'Pain control: pharmacologic and non-pharmacologic interventions',
             'Wound healing: monitor incision, prevent infection',
@@ -372,7 +377,7 @@ final amputationRehabContent = TopicData(
         ComparisonCardBlock(
           title: 'Rigid Removable Dressing (RRD)',
           themeColor: const Color(0xFF2E7D32),
-          backgroundColor: const Color(0xFFE8F5E9),
+          backgroundColor: const Color(0xFF152A1A),
           icon: Icons.shield,
           description: 'A plaster or fiberglass cast applied over the residual limb '
               'postoperatively. Provides the most effective edema control while '
@@ -390,7 +395,7 @@ final amputationRehabContent = TopicData(
         ComparisonCardBlock(
           title: 'Elastic Bandage (Figure-8 Wrap)',
           themeColor: const Color(0xFF6A1B9A),
-          backgroundColor: const Color(0xFFF3E5F5),
+          backgroundColor: const Color(0xFF2A1A2E),
           icon: Icons.wrap_text,
           description: 'Traditional compression bandaging using double-length elastic wraps '
               'applied in a figure-8 pattern with distal-to-proximal pressure gradient.',
@@ -407,7 +412,7 @@ final amputationRehabContent = TopicData(
         ComparisonCardBlock(
           title: 'Elastic Shrinker Socks',
           themeColor: const Color(0xFF00695C),
-          backgroundColor: const Color(0xFFE0F2F1),
+          backgroundColor: const Color(0xFF152A27),
           icon: Icons.compress,
           description: 'Pre-fabricated elastic compression garments shaped for the residual '
               'limb, providing uniform compression with easy application.',
@@ -423,7 +428,7 @@ final amputationRehabContent = TopicData(
         BulletCardBlock(
           title: 'Shrinkage Device Guidelines',
           themeColor: const Color(0xFFE65100),
-          backgroundColor: const Color(0xFFFFF3E0),
+          backgroundColor: const Color(0xFF2A2215),
           points: [
             'Worn 24 hours per day EXCEPT during bathing',
             'Remove only for wound inspection and hygiene',
@@ -441,7 +446,7 @@ final amputationRehabContent = TopicData(
         BulletCardBlock(
           title: 'Hip Flexion Contracture Prevention (TF)',
           themeColor: const Color(0xFFC62828),
-          backgroundColor: const Color(0xFFFFEBEE),
+          backgroundColor: const Color(0xFF2A1519),
           points: [
             'DO NOT place pillow under the thigh when supine',
             'Lie PRONE for 15 minutes, 3 times per day',
@@ -453,7 +458,7 @@ final amputationRehabContent = TopicData(
         BulletCardBlock(
           title: 'Hip Abduction Contracture Prevention (TF)',
           themeColor: const Color(0xFFBF360C),
-          backgroundColor: const Color(0xFFFBE9E7),
+          backgroundColor: const Color(0xFF2A1D19),
           points: [
             'DO NOT place pillow between legs when side-lying',
             'Keep residual limb in adduction when resting',
@@ -464,7 +469,7 @@ final amputationRehabContent = TopicData(
         BulletCardBlock(
           title: 'Knee Flexion Contracture Prevention (TT)',
           themeColor: const Color(0xFF4527A0),
-          backgroundColor: const Color(0xFFEDE7F6),
+          backgroundColor: const Color(0xFF1F1A2E),
           points: [
             'DO NOT hang residual limb off the edge of the bed',
             'DO NOT place pillow under the knee when supine',
@@ -480,6 +485,12 @@ final amputationRehabContent = TopicData(
           'established. Prone positioning prevents hip flexion contracture in TF amputees. '
           'For TT amputees, never place a pillow under the knee — keep it extended. '
           'These are high-yield board concepts.',
+        ),
+        CheckpointBlock(
+          question: 'What is the MOST important contracture to prevent after a transfemoral amputation?',
+          options: ['Knee flexion contracture', 'Hip flexion contracture', 'Hip abduction contracture', 'Ankle plantarflexion contracture'],
+          correctIndex: 1,
+          explanation: 'Hip flexion contracture is the most important contracture to prevent after TF amputation. It occurs due to prolonged sitting and unopposed hip flexors. Prevention: prone lying 20-30 min/day, avoid placing pillow under residual limb. A hip flexion contracture >15 degrees significantly impairs prosthetic fitting and gait.',
         ),
         TableBlock(
           title: 'Common Contracture Patterns by Amputation Level',
@@ -526,7 +537,7 @@ final amputationRehabContent = TopicData(
         BulletCardBlock(
           title: 'Gait Training Progression',
           themeColor: const Color(0xFF00838F),
-          backgroundColor: const Color(0xFFE0F7FA),
+          backgroundColor: const Color(0xFF152A2E),
           points: [
             'Stage 1: Parallel bars — weight shifting, balance, step initiation',
             'Stage 2: Walker — increased independence with support',
@@ -601,9 +612,9 @@ final amputationRehabContent = TopicData(
           title: 'Metabolic Cost of Prosthetic Ambulation',
           columns: ['Amputation Level', 'Traumatic', 'Vascular'],
           rows: [
-            ['Transtibial (unilateral)', '~10-25% above normal', '~40% above normal'],
-            ['Transfemoral (unilateral)', '~60-70% above normal', '~100% above normal'],
-            ['Bilateral transtibial', '~40% above normal', '~60-80% above normal'],
+            ['Transtibial (unilateral)', '~10-25% above normal', '~20-40% above normal'],
+            ['Transfemoral (unilateral)', '~60-70% above normal', '~65-100% above normal'],
+            ['Bilateral transtibial', '~41% above normal (combined; not separately characterized by etiology in Waters/Mulroy)', '~41% above normal (combined; not separately characterized by etiology in Waters/Mulroy)'],
           ],
           headerColor: const Color(0xFF4527A0),
         ),
@@ -612,7 +623,7 @@ final amputationRehabContent = TopicData(
           'Vascular amputees require significantly more energy than traumatic amputees '
           'at the same amputation level. This reflects older age, cardiovascular disease, '
           'and limited reserve. Knee preservation (TT vs TF) is critical because '
-          'the energy cost drops dramatically: ~40% (TT vascular) vs ~100% (TF vascular).',
+          'the energy cost drops dramatically: ~20-40% (TT vascular) vs ~65-100% (TF vascular).',
         ),
         HeaderBlock('Phantom Limb Pain'),
         TextBlock(
@@ -728,7 +739,7 @@ final amputationRehabContent = TopicData(
         ComparisonCardBlock(
           title: 'AMP / AMPnoPRO / AMPPRO',
           themeColor: const Color(0xFF6A1B9A),
-          backgroundColor: const Color(0xFFF3E5F5),
+          backgroundColor: const Color(0xFF2A1A2E),
           icon: Icons.assessment,
           description: 'A 21-item clinical assessment tool that predicts K-level '
               'functional classification. Can be administered with prosthesis '
@@ -754,7 +765,7 @@ final amputationRehabContent = TopicData(
         ComparisonCardBlock(
           title: '6-Minute Walk Test (6MWT)',
           themeColor: const Color(0xFF2E7D32),
-          backgroundColor: const Color(0xFFE8F5E9),
+          backgroundColor: const Color(0xFF152A1A),
           icon: Icons.directions_walk,
           description: 'Measures functional endurance by recording the distance walked '
               'in 6 minutes on a flat, measured course.',
@@ -770,7 +781,7 @@ final amputationRehabContent = TopicData(
         ComparisonCardBlock(
           title: 'Timed Up and Go (TUG)',
           themeColor: const Color(0xFF1565C0),
-          backgroundColor: const Color(0xFFE3F2FD),
+          backgroundColor: const Color(0xFF1A2332),
           icon: Icons.timer,
           description: 'Measures basic functional mobility: stand from a chair, walk '
               '3 meters, turn around, walk back, and sit down. Timed in seconds.',
@@ -786,7 +797,7 @@ final amputationRehabContent = TopicData(
         ComparisonCardBlock(
           title: 'L-Test',
           themeColor: const Color(0xFF00695C),
-          backgroundColor: const Color(0xFFE0F2F1),
+          backgroundColor: const Color(0xFF152A27),
           icon: Icons.turn_right,
           description: 'A modified TUG with an L-shaped path that adds complexity '
               'by requiring two turns, more closely simulating real-world ambulation.',
@@ -803,7 +814,7 @@ final amputationRehabContent = TopicData(
         BulletCardBlock(
           title: 'Houghton Scale',
           themeColor: const Color(0xFF4527A0),
-          backgroundColor: const Color(0xFFEDE7F6),
+          backgroundColor: const Color(0xFF1F1A2E),
           points: [
             'Questionnaire assessing prosthesis use in daily activities',
             'Evaluates frequency and context of prosthetic wear',
@@ -815,7 +826,7 @@ final amputationRehabContent = TopicData(
         BulletCardBlock(
           title: 'Socket Comfort Score (SCS)',
           themeColor: const Color(0xFFBF360C),
-          backgroundColor: const Color(0xFFFBE9E7),
+          backgroundColor: const Color(0xFF2A1D19),
           points: [
             'Patient-reported 0-10 numeric rating scale for socket comfort',
             '0 = most uncomfortable socket imaginable',
@@ -828,7 +839,7 @@ final amputationRehabContent = TopicData(
         BulletCardBlock(
           title: 'Activities-specific Balance Confidence (ABC) Scale',
           themeColor: const Color(0xFFE65100),
-          backgroundColor: const Color(0xFFFFF3E0),
+          backgroundColor: const Color(0xFF2A2215),
           points: [
             '16-item self-report measure of balance confidence',
             'Patient rates confidence (0-100%) for specific activities',

@@ -23,7 +23,7 @@ final specialPopulationsContent = TopicData(
         BulletCardBlock(
           title: 'Dysvascular Amputation Epidemiology',
           themeColor: const Color(0xFFC62828),
-          backgroundColor: const Color(0xFFFFEBEE),
+          backgroundColor: const Color(0xFF2A1519),
           points: [
             'Dysvascular disease: #1 cause of LE amputation (82% of all LE amputations)',
             'Diabetes contributes to 2/3 of all LE amputations',
@@ -59,7 +59,7 @@ final specialPopulationsContent = TopicData(
         BulletCardBlock(
           title: 'Toe-Brachial Index (TBI)',
           themeColor: const Color(0xFF1565C0),
-          backgroundColor: const Color(0xFFE3F2FD),
+          backgroundColor: const Color(0xFF1A2332),
           points: [
             'Used when ABI is falsely elevated (>1.30-1.40) in diabetic/renal patients',
             'Small digital arteries of toes rarely undergo medial calcification',
@@ -68,12 +68,18 @@ final specialPopulationsContent = TopicData(
             'Always use TBI instead of ABI in patients with non-compressible vessels',
           ],
         ),
+        CheckpointBlock(
+          question: 'A diabetic patient being evaluated for BKA wound healing has an ABI of 1.42 despite clinical signs suggestive of PAD. The ABI may be falsely elevated in diabetic patients due to:',
+          options: ['Peripheral neuropathy', 'Medial arterial calcification (Monckeberg sclerosis)', 'Venous insufficiency', 'Edema'],
+          correctIndex: 1,
+          explanation: 'ABI can be falsely elevated in diabetic patients due to medial arterial calcification (Monckeberg sclerosis), which makes vessels non-compressible. When ABI is >1.3, use toe-brachial index (TBI) instead — toe vessels are less affected by calcification. TBI >0.70 is normal.',
+        ),
 
         HeaderBlock('Diabetic Foot Complications'),
         ComparisonCardBlock(
           title: 'Charcot Foot (Neuropathic Arthropathy)',
           themeColor: const Color(0xFFBF360C),
-          backgroundColor: const Color(0xFFFBE9E7),
+          backgroundColor: const Color(0xFF2A1D19),
           icon: Icons.warning_amber,
           description: 'Progressive, destructive joint condition caused by loss of '
               'protective sensation from peripheral neuropathy. The midfoot is the '
@@ -93,7 +99,7 @@ final specialPopulationsContent = TopicData(
         ComparisonCardBlock(
           title: 'Total Contact Cast (TCC)',
           themeColor: const Color(0xFF2E7D32),
-          backgroundColor: const Color(0xFFE8F5E9),
+          backgroundColor: const Color(0xFF152A1A),
           icon: Icons.healing,
           description: 'A well-molded, minimally padded cast that distributes plantar '
               'pressure across the entire sole, considered the gold standard for '
@@ -153,7 +159,7 @@ final specialPopulationsContent = TopicData(
         BulletCardBlock(
           title: 'Diabetic Footwear Prescription',
           themeColor: const Color(0xFF1565C0),
-          backgroundColor: const Color(0xFFE3F2FD),
+          backgroundColor: const Color(0xFF1A2332),
           points: [
             'Extra-depth shoes: accommodate deformities and custom insoles',
             'Custom-molded shoes: for severe deformity (Charcot, prior amputation)',
@@ -169,7 +175,7 @@ final specialPopulationsContent = TopicData(
         BulletCardBlock(
           title: 'Eligibility Requirements',
           themeColor: const Color(0xFF00695C),
-          backgroundColor: const Color(0xFFE0F2F1),
+          backgroundColor: const Color(0xFF152A27),
           points: [
             'Part B benefit (separate from DME and orthotics)',
             'Must have documented diagnosis of diabetes mellitus',
@@ -193,7 +199,7 @@ final specialPopulationsContent = TopicData(
         BulletCardBlock(
           title: 'Prescribers & Suppliers',
           themeColor: const Color(0xFF00695C),
-          backgroundColor: const Color(0xFFE0F2F1),
+          backgroundColor: const Color(0xFF152A27),
           points: [
             'Prescribers: podiatrist, MD/DO, PA, NP, or clinical nurse specialist',
             'Suppliers: podiatrist, pedorthist, orthotist, prosthetist, or other qualified individual',
@@ -205,7 +211,7 @@ final specialPopulationsContent = TopicData(
         BulletCardBlock(
           title: 'Special Prosthetic Modifications',
           themeColor: const Color(0xFF6A1B9A),
-          backgroundColor: const Color(0xFFF3E5F5),
+          backgroundColor: const Color(0xFF2A1A2E),
           points: [
             'Lighter components to reduce energy demands (already elevated)',
             'Easier don/doff mechanisms (impaired hand function from neuropathy, arthritis)',
@@ -223,6 +229,25 @@ final specialPopulationsContent = TopicData(
           'use toe pressures instead. Total Contact Casting (TCC) is the GOLD STANDARD '
           'for neuropathic ulcer healing. 55% of diabetic amputees require contralateral '
           'amputation within 2-3 years.',
+        ),
+        CaseScenarioBlock(
+          title: 'Diabetic Foot Management',
+          vignette: 'A 68-year-old male with poorly controlled diabetes (HbA1c 9.2%) presents with a Wagner Grade 2 plantar ulcer under the first metatarsal head of his right foot. He has decreased sensation to monofilament testing. His left foot was amputated (BKA) 2 years ago.',
+          decisionPoints: [
+            CaseDecisionPoint(
+              prompt: 'What is the gold standard treatment for this plantar ulcer?',
+              options: ['Offloading shoe with rigid sole', 'Total contact cast (TCC)', 'Custom molded shoe', 'Surgical debridement only'],
+              optimalIndex: 1,
+              explanation: 'Total contact cast is the gold standard for diabetic plantar ulcers — 88.9% wound closure rate vs ~50% with other methods. Despite this strong evidence, only 16% of eligible patients actually receive TCC (significant underutilization).',
+            ),
+            CaseDecisionPoint(
+              prompt: 'After the ulcer heals, what footwear intervention is critical to prevent recurrence?',
+              options: ['Standard athletic shoes', 'Medicare therapeutic depth shoes with custom insoles', 'AFO with rocker bottom', 'No special footwear needed'],
+              optimalIndex: 1,
+              explanation: 'Medicare therapeutic shoe program covers depth shoes + 3 pairs of custom insoles per year for diabetic patients with foot complications. Depth shoes accommodate insoles and reduce plantar pressure. This is especially critical for this patient who already lost the contralateral limb.',
+            ),
+          ],
+          summaryPearl: 'TCC is the gold standard for diabetic plantar ulcers (88.9% healing rate) but is underutilized (only 16% of eligible patients receive it). After healing, Medicare covers therapeutic depth shoes + 3 pairs of custom insoles annually. Protecting the remaining foot is paramount — 55% lose the contralateral limb within 5 years.',
         ),
       ],
     ),
@@ -244,7 +269,7 @@ final specialPopulationsContent = TopicData(
         ComparisonCardBlock(
           title: 'Running Prostheses (Energy-Return Blades)',
           themeColor: const Color(0xFF2E7D32),
-          backgroundColor: const Color(0xFFE8F5E9),
+          backgroundColor: const Color(0xFF152A1A),
           icon: Icons.directions_run,
           description: 'J-shaped carbon fiber blades designed specifically for running, '
               'storing energy during loading and returning it during push-off. '
@@ -264,7 +289,7 @@ final specialPopulationsContent = TopicData(
         BulletCardBlock(
           title: 'Running Blade vs Walking Prosthesis',
           themeColor: const Color(0xFFE65100),
-          backgroundColor: const Color(0xFFFFF3E0),
+          backgroundColor: const Color(0xFF2A2215),
           points: [
             'Walking foot: heel strike → midstance → push-off (full gait cycle)',
             'Running blade: forefoot only contact, no heel, energy return mechanism',
@@ -278,7 +303,7 @@ final specialPopulationsContent = TopicData(
         BulletCardBlock(
           title: 'Activity-Specific Lower Extremity Options',
           themeColor: const Color(0xFF1565C0),
-          backgroundColor: const Color(0xFFE3F2FD),
+          backgroundColor: const Color(0xFF1A2332),
           points: [
             'Swimming prostheses: waterproof components, streamlined design, corrosion-resistant',
             'Cycling prostheses: rigid ankle, specific cleat interface, crank arm modifications',
@@ -291,7 +316,7 @@ final specialPopulationsContent = TopicData(
         BulletCardBlock(
           title: 'Upper Extremity Activity-Specific Terminal Devices',
           themeColor: const Color(0xFF4527A0),
-          backgroundColor: const Color(0xFFEDE7F6),
+          backgroundColor: const Color(0xFF1F1A2E),
           points: [
             'Fishing adapter: rod-holding terminal device',
             'Bowling adapter: ball-release mechanism interface',
@@ -307,7 +332,7 @@ final specialPopulationsContent = TopicData(
         BulletCardBlock(
           title: 'Paralympic Classification Principles',
           themeColor: const Color(0xFF00838F),
-          backgroundColor: const Color(0xFFE0F7FA),
+          backgroundColor: const Color(0xFF152A2E),
           points: [
             'Classification is sport-specific (not universal across all sports)',
             'Based on functional ability, NOT solely on amputation level',
@@ -346,24 +371,24 @@ final specialPopulationsContent = TopicData(
           title: 'Energy Expenditure by Amputation Level',
           columns: ['Level', 'Energy Increase Above Normal', 'Speed Decrease'],
           rows: [
-            ['Unilateral TT', '10-20% increase', '10-15% decrease'],
-            ['Unilateral TF', '50-65% increase', '30-40% decrease'],
-            ['Bilateral TT', '40-60% increase', '20-30% decrease'],
+            ['Unilateral TT', '10-25% increase (vascular 20-40%)', '10-15% decrease'],
+            ['Unilateral TF', '60-70% increase (vascular 65-100%)', '30-40% decrease'],
+            ['Bilateral TT', '~41% increase', '20-30% decrease'],
             ['Bilateral TF', '>200% increase', '>50% decrease'],
-            ['Hip Disarticulation', '>80% increase', '>40% decrease'],
+            ['Hip Disarticulation', '100-200% increase', '>40% decrease'],
           ],
           headerColor: const Color(0xFFC62828),
         ),
         ComparisonCardBlock(
           title: 'Bilateral Transtibial Amputees',
           themeColor: const Color(0xFF2E7D32),
-          backgroundColor: const Color(0xFFE8F5E9),
+          backgroundColor: const Color(0xFF152A1A),
           icon: Icons.accessibility_new,
           description: 'Most bilateral TT amputees can achieve functional prosthetic '
               'ambulation with appropriate rehabilitation and componentry. Energy '
               'expenditure is elevated but manageable for most patients.',
           keyPoints: [
-            'Energy expenditure: ~40-60% above normal',
+            'Energy expenditure: ~41% above normal',
             'MOST bilateral TT amputees CAN ambulate with prostheses',
             'Both knees preserved — critical for transfers, balance, and proprioception',
             'Prosthetic fitting: fit one side first, then add the other',
@@ -375,7 +400,7 @@ final specialPopulationsContent = TopicData(
         ComparisonCardBlock(
           title: 'Bilateral Transfemoral Amputees',
           themeColor: const Color(0xFFC62828),
-          backgroundColor: const Color(0xFFFFEBEE),
+          backgroundColor: const Color(0xFF2A1519),
           icon: Icons.wheelchair_pickup,
           description: 'Bilateral TF amputation presents extreme energy demands (>200% '
               'above normal). Many patients cannot achieve functional prosthetic '
@@ -400,7 +425,7 @@ final specialPopulationsContent = TopicData(
         ComparisonCardBlock(
           title: 'Stubbies for Bilateral TF',
           themeColor: const Color(0xFFE65100),
-          backgroundColor: const Color(0xFFFFF3E0),
+          backgroundColor: const Color(0xFF2A2215),
           icon: Icons.height,
           description: 'Short prostheses without articulating knee joints or prosthetic '
               'feet, used as a transitional training tool for bilateral TF amputees '
@@ -421,7 +446,7 @@ final specialPopulationsContent = TopicData(
         BulletCardBlock(
           title: 'Stubby Progressive Training Protocol',
           themeColor: const Color(0xFF4527A0),
-          backgroundColor: const Color(0xFFEDE7F6),
+          backgroundColor: const Color(0xFF1F1A2E),
           points: [
             '1. Begin with stubbies for initial gait training (~1 month intensive rehab)',
             '2. Progress to full-time stubby use (10-16 hours/day)',
@@ -435,7 +460,7 @@ final specialPopulationsContent = TopicData(
         BulletCardBlock(
           title: 'Sequential Fitting Principles',
           themeColor: const Color(0xFF1565C0),
-          backgroundColor: const Color(0xFFE3F2FD),
+          backgroundColor: const Color(0xFF1A2332),
           points: [
             'Fit one side first — usually the MORE RECENT amputation',
             'Allow patient to master one prosthesis before adding the second',
@@ -449,7 +474,7 @@ final specialPopulationsContent = TopicData(
         BulletCardBlock(
           title: 'Wheelchair Modifications',
           themeColor: const Color(0xFF6A1B9A),
-          backgroundColor: const Color(0xFFF3E5F5),
+          backgroundColor: const Color(0xFF2A1A2E),
           points: [
             'Posterior shift in center of gravity (COG) due to lost limb weight',
             'ANTI-TIPPERS ESSENTIAL — high risk of backward tipping without LE weight',
@@ -497,7 +522,7 @@ final specialPopulationsContent = TopicData(
         BulletCardBlock(
           title: 'Predictors of Prosthetic Success in Elderly',
           themeColor: const Color(0xFF2E7D32),
-          backgroundColor: const Color(0xFFE8F5E9),
+          backgroundColor: const Color(0xFF152A1A),
           points: [
             'Cognitive function: MOST SIGNIFICANT barrier if impaired',
             'Motivation and willingness to participate in rehabilitation',
@@ -513,7 +538,7 @@ final specialPopulationsContent = TopicData(
         ComparisonCardBlock(
           title: 'Impact of Cognitive Impairment',
           themeColor: const Color(0xFFC62828),
-          backgroundColor: const Color(0xFFFFEBEE),
+          backgroundColor: const Color(0xFF2A1519),
           icon: Icons.psychology_alt,
           description: 'Cognitive impairment is the most significant barrier to prosthetic '
               'rehabilitation in the elderly. It affects ability to learn new skills, '
@@ -535,7 +560,7 @@ final specialPopulationsContent = TopicData(
         BulletCardBlock(
           title: 'Red Flags for Poor Outcomes',
           themeColor: const Color(0xFFBF360C),
-          backgroundColor: const Color(0xFFFBE9E7),
+          backgroundColor: const Color(0xFF2A1D19),
           points: [
             'Age >80 with bilateral TF amputation: very poor prosthetic prognosis',
             'Severe cognitive impairment or advanced dementia',
@@ -551,7 +576,7 @@ final specialPopulationsContent = TopicData(
         BulletCardBlock(
           title: 'Component Selection',
           themeColor: const Color(0xFF1565C0),
-          backgroundColor: const Color(0xFFE3F2FD),
+          backgroundColor: const Color(0xFF1A2332),
           points: [
             'Lighter components preferred — reduces energy demands and fatigue',
             'Simpler suspension systems — easier don/doff for arthritic hands',
@@ -566,7 +591,7 @@ final specialPopulationsContent = TopicData(
         ComparisonCardBlock(
           title: 'Fall Risk in Elderly Amputees',
           themeColor: const Color(0xFF4527A0),
-          backgroundColor: const Color(0xFFEDE7F6),
+          backgroundColor: const Color(0xFF1F1A2E),
           icon: Icons.personal_injury,
           description: 'Falls are the leading cause of injury in elderly amputees. '
               'Microprocessor knees have been shown to reduce fall frequency in '
@@ -584,7 +609,7 @@ final specialPopulationsContent = TopicData(
         BulletCardBlock(
           title: 'Fall Risk Factors in Elderly Amputees',
           themeColor: const Color(0xFFC62828),
-          backgroundColor: const Color(0xFFFFEBEE),
+          backgroundColor: const Color(0xFF2A1519),
           points: [
             'Age 71-80 years',
             'History of previous falls',
@@ -601,7 +626,7 @@ final specialPopulationsContent = TopicData(
         BulletCardBlock(
           title: 'Realistic Goal Setting',
           themeColor: const Color(0xFF00695C),
-          backgroundColor: const Color(0xFFE0F2F1),
+          backgroundColor: const Color(0xFF152A27),
           points: [
             'Goals may appropriately differ from younger amputees',
             'Household ambulation (K1) may be a realistic and meaningful goal',
@@ -617,7 +642,7 @@ final specialPopulationsContent = TopicData(
         BulletCardBlock(
           title: 'Functional Level Patterns',
           themeColor: const Color(0xFFE65100),
-          backgroundColor: const Color(0xFFFFF3E0),
+          backgroundColor: const Color(0xFF2A2215),
           points: [
             'K-level distribution skews toward K1-K2 in elderly amputees',
             'K1 (household ambulator): most common classification in elderly dysvascular',
@@ -659,7 +684,7 @@ final specialPopulationsContent = TopicData(
         ComparisonCardBlock(
           title: 'IDEO (Intrepid Dynamic Exoskeletal Orthosis)',
           themeColor: const Color(0xFF1565C0),
-          backgroundColor: const Color(0xFFE3F2FD),
+          backgroundColor: const Color(0xFF1A2332),
           icon: Icons.shield,
           description: 'A custom passive-dynamic carbon fiber AFO designed by CPO '
               'Ryan Blanck (2009) at the Center for the Intrepid as a limb '
@@ -699,7 +724,7 @@ final specialPopulationsContent = TopicData(
         BulletCardBlock(
           title: 'IED Blast Injury Characteristics',
           themeColor: const Color(0xFFC62828),
-          backgroundColor: const Color(0xFFFFEBEE),
+          backgroundColor: const Color(0xFF2A1519),
           points: [
             'IEDs: predominant cause of combat injuries in OEF/OIF',
             'Most common cause of military deaths 2008-2011',
@@ -716,7 +741,7 @@ final specialPopulationsContent = TopicData(
         ComparisonCardBlock(
           title: 'Dismounted Complex Blast Injury (DCBI)',
           themeColor: const Color(0xFF4A148C),
-          backgroundColor: const Color(0xFFEDE7F6),
+          backgroundColor: const Color(0xFF1F1A2E),
           icon: Icons.warning,
           description: 'The most severe injury pattern in modern military conflict, '
               'involving multiple extremity amputations with associated pelvic '
@@ -735,7 +760,7 @@ final specialPopulationsContent = TopicData(
         BulletCardBlock(
           title: 'Polytrauma Considerations',
           themeColor: const Color(0xFFE65100),
-          backgroundColor: const Color(0xFFFFF3E0),
+          backgroundColor: const Color(0xFF2A2215),
           points: [
             'TBI frequently co-occurs with blast amputations — affects cognitive rehab capacity',
             'PTSD: high prevalence; affects motivation, sleep, pain perception, rehab engagement',

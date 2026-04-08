@@ -9,6 +9,7 @@ import '../../core/widgets/quiz_session_view.dart';
 import 'widgets/flashcard_view.dart';
 import 'module_content_screen.dart';
 import 'podcast_player_screen.dart';
+import 'search_screen.dart';
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({super.key});
@@ -25,6 +26,25 @@ class HomeScreen extends StatelessWidget {
             expandedHeight: 180,
             pinned: true,
             backgroundColor: AppTheme.backgroundDark,
+            actions: [
+              IconButton(
+                icon: const Icon(
+                  Icons.search_rounded,
+                  color: AppTheme.accentTeal,
+                  size: 24,
+                ),
+                tooltip: 'Search all modules',
+                onPressed: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (_) => const SearchScreen(),
+                    ),
+                  );
+                },
+              ),
+              const SizedBox(width: 4),
+            ],
             flexibleSpace: FlexibleSpaceBar(
               background: Container(
                 decoration: const BoxDecoration(
@@ -283,17 +303,22 @@ class HomeScreen extends StatelessWidget {
             delegate: SliverChildBuilderDelegate(
               (context, index) {
                 final module = modules[index];
-                return ContentCard(
-                  module: module,
-                  index: index,
-                  onTap: () {
-                    Navigator.push(
-                      context,
-                      MaterialPageRoute(
-                        builder: (context) => ModuleContentScreen(module: module),
-                      ),
-                    );
-                  },
+                return Center(
+                  child: ConstrainedBox(
+                    constraints: const BoxConstraints(maxWidth: 800),
+                    child: ContentCard(
+                      module: module,
+                      index: index,
+                      onTap: () {
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                            builder: (context) => ModuleContentScreen(module: module),
+                          ),
+                        );
+                      },
+                    ),
+                  ),
                 );
               },
               childCount: modules.length,

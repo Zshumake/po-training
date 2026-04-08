@@ -11,6 +11,9 @@ final gaitAnalysisContent = TopicData(
     TopicTab(
       title: 'Normal Gait Review',
       blocks: [
+        HeaderBlock('Interactive Gait Cycle'),
+        TextBlock('Tap each phase to explore muscle activity, joint positions, and clinical significance.'),
+        GaitCycleBlock(),
         HeaderBlock('Pathologic Gait Patterns'),
         TextBlock(
           'Gait deviations result from weakness, spasticity, contracture, pain, '
@@ -39,7 +42,7 @@ final gaitAnalysisContent = TopicData(
         ComparisonCardBlock(
           title: 'Uncompensated Trendelenburg',
           themeColor: Colors.red,
-          backgroundColor: const Color(0xFFFFEBEE),
+          backgroundColor: const Color(0xFF2A1519),
           icon: Icons.trending_down,
           description: 'The pelvis drops on the swing side due to weak hip abductors '
               'on the stance side. The trunk remains midline or shifts slightly '
@@ -55,7 +58,7 @@ final gaitAnalysisContent = TopicData(
         ComparisonCardBlock(
           title: 'Compensated Trendelenburg (Gluteus Medius Lurch)',
           themeColor: Colors.orange,
-          backgroundColor: const Color(0xFFFFF3E0),
+          backgroundColor: const Color(0xFF2A2215),
           icon: Icons.swap_horiz,
           description: 'The patient compensates for hip abductor weakness by leaning '
               'the trunk OVER the affected (stance) side to shift the COG, '
@@ -75,10 +78,20 @@ final gaitAnalysisContent = TopicData(
           'The cane reduces the demand on the hip abductors by ~50%. '
           'Trendelenburg sign tests the stance-side abductors, not the swing side.',
         ),
+        AnnotatedImageBlock(
+          title: 'Normal vs Trendelenburg Gait',
+          diagramType: 'gait-trendelenburg',
+          hotspots: [
+            HotspotData(id: 'hip-drop', xPercent: 0.7, yPercent: 0.35, label: 'Contralateral Hip Drop', description: 'The pelvis drops on the unsupported side due to weakness of the stance-side hip abductors (gluteus medius/minimus).', clinicalSignificance: 'Key finding in L5 radiculopathy, superior gluteal nerve injury, or hip abductor weakness.', pinColor: Color(0xFFDC2626)),
+            HotspotData(id: 'stance-hip', xPercent: 0.3, yPercent: 0.4, label: 'Stance-Side Hip', description: 'The gluteus medius on the stance side fails to stabilize the pelvis during single-limb support.', pinColor: Color(0xFF0D9488)),
+            HotspotData(id: 'trunk-lean', xPercent: 0.3, yPercent: 0.2, label: 'Compensated: Trunk Lean', description: 'In compensated Trendelenburg, the patient leans the trunk TOWARD the weak side to shift the center of gravity over the stance limb.', clinicalSignificance: 'Compensated Trendelenburg = trunk lean toward weak side. Uncompensated = contralateral hip drop without trunk lean.', pinColor: Color(0xFFFF9800)),
+          ],
+          aspectRatio: 1.3,
+        ),
         BulletCardBlock(
           title: 'Additional Pathologic Gait Patterns',
           themeColor: Colors.deepPurple,
-          backgroundColor: const Color(0xFFEDE7F6),
+          backgroundColor: const Color(0xFF1F1A2E),
           points: [
             'Crouch gait: excessive knee and hip flexion throughout stance (cerebral palsy, hamstring spasticity)',
             'Scissor gait: excessive hip adduction and internal rotation (spastic diplegia, UMN lesion)',
@@ -87,6 +100,36 @@ final gaitAnalysisContent = TopicData(
             'Waddling gait: bilateral Trendelenburg (bilateral hip abductor weakness, muscular dystrophy)',
             'Quadriceps avoidance: patient leans trunk forward or locks knee in extension to avoid knee buckling',
           ],
+        ),
+        VideoBlock(
+          url: 'https://www.youtube.com/watch?v=5Z6shSu96CM',
+          title: 'Normal Gait Cycle Animation',
+          description: 'Watch the 8 phases of normal gait: initial contact, loading response, midstance, terminal stance, preswing, initial swing, midswing, terminal swing. Note the 60/40 stance-to-swing ratio.',
+        ),
+        VideoBlock(
+          url: 'https://www.youtube.com/watch?v=olZYoe3gr2Q',
+          title: 'Trendelenburg Gait: Compensated vs Uncompensated',
+          description: 'Uncompensated = contralateral pelvic drop (weak hip abductors). Compensated = ipsilateral trunk lean over stance leg to reduce abductor demand. Board favorite.',
+        ),
+        VideoBlock(
+          url: 'https://www.youtube.com/watch?v=LjJmZKr_E8g',
+          title: 'Steppage Gait (Foot Drop)',
+          description: 'Excessive hip and knee flexion during swing to clear the dropped foot. Caused by peroneal nerve palsy, L5 radiculopathy, or CMT. Watch for slapping forefoot contact.',
+        ),
+        VideoBlock(
+          url: 'https://www.youtube.com/watch?v=dc7cnLxbpKU',
+          title: 'Circumduction Gait (Hemiplegic)',
+          description: 'Swing leg traces a semicircle laterally to advance. Classic post-stroke pattern due to inability to flex hip/knee adequately. Most common hemiplegic gait compensation.',
+        ),
+        VideoBlock(
+          url: 'https://www.youtube.com/watch?v=rLyEZubc4tk',
+          title: 'Antalgic Gait',
+          description: 'Shortened stance phase on the painful side. Quick unloading. Look for asymmetric step length and reduced weight-bearing time.',
+        ),
+        VideoBlock(
+          url: 'https://www.youtube.com/watch?v=v1SoZ_S31pk',
+          title: 'Parkinsonian (Festinating) Gait',
+          description: 'Shuffling, short steps, reduced arm swing, forward-flexed posture, start hesitation, freezing. Festination = involuntary acceleration.',
         ),
       ],
     ),
@@ -160,7 +203,7 @@ final gaitAnalysisContent = TopicData(
         BulletCardBlock(
           title: 'Key Transfemoral Alignment Concepts',
           themeColor: Colors.amber,
-          backgroundColor: const Color(0xFFFFF8E1),
+          backgroundColor: const Color(0xFF2A2515),
           points: [
             'TKA line: trochanter-knee-ankle line; GRF should pass through this',
             'Stability in stance: GRF must pass ANTERIOR to knee axis',
@@ -169,6 +212,52 @@ final gaitAnalysisContent = TopicData(
             'Socket flexion (5-7 degrees) compensates for hip flexion contracture',
             'Lateral trunk bend can be prosthetic (short, inset) or patient (weak abductors) cause',
           ],
+        ),
+        VideoBlock(
+          url: 'https://www.youtube.com/watch?v=N_lufFd0EoI',
+          title: 'Transtibial Prosthetic Gait Deviations',
+          description: 'Watch for foot slap (excessive heel lever), drop-off (inadequate toe lever), lateral thrust (loose socket), and vaulting (prosthesis too long or inadequate suspension).',
+        ),
+        VideoBlock(
+          url: 'https://www.youtube.com/watch?v=VtPQrHmnmhw',
+          title: 'Transfemoral Prosthetic Gait Deviations',
+          description: 'Key deviations: lateral trunk bend (most common TF deviation — weak abductors or short residual limb), circumduction, vaulting, and whips (rotational malalignment).',
+        ),
+        VideoBlock(
+          url: 'https://www.youtube.com/watch?v=i2bxODibvb0',
+          title: 'Vaulting: The Most Energy-Costly Deviation',
+          description: 'Plantarflexion of the sound limb to swing the prosthetic limb. Most energy-consuming compensatory habit. Caused by prosthesis too long, inadequate suspension, or fear of catching toe.',
+        ),
+        CheckpointBlock(
+          question: 'A transfemoral amputee demonstrates lateral trunk bending toward the prosthetic side during stance. What is the MOST LIKELY prosthetic cause?',
+          options: ['Prosthesis too long', 'Prosthesis too short', 'Excessive knee friction', 'Foot set too far anterior'],
+          correctIndex: 1,
+          explanation: 'Lateral trunk bending toward the prosthetic side is the most common TF gait deviation. The most likely prosthetic cause is a prosthesis that is too short, forcing the patient to lean over the prosthetic side to clear the sound limb. Patient causes include weak hip abductors or a short residual limb.',
+        ),
+        CaseScenarioBlock(
+          title: 'TF Amputee Gait Analysis',
+          vignette: 'A 45-year-old male with a left transfemoral amputation (traumatic, K3) presents for gait analysis. He is wearing an IRC socket with suction suspension and a C-Leg microprocessor knee. You observe him walking in the clinic.',
+          decisionPoints: [
+            CaseDecisionPoint(
+              prompt: 'You notice the patient demonstrates a wide-based gait with the prosthetic limb abducted throughout stance. What is your primary assessment?',
+              options: ['Prosthesis is too long', 'Medial wall discomfort or inadequate lateral wall support', 'Weak hip flexors', 'Knee unit set in excessive flexion'],
+              optimalIndex: 1,
+              explanation: 'Abducted gait is most commonly caused by a prosthesis that is too long OR medial wall discomfort forcing the patient to keep the limb away from the body. With an IRC socket, inadequate lateral wall support should be assessed first.',
+            ),
+            CaseDecisionPoint(
+              prompt: 'After socket adjustment, the abducted gait resolves. However, you now notice terminal impact — an audible "clunk" at the end of swing phase. What component adjustment is needed?',
+              options: ['Increase knee flexion resistance', 'Decrease knee flexion resistance', 'Increase knee extension resistance', 'Change the prosthetic foot'],
+              optimalIndex: 2,
+              explanation: 'Terminal impact occurs when the knee reaches full extension too rapidly at the end of swing phase. Increasing extension damping (resistance) in the knee unit slows the shank and eliminates the abrupt stop. With a C-Leg, this is adjusted via software.',
+            ),
+            CaseDecisionPoint(
+              prompt: 'The patient also reports difficulty descending stairs. What is the primary advantage of his microprocessor knee for stair descent?',
+              options: ['It provides powered knee extension', 'It allows controlled yielding flexion (step-over-step descent)', 'It locks the knee in full extension', 'It increases walking speed on level ground'],
+              optimalIndex: 1,
+              explanation: 'Microprocessor knees like the C-Leg allow controlled yielding knee flexion during stance, enabling step-over-step stair descent. This is one of the key functional advantages over mechanical knees, which require step-to gait on stairs.',
+            ),
+          ],
+          summaryPearl: 'TF gait deviations are systematically analyzed: abducted gait → check socket fit and length; terminal impact → adjust extension damping; stair descent → MPK advantage. MPKs including the C-Leg substantially reduce falls and stumbles compared to mechanical knees (approximately 64-80% reduction across studies; Hafner 2007, Kahle 2008, Kaufman 2018).',
         ),
       ],
     ),
@@ -202,7 +291,7 @@ final gaitAnalysisContent = TopicData(
         ComparisonCardBlock(
           title: 'Floor Reaction AFO (FRAFO)',
           themeColor: Colors.teal,
-          backgroundColor: const Color(0xFFE0F2F1),
+          backgroundColor: const Color(0xFF152A27),
           icon: Icons.architecture,
           description: 'A solid ankle AFO with an anterior proximal shell/tibial cuff that '
               'creates a knee extension moment by blocking tibial advancement. '
@@ -219,7 +308,7 @@ final gaitAnalysisContent = TopicData(
         BulletCardBlock(
           title: 'KAFO-Related Gait Deviations',
           themeColor: Colors.indigo,
-          backgroundColor: const Color(0xFFE8EAF6),
+          backgroundColor: const Color(0xFF1A1D2E),
           points: [
             'Circumduction: KAFO too long or knee lock prevents knee flexion in swing',
             'Vaulting: KAFO too long; compensating by rising on contralateral toes',
@@ -249,7 +338,7 @@ final gaitAnalysisContent = TopicData(
         BulletCardBlock(
           title: 'Shoe Modifications and Gait Effects',
           themeColor: Colors.brown,
-          backgroundColor: const Color(0xFFEFEBE9),
+          backgroundColor: const Color(0xFF2A2522),
           points: [
             'Heel lift: compensates for limb length discrepancy or fixed equinus; reduces recurvatum',
             'Rocker bottom sole: substitutes for lost ankle/forefoot motion (fused ankle or MTP joints)',
@@ -282,14 +371,12 @@ final gaitAnalysisContent = TopicData(
           columns: ['Amputation Level', 'Increase Over Normal (%)', 'Speed Change'],
           rows: [
             ["Syme's amputation", '15%', 'Slightly decreased'],
-            ['Traumatic unilateral TT (BKA) - average', '25%', 'Slightly decreased'],
-            ['Traumatic unilateral TT - long residual limb', '10%', 'Near normal'],
-            ['Traumatic unilateral TT - short residual limb', '40%', 'Moderately decreased'],
-            ['Traumatic bilateral TT (BKA)', '41%', 'Moderately decreased'],
+            ['Traumatic unilateral TT (BKA)', '10-25%', 'Slightly decreased'],
+            ['Traumatic bilateral TT (BKA)', '~41%', 'Moderately decreased'],
             ['Traumatic unilateral TF (AKA)', '60-70%', 'Significantly decreased'],
             ['Traumatic bilateral TF (AKA)', '>200%', 'Most use wheelchair'],
-            ['Vascular unilateral TT (BKA)', '40%', 'Decreased'],
-            ['Vascular unilateral TF (AKA)', '100%', 'Markedly decreased'],
+            ['Vascular unilateral TT (BKA)', '20-40%', 'Decreased'],
+            ['Vascular unilateral TF (AKA)', '65-100%', 'Markedly decreased'],
             ['Hip disarticulation', '100-200%', 'Markedly decreased'],
           ],
           headerColor: Colors.red,
@@ -298,12 +385,12 @@ final gaitAnalysisContent = TopicData(
           'Board Pearl - Two Key Rules',
           '1) Higher level = higher energy cost (TF > TT > Syme\'s). '
           '2) Vascular etiology costs MORE than traumatic at the same level '
-          '(vascular TT 40% vs traumatic TT 25%). These are heavily tested.',
+          '(vascular TT 20-40% vs traumatic TT 10-25%). These are heavily tested.',
         ),
         BulletCardBlock(
           title: 'Energy Expenditure Principles',
           themeColor: Colors.red,
-          backgroundColor: const Color(0xFFFFEBEE),
+          backgroundColor: const Color(0xFF2A1519),
           points: [
             'Energy cost measured as O2 consumption per meter walked (mL O2/kg/m)',
             'Amputees self-select a slower walking speed to maintain a comfortable O2 rate',
@@ -317,7 +404,7 @@ final gaitAnalysisContent = TopicData(
         ComparisonCardBlock(
           title: 'Wheelchair vs Prosthetic Ambulation',
           themeColor: Colors.blue,
-          backgroundColor: const Color(0xFFE3F2FD),
+          backgroundColor: const Color(0xFF1A2332),
           icon: Icons.accessible,
           description: 'For higher-level amputees, wheelchair propulsion may be '
               'more energy-efficient than prosthetic ambulation, which is an '
@@ -340,7 +427,7 @@ final gaitAnalysisContent = TopicData(
         BulletCardBlock(
           title: 'Factors Affecting Energy Expenditure',
           themeColor: Colors.orange,
-          backgroundColor: const Color(0xFFFFF3E0),
+          backgroundColor: const Color(0xFF2A2215),
           points: [
             'Amputation level: most important factor (higher = more energy)',
             'Etiology: vascular > traumatic at same level',
@@ -378,6 +465,12 @@ final gaitAnalysisContent = TopicData(
           'A fit 45-year-old who just had a traumatic BKA may be classified K3 '
           '(community ambulator) even before receiving a prosthesis, based on '
           'expected recovery trajectory.',
+        ),
+        CheckpointBlock(
+          question: 'Compared to a traumatic transtibial amputee, a vascular transtibial amputee will have:',
+          options: ['Lower energy expenditure', 'Same energy expenditure', 'Higher energy expenditure', 'Energy expenditure depends only on prosthetic foot type'],
+          correctIndex: 2,
+          explanation: 'Vascular amputees consistently require MORE energy than traumatic amputees at the same amputation level. Vascular TT: ~40% increase vs traumatic TT: ~25% increase. This is due to comorbidities (diabetes, PVD, deconditioning) rather than the amputation itself.',
         ),
       ],
     ),
@@ -450,7 +543,7 @@ final gaitAnalysisContent = TopicData(
         BulletCardBlock(
           title: 'AP GRF Components',
           themeColor: Colors.green,
-          backgroundColor: const Color(0xFFE8F5E9),
+          backgroundColor: const Color(0xFF152A1A),
           points: [
             'Braking force (posteriorly directed): occurs during loading response and early midstance',
             'Propulsive force (anteriorly directed): occurs during terminal stance and preswing (push-off)',
