@@ -29,6 +29,9 @@ jobs:
       - name: Build Flutter web
         run: flutter build web --release --base-href /po-training/
 
+      - name: Disable Jekyll
+        run: touch build/web/.nojekyll
+
       - name: Deploy to gh-pages
         uses: peaceiris/actions-gh-pages@v4
         with:
@@ -36,3 +39,4 @@ jobs:
           publish_dir: ./build/web
           publish_branch: gh-pages
           force_orphan: true
+          enable_jekyll: false
